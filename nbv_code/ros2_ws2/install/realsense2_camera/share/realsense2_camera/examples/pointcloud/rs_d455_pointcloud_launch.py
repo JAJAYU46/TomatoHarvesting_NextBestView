@@ -1,0 +1,1 @@
+/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_camera/examples/pointcloud/rs_d455_pointcloud_launch.py

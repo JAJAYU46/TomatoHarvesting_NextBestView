@@ -1,0 +1,1 @@
+/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_camera/examples/launch_params_from_file/rs_launch_get_params_from_yaml.py

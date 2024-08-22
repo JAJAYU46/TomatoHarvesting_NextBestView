@@ -1,0 +1,1 @@
+/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2/ament_cmake_environment_hooks/local_setup.bash
