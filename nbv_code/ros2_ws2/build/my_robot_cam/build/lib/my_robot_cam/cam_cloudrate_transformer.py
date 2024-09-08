@@ -15,6 +15,8 @@ from pynput import keyboard
 # import tf2_ros  # For TF2 transformations
 # # import tf2_sensor_msgs.tf2_sensor_msgs as tf2_sensor_msgs  # For transforming PointCloud2 messages
 # from tf2_ros import do_transform_cloud
+from sensor_msgs_py import point_cloud2 as pc2 #for filter distance
+import math
 
 
 class MyNode(Node): #construct Node class
@@ -67,8 +69,10 @@ class MyNode(Node): #construct Node class
             # self.cloudrate_transformer_pub_.publish(transformed_cloud)
 
             #[下面是原本的但會有frame轉換錯方向的問題]
+            filtered_points=self.distance_filter(msg)
             msg.header=std_msgs.Header(frame_id='camera_link_optical')#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID
-            self.cloudrate_transformer_pub_.publish(msg)
+            filtered_msg = pc2.create_cloud(msg.header, msg.fields, filtered_points)
+            self.cloudrate_transformer_pub_.publish(filtered_msg)
         elif self.Mode==1: #reload mode 
             if self.ReloadFlag==True: #key,
                 #msg = sensor_msgs.PointCloud2()
@@ -78,8 +82,10 @@ class MyNode(Node): #construct Node class
                 #self.get_logger().info(msg)
                 #self.cloudrate_transformer_pub_.publish(msg)
                 #self.callback_forPublish(self,msg)
+                filtered_points=self.distance_filter(msg)    
                 msg.header=std_msgs.Header(frame_id='camera_link_optical')#cam_frame_pcd設定這個點雲圖會顯示到的frame ID
-                self.cloudrate_transformer_pub_.publish(msg)
+                filtered_msg = pc2.create_cloud(msg.header, msg.fields, filtered_points)
+                self.cloudrate_transformer_pub_.publish(filtered_msg)
                 self.ReloadFlag=False
         # #============【Publish】===========
         # msg = Twist() #create a message object from the class twist
@@ -104,6 +110,25 @@ class MyNode(Node): #construct Node class
     #     self.get_logger().info(str(msg.x))
     #     self.get_logger().info("("+str(msg.x)+", "+str(msg.y)+")")
     # r
+
+    def distance_filter(self,msg2):
+        filtered_points = []
+        gen = pc2.read_points(msg2, skip_nans=True)
+        int_data = list(gen)
+        
+
+        for point in int_data:
+            x, y, z, rgb = point
+            
+            if not math.isinf(x) and not math.isinf(y) and not math.isinf(z):
+                # self.get_logger().info("now z: "+str(z))
+                if z<1: #z再依公尺以內的才要繼續傳下去處理（因為機器手必頂多採收一公尺以內的東西, 這樣可以加快運算速度）
+                    # self.get_logger().info("now z: "+str(z))
+                    filtered_points.append([x, y, z, rgb])
+        return filtered_points
+                    
+    
+    
     def on_press(self,key):
         #self.get_logger().info("key:"+str(key))
         #key_str = str(key)
