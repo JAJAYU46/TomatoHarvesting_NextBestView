@@ -40,12 +40,14 @@ def preprocess_point_cloud(pcd, voxel_size):
     # pcd_down = pcd.voxel_down_sample(voxel_size)
 
     radius_normal = voxel_size * 2
-    print(":: Estimate normal with search radius %.3f." % radius_normal)
+    if __debug__:
+        print(":: Estimate normal with search radius %.3f." % radius_normal)
     pcd.estimate_normals(
         o3d.geometry.KDTreeSearchParamHybrid(radius=radius_normal, max_nn=30))
 
     radius_feature = voxel_size * 5
-    print(":: Compute FPFH feature with search radius %.3f." % radius_feature)
+    if __debug__:
+        print(":: Compute FPFH feature with search radius %.3f." % radius_feature)
     pcd_fpfh = o3d.pipelines.registration.compute_fpfh_feature(
         pcd,
         o3d.geometry.KDTreeSearchParamHybrid(radius=radius_feature, max_nn=100))
@@ -55,9 +57,10 @@ def preprocess_point_cloud(pcd, voxel_size):
 def execute_global_registration(source_down, target_down, source_fpfh,
                                 target_fpfh, voxel_size):
     distance_threshold = voxel_size * 1.5
-    print(":: RANSAC registration on downsampled point clouds.")
-    print("   Since the downsampling voxel size is %.3f," % voxel_size)
-    print("   we use a liberal distance threshold %.3f." % distance_threshold)
+    if __debug__:
+        print(":: RANSAC registration on downsampled point clouds.")
+        print("   Since the downsampling voxel size is %.3f," % voxel_size)
+        print("   we use a liberal distance threshold %.3f." % distance_threshold)
     result = o3d.pipelines.registration.registration_ransac_based_on_feature_matching(
         source_down, target_down, source_fpfh, target_fpfh, True,
         distance_threshold,
@@ -68,7 +71,8 @@ def execute_global_registration(source_down, target_down, source_fpfh,
             o3d.pipelines.registration.CorrespondenceCheckerBasedOnDistance( #這個在找兩個點之間的距離...的
                 distance_threshold)
         ], o3d.pipelines.registration.RANSACConvergenceCriteria(100000, 0.999))
-    print(result.transformation)
+    if __debug__:
+        print(result.transformation)
     return result
 
 
@@ -108,18 +112,21 @@ def ICPoperation(source, target):
     sp_tp_ratio=target_num_points/source_num_points
 
     evaluation = o3d.pipelines.registration.evaluate_registration(source_down, target_down, threshold, result_ransac.transformation)
-    print("global registration evaluation: "+str(evaluation))
-    # print(len(evaluation.correspondence_set))
-    print("target_num_points=%d" %target_num_points)
-    print("paired_point_num=%d" %len(evaluation.correspondence_set))
+    if __debug__:
+        print("global registration evaluation: "+str(evaluation))
+        # print(len(evaluation.correspondence_set))
+        print("target_num_points=%d" %target_num_points)
+        print("paired_point_num=%d" %len(evaluation.correspondence_set))
     paired_point_ratio=len(evaluation.correspondence_set)/target_num_points #target中有幾趴的點又被配對到, 配對到的點太少就要重算global registration
-    print("corresponding point= %.2f" %paired_point_ratio)
-    print("good_fitness_standard= %.2f" %((sp_tp_ratio)*0.6))
+    if __debug__:
+        print("corresponding point= %.2f" %paired_point_ratio)
+        print("good_fitness_standard= %.2f" %((sp_tp_ratio)*0.6))
 
     while (paired_point_ratio<=0.60) or (evaluation.inlier_rmse > 0.01) or (evaluation.fitness<(sp_tp_ratio)*0.6): #如果global誤差太大, 就重算global
         # evaluation.inlier_rmse 正常的時候是0.00762, 如果這次算出的global誤差太大, 就重算global
         #不知為啥有時paired_point_ratio會大於1ㄟ其實不太對的
-        print("recalculate global registration (target_num_points/len(evaluation.correspondence_set))<0.60) or (evaluation.inlier_rmse > 0.01)")
+        if __debug__:
+            print("recalculate global registration (target_num_points/len(evaluation.correspondence_set))<0.60) or (evaluation.inlier_rmse > 0.01)")
         #===========test=============
         # source_down = copy.deepcopy(source_down_origin)
         # target_down = copy.deepcopy(target_down_origin)
@@ -131,9 +138,9 @@ def ICPoperation(source, target):
         evaluation = o3d.pipelines.registration.evaluate_registration(source_down, target_down, threshold, result_ransac.transformation)
         paired_point_ratio=len(evaluation.correspondence_set)/target_num_points
         
-        
-        print("corresponding point= %.2f" %paired_point_ratio)
-        print("global registration evaluation: "+str(evaluation))
+        if __debug__:
+            print("corresponding point= %.2f" %paired_point_ratio)
+            print("global registration evaluation: "+str(evaluation))
         if __debug__:
             draw_registration_result(source_down, target_down, result_ransac.transformation, "ReGlobal_registration")
 
@@ -141,11 +148,13 @@ def ICPoperation(source, target):
     #[Step2] Local Registration (By ICP method)
     icp_count=3
     result_icp_final=ICP_helper(source, target, result_ransac, icp_count, threshold)
-    print("Total "+str(icp_count)+"th time of point-to-point ICP")
+    if __debug__:
+        print("Total "+str(icp_count)+"th time of point-to-point ICP")
     if __debug__:
         draw_registration_result(source_down, target_down, result_icp_final.transformation, "Local_registration(ICP)")
-    print("The final transformation matrics is: ")
-    print(result_icp_final.transformation)  
+    if __debug__:
+        print("The final transformation matrics is: ")
+        print(result_icp_final.transformation)  
     return result_icp_final  
     
     
@@ -158,8 +167,8 @@ def ICP_helper(source, target, global_result, count, threshold):
     #下面是open3d內建的icp方法, 可以得到local下的轉換矩陣
     local_result=ICP_helper(source, target, global_result, count, threshold)
     new_local_result = o3d.pipelines.registration.registration_icp(source, target, threshold, local_result.transformation,o3d.pipelines.registration.TransformationEstimationPointToPoint())
-    
-    print(new_local_result.transformation)
+    if __debug__:
+        print(new_local_result.transformation)
     # draw_registration_result(source, target, new_local_result.transformation)
     return new_local_result
 

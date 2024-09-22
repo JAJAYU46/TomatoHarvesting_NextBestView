@@ -20,6 +20,11 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            #建立一個excecutable 
+            "nbv_tompcd_filter = my_robot_nbv.nbv_tompcd_filter:main"
         ],
     },
+    # package_data={ #好像沒功能
+    #     'my_robot_nbv': ['module_ICP.py'],  # Include your module here
+    # }
 )

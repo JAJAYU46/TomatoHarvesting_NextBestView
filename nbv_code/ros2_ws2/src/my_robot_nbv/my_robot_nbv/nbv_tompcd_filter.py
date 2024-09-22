@@ -25,6 +25,9 @@ from cv_bridge import CvBridge, CvBridgeError
 import math
 
 #===============================
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.realpath(__file__))) #approach adds the current directory where the script is located to the Python path.
 #Pesonal Module
 from module_ICP import ICPoperation
 from lib_cloud_conversion_between_Open3D_and_ROS_colorf4 import convertCloudFromOpen3dToRos, convertCloudFromRosToOpen3d
@@ -88,9 +91,10 @@ class MyNode(Node): #construct Node class
         # points = []
         # colors = []
         #===============================================
-        self.get_logger().info("========================")
-        self.get_logger().info("new frame start process")
-        self.get_logger().info("========================")
+        if __debug__:
+            self.get_logger().info("========================")
+            self.get_logger().info("new frame start process")
+            self.get_logger().info("========================")
         gen = pc2.read_points(msg, skip_nans=True)
         int_data = list(gen)
         # for a in pc2.read_points(msg, skip_nans=True, field_names=("x", "y", "z", "rgb")):
@@ -165,7 +169,8 @@ class MyNode(Node): #construct Node class
         # self.TomatoBox_lu[1]=min_v
         # self.TomatoBox_rd[0]=max_u
         # self.TomatoBox_rd[1]=max_v
-        self.get_logger().info("done filtering")
+        if __debug__:
+            self.get_logger().info("done filtering")
         msg.header=std_msgs.Header(frame_id='camera_link_optical')#, stamp=Clock().now().to_msg())#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID      
         filtered_msg = pc2.create_cloud(msg.header, msg.fields, filtered_points)
         # self.get_logger().info(f"filtered_points: {filtered_points}")
@@ -232,8 +237,9 @@ class MyNode(Node): #construct Node class
         # int_data = list(gen)
         msg_points_np = np.array(list(pc2.read_points(msg, skip_nans=True)))
         source_points_np = np.array(list(pc2.read_points(source_pointcloud2, skip_nans=True)))
-        self.get_logger().info(f'Shape of msg_points_np.shape: {msg_points_np.shape}')
-        self.get_logger().info(f'Shape of source_points_np.shape: {(source_points_np.shape)}')
+        if __debug__:
+            self.get_logger().info(f'Shape of msg_points_np.shape: {msg_points_np.shape}')
+            self.get_logger().info(f'Shape of source_points_np.shape: {(source_points_np.shape)}')
         # # self.get_logger().info(f'Array of msg_points_np: {msg_points_np}')
         # self.get_logger().info(f'Data_type of msg_points_np: {msg_points_np.dtype}')
         # self.get_logger().info(f'Array of source_points_np: {(source_points_np)}')
@@ -241,12 +247,14 @@ class MyNode(Node): #construct Node class
 
         whole_points_np = np.append(msg_points_np, source_points_np, axis=0)#往側邊append
         # self.get_logger().info(f'Array of whole_points_np: {(whole_points_np)}')
-        self.get_logger().info(f'Shape of whole_points_np: {(whole_points_np.shape)}')
+        if __debug__:
+            self.get_logger().info(f'Shape of whole_points_np: {(whole_points_np.shape)}')
         # self.get_logger().info(f'msg.fields: {(msg.fields)}')
         # self.get_logger().info(f'filter_points: {(filtered_points)}')
         whole_pointcloud2 = pc2.create_cloud(msg.header, msg.fields, whole_points_np.tolist())
         self.tompcd_ICP_pub_.publish(whole_pointcloud2)
-        self.get_logger().info("done publishing whole_pointcloud2 to ICP_topic")
+        if __debug__:
+            self.get_logger().info("done publishing whole_pointcloud2 to ICP_topic")
         
         
 
@@ -504,6 +512,17 @@ def main(args=None): #construct main function
     # target = o3d.io.read_point_cloud(target_path.format(num)) #demo_pcds.paths[1])
 
     # ICPoperation(source,target)
+    # =============== [下面這段是run in optimize mode] ================
+    if not __debug__:
+        # Your main code here
+        print("Running in optimized mode")
+        # Proceed with normal node logic
+    else:
+        # Relaunch the script in optimized mode
+        script_path = os.path.realpath(__file__)
+        os.execv(sys.executable, [sys.executable, '-O', script_path] + sys.argv[1:])
+    #===============================================================
+    
     rclpy.init(args=args)
     node1 = MyNode() #node1=NodeClass: MyNode
     rclpy.spin(node1) #keep node alive until ctrl+C

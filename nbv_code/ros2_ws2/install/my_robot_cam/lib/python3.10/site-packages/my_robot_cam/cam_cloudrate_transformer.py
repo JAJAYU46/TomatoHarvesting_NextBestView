@@ -6,6 +6,9 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist #For publisher
 import sensor_msgs.msg as sensor_msgs
 import std_msgs.msg as std_msgs  #For publisher
+
+import time #for time_delay
+
 #import keyboard #for keyboard輸入
 # import keyboard
 # #from pynput.keyboard import Key, Listener
@@ -17,6 +20,10 @@ from pynput import keyboard
 # from tf2_ros import do_transform_cloud
 from sensor_msgs_py import point_cloud2 as pc2 #for filter distance
 import math
+
+#=========== for TF ==================
+from tf2_ros import Buffer, TransformListener
+from geometry_msgs.msg import TransformStamped
 
 
 class MyNode(Node): #construct Node class
@@ -32,6 +39,13 @@ class MyNode(Node): #construct Node class
         self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/camera/points", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         #/camera/points （for gazebo) "/camera/camera/depth/color/points"(for realsense)
         self.get_logger().info("python_NodeName have been started")
+        
+        # Time when the last message was received
+        # self.last_received_time = time.time() ###
+        # self.time_delay = 0 ### #設每0.5秒鐘才更新一次(也是需要讓它realtime）) #################也不能設三秒啥的, 這樣你作標會機器轉了但等於你point cloud publish在錯的角度上
+        #因為其實對的作法要publish在現在這次偵測到的那個frame而不是直接publish 在此時刻的frame, 市要計算跟算frame的, 但這部份就可以先跳過
+        # self.get_logger().info("now sample rate:"+str(self.time_delay)+" sec") ###
+        
         #self.create_timer(1.0, self.callback1) #(time interval/ calling callback)
         #self.create_timer(1.0, self.callback_forSubscribe)
         #會定期偵測有沒有輸入e
@@ -46,6 +60,9 @@ class MyNode(Node): #construct Node class
         # self.tf_buffer = tf2_ros.Buffer()
         # self.tf_listener = tf2_ros.TransformListener(self.tf_buffer)
         # #==========================
+        # TF2 buffer and listener for frame transformations
+        self.tf_buffer = Buffer()
+        self.tf_listener = TransformListener(self.tf_buffer, self)
 
 
 
@@ -56,9 +73,18 @@ class MyNode(Node): #construct Node class
         # on_release=self.on_release)
         # listener.start()
         
+
+
+
+
     # def callback_ModeType(self):
     #不知道為啥事subscriber那邊寫下之後，就不能用create_callback了，要下面這樣才行
     def callback1(self, msg:sensor_msgs.PointCloud2):# sensor_msgs.PointCloud2): #construct a callback
+        # current_time = time.time() ###
+        
+        
+        
+        
         if self.Mode==0: #continue mode
             # #[加了frame的處理tf]
             # # Get the transformation from the camera frame to the odom frame
@@ -69,10 +95,24 @@ class MyNode(Node): #construct Node class
             # self.cloudrate_transformer_pub_.publish(transformed_cloud)
 
             #[下面是原本的但會有frame轉換錯方向的問題]
-            filtered_points=self.distance_filter(msg)
-            msg.header=std_msgs.Header(frame_id='camera_link_optical')#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID
+            # if current_time - self.last_received_time >= self.time_delay: ###
+            try:
+                # Get the transformation from the camera frame (or the frame you're working with)
+                # transform: TransformStamped = self.tf_buffer.lookup_transform('camera_link_optical', msg.header.frame_id, rclpy.time.Time())
+                            # Get the transformation at the time of point cloud capture
+                transform: TransformStamped = self.tf_buffer.lookup_transform(
+                    'camera_link_optical',    # Moving frame
+                    msg.header.frame_id,      # Original frame (typically fixed)
+                    msg.header.stamp)         # Time when the point cloud was captured
+
+            except Exception as e:
+                self.get_logger().error(f"Failed to get transform or process point cloud: {e}")
+
+            filtered_points=self.distance_filter(msg) # <Note>發現這個函式超級慢 所以要處理一下frame的問題
+            msg.header=std_msgs.Header(frame_id='camera_link_optical', stamp=msg.header.stamp)#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID
             filtered_msg = pc2.create_cloud(msg.header, msg.fields, filtered_points)
             self.cloudrate_transformer_pub_.publish(filtered_msg)
+            # self.cloudrate_transformer_pub_.publish(msg)
         elif self.Mode==1: #reload mode 
             if self.ReloadFlag==True: #key,
                 #msg = sensor_msgs.PointCloud2()
@@ -82,8 +122,19 @@ class MyNode(Node): #construct Node class
                 #self.get_logger().info(msg)
                 #self.cloudrate_transformer_pub_.publish(msg)
                 #self.callback_forPublish(self,msg)
+                try:
+                    # Get the transformation from the camera frame (or the frame you're working with)
+                    # transform: TransformStamped = self.tf_buffer.lookup_transform('camera_link_optical', msg.header.frame_id, rclpy.time.Time())
+                                # Get the transformation at the time of point cloud capture
+                    transform: TransformStamped = self.tf_buffer.lookup_transform(
+                        'camera_link_optical',    # Moving frame
+                        msg.header.frame_id,      # Original frame (typically fixed)
+                        msg.header.stamp)         # Time when the point cloud was captured
+
+                except Exception as e:
+                    self.get_logger().error(f"Failed to get transform or process point cloud: {e}")
                 filtered_points=self.distance_filter(msg)    
-                msg.header=std_msgs.Header(frame_id='camera_link_optical')#cam_frame_pcd設定這個點雲圖會顯示到的frame ID
+                msg.header=std_msgs.Header(frame_id='camera_link_optical', stamp=msg.header.stamp)#cam_frame_pcd設定這個點雲圖會顯示到的frame ID
                 filtered_msg = pc2.create_cloud(msg.header, msg.fields, filtered_points)
                 self.cloudrate_transformer_pub_.publish(filtered_msg)
                 self.ReloadFlag=False
