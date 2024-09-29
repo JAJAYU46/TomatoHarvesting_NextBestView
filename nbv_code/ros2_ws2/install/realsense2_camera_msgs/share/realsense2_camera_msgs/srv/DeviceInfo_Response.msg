@@ -1,1 +1,8 @@
-/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs/rosidl_cmake/srv/DeviceInfo_Response.msg
+
+string device_name
+string serial_number
+string firmware_version
+string usb_type_descriptor
+string firmware_update_id
+string sensors
+string physical_port

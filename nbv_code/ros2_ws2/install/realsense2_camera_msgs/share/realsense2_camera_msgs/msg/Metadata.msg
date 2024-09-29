@@ -1,1 +1,2 @@
-/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_camera_msgs/msg/Metadata.msg
+std_msgs/Header header
+string json_data

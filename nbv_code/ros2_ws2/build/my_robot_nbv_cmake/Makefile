@@ -211,24 +211,24 @@ nbvc_ray_generation/fast:
 .PHONY : nbvc_ray_generation/fast
 
 #=============================================================================
-# Target rules for targets named SdfModel
+# Target rules for targets named nbvc_lib_SdfModel
 
 # Build rule for target.
-SdfModel: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SdfModel
-.PHONY : SdfModel
+nbvc_lib_SdfModel: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nbvc_lib_SdfModel
+.PHONY : nbvc_lib_SdfModel
 
 # fast build rule for target.
-SdfModel/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SdfModel.dir/build.make CMakeFiles/SdfModel.dir/build
-.PHONY : SdfModel/fast
+nbvc_lib_SdfModel/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_lib_SdfModel.dir/build.make CMakeFiles/nbvc_lib_SdfModel.dir/build
+.PHONY : nbvc_lib_SdfModel/fast
 
 src/SdfModel.o: src/SdfModel.cpp.o
 .PHONY : src/SdfModel.o
 
 # target to build an object file
 src/SdfModel.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SdfModel.dir/build.make CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_lib_SdfModel.dir/build.make CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.o
 .PHONY : src/SdfModel.cpp.o
 
 src/SdfModel.i: src/SdfModel.cpp.i
@@ -236,7 +236,7 @@ src/SdfModel.i: src/SdfModel.cpp.i
 
 # target to preprocess a source file
 src/SdfModel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SdfModel.dir/build.make CMakeFiles/SdfModel.dir/src/SdfModel.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_lib_SdfModel.dir/build.make CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.i
 .PHONY : src/SdfModel.cpp.i
 
 src/SdfModel.s: src/SdfModel.cpp.s
@@ -244,7 +244,7 @@ src/SdfModel.s: src/SdfModel.cpp.s
 
 # target to generate assembly for a file
 src/SdfModel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SdfModel.dir/build.make CMakeFiles/SdfModel.dir/src/SdfModel.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_lib_SdfModel.dir/build.make CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.s
 .PHONY : src/SdfModel.cpp.s
 
 src/nbvc_ray_generation.o: src/nbvc_ray_generation.cpp.o
@@ -286,7 +286,7 @@ help:
 	@echo "... test"
 	@echo "... my_robot_nbv_cmake_uninstall"
 	@echo "... uninstall"
-	@echo "... SdfModel"
+	@echo "... nbvc_lib_SdfModel"
 	@echo "... nbvc_ray_generation"
 	@echo "... src/SdfModel.o"
 	@echo "... src/SdfModel.i"

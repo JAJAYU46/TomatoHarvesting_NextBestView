@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera/realsense2_camera_node" "TARGETS" "realsense2_camera_node" "DESTINATION" "lib/realsense2_camera")

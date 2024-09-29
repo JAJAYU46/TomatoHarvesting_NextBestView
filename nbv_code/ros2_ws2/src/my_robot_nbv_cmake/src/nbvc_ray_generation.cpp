@@ -1,3 +1,5 @@
+
+
 //A basic node structure
 #include "rclcpp/rclcpp.hpp"
 #include <octomap/octomap.h>
@@ -25,6 +27,10 @@ using std::placeholders::_1;
 //for marker
 #include <geometry_msgs/msg/point.hpp>
 #include <visualization_msgs/msg/marker.hpp>
+
+
+// #include "SdfModel.h"
+#include "my_robot_nbv_cmake/SdfModel.h"
 
 class MyNode : public rclcpp::Node
 {

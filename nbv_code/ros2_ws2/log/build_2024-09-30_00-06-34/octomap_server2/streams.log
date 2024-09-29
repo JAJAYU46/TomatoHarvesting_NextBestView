@@ -1,0 +1,207 @@
+[0.753s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/octomap_server2 -DCMAKE_INSTALL_PREFIX=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2
+[0.906s] -- The C compiler identification is GNU 11.4.0
+[0.978s] -- The CXX compiler identification is GNU 11.4.0
+[0.991s] -- Detecting C compiler ABI info
+[1.067s] -- Detecting C compiler ABI info - done
+[1.087s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.087s] -- Detecting C compile features
+[1.087s] -- Detecting C compile features - done
+[1.091s] -- Detecting CXX compiler ABI info
+[1.177s] -- Detecting CXX compiler ABI info - done
+[1.196s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.198s] -- Detecting CXX compile features
+[1.199s] -- Detecting CXX compile features - done
+[1.205s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.400s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[1.532s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[1.603s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.609s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.623s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.645s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.676s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.794s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.799s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.937s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")
+[1.973s] -- Found FastRTPS: /opt/ros/humble/include
+[2.038s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.054s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.126s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.128s] -- Found Threads: TRUE
+[2.353s] -- Found rclcpp_components: 16.0.9 (/opt/ros/humble/share/rclcpp_components/cmake)
+[2.490s] [33mCMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:146 (find_package):
+[2.490s]   Policy CMP0144 is not set: find_package uses upper-case <PACKAGENAME>_ROOT
+[2.490s]   variables.  Run "cmake --help-policy CMP0144" for policy details.  Use the
+[2.490s]   cmake_policy command to set the policy and suppress this warning.
+[2.490s] 
+[2.490s]   CMake variable EIGEN_ROOT is set to:
+[2.490s] 
+[2.490s]     /usr/include/eigen3
+[2.490s] 
+[2.490s]   For compatibility, find_package is ignoring the variable, but code in a
+[2.490s]   .cmake module might still use it.
+[2.490s] Call Stack (most recent call first):
+[2.491s]   /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:299 (find_eigen)
+[2.491s]   /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:543 (find_external_library)
+[2.491s]   CMakeLists.txt:21 (find_package)
+[2.491s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.491s] [0m
+[2.495s] -- Checking for module 'eigen3'
+[2.510s] --   Found eigen3, version 3.4.0
+[2.548s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1")
+[2.548s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[2.549s] [33mCMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:128 (find_package):
+[2.549s]   Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+[2.549s]   --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+[2.549s]   set the policy and suppress this warning.
+[2.549s] 
+[2.549s] Call Stack (most recent call first):
+[2.549s]   /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:297 (find_boost)
+[2.550s]   /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:543 (find_external_library)
+[2.550s]   CMakeLists.txt:21 (find_package)
+[2.550s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.550s] [0m
+[2.590s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization
+[2.593s] [33mCMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/pcl/Modules/FindFLANN.cmake:44 (find_package):
+[2.594s]   Policy CMP0144 is not set: find_package uses upper-case <PACKAGENAME>_ROOT
+[2.594s]   variables.  Run "cmake --help-policy CMP0144" for policy details.  Use the
+[2.594s]   cmake_policy command to set the policy and suppress this warning.
+[2.594s] 
+[2.594s]   CMake variable FLANN_ROOT is set to:
+[2.594s] 
+[2.594s]     /usr
+[2.594s] 
+[2.594s]   For compatibility, find_package is ignoring the variable, but code in a
+[2.594s]   .cmake module might still use it.
+[2.594s] Call Stack (most recent call first):
+[2.594s]   /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:256 (find_package)
+[2.594s]   /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:301 (find_flann)
+[2.594s]   /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:543 (find_external_library)
+[2.594s]   CMakeLists.txt:21 (find_package)
+[2.594s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.595s] [0m
+[2.609s] -- Checking for module 'flann'
+[2.631s] --   Found flann, version 1.9.1
+[2.680s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so
+[2.681s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[2.737s] -- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so
+[2.750s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX
+[2.934s] -- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1")
+[2.935s] -- Found MPI: TRUE (found version "3.1") found components: C
+[2.941s] -- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0")
+[2.964s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11")
+[3.004s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37")
+[3.057s] -- Found Eigen3: /usr/include/eigen3 (found version "3.4.0")
+[3.249s] -- Found X11: /usr/include
+[3.250s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[3.326s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[3.327s] -- Looking for gethostbyname
+[3.395s] -- Looking for gethostbyname - found
+[3.395s] -- Looking for connect
+[3.464s] -- Looking for connect - found
+[3.464s] -- Looking for remove
+[3.535s] -- Looking for remove - found
+[3.535s] -- Looking for shmat
+[3.606s] -- Looking for shmat - found
+[3.606s] -- Looking for IceConnectionNumber in ICE
+[3.677s] -- Looking for IceConnectionNumber in ICE - found
+[3.813s] -- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7")
+[3.816s] -- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so
+[3.821s] -- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3")
+[3.824s] -- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5")
+[3.893s] -- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80")
+[3.914s] -- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")
+[3.924s] -- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1")
+[3.930s] -- Found utf8cpp: /usr/include/utf8cpp
+[4.020s] -- Checking for module 'libusb-1.0'
+[4.039s] --   Found libusb-1.0, version 1.0.25
+[4.080s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so
+[4.082s] -- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0")
+[4.082s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[4.123s] -- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33")
+[4.123s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[4.123s] [0m** WARNING ** io features related to pcap will be disabled[0m
+[4.497s] [33mCMake Warning (dev) at /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:128 (find_package):
+[4.497s]   Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+[4.498s]   --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+[4.498s]   set the policy and suppress this warning.
+[4.498s] 
+[4.498s] Call Stack (most recent call first):
+[4.498s]   /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:297 (find_boost)
+[4.498s]   /usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:543 (find_external_library)
+[4.498s]   CMakeLists.txt:21 (find_package)
+[4.498s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[4.498s] [0m
+[4.514s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[4.522s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[4.532s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[4.888s] -- Found Qhull version 8.0.2
+[5.253s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[5.619s] -- looking for PCL_COMMON
+[5.621s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so
+[5.621s] -- looking for PCL_KDTREE
+[5.622s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so
+[5.623s] -- looking for PCL_OCTREE
+[5.624s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so
+[5.624s] -- looking for PCL_SEARCH
+[5.626s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so
+[5.626s] -- looking for PCL_SAMPLE_CONSENSUS
+[5.627s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so
+[5.630s] -- looking for PCL_FILTERS
+[5.633s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so
+[5.634s] -- looking for PCL_2D
+[5.634s] -- Found PCL_2D: /usr/include/pcl-1.12
+[5.635s] -- looking for PCL_GEOMETRY
+[5.635s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12
+[5.635s] -- looking for PCL_IO
+[5.638s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so
+[5.640s] -- looking for PCL_FEATURES
+[5.642s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so
+[5.642s] -- looking for PCL_ML
+[5.645s] -- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so
+[5.645s] -- looking for PCL_SEGMENTATION
+[5.647s] -- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so
+[5.647s] -- looking for PCL_VISUALIZATION
+[5.649s] -- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so
+[5.652s] -- looking for PCL_SURFACE
+[5.656s] -- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so
+[5.656s] -- looking for PCL_REGISTRATION
+[5.659s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so
+[5.659s] -- looking for PCL_KEYPOINTS
+[5.660s] -- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so
+[5.661s] -- looking for PCL_TRACKING
+[5.665s] -- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so
+[5.666s] -- looking for PCL_RECOGNITION
+[5.667s] -- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so
+[5.670s] -- looking for PCL_STEREO
+[5.671s] -- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so
+[5.671s] -- looking for PCL_APPS
+[5.678s] -- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so
+[5.680s] -- looking for PCL_IN_HAND_SCANNER
+[5.681s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12
+[5.681s] -- looking for PCL_MODELER
+[5.681s] -- Found PCL_MODELER: /usr/include/pcl-1.12
+[5.681s] -- looking for PCL_POINT_CLOUD_EDITOR
+[5.683s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12
+[5.683s] -- looking for PCL_OUTOFCORE
+[5.684s] -- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so
+[5.686s] -- looking for PCL_PEOPLE
+[5.687s] -- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so
+[5.688s] -- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_apps;pcl_outofcore;pcl_people;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN;QHULL::QHULL (Required is at least version "1.10")
+[5.693s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[5.867s] -- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)
+[5.953s] -- Found visualization_msgs: 4.2.4 (/opt/ros/humble/share/visualization_msgs/cmake)
+[6.093s] -- Found std_srvs: 4.2.4 (/opt/ros/humble/share/std_srvs/cmake)
+[6.389s] -- Found OpenMP_C: -fopenmp (found version "4.5")
+[6.442s] -- Found OpenMP_CXX: -fopenmp (found version "4.5")
+[6.443s] -- Found OpenMP: TRUE (found version "4.5")
+[6.444s] -- Found pcl_conversions: 2.6.1 (/home/jajayu/ros2_ws/install/pcl_conversions/share/pcl_conversions/cmake)
+[6.620s] -- Found octomap_msgs: 2.0.0 (/opt/ros/humble/share/octomap_msgs/cmake)
+[6.717s] -- Found tf2: 0.25.7 (/opt/ros/humble/share/tf2/cmake)
+[6.729s] -- Found tf2_ros: 0.25.7 (/opt/ros/humble/share/tf2_ros/cmake)
+[7.028s] -- Found tf2_geometry_msgs: 0.25.7 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[7.041s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[7.043s] -- Found Eigen3: TRUE (found version "3.4.0")
+[7.043s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[7.295s] -- Configuring done (6.4s)
+[7.351s] -- Generating done (0.1s)
+[7.352s] -- Build files have been written to: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2

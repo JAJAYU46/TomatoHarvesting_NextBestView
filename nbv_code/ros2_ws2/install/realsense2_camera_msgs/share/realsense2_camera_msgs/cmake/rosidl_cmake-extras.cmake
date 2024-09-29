@@ -1,1 +1,4 @@
-/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs/rosidl_cmake/rosidl_cmake-extras.cmake
+# generated from rosidl_cmake/cmake/rosidl_cmake-extras.cmake.in
+
+set(realsense2_camera_msgs_IDL_FILES "msg/IMUInfo.idl;msg/Extrinsics.idl;msg/Metadata.idl;msg/RGBD.idl;srv/DeviceInfo.idl")
+set(realsense2_camera_msgs_INTERFACE_FILES "msg/IMUInfo.msg;msg/Extrinsics.msg;msg/Metadata.msg;msg/RGBD.msg;srv/DeviceInfo.srv;srv/DeviceInfo_Request.msg;srv/DeviceInfo_Response.msg")
