@@ -1,0 +1,36 @@
+[0.019s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8
+[0.160s] [35m[1mConsolidate compiler generated dependencies of target SdfModel[0m
+[0.174s] [ 50%] Built target nbvc_ray_generation
+[0.181s] [ 75%] [32mBuilding CXX object CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o[0m
+[6.167s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[6.167s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:278:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[Kint[m[K’
+[6.167s]   278 |     [01;31m[Kint[m[K num_points = 100
+[6.167s]       |     [01;31m[K^~~[m[K
+[6.178s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:280:22:[m[K [01;31m[Kerror: [m[K‘[01m[Krd[m[K’ was not declared in this scope
+[6.178s]   280 |     std::mt19937 gen([01;31m[Krd[m[K());
+[6.178s]       |                      [01;31m[K^~[m[K
+[6.191s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:285:25:[m[K [01;31m[Kerror: [m[K‘[01m[Knum_points[m[K’ was not declared in this scope
+[6.191s]   285 |     for (int i = 0; i < [01;31m[Knum_points[m[K; ++i) {
+[6.191s]       |                         [01;31m[K^~~~~~~~~~[m[K
+[6.200s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:290:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kcenter_[m[K’ was not declared in this scope
+[6.200s]   290 |         float x = [01;31m[Kcenter_[m[K[0] + r * sin(theta)*cos(phi);
+[6.200s]       |                   [01;31m[K^~~~~~~[m[K
+[6.213s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:302:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kcenter_[m[K’ was not declared in this scope
+[6.213s]   302 |         float x = [01;31m[Kcenter_[m[K[0] + 1f * sin(theta)*cos(phi);
+[6.213s]       |                   [01;31m[K^~~~~~~[m[K
+[6.213s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:302:32:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""f[m[K’
+[6.213s]   302 |         float x = center_[0] + [01;31m[K1f[m[K * sin(theta)*cos(phi);
+[6.213s]       |                                [01;31m[K^~[m[K
+[6.213s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:303:32:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""f[m[K’
+[6.213s]   303 |         float y = center_[1] + [01;31m[K1f[m[K * sin(theta)*sin(phi);
+[6.214s]       |                                [01;31m[K^~[m[K
+[6.214s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:304:32:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""f[m[K’
+[6.214s]   304 |         float z = center_[2] + [01;31m[K1f[m[K * cos(theta);
+[6.214s]       |                                [01;31m[K^~[m[K
+[6.214s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:299:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kr[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[6.214s]   299 |         float [01;35m[Kr[m[K = dist_r(gen);
+[6.214s]       |               [01;35m[K^[m[K
+[8.634s] gmake[2]: *** [CMakeFiles/SdfModel.dir/build.make:76: CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o] Error 1
+[8.634s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/SdfModel.dir/all] Error 2
+[8.635s] gmake: *** [Makefile:146: all] Error 2
+[8.651s] Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8

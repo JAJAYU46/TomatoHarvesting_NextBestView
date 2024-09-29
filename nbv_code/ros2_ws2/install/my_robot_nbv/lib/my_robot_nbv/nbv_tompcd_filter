@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-# EASY-INSTALL-ENTRY-SCRIPT: 'my-robot-nbv==0.0.0','console_scripts','nbv_tompcd_filter'
+# EASY-INSTALL-ENTRY-SCRIPT: 'my-robot-nbv','console_scripts','nbv_tompcd_filter'
 import re
 import sys
 
 # for compatibility with easy_install; see #2198
-__requires__ = 'my-robot-nbv==0.0.0'
+__requires__ = 'my-robot-nbv'
 
 try:
     from importlib.metadata import distribution
@@ -30,4 +30,4 @@ globals().setdefault('load_entry_point', importlib_load_entry_point)
 
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
-    sys.exit(load_entry_point('my-robot-nbv==0.0.0', 'console_scripts', 'nbv_tompcd_filter')())
+    sys.exit(load_entry_point('my-robot-nbv', 'console_scripts', 'nbv_tompcd_filter')())
