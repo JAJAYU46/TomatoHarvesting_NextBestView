@@ -310,7 +310,7 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install("TARGETS" "nbvc_ray_generation" "DESTINATION" "lib/my_robot_nbv_cmake")
+# install("TARGETS" "nbvc_ray_generation" "SdfModel" "DESTINATION" "lib/my_robot_nbv_cmake")
 include("/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(FILES "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/my_robot_nbv_cmake" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

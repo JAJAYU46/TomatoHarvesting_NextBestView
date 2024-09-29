@@ -1,0 +1,62 @@
+[35m[1mConsolidate compiler generated dependencies of target SdfModel[0m
+[ 50%] Built target nbvc_ray_generation
+[ 75%] [32mBuilding CXX object CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o[0m
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:[m[K In member function ‘[01m[Kvoid MeshProcessor::LoadMesh()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:43:75:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kopen3d::t::geometry::TriangleMesh[m[K’ and ‘[01m[Kstd::shared_ptr<open3d::t::geometry::TriangleMesh>[m[K’)
+   43 |         mesh_ = std::make_shared<open3d::t::geometry::TriangleMesh>(mesh0_[01;31m[K)[m[K;
+      |                                                                           [01;31m[K^[m[K
+In file included from [01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/PointCloud.h:24[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:70[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:94:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kopen3d::t::geometry::TriangleMesh& open3d::t::geometry::TriangleMesh::operator=(const open3d::t::geometry::TriangleMesh&)[m[K’
+   94 | class [01;36m[KTriangleMesh[m[K : public Geometry, public DrawableGeometry {
+      |       [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:94:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<open3d::t::geometry::TriangleMesh>[m[K’ to ‘[01m[Kconst open3d::t::geometry::TriangleMesh&[m[K’
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:44:28:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[Kopen3d::t::geometry::TriangleMesh[m[K’
+   44 |         if (mesh_ && !mesh_[01;31m[K->[m[KIsEmpty()) {  // Check if the point cloud is not empty
+      |                            [01;31m[K^~[m[K
+In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+                 from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+                 from [01m[K/usr/include/c++/11/string:41[m[K,
+                 from [01m[K/usr/include/c++/11/bits/locale_classes.h:40[m[K,
+                 from [01m[K/usr/include/c++/11/bits/ios_base.h:41[m[K,
+                 from [01m[K/usr/include/c++/11/ios:42[m[K,
+                 from [01m[K/usr/include/c++/11/istream:38[m[K,
+                 from [01m[K/usr/include/c++/11/sstream:38[m[K,
+                 from [01m[K/usr/include/c++/11/complex:45[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/3rdparty/Eigen/Core:50[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+/usr/include/c++/11/ext/new_allocator.h: In instantiation of ‘[01m[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = open3d::t::geometry::TriangleMesh; _Args = {std::shared_ptr<open3d::geometry::TriangleMesh>&}; _Tp = open3d::t::geometry::TriangleMesh][m[K’:
+[01m[K/usr/include/c++/11/bits/alloc_traits.h:516:17:[m[K   required from ‘[01m[Kstatic void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = open3d::t::geometry::TriangleMesh; _Args = {std::shared_ptr<open3d::geometry::TriangleMesh>&}; _Tp = open3d::t::geometry::TriangleMesh; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<open3d::t::geometry::TriangleMesh>][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr_base.h:519:39:[m[K   required from ‘[01m[Kstd::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {std::shared_ptr<open3d::geometry::TriangleMesh>&}; _Tp = open3d::t::geometry::TriangleMesh; _Alloc = std::allocator<open3d::t::geometry::TriangleMesh>; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr_base.h:650:16:[m[K   required from ‘[01m[Kstd::__shared_count<_Lp>::__shared_count(_Tp*&, std::_Sp_alloc_shared_tag<_Alloc>, _Args&& ...) [with _Tp = open3d::t::geometry::TriangleMesh; _Alloc = std::allocator<open3d::t::geometry::TriangleMesh>; _Args = {std::shared_ptr<open3d::geometry::TriangleMesh>&}; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr_base.h:1342:14:[m[K   required from ‘[01m[Kstd::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<open3d::t::geometry::TriangleMesh>; _Args = {std::shared_ptr<open3d::geometry::TriangleMesh>&}; _Tp = open3d::t::geometry::TriangleMesh; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:409:59:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<open3d::t::geometry::TriangleMesh>; _Args = {std::shared_ptr<open3d::geometry::TriangleMesh>&}; _Tp = open3d::t::geometry::TriangleMesh][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:862:14:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = open3d::t::geometry::TriangleMesh; _Alloc = std::allocator<open3d::t::geometry::TriangleMesh>; _Args = {std::shared_ptr<open3d::geometry::TriangleMesh>&}][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:878:39:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = open3d::t::geometry::TriangleMesh; _Args = {std::shared_ptr<open3d::geometry::TriangleMesh>&}][m[K’
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:43:68:[m[K   required from here
+[01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kopen3d::t::geometry::TriangleMesh::TriangleMesh(std::shared_ptr<open3d::geometry::TriangleMesh>&)[m[K’
+  162 |         { [01;31m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+      |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/PointCloud.h:24[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:70[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:109:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kopen3d::t::geometry::TriangleMesh::TriangleMesh(const open3d::core::Tensor&, const open3d::core::Tensor&)[m[K’
+  109 |     [01;36m[KTriangleMesh[m[K(const core::Tensor &vertex_positions,
+      |     [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:109:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:99:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kopen3d::t::geometry::TriangleMesh::TriangleMesh(const open3d::core::Device&)[m[K’
+   99 |     [01;36m[KTriangleMesh[m[K(const core::Device &device = core::Device("CPU:0"));
+      |     [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:99:38:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<open3d::geometry::TriangleMesh>[m[K’ to ‘[01m[Kconst open3d::core::Device&[m[K’
+   99 |     TriangleMesh([01;36m[Kconst core::Device &device = core::Device("CPU:0")[m[K);
+      |                  [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:94:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kopen3d::t::geometry::TriangleMesh::TriangleMesh(const open3d::t::geometry::TriangleMesh&)[m[K’
+   94 | class [01;36m[KTriangleMesh[m[K : public Geometry, public DrawableGeometry {
+      |       [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:94:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<open3d::geometry::TriangleMesh>[m[K’ to ‘[01m[Kconst open3d::t::geometry::TriangleMesh&[m[K’
+gmake[2]: *** [CMakeFiles/SdfModel.dir/build.make:76: CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/SdfModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

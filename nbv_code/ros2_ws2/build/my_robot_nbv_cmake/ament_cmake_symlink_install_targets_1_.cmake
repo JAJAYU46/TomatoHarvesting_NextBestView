@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake/SdfModel" "TARGETS" "SdfModel" "DESTINATION" "lib/my_robot_nbv_cmake")

@@ -1,0 +1,82 @@
+[0.016s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8
+[0.161s] [35m[1mConsolidate compiler generated dependencies of target SdfModel[0m
+[0.174s] [ 50%] Built target nbvc_ray_generation
+[0.181s] [ 75%] [32mBuilding CXX object CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o[0m
+[6.362s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:[m[K In member function ‘[01m[Kvoid MeshProcessor::LoadMesh()[m[K’:
+[6.362s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:44:70:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kstd::shared_ptr<open3d::t::geometry::TriangleMesh>[m[K’ and ‘[01m[Kopen3d::t::geometry::TriangleMesh[m[K’)
+[6.362s]    44 |         mesh_ = open3d::t::geometry::TriangleMesh::FromLegacy(*mesh0_[01;31m[K)[m[K;
+[6.362s]       |                                                                      [01;31m[K^[m[K
+[6.362s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[6.362s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/3rdparty/fmt/format.h:41[m[K,
+[6.362s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/utility/IJsonConvertible.h:10[m[K,
+[6.362s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:12[m[K,
+[6.362s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[6.362s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[6.362s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:363:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<const std::shared_ptr<_Yp>&> std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Yp>&) [with _Yp = _Yp; _Tp = open3d::t::geometry::TriangleMesh][m[K’
+[6.363s]   363 |         [01;36m[Koperator[m[K=(const shared_ptr<_Yp>& __r) noexcept
+[6.363s]       |         [01;36m[K^~~~~~~~[m[K
+[6.363s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:363:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[6.363s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:44:70:[m[K [01;36m[Knote: [m[K  ‘[01m[Kopen3d::t::geometry::TriangleMesh[m[K’ is not derived from ‘[01m[Kconst std::shared_ptr<_Tp>[m[K’
+[6.363s]    44 |         mesh_ = open3d::t::geometry::TriangleMesh::FromLegacy(*mesh0_[01;36m[K)[m[K;
+[6.363s]       |                                                                      [01;36m[K^[m[K
+[6.363s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[6.363s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/3rdparty/fmt/format.h:41[m[K,
+[6.363s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/utility/IJsonConvertible.h:10[m[K,
+[6.363s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:12[m[K,
+[6.363s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[6.363s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[6.363s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:374:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::auto_ptr<_Up> > std::shared_ptr<_Tp>::operator=(std::auto_ptr<_Up>&&) [with _Yp = _Yp; _Tp = open3d::t::geometry::TriangleMesh][m[K’
+[6.363s]   374 |         [01;36m[Koperator[m[K=(auto_ptr<_Yp>&& __r)
+[6.364s]       |         [01;36m[K^~~~~~~~[m[K
+[6.364s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:374:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[6.364s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:44:70:[m[K [01;36m[Knote: [m[K  ‘[01m[Kopen3d::t::geometry::TriangleMesh[m[K’ is not derived from ‘[01m[Kstd::auto_ptr<_Up>[m[K’
+[6.364s]    44 |         mesh_ = open3d::t::geometry::TriangleMesh::FromLegacy(*mesh0_[01;36m[K)[m[K;
+[6.364s]       |                                                                      [01;36m[K^[m[K
+[6.364s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[6.364s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/3rdparty/fmt/format.h:41[m[K,
+[6.364s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/utility/IJsonConvertible.h:10[m[K,
+[6.364s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:12[m[K,
+[6.364s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[6.364s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[6.364s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:391:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::shared_ptr<_Yp> > std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Yp>&&) [with _Yp = _Yp; _Tp = open3d::t::geometry::TriangleMesh][m[K’
+[6.364s]   391 |         [01;36m[Koperator[m[K=(shared_ptr<_Yp>&& __r) noexcept
+[6.364s]       |         [01;36m[K^~~~~~~~[m[K
+[6.364s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:391:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[6.364s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:44:70:[m[K [01;36m[Knote: [m[K  ‘[01m[Kopen3d::t::geometry::TriangleMesh[m[K’ is not derived from ‘[01m[Kstd::shared_ptr<_Tp>[m[K’
+[6.364s]    44 |         mesh_ = open3d::t::geometry::TriangleMesh::FromLegacy(*mesh0_[01;36m[K)[m[K;
+[6.365s]       |                                                                      [01;36m[K^[m[K
+[6.365s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[6.365s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/3rdparty/fmt/format.h:41[m[K,
+[6.365s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/utility/IJsonConvertible.h:10[m[K,
+[6.365s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:12[m[K,
+[6.365s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[6.365s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[6.365s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:399:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp, class _Del> std::shared_ptr<_Tp>::_Assignable<std::unique_ptr<_Up, _Ep> > std::shared_ptr<_Tp>::operator=(std::unique_ptr<_Up, _Ep>&&) [with _Yp = _Yp; _Del = _Del; _Tp = open3d::t::geometry::TriangleMesh][m[K’
+[6.365s]   399 |         [01;36m[Koperator[m[K=(unique_ptr<_Yp, _Del>&& __r)
+[6.365s]       |         [01;36m[K^~~~~~~~[m[K
+[6.365s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:399:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[6.365s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:44:70:[m[K [01;36m[Knote: [m[K  ‘[01m[Kopen3d::t::geometry::TriangleMesh[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<_Tp, _Dp>[m[K’
+[6.365s]    44 |         mesh_ = open3d::t::geometry::TriangleMesh::FromLegacy(*mesh0_[01;36m[K)[m[K;
+[6.365s]       |                                                                      [01;36m[K^[m[K
+[6.365s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[6.365s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/3rdparty/fmt/format.h:41[m[K,
+[6.365s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/utility/IJsonConvertible.h:10[m[K,
+[6.366s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:12[m[K,
+[6.366s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[6.366s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[6.366s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:359:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Tp>&) [with _Tp = open3d::t::geometry::TriangleMesh][m[K’
+[6.366s]   359 |       shared_ptr& [01;36m[Koperator[m[K=(const shared_ptr&) noexcept = default;
+[6.366s]       |                   [01;36m[K^~~~~~~~[m[K
+[6.366s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:359:29:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kopen3d::t::geometry::TriangleMesh[m[K’ to ‘[01m[Kconst std::shared_ptr<open3d::t::geometry::TriangleMesh>&[m[K’
+[6.366s]   359 |       shared_ptr& operator=([01;36m[Kconst shared_ptr&[m[K) noexcept = default;
+[6.366s]       |                             [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[6.366s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:383:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Tp>&&) [with _Tp = open3d::t::geometry::TriangleMesh][m[K’
+[6.366s]   383 |       [01;36m[Koperator[m[K=(shared_ptr&& __r) noexcept
+[6.366s]       |       [01;36m[K^~~~~~~~[m[K
+[6.366s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:383:30:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kopen3d::t::geometry::TriangleMesh[m[K’ to ‘[01m[Kstd::shared_ptr<open3d::t::geometry::TriangleMesh>&&[m[K’
+[6.366s]   383 |       operator=([01;36m[Kshared_ptr&& __r[m[K) noexcept
+[6.366s]       |                 [01;36m[K~~~~~~~~~~~~~^~~[m[K
+[8.179s] gmake[2]: *** [CMakeFiles/SdfModel.dir/build.make:76: CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o] Error 1
+[8.180s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/SdfModel.dir/all] Error 2
+[8.180s] gmake: *** [Makefile:146: all] Error 2
+[8.197s] Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8

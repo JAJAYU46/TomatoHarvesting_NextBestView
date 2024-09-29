@@ -1,0 +1,18 @@
+[35m[1mConsolidate compiler generated dependencies of target SdfModel[0m
+[ 50%] Built target nbvc_ray_generation
+[ 75%] [32mBuilding CXX object CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o[0m
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:[m[K In member function ‘[01m[Kvoid MeshProcessor::LoadMesh()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:42:51:[m[K [01;31m[Kerror: [m[Ktoo few arguments to function ‘[01m[Kbool open3d::io::ReadTriangleMesh(const string&, open3d::geometry::TriangleMesh&, open3d::io::ReadTriangleMeshOptions)[m[K’
+   42 |         auto mesh0_ = [01;31m[Kopen3d::io::ReadTriangleMesh(ply_file_path_)[m[K;
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:53[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[01m[K/home/jajayu/open3d_install/include/open3d/io/TriangleMeshIO.h:55:6:[m[K [01;36m[Knote: [m[Kdeclared here
+   55 | bool [01;36m[KReadTriangleMesh[m[K(const std::string &filename,
+      |      [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:45:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kself[m[K’ was not declared in this scope
+   45 |         if (mesh0_ && !mesh0_->is_empty([01;31m[Kself[m[K)) {  // Check if the point cloud is not empty
+      |                                         [01;31m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/SdfModel.dir/build.make:76: CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/SdfModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

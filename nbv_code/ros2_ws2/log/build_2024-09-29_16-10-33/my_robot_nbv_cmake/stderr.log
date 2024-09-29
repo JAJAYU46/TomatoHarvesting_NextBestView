@@ -1,0 +1,24 @@
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:[m[K In member function ‘[01m[Kvoid MeshProcessor::LoadMesh()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:43:57:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kopen3d::t::geometry::TriangleMesh::TriangleMesh(std::shared_ptr<open3d::geometry::TriangleMesh>&)[m[K’
+   43 |         mesh_ = open3d::t::geometry::TriangleMesh(mesh0_[01;31m[K)[m[K;
+      |                                                         [01;31m[K^[m[K
+In file included from [01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/PointCloud.h:24[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:70[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:109:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kopen3d::t::geometry::TriangleMesh::TriangleMesh(const open3d::core::Tensor&, const open3d::core::Tensor&)[m[K’
+  109 |     [01;36m[KTriangleMesh[m[K(const core::Tensor &vertex_positions,
+      |     [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:109:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:99:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kopen3d::t::geometry::TriangleMesh::TriangleMesh(const open3d::core::Device&)[m[K’
+   99 |     [01;36m[KTriangleMesh[m[K(const core::Device &device = core::Device("CPU:0"));
+      |     [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:99:38:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<open3d::geometry::TriangleMesh>[m[K’ to ‘[01m[Kconst open3d::core::Device&[m[K’
+   99 |     TriangleMesh([01;36m[Kconst core::Device &device = core::Device("CPU:0")[m[K);
+      |                  [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:94:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kopen3d::t::geometry::TriangleMesh::TriangleMesh(const open3d::t::geometry::TriangleMesh&)[m[K’
+   94 | class [01;36m[KTriangleMesh[m[K : public Geometry, public DrawableGeometry {
+      |       [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/open3d_install/include/open3d/t/geometry/TriangleMesh.h:94:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<open3d::geometry::TriangleMesh>[m[K’ to ‘[01m[Kconst open3d::t::geometry::TriangleMesh&[m[K’
+gmake[2]: *** [CMakeFiles/SdfModel.dir/build.make:76: CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/SdfModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

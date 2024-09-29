@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//The directory containing a CMake configuration file for 0pen3D.
+0pen3D_DIR:PATH=0pen3D_DIR-NOTFOUND
+
 //Generate environment files in the CMAKE_INSTALL_PREFIX
 AMENT_CMAKE_ENVIRONMENT_GENERATION:BOOL=OFF
 
@@ -255,6 +258,9 @@ OPENSSL_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
 OPENSSL_SSL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libssl.so
+
+//The directory containing a CMake configuration file for Open3D.
+Open3D_DIR:PATH=/home/jajayu/open3d_install/lib/cmake/Open3D
 
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
@@ -677,6 +683,8 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding FastRTPS
 FIND_PACKAGE_MESSAGE_DETAILS_FastRTPS:INTERNAL=[/opt/ros/humble/include][/opt/ros/humble/lib/libfastrtps.so;/opt/ros/humble/lib/libfastcdr.so][v()]
+//Details about finding Open3D
+FIND_PACKAGE_MESSAGE_DETAILS_Open3D:INTERNAL=[/home/jajayu/open3d_install/lib/cmake/Open3D/Open3DConfig.cmake][v0.18.0()]
 //Details about finding OpenSSL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcrypto.so][/usr/include][c ][v3.0.2()]
 //Details about finding Python3

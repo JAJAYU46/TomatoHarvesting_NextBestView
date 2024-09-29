@@ -1,0 +1,10 @@
+[35m[1mConsolidate compiler generated dependencies of target SdfModel[0m
+[ 50%] Built target nbvc_ray_generation
+[ 75%] [32mBuilding CXX object CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o[0m
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:[m[K In member function ‘[01m[Kvoid MeshProcessor::ComputeSDFandOccupancy()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:98:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kopen3d::Core[m[K’ has not been declared
+   98 |             auto point_q_formed = open3d::[01;31m[KCore[m[K::Tensor({{point_q.x(), point_q.y(), point_q.z()}}, {1, 3}, open3d::core::Float32);
+      |                                           [01;31m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/SdfModel.dir/build.make:76: CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/SdfModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

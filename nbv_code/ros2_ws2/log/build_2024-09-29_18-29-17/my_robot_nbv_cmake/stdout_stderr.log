@@ -1,0 +1,29 @@
+[35m[1mConsolidate compiler generated dependencies of target SdfModel[0m
+[ 50%] Built target nbvc_ray_generation
+[ 75%] [32mBuilding CXX object CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o[0m
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:[m[K In member function ‘[01m[Kvoid MeshProcessor::Visualize()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:123:24:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[Kopen3d::geometry::PointCloud[m[K’
+  123 |         query_point_vis[01;31m[K->[m[Kpoints_ = open3d::utility::Vector3dVector(points_);
+      |                        [01;31m[K^~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:123:53:[m[K [01;31m[Kerror: [m[K‘[01m[KVector3dVector[m[K’ is not a member of ‘[01m[Kopen3d::utility[m[K’
+  123 |         query_point_vis->points_ = open3d::utility::[01;31m[KVector3dVector[m[K(points_);
+      |                                                     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:124:24:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[Kopen3d::geometry::PointCloud[m[K’
+  124 |         query_point_vis[01;31m[K->[m[Kcolors_ = open3d::utility::Vector3dVector(colors_);
+      |                        [01;31m[K^~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:124:53:[m[K [01;31m[Kerror: [m[K‘[01m[KVector3dVector[m[K’ is not a member of ‘[01m[Kopen3d::utility[m[K’
+  124 |         query_point_vis->colors_ = open3d::utility::[01;31m[KVector3dVector[m[K(colors_);
+      |                                                     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:137:25:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kopen3d::geometry::PointCloud[m[K’ to ‘[01m[Kstd::shared_ptr<const open3d::geometry::Geometry>[m[K’
+  137 |         vis.AddGeometry([01;31m[Kquery_point_vis[m[K);
+      |                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                         [01;31m[K|[m[K
+      |                         [01;31m[Kopen3d::geometry::PointCloud[m[K
+In file included from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:131[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[01m[K/home/jajayu/open3d_install/include/open3d/visualization/visualizer/Visualizer.h:134:55:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvirtual bool open3d::visualization::Visualizer::AddGeometry(std::shared_ptr<const open3d::geometry::Geometry>, bool)[m[K’
+  134 |             [01;36m[Kstd::shared_ptr<const geometry::Geometry> geometry_ptr[m[K,
+      |             [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/SdfModel.dir/build.make:76: CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/SdfModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

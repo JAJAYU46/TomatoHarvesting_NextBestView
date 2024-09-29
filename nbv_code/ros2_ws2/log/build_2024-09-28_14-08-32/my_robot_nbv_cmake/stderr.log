@@ -1,0 +1,20 @@
+[0mCMake Deprecation Warning at /home/jajayu/open3d_install/lib/cmake/Open3D/Open3DConfig.cmake:18 (cmake_policy):
+  The OLD behavior for policy CMP0072 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+Call Stack (most recent call first):
+  CMakeLists.txt:29 (find_package)
+
+[0m
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Kopen3d/visualization/Visualizer.h: No such file or directory
+    4 | #include [01;31m[K<open3d/visualization/Visualizer.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/SdfModel.dir/build.make:76: CMakeFiles/SdfModel.dir/src/SdfModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/SdfModel.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2
