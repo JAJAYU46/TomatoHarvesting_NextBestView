@@ -1,0 +1,86 @@
+[0.018s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8
+[0.150s] [ 50%] Built target nbvc_lib_SdfModel
+[0.178s] [ 75%] [32mBuilding CXX object CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o[0m
+[7.041s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::octomap_callback(octomap_msgs::msg::Octomap_<std::allocator<void> >::SharedPtr)[m[K’:
+[7.041s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:169:66:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator*[m[K’ (operand type is ‘[01m[Kstd::vector<octomath::Vector3>[m[K’)
+[7.041s]   169 |                     publish_multiple_rays_and_directions(origin, [01;31m[K*directionsV[m[K, *hitpointV);
+[7.042s]       |                                                                  [01;31m[K^~~~~~~~~~~~[m[K
+[7.042s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:50[m[K,
+[7.042s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+[7.042s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[7.042s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+[7.042s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:27[m[K:
+[7.042s] [01m[K/usr/include/c++/11/complex:392:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::operator*(const std::complex<_Tp>&, const std::complex<_Tp>&)[m[K’
+[7.042s]   392 |     [01;36m[Koperator[m[K*(const complex<_Tp>& __x, const complex<_Tp>& __y)
+[7.042s]       |     [01;36m[K^~~~~~~~[m[K
+[7.042s] [01m[K/usr/include/c++/11/complex:392:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.042s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:169:67:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::vector<octomath::Vector3>[m[K’ is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+[7.043s]   169 |                     publish_multiple_rays_and_directions(origin, *[01;36m[KdirectionsV[m[K, *hitpointV);
+[7.043s]       |                                                                   [01;36m[K^~~~~~~~~~~[m[K
+[7.043s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:50[m[K,
+[7.043s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+[7.043s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[7.043s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+[7.043s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:27[m[K:
+[7.043s] [01m[K/usr/include/c++/11/complex:401:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::operator*(const std::complex<_Tp>&, const _Tp&)[m[K’
+[7.043s]   401 |     [01;36m[Koperator[m[K*(const complex<_Tp>& __x, const _Tp& __y)
+[7.043s]       |     [01;36m[K^~~~~~~~[m[K
+[7.043s] [01m[K/usr/include/c++/11/complex:401:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.043s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:169:67:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::vector<octomath::Vector3>[m[K’ is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+[7.043s]   169 |                     publish_multiple_rays_and_directions(origin, *[01;36m[KdirectionsV[m[K, *hitpointV);
+[7.043s]       |                                                                   [01;36m[K^~~~~~~~~~~[m[K
+[7.043s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:50[m[K,
+[7.043s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+[7.044s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[7.044s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+[7.044s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:27[m[K:
+[7.044s] [01m[K/usr/include/c++/11/complex:410:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::operator*(const _Tp&, const std::complex<_Tp>&)[m[K’
+[7.044s]   410 |     [01;36m[Koperator[m[K*(const _Tp& __x, const complex<_Tp>& __y)
+[7.044s]       |     [01;36m[K^~~~~~~~[m[K
+[7.044s] [01m[K/usr/include/c++/11/complex:410:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.044s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:169:67:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[7.044s]   169 |                     publish_multiple_rays_and_directions(origin, *[01;36m[KdirectionsV[m[K, *hitpointV);
+[7.044s]       |                                                                   [01;36m[K^~~~~~~~~~~[m[K
+[7.044s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:169:80:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator*[m[K’ (operand type is ‘[01m[Kstd::vector<octomath::Vector3>[m[K’)
+[7.044s]   169 |                     publish_multiple_rays_and_directions(origin, *directionsV, [01;31m[K*hitpointV[m[K);
+[7.045s]       |                                                                                [01;31m[K^~~~~~~~~~[m[K
+[7.045s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:50[m[K,
+[7.045s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+[7.045s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[7.045s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+[7.045s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:27[m[K:
+[7.045s] [01m[K/usr/include/c++/11/complex:392:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::operator*(const std::complex<_Tp>&, const std::complex<_Tp>&)[m[K’
+[7.045s]   392 |     [01;36m[Koperator[m[K*(const complex<_Tp>& __x, const complex<_Tp>& __y)
+[7.045s]       |     [01;36m[K^~~~~~~~[m[K
+[7.046s] [01m[K/usr/include/c++/11/complex:392:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.046s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:169:81:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::vector<octomath::Vector3>[m[K’ is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+[7.046s]   169 |                     publish_multiple_rays_and_directions(origin, *directionsV, *[01;36m[KhitpointV[m[K);
+[7.046s]       |                                                                                 [01;36m[K^~~~~~~~~[m[K
+[7.046s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:50[m[K,
+[7.046s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+[7.046s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[7.046s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+[7.046s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:27[m[K:
+[7.046s] [01m[K/usr/include/c++/11/complex:401:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::operator*(const std::complex<_Tp>&, const _Tp&)[m[K’
+[7.046s]   401 |     [01;36m[Koperator[m[K*(const complex<_Tp>& __x, const _Tp& __y)
+[7.046s]       |     [01;36m[K^~~~~~~~[m[K
+[7.046s] [01m[K/usr/include/c++/11/complex:401:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.046s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:169:81:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::vector<octomath::Vector3>[m[K’ is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+[7.046s]   169 |                     publish_multiple_rays_and_directions(origin, *directionsV, *[01;36m[KhitpointV[m[K);
+[7.046s]       |                                                                                 [01;36m[K^~~~~~~~~[m[K
+[7.046s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:50[m[K,
+[7.047s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+[7.047s]                  from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+[7.047s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+[7.047s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:27[m[K:
+[7.047s] [01m[K/usr/include/c++/11/complex:410:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::operator*(const _Tp&, const std::complex<_Tp>&)[m[K’
+[7.047s]   410 |     [01;36m[Koperator[m[K*(const _Tp& __x, const complex<_Tp>& __y)
+[7.047s]       |     [01;36m[K^~~~~~~~[m[K
+[7.047s] [01m[K/usr/include/c++/11/complex:410:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[7.047s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:169:81:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[7.047s]   169 |                     publish_multiple_rays_and_directions(origin, *directionsV, *[01;36m[KhitpointV[m[K);
+[7.047s]       |                                                                                 [01;36m[K^~~~~~~~~[m[K
+[11.978s] gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+[11.979s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+[11.979s] gmake: *** [Makefile:146: all] Error 2
+[11.995s] Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8

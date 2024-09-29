@@ -1,0 +1,16 @@
+[ 50%] Built target nbvc_lib_SdfModel
+[ 75%] [32mBuilding CXX object CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o[0m
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::octomap_callback(octomap_msgs::msg::Octomap_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:106:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kradius_[m[K’ was not declared in this scope; did you mean ‘[01m[Kraise[m[K’?
+  106 |                     std::uniform_real_distribution<> dist_r([01;31m[Kradius_[m[K, radius_);
+      |                                                             [01;31m[K^~~~~~~[m[K
+      |                                                             [32m[Kraise[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:109:41:[m[K [01;31m[Kerror: [m[K‘[01m[KpointNum[m[K’ was not declared in this scope
+  109 |                     for (int i = 0; i < [01;31m[KpointNum[m[K; ++i) {
+      |                                         [01;31m[K^~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:116:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kcenter_[m[K’ was not declared in this scope
+  116 |                         float x = [01;31m[Kcenter_[m[K.x() + r * sin(theta)*cos(phi);
+      |                                   [01;31m[K^~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

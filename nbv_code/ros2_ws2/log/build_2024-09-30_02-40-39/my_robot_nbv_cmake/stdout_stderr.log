@@ -1,0 +1,15 @@
+[ 50%] Built target nbvc_lib_SdfModel
+[ 75%] [32mBuilding CXX object CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o[0m
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kstd::vector<octomath::Vector3> MyNode::RandomPoint(octomap::point3d, int, double)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:164:34:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Koctomap::point3d[m[K’ {aka ‘[01m[Koctomath::Vector3[m[K’} and ‘[01m[Kint[m[K’)
+  164 |                 float x = center_[01;31m[K[[m[K0] + r * sin(theta)*cos(phi);
+      |                                  [01;31m[K^[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:165:34:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Koctomap::point3d[m[K’ {aka ‘[01m[Koctomath::Vector3[m[K’} and ‘[01m[Kint[m[K’)
+  165 |                 float y = center_[01;31m[K[[m[K1] + r * sin(theta)*sin(phi);
+      |                                  [01;31m[K^[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:166:34:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Koctomap::point3d[m[K’ {aka ‘[01m[Koctomath::Vector3[m[K’} and ‘[01m[Kint[m[K’)
+  166 |                 float z = center_[01;31m[K[[m[K2] + r * cos(theta);
+      |                                  [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
