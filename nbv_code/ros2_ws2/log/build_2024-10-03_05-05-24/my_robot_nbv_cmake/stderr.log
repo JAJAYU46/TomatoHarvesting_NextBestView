@@ -1,0 +1,14 @@
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::octomap_callback(octomap_msgs::msg::Octomap_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:130:77:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::vector<float>[m[K’ to ‘[01m[Koctomap::point3d[m[K’ {aka ‘[01m[Koctomath::Vector3[m[K’}
+  130 |         std::vector<octomap::point3d> origins = RandomPoint([01;31m[KmodelCenter[m[K, 5, 2); //中心座標, 點數, 長度
+      |                                                             [01;31m[K^~~~~~~~~~~[m[K
+      |                                                             [01;31m[K|[m[K
+      |                                                             [01;31m[Kstd::vector<float>[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:232:68:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kstd::vector<octomath::Vector3> MyNode::RandomPoint(octomap::point3d, int, double)[m[K’
+  232 |  std::vector<octomap::point3d> RandomPoint([01;36m[Koctomap::point3d center_[m[K, int pointNum, double radius_){
+      |                                            [01;36m[K~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

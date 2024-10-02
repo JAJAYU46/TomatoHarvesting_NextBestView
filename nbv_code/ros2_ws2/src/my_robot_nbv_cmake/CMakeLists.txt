@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.8)
 project(my_robot_nbv_cmake)
 
+# set(CMAKE_BUILD_TYPE Debug)#compile in debug mode比較好知道哪裡錯, 之後對了可刪掉
+
+
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
@@ -9,6 +12,8 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)#for subscribe ros2 pcd
+
 
 #for octomap
 find_package(octomap REQUIRED)
@@ -68,7 +73,9 @@ endif()
 
 #create an executable
 add_executable(nbvc_ray_generation src/nbvc_ray_generation.cpp) #要執行的node名稱/ 檔案位置(相對於現在這個package)
-# add_executable(SdfModel src/SdfModel.cpp) #要執行的node名稱/ 檔案位置(相對於現在這個package)
+add_executable(SdfModelV3 src/SdfModelV3.cpp) #要執行的node名稱/ 檔案位置(相對於現在這個package)
+add_executable(nbvc_ray_generationV3_beforeclean src/nbvc_ray_generationV3_beforeclean.cpp) #要執行的node名稱/ 檔案位置(相對於現在這個package)
+
 # <Debug> 現在SdfModel.cpp是要當一個class library,  不是要件一個executable, 它沒有main!
 add_library(nbvc_lib_SdfModel src/SdfModel.cpp)
 
@@ -81,6 +88,9 @@ ament_target_dependencies(nbvc_ray_generation #msg的是加這種的
   std_msgs
   visualization_msgs
   geometry_msgs
+
+  #for subsribe pcd topic
+  sensor_msgs
 )# ${OCTOMAP_LIBRARIES}) #說這個executable 裡面有用到(dependency)rclcpp這個package
 TARGET_LINK_LIBRARIES(nbvc_ray_generation #好像自己額外的要用這個加才可以
     nbvc_lib_SdfModel    
@@ -89,6 +99,23 @@ TARGET_LINK_LIBRARIES(nbvc_ray_generation #好像自己額外的要用這個加�
 
 )
 
+
+ament_target_dependencies(nbvc_ray_generationV3_beforeclean #msg的是加這種的
+  rclcpp 
+  octomap_msgs
+  std_msgs
+  visualization_msgs
+  geometry_msgs
+
+  #for subsribe pcd topic
+  sensor_msgs
+)# ${OCTOMAP_LIBRARIES}) #說這個executable 裡面有用到(dependency)rclcpp這個package
+TARGET_LINK_LIBRARIES(nbvc_ray_generationV3_beforeclean #好像自己額外的要用這個加才可以
+    nbvc_lib_SdfModel    
+    ${OCTOMAP_LIBRARIES}
+    ${Open3D_LIBRARIES}
+
+)
 # install (TARGETS #告訴這個node 是在這個package 定義的
 #   nbvc_ray_generation
 # 	DESTINATION lib/${PROJECT_NAME} #要到那個workspace的include file 裡面找到這個package/lib file 會看到那個executable node
@@ -103,6 +130,14 @@ TARGET_LINK_LIBRARIES(nbvc_lib_SdfModel #好像自己額外的要用這個加才
     ${Open3D_LIBRARIES}
 )
 
+ament_target_dependencies(SdfModelV3 #msg的是加這種的
+  rclcpp 
+  std_msgs
+)# ${OCTOMAP_LIBRARIES}) #說這個executable 裡面有用到(dependency)rclcpp這個package
+TARGET_LINK_LIBRARIES(SdfModelV3 #好像自己額外的要用這個加才可以
+    ${Open3D_LIBRARIES}
+)
+
 # install (TARGETS #告訴這個node 是在這個package 定義的
 #   SdfModel
 # 	DESTINATION lib/${PROJECT_NAME} #要到那個workspace的include file 裡面找到這個package/lib file 會看到那個executable node
@@ -111,7 +146,9 @@ TARGET_LINK_LIBRARIES(nbvc_lib_SdfModel #好像自己額外的要用這個加才
 # Install the targets
 install(TARGETS
   nbvc_ray_generation
+  nbvc_ray_generationV3_beforeclean
   nbvc_lib_SdfModel
+  SdfModelV3
   DESTINATION lib/${PROJECT_NAME}
 )
 

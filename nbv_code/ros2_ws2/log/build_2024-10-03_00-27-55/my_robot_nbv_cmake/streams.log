@@ -1,0 +1,12 @@
+[0.014s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8
+[0.141s] [ 25%] [32mBuilding CXX object CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.o[0m
+[11.317s] [ 50%] [32m[1mLinking CXX static library libnbvc_lib_SdfModel.a[0m
+[11.369s] [ 50%] Built target nbvc_lib_SdfModel
+[11.391s] [ 75%] [32m[1mLinking CXX executable nbvc_ray_generation[0m
+[11.518s] /usr/bin/ld: libnbvc_lib_SdfModel.a(SdfModel.cpp.o): in function `main':
+[11.523s] SdfModel.cpp:(.text+0x2065): multiple definition of `main'; CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o:nbvc_ray_generation.cpp:(.text+0x69): first defined here
+[12.605s] collect2: error: ld returned 1 exit status
+[12.606s] gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:195: nbvc_ray_generation] Error 1
+[12.606s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+[12.607s] gmake: *** [Makefile:146: all] Error 2
+[12.621s] Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8

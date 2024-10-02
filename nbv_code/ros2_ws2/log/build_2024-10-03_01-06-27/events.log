@@ -1,0 +1,305 @@
+[0.000000] (-) TimerEvent: {}
+[0.001853] (-) JobUnselected: {'identifier': 'my_bot'}
+[0.001920] (-) JobUnselected: {'identifier': 'my_robot_cam'}
+[0.001942] (-) JobUnselected: {'identifier': 'my_robot_nbv'}
+[0.001959] (-) JobUnselected: {'identifier': 'octomap_server2'}
+[0.001976] (-) JobUnselected: {'identifier': 'realsense2_camera'}
+[0.002006] (-) JobUnselected: {'identifier': 'realsense2_camera_msgs'}
+[0.002029] (-) JobUnselected: {'identifier': 'realsense2_description'}
+[0.002047] (my_robot_nbv_cmake) JobQueued: {'identifier': 'my_robot_nbv_cmake', 'dependencies': OrderedDict()}
+[0.002066] (my_robot_nbv_cmake) JobStarted: {'identifier': 'my_robot_nbv_cmake'}
+[0.015772] (my_robot_nbv_cmake) JobProgress: {'identifier': 'my_robot_nbv_cmake', 'progress': 'cmake'}
+[0.017792] (my_robot_nbv_cmake) JobProgress: {'identifier': 'my_robot_nbv_cmake', 'progress': 'build'}
+[0.018020] (my_robot_nbv_cmake) Command: {'cmd': ['/home/jajayu/.local/bin/cmake', '--build', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake', '--', '-j8', '-l8'], 'cwd': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jajayu'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jajayu/open3d_install/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_ros/lib:/home/jajayu/ros2_ws/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jajayu'), ('OLDPWD', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('MANAGERPID', '1598'), ('SYSTEMD_EXEC_PID', '1775'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '2748'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install:/home/jajayu/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jajayu'), ('JOURNAL_STREAM', '8:7120'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jajayu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jajayu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jajayu-virtual-machine:@/tmp/.ICE-unix/1746,unix/jajayu-virtual-machine:/tmp/.ICE-unix/1746'), ('INVOCATION_ID', '6b0176dca7d947c58531aed191e48b00'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.M8Q3U2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('TERMINATOR_UUID', 'urn:uuid:260f91d3-f54e-4c12-b86c-e6eb2dcdc187'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/webots_ros2_tests/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/webots_ros2/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/pcl_msgs/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/build/pcd_demo:/home/jajayu/ros2_ws/install/pcd_demo/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/gazebo_tutorial:/home/jajayu/ros2_ws/install/gazebo_tutorial/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('Open3D_DIR', '/home/jajayu/open3d_install/lib/cmake/Open3D'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/depthimage_to_pointcloud2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble')]), 'shell': False}
+[0.100172] (-) TimerEvent: {}
+[0.142184] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding CXX object CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/src/nbvc_ray_generationV3_beforeclean.cpp.o\x1b[0m\n'}
+[0.149217] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 37%] Built target nbvc_lib_SdfModel\n'}
+[0.152196] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 62%] Built target SdfModelV3\n'}
+[0.170385] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 87%] Built target nbvc_ray_generation\n'}
+[0.200257] (-) TimerEvent: {}
+[0.300740] (-) TimerEvent: {}
+[0.401288] (-) TimerEvent: {}
+[0.505575] (-) TimerEvent: {}
+[0.606274] (-) TimerEvent: {}
+[0.706972] (-) TimerEvent: {}
+[0.807375] (-) TimerEvent: {}
+[0.908991] (-) TimerEvent: {}
+[1.009411] (-) TimerEvent: {}
+[1.109743] (-) TimerEvent: {}
+[1.210237] (-) TimerEvent: {}
+[1.310769] (-) TimerEvent: {}
+[1.411402] (-) TimerEvent: {}
+[1.512114] (-) TimerEvent: {}
+[1.613209] (-) TimerEvent: {}
+[1.714390] (-) TimerEvent: {}
+[1.814926] (-) TimerEvent: {}
+[1.915532] (-) TimerEvent: {}
+[2.016633] (-) TimerEvent: {}
+[2.117513] (-) TimerEvent: {}
+[2.218296] (-) TimerEvent: {}
+[2.319003] (-) TimerEvent: {}
+[2.419925] (-) TimerEvent: {}
+[2.520727] (-) TimerEvent: {}
+[2.621120] (-) TimerEvent: {}
+[2.721785] (-) TimerEvent: {}
+[2.822225] (-) TimerEvent: {}
+[2.923594] (-) TimerEvent: {}
+[3.024414] (-) TimerEvent: {}
+[3.125141] (-) TimerEvent: {}
+[3.225524] (-) TimerEvent: {}
+[3.326168] (-) TimerEvent: {}
+[3.427570] (-) TimerEvent: {}
+[3.528282] (-) TimerEvent: {}
+[3.629016] (-) TimerEvent: {}
+[3.730092] (-) TimerEvent: {}
+[3.830943] (-) TimerEvent: {}
+[3.931458] (-) TimerEvent: {}
+[4.032213] (-) TimerEvent: {}
+[4.132757] (-) TimerEvent: {}
+[4.233433] (-) TimerEvent: {}
+[4.334084] (-) TimerEvent: {}
+[4.434908] (-) TimerEvent: {}
+[4.535770] (-) TimerEvent: {}
+[4.636552] (-) TimerEvent: {}
+[4.707510] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/NearestNeighborSearch.h:13\x1b[m\x1b[K,\n'}
+[4.707728] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/Open3D.h:29\x1b[m\x1b[K,\n'}
+[4.707796] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4\x1b[m\x1b[K,\n'}
+[4.707867] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generationV3_beforeclean.cpp:27\x1b[m\x1b[K:\n'}
+[4.707932] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual bool open3d::core::nns::FixedRadiusIndex::SetTensorData(const open3d::core::Tensor&, const open3d::core::Dtype&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.707993] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:400:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdataset_points\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.708056] (my_robot_nbv_cmake) StderrLine: {'line': b'  400 |     bool SetTensorData(\x1b[01;35m\x1b[Kconst Tensor& dataset_points\x1b[m\x1b[K,\n'}
+[4.708125] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.708187] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:401:37:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kindex_dtype\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.708250] (my_robot_nbv_cmake) StderrLine: {'line': b'  401 |                        \x1b[01;35m\x1b[Kconst Dtype& index_dtype = core::Int64\x1b[m\x1b[K) override {\n'}
+[4.708305] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.709354] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual std::pair<open3d::core::Tensor, open3d::core::Tensor> open3d::core::nns::FixedRadiusIndex::SearchKnn(const open3d::core::Tensor&, int) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.709484] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:415:55:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kquery_points\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.709552] (my_robot_nbv_cmake) StderrLine: {'line': b'  415 |     std::pair<Tensor, Tensor> SearchKnn(\x1b[01;35m\x1b[Kconst Tensor& query_points\x1b[m\x1b[K,\n'}
+[4.709609] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                                         \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.709663] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:416:45:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kknn\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.709719] (my_robot_nbv_cmake) StderrLine: {'line': b'  416 |                                         \x1b[01;35m\x1b[Kint knn\x1b[m\x1b[K) const override {\n'}
+[4.709775] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                                         \x1b[01;35m\x1b[K~~~~^~~\x1b[m\x1b[K\n'}
+[4.714040] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual std::tuple<open3d::core::Tensor, open3d::core::Tensor, open3d::core::Tensor> open3d::core::nns::FixedRadiusIndex::SearchRadius(const open3d::core::Tensor&, const open3d::core::Tensor&, bool) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.714379] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:421:27:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kquery_points\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.714474] (my_robot_nbv_cmake) StderrLine: {'line': b'  421 |             \x1b[01;35m\x1b[Kconst Tensor& query_points\x1b[m\x1b[K,\n'}
+[4.714543] (my_robot_nbv_cmake) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.714604] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:422:27:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kradii\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.714682] (my_robot_nbv_cmake) StderrLine: {'line': b'  422 |             \x1b[01;35m\x1b[Kconst Tensor& radii\x1b[m\x1b[K,\n'}
+[4.714741] (my_robot_nbv_cmake) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[4.714830] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/FixedRadiusIndex.h:423:18:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksort\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.714903] (my_robot_nbv_cmake) StderrLine: {'line': b'  423 |             \x1b[01;35m\x1b[Kbool sort = true\x1b[m\x1b[K) const override {\n'}
+[4.714959] (my_robot_nbv_cmake) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.715454] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/NearestNeighborSearch.h:14\x1b[m\x1b[K,\n'}
+[4.715525] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/Open3D.h:29\x1b[m\x1b[K,\n'}
+[4.715572] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4\x1b[m\x1b[K,\n'}
+[4.715599] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generationV3_beforeclean.cpp:27\x1b[m\x1b[K:\n'}
+[4.715623] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual bool open3d::core::nns::KnnIndex::SetTensorData(const open3d::core::Tensor&, double, const open3d::core::Dtype&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.715648] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:52:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdataset_points\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.715693] (my_robot_nbv_cmake) StderrLine: {'line': b'   52 |     bool SetTensorData(\x1b[01;35m\x1b[Kconst Tensor& dataset_points\x1b[m\x1b[K,\n'}
+[4.715736] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.715779] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:53:31:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kradius\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.715905] (my_robot_nbv_cmake) StderrLine: {'line': b'   53 |                        \x1b[01;35m\x1b[Kdouble radius\x1b[m\x1b[K,\n'}
+[4.715989] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~~~^~~~~~\x1b[m\x1b[K\n'}
+[4.716045] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:54:37:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kindex_dtype\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.716103] (my_robot_nbv_cmake) StderrLine: {'line': b'   54 |                        \x1b[01;35m\x1b[Kconst Dtype& index_dtype = core::Int64\x1b[m\x1b[K) override {\n'}
+[4.716158] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.716265] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual std::tuple<open3d::core::Tensor, open3d::core::Tensor, open3d::core::Tensor> open3d::core::nns::KnnIndex::SearchRadius(const open3d::core::Tensor&, const open3d::core::Tensor&, bool) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.716369] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:66:67:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kquery_points\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.716436] (my_robot_nbv_cmake) StderrLine: {'line': b'   66 |     std::tuple<Tensor, Tensor, Tensor> SearchRadius(\x1b[01;35m\x1b[Kconst Tensor& query_points\x1b[m\x1b[K,\n'}
+[4.716491] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                                                     \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.716545] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:67:67:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kradii\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.716601] (my_robot_nbv_cmake) StderrLine: {'line': b'   67 |                                                     \x1b[01;35m\x1b[Kconst Tensor& radii\x1b[m\x1b[K,\n'}
+[4.716655] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                                                     \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[4.716708] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:68:58:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksort\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.716773] (my_robot_nbv_cmake) StderrLine: {'line': b'   68 |                                                     \x1b[01;35m\x1b[Kbool sort\x1b[m\x1b[K) const override {\n'}
+[4.716830] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                                                     \x1b[01;35m\x1b[K~~~~~^~~~\x1b[m\x1b[K\n'}
+[4.717231] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual std::tuple<open3d::core::Tensor, open3d::core::Tensor, open3d::core::Tensor> open3d::core::nns::KnnIndex::SearchRadius(const open3d::core::Tensor&, double, bool) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.717379] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:72:67:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kquery_points\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.717456] (my_robot_nbv_cmake) StderrLine: {'line': b'   72 |     std::tuple<Tensor, Tensor, Tensor> SearchRadius(\x1b[01;35m\x1b[Kconst Tensor& query_points\x1b[m\x1b[K,\n'}
+[4.717518] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                                                     \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.717577] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:73:66:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kradius\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.717637] (my_robot_nbv_cmake) StderrLine: {'line': b'   73 |                                                     \x1b[01;35m\x1b[Kconst double radius\x1b[m\x1b[K,\n'}
+[4.717694] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                                                     \x1b[01;35m\x1b[K~~~~~~~~~~~~~^~~~~~\x1b[m\x1b[K\n'}
+[4.717751] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:74:58:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksort\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.717808] (my_robot_nbv_cmake) StderrLine: {'line': b'   74 |                                                     \x1b[01;35m\x1b[Kbool sort\x1b[m\x1b[K) const override {\n'}
+[4.717864] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                                                     \x1b[01;35m\x1b[K~~~~~^~~~\x1b[m\x1b[K\n'}
+[4.717919] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual std::tuple<open3d::core::Tensor, open3d::core::Tensor, open3d::core::Tensor> open3d::core::nns::KnnIndex::SearchHybrid(const open3d::core::Tensor&, double, int) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.717977] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:79:27:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kquery_points\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.718059] (my_robot_nbv_cmake) StderrLine: {'line': b'   79 |             \x1b[01;35m\x1b[Kconst Tensor& query_points\x1b[m\x1b[K,\n'}
+[4.718123] (my_robot_nbv_cmake) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.718183] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:80:26:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kradius\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.718252] (my_robot_nbv_cmake) StderrLine: {'line': b'   80 |             \x1b[01;35m\x1b[Kconst double radius\x1b[m\x1b[K,\n'}
+[4.718314] (my_robot_nbv_cmake) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~~~~^~~~~~\x1b[m\x1b[K\n'}
+[4.718374] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/KnnIndex.h:81:23:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kmax_knn\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.718439] (my_robot_nbv_cmake) StderrLine: {'line': b'   81 |             \x1b[01;35m\x1b[Kconst int max_knn\x1b[m\x1b[K) const override {\n'}
+[4.718496] (my_robot_nbv_cmake) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[4.727099] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/NearestNeighborSearch.h:15\x1b[m\x1b[K,\n'}
+[4.727277] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/Open3D.h:29\x1b[m\x1b[K,\n'}
+[4.727342] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4\x1b[m\x1b[K,\n'}
+[4.727399] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generationV3_beforeclean.cpp:27\x1b[m\x1b[K:\n'}
+[4.727466] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/NanoFlannIndex.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual bool open3d::core::nns::NanoFlannIndex::SetTensorData(const open3d::core::Tensor&, double, const open3d::core::Dtype&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.727750] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/NanoFlannIndex.h:43:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdataset_points\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.727846] (my_robot_nbv_cmake) StderrLine: {'line': b'   43 |     bool SetTensorData(\x1b[01;35m\x1b[Kconst Tensor &dataset_points\x1b[m\x1b[K,\n'}
+[4.727903] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.727959] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/NanoFlannIndex.h:44:31:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kradius\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.728016] (my_robot_nbv_cmake) StderrLine: {'line': b'   44 |                        \x1b[01;35m\x1b[Kdouble radius\x1b[m\x1b[K,\n'}
+[4.728069] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~~~^~~~~~\x1b[m\x1b[K\n'}
+[4.728123] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/core/nns/NanoFlannIndex.h:45:37:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kindex_dtype\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[4.728188] (my_robot_nbv_cmake) StderrLine: {'line': b'   45 |                        \x1b[01;35m\x1b[Kconst Dtype &index_dtype = core::Int64\x1b[m\x1b[K) override {\n'}
+[4.728241] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.737645] (-) TimerEvent: {}
+[4.838276] (-) TimerEvent: {}
+[4.938725] (-) TimerEvent: {}
+[5.039119] (-) TimerEvent: {}
+[5.140393] (-) TimerEvent: {}
+[5.241015] (-) TimerEvent: {}
+[5.252909] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/Open3D.h:37\x1b[m\x1b[K,\n'}
+[5.253111] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4\x1b[m\x1b[K,\n'}
+[5.253248] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generationV3_beforeclean.cpp:27\x1b[m\x1b[K:\n'}
+[5.253321] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/geometry/Line3D.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual bool open3d::geometry::Line3D::IsParameterValid(double) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.253387] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/geometry/Line3D.h:208:42:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kparameter\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.253494] (my_robot_nbv_cmake) StderrLine: {'line': b'  208 |     virtual bool IsParameterValid(\x1b[01;35m\x1b[Kdouble parameter\x1b[m\x1b[K) const { return true; }\n'}
+[5.253556] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                                   \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.341496] (-) TimerEvent: {}
+[5.446549] (-) TimerEvent: {}
+[5.547504] (-) TimerEvent: {}
+[5.648204] (-) TimerEvent: {}
+[5.748721] (-) TimerEvent: {}
+[5.849120] (-) TimerEvent: {}
+[5.949932] (-) TimerEvent: {}
+[6.051451] (-) TimerEvent: {}
+[6.151827] (-) TimerEvent: {}
+[6.252684] (-) TimerEvent: {}
+[6.306164] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/Open3D.h:112\x1b[m\x1b[K,\n'}
+[6.306366] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4\x1b[m\x1b[K,\n'}
+[6.306447] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generationV3_beforeclean.cpp:27\x1b[m\x1b[K:\n'}
+[6.306513] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/visualization/gui/SceneWidget.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual bool open3d::visualization::gui::SceneWidget::MouseInteractor::Tick(const open3d::visualization::gui::TickEvent&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.306580] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/open3d_install/include/open3d/visualization/gui/SceneWidget.h:60:44:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ke\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.306750] (my_robot_nbv_cmake) StderrLine: {'line': b'   60 |         virtual bool Tick(\x1b[01;35m\x1b[Kconst TickEvent& e\x1b[m\x1b[K) { return false; }\n'}
+[6.306815] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                           \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~^\x1b[m\x1b[K\n'}
+[6.352954] (-) TimerEvent: {}
+[6.453981] (-) TimerEvent: {}
+[6.554789] (-) TimerEvent: {}
+[6.655718] (-) TimerEvent: {}
+[6.756603] (-) TimerEvent: {}
+[6.857411] (-) TimerEvent: {}
+[6.957759] (-) TimerEvent: {}
+[7.058182] (-) TimerEvent: {}
+[7.158797] (-) TimerEvent: {}
+[7.259939] (-) TimerEvent: {}
+[7.360333] (-) TimerEvent: {}
+[7.461124] (-) TimerEvent: {}
+[7.567987] (-) TimerEvent: {}
+[7.668464] (-) TimerEvent: {}
+[7.769676] (-) TimerEvent: {}
+[7.870457] (-) TimerEvent: {}
+[7.970975] (-) TimerEvent: {}
+[8.071625] (-) TimerEvent: {}
+[8.172089] (-) TimerEvent: {}
+[8.273692] (-) TimerEvent: {}
+[8.374664] (-) TimerEvent: {}
+[8.476057] (-) TimerEvent: {}
+[8.576432] (-) TimerEvent: {}
+[8.677107] (-) TimerEvent: {}
+[8.778266] (-) TimerEvent: {}
+[8.878856] (-) TimerEvent: {}
+[8.979329] (-) TimerEvent: {}
+[9.080058] (-) TimerEvent: {}
+[9.180542] (-) TimerEvent: {}
+[9.280962] (-) TimerEvent: {}
+[9.381401] (-) TimerEvent: {}
+[9.482471] (-) TimerEvent: {}
+[9.583346] (-) TimerEvent: {}
+[9.684126] (-) TimerEvent: {}
+[9.788452] (-) TimerEvent: {}
+[9.889031] (-) TimerEvent: {}
+[9.990327] (-) TimerEvent: {}
+[10.091195] (-) TimerEvent: {}
+[10.191927] (-) TimerEvent: {}
+[10.292471] (-) TimerEvent: {}
+[10.393468] (-) TimerEvent: {}
+[10.493920] (-) TimerEvent: {}
+[10.594870] (-) TimerEvent: {}
+[10.696323] (-) TimerEvent: {}
+[10.796802] (-) TimerEvent: {}
+[10.897427] (-) TimerEvent: {}
+[10.998699] (-) TimerEvent: {}
+[11.099401] (-) TimerEvent: {}
+[11.201116] (-) TimerEvent: {}
+[11.301699] (-) TimerEvent: {}
+[11.402270] (-) TimerEvent: {}
+[11.502820] (-) TimerEvent: {}
+[11.603213] (-) TimerEvent: {}
+[11.703725] (-) TimerEvent: {}
+[11.805127] (-) TimerEvent: {}
+[11.905611] (-) TimerEvent: {}
+[12.006425] (-) TimerEvent: {}
+[12.107159] (-) TimerEvent: {}
+[12.207657] (-) TimerEvent: {}
+[12.308320] (-) TimerEvent: {}
+[12.409011] (-) TimerEvent: {}
+[12.510072] (-) TimerEvent: {}
+[12.610811] (-) TimerEvent: {}
+[12.712164] (-) TimerEvent: {}
+[12.812680] (-) TimerEvent: {}
+[12.913331] (-) TimerEvent: {}
+[13.014039] (-) TimerEvent: {}
+[13.115343] (-) TimerEvent: {}
+[13.216092] (-) TimerEvent: {}
+[13.317084] (-) TimerEvent: {}
+[13.417605] (-) TimerEvent: {}
+[13.518429] (-) TimerEvent: {}
+[13.618819] (-) TimerEvent: {}
+[13.719300] (-) TimerEvent: {}
+[13.819845] (-) TimerEvent: {}
+[13.920288] (-) TimerEvent: {}
+[14.020712] (-) TimerEvent: {}
+[14.121272] (-) TimerEvent: {}
+[14.222103] (-) TimerEvent: {}
+[14.323106] (-) TimerEvent: {}
+[14.423843] (-) TimerEvent: {}
+[14.524310] (-) TimerEvent: {}
+[14.624966] (-) TimerEvent: {}
+[14.726099] (-) TimerEvent: {}
+[14.826573] (-) TimerEvent: {}
+[14.927222] (-) TimerEvent: {}
+[15.027612] (-) TimerEvent: {}
+[15.128263] (-) TimerEvent: {}
+[15.228954] (-) TimerEvent: {}
+[15.329490] (-) TimerEvent: {}
+[15.429966] (-) TimerEvent: {}
+[15.530913] (-) TimerEvent: {}
+[15.632641] (-) TimerEvent: {}
+[15.733290] (-) TimerEvent: {}
+[15.834496] (-) TimerEvent: {}
+[15.934947] (-) TimerEvent: {}
+[16.035379] (-) TimerEvent: {}
+[16.136055] (-) TimerEvent: {}
+[16.236622] (-) TimerEvent: {}
+[16.337133] (-) TimerEvent: {}
+[16.437626] (-) TimerEvent: {}
+[16.539001] (-) TimerEvent: {}
+[16.639551] (-) TimerEvent: {}
+[16.710713] (my_robot_nbv_cmake) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable nbvc_ray_generationV3_beforeclean\x1b[0m\n'}
+[16.739960] (-) TimerEvent: {}
+[16.840925] (-) TimerEvent: {}
+[16.941499] (-) TimerEvent: {}
+[17.041868] (-) TimerEvent: {}
+[17.142694] (-) TimerEvent: {}
+[17.243303] (-) TimerEvent: {}
+[17.261598] (my_robot_nbv_cmake) StderrLine: {'line': b"/usr/bin/ld: CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/src/nbvc_ray_generationV3_beforeclean.cpp.o: in function `octomap_msgs::fullMsgToMap(octomap_msgs::msg::Octomap_<std::allocator<void> > const&)':\n"}
+[17.261738] (my_robot_nbv_cmake) StderrLine: {'line': b"nbvc_ray_generationV3_beforeclean.cpp:(.text._ZN12octomap_msgsL12fullMsgToMapERKNS_3msg8Octomap_ISaIvEEE[_ZN6MyNode16octomap_callbackESt10shared_ptrIN12octomap_msgs3msg8Octomap_ISaIvEEEE]+0x5a): undefined reference to `octomap::AbstractOcTree::createTree(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, double)'\n"}
+[17.262462] (my_robot_nbv_cmake) StderrLine: {'line': b"/usr/bin/ld: CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/src/nbvc_ray_generationV3_beforeclean.cpp.o: in function `octomap_msgs::binaryMsgToMap(octomap_msgs::msg::Octomap_<std::allocator<void> > const&)':\n"}
+[17.262618] (my_robot_nbv_cmake) StderrLine: {'line': b"nbvc_ray_generationV3_beforeclean.cpp:(.text._ZN12octomap_msgsL14binaryMsgToMapERKNS_3msg8Octomap_ISaIvEEE[_ZN6MyNode16octomap_callbackESt10shared_ptrIN12octomap_msgs3msg8Octomap_ISaIvEEEE]+0x64): undefined reference to `octomap::ColorOcTree::ColorOcTree(double)'\n"}
+[17.262848] (my_robot_nbv_cmake) StderrLine: {'line': b"/usr/bin/ld: nbvc_ray_generationV3_beforeclean.cpp:(.text._ZN12octomap_msgsL14binaryMsgToMapERKNS_3msg8Octomap_ISaIvEEE[_ZN6MyNode16octomap_callbackESt10shared_ptrIN12octomap_msgs3msg8Octomap_ISaIvEEEE]+0xa7): undefined reference to `octomap::OcTree::OcTree(double)'\n"}
+[17.263774] (my_robot_nbv_cmake) StderrLine: {'line': b"/usr/bin/ld: CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/src/nbvc_ray_generationV3_beforeclean.cpp.o: in function `MyNode::octomap_callback(std::shared_ptr<octomap_msgs::msg::Octomap_<std::allocator<void> > >)':\n"}
+[17.264753] (my_robot_nbv_cmake) StderrLine: {'line': b"nbvc_ray_generationV3_beforeclean.cpp:(.text._ZN6MyNode16octomap_callbackESt10shared_ptrIN12octomap_msgs3msg8Octomap_ISaIvEEEE[_ZN6MyNode16octomap_callbackESt10shared_ptrIN12octomap_msgs3msg8Octomap_ISaIvEEEE]+0x6c0): undefined reference to `octomap::AbstractOcTree::write(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const'\n"}
+[17.305286] (my_robot_nbv_cmake) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[17.306560] (my_robot_nbv_cmake) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/build.make:191: nbvc_ray_generationV3_beforeclean] Error 1\n'}
+[17.306791] (my_robot_nbv_cmake) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/all] Error 2\n'}
+[17.307031] (my_robot_nbv_cmake) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[17.320594] (my_robot_nbv_cmake) CommandEnded: {'returncode': 2}
+[17.343647] (-) TimerEvent: {}
+[17.444081] (-) TimerEvent: {}
+[17.466475] (my_robot_nbv_cmake) JobEnded: {'identifier': 'my_robot_nbv_cmake', 'rc': 2}
+[17.477158] (-) EventReactorShutdown: {}

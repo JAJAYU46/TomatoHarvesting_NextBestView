@@ -762,5 +762,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
   "CMakeFiles/my_robot_nbv_cmake_uninstall.dir/DependInfo.cmake"
   "CMakeFiles/nbvc_ray_generation.dir/DependInfo.cmake"
+  "CMakeFiles/SdfModelV3.dir/DependInfo.cmake"
+  "CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/DependInfo.cmake"
   "CMakeFiles/nbvc_lib_SdfModel.dir/DependInfo.cmake"
   )

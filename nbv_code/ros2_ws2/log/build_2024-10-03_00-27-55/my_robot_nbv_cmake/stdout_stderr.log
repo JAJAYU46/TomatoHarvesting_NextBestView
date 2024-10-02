@@ -1,0 +1,10 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.o[0m
+[ 50%] [32m[1mLinking CXX static library libnbvc_lib_SdfModel.a[0m
+[ 50%] Built target nbvc_lib_SdfModel
+[ 75%] [32m[1mLinking CXX executable nbvc_ray_generation[0m
+/usr/bin/ld: libnbvc_lib_SdfModel.a(SdfModel.cpp.o): in function `main':
+SdfModel.cpp:(.text+0x2065): multiple definition of `main'; CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o:nbvc_ray_generation.cpp:(.text+0x69): first defined here
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:195: nbvc_ray_generation] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

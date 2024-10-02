@@ -71,6 +71,8 @@ class MyNode(Node): #construct Node class
         #【publisher】
         self.tompcd_filter_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_filter", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         self.tompcd_ICP_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_ICP", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        self.tompcd_ICPonly_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_ICPonly", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        
         #【subscriber】
         self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/cam/cloudrate_transformer", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         #for image
@@ -191,7 +193,7 @@ class MyNode(Node): #construct Node class
         point_cloud.points = o3d.utility.Vector3dVector(points)
         point_cloud.colors = o3d.utility.Vector3dVector(colors_pcd_open3d)
         
-        source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato.ply"
+        source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
         source = o3d.io.read_point_cloud(source_path.format(3)) #demo_pcds.paths[0])
         # print(np.asarray(pcd.points))
         #for debug
@@ -226,7 +228,7 @@ class MyNode(Node): #construct Node class
 
         self.get_logger().info("done registering, start integrating two point cloud")
         source_pointcloud2 = convertCloudFromOpen3dToRos(source, "camera_link_optical")
-        # self.tompcd_ICP_pub_.publish(source_pointcloud2) #pc_array = np.array(list(pc_data))
+        self.tompcd_ICPonly_pub_.publish(source_pointcloud2) #pc_array = np.array(list(pc_data)) //只publish那個轉好的model給之後算sdf用
         
         #把ICP data和原來的pointcloud2 data組合起來, 因為之後要給octomap算 弄不出來...20240825
         # new_point = list(pc2.read_points(msg, field_names=("x", "y", "z", "rgb"), skip_nans=True))

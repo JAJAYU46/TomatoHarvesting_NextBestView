@@ -29,6 +29,8 @@ public:
     void ComputeSDF(std::vector<Eigen::Vector3f> query_points_input);
     //==================== [Operation Function] =========================//
     array<int, 2> ShowInPointCount();
+    vector<Eigen::Vector3f> ShowInQueryPoints();
+    vector<float> GetModelCenter();
     void CleanPointCount();
     void Visualize();
 
@@ -43,6 +45,7 @@ private:
     std::vector<Eigen::Vector3d> points_;
     std::vector<Eigen::Vector3d> colors_;
     std::vector<Eigen::Vector3f> query_points_;
+    std::vector<Eigen::Vector3f> query_points_in;
 
     std::shared_ptr<open3d::geometry::TriangleMesh> mesh0_;
     open3d::t::geometry::TriangleMesh mesh_;

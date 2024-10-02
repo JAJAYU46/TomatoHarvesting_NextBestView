@@ -1,0 +1,11 @@
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::octomap_callback(octomap_msgs::msg::Octomap_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:131:25:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[Kstd[m[K’
+  131 |                         [01;31m[Kstd[m[K::vector<octomap::point3d> origins = RandomPoint(modelCenterOctomap_pcd , 5, 2); //中心座標, 點數, 長度
+      |                         [01;31m[K^~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:132:51:[m[K [01;31m[Kerror: [m[K‘[01m[Korigins[m[K’ was not declared in this scope; did you mean ‘[01m[Korigin[m[K’?
+  132 |                         for (const auto& origin : [01;31m[Korigins[m[K) {
+      |                                                   [01;31m[K^~~~~~~[m[K
+      |                                                   [32m[Korigin[m[K
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,20 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.o[0m
+[ 37%] Built target SdfModelV3
+[ 50%] [32m[1mLinking CXX static library libnbvc_lib_SdfModel.a[0m
+[ 50%] Built target nbvc_lib_SdfModel
+[ 75%] [32m[1mLinking CXX executable nbvc_ray_generationV3_beforeclean[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o[0m
+[ 87%] Built target nbvc_ray_generationV3_beforeclean
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::octomap_callback(octomap_msgs::msg::Octomap_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:203:56:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::vector<Eigen::Matrix<float, 3, 1> >[m[K’ to ‘[01m[Kstd::vector<octomath::Vector3>&[m[K’
+  203 |                         publish_any_ray_marker(origin, [01;31m[Kquery_points_in[m[K, 3, {0.5,0.5,0.5});
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                                        [01;31m[K|[m[K
+      |                                                        [01;31m[Kstd::vector<Eigen::Matrix<float, 3, 1> >[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:371:100:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kvoid MyNode::publish_any_ray_marker(const point3d&, std::vector<octomath::Vector3>&, int, const std::array<double, 3>&, double)[m[K’
+  371 | st octomap::point3d &origin, [01;36m[Kstd::vector<octomap::point3d> &endPoints[m[K, int id=0,const std::array<double, 3> &marker_color={1,0,0}, const double x_scale=0.03) {
+      |                              [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,15 @@
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::octomap_callback(octomap_msgs::msg::Octomap_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:181:43:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kvector<[01;32m[Koctomath::Vector3[m[K>[m[K’ to ‘[01m[Kvector<[01;32m[KEigen::Matrix<float, 3, 1>[m[K>[m[K’
+  181 |        ModelScene.ComputeSDF([01;31m[KhitpointV[m[K);//看現在總共有幾個點要看（因為現在是輸入hitpoint現在就是要看這些打到的點有幾個會在surface內)
+      |                              [01;31m[K^~~~~~~~~[m[K
+      |                              [01;31m[K|[m[K
+      |                              [01;31m[Kvector<octomath::Vector3>[m[K
+
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:27[m[K:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:29:50:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid SdfModel::ComputeSDF(std::vector<Eigen::Matrix<float, 3, 1> >)[m[K’
+   29 | [01;36m[Kstd::vector<Eigen::Vector3f> query_points_input[m[K);
+      | [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

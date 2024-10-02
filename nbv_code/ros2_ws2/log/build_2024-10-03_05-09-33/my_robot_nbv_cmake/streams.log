@@ -1,0 +1,20 @@
+[0.027s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8
+[0.169s] [ 25%] Built target nbvc_lib_SdfModel
+[0.190s] [ 50%] Built target SdfModelV3
+[0.224s] [ 75%] Built target nbvc_ray_generationV3_beforeclean
+[0.253s] [ 87%] [32mBuilding CXX object CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o[0m
+[6.977s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::octomap_callback(octomap_msgs::msg::Octomap_<std::allocator<void> >::SharedPtr)[m[K’:
+[6.977s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:129:103:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::vector<float>[m[K’ to ‘[01m[Kconst std::vector<Eigen::Matrix<float, 3, 1> >&[m[K’
+[6.977s]   129 | int3d modelCenter = convertEigenToOctomap([01;31m[KModelScene.GetModelCenter()[m[K);
+[6.977s]       |                                           [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[6.977s]       |                                                                    [01;31m[K|[m[K
+[6.977s]       |                                                                    [01;31m[Kstd::vector<float>[m[K
+[6.977s] 
+[6.977s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:274:109:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kstd::vector<octomath::Vector3> MyNode::convertEigenToOctomap(const std::vector<Eigen::Matrix<float, 3, 1> >&)[m[K’
+[6.977s]   274 | genToOctomap([01;36m[Kconst std::vector<Eigen::Matrix<float, 3, 1>>& eigen_points[m[K) {
+[6.978s]       |              [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[6.978s] 
+[13.173s] gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+[13.177s] gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+[13.177s] gmake: *** [Makefile:146: all] Error 2
+[13.192s] Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8

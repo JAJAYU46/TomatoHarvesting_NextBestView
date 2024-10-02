@@ -564,8 +564,16 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
   /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp \
   /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp \
   /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__struct.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__traits.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__builder.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__traits.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__struct.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__traits.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp \
   /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__builder.hpp \
   /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp \
   /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__traits.hpp \
@@ -725,6 +733,7 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
   /usr/include/c++/11/complex \
   /usr/include/c++/11/condition_variable \
   /usr/include/c++/11/csignal \
+  /usr/include/c++/11/cstdarg \
   /usr/include/c++/11/cstddef \
   /usr/include/c++/11/cstdint \
   /usr/include/c++/11/cstdio \
@@ -1207,6 +1216,20 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
 /opt/ros/humble/include/rmw/rmw/qos_profiles.h:
 
 /home/jajayu/open3d_install/include/open3d/visualization/rendering/Camera.h:
@@ -1417,6 +1440,12 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /opt/ros/humble/include/rclcpp/rclcpp/time.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/opt/ros/humble/include/rmw/rmw/event.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:
@@ -1529,6 +1558,10 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp:
+
 /usr/include/c++/11/functional:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__traits.hpp:
@@ -1609,10 +1642,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /opt/ros/humble/include/rcl/rcl/logging_rosout.h:
 
-/home/jajayu/open3d_install/include/open3d/t/geometry/Geometry.h:
-
-/usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h:
-
 /usr/include/eigen3/Eigen/SVD:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node.hpp:
@@ -1666,6 +1695,8 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp:
 
 /home/jajayu/open3d_install/include/open3d/utility/Console.h:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__traits.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/allocator/allocator_deleter.hpp:
 
@@ -1758,8 +1789,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 /home/jajayu/open3d_install/include/open3d/utility/Helper.h:
 
 /home/jajayu/open3d_install/include/open3d/visualization/visualizer/VisualizerWithEditing.h:
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /home/jajayu/open3d_install/include/open3d/3rdparty/fmt/ostream.h:
 
@@ -1896,8 +1925,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:
 
 /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
 /home/jajayu/open3d_install/include/open3d/io/IJsonConvertibleIO.h:
 
@@ -2157,8 +2184,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/uv_coordinate__traits.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:
 
 /opt/ros/humble/include/octomap_msgs/octomap_msgs/msg/detail/octomap__struct.hpp:
@@ -2212,8 +2237,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 /opt/ros/humble/include/rclcpp/rclcpp/waitable.hpp:
 
 /usr/include/signal.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:
 
@@ -2535,15 +2558,39 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/service_type_support_decl.hpp:
 
-/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp:
-
 /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h:
 
 /home/jajayu/open3d_install/include/open3d/visualization/webrtc_server/WebRTCWindowSystem.h:
 
 /usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
 
+/home/jajayu/open3d_install/include/open3d/t/geometry/Geometry.h:
+
+/usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
+
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__struct.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__builder.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__traits.hpp:
+
+/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__struct.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/CoreIterators.h:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:
+
+/usr/include/c++/11/bits/node_handle.h:
 
 /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:
 
@@ -2727,8 +2774,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /usr/include/c++/11/bits/nested_exception.h:
 
-/usr/include/c++/11/bits/node_handle.h:
-
 /usr/include/c++/11/bits/parse_numbers.h:
 
 /usr/include/c++/11/bits/ptr_traits.h:
@@ -2831,6 +2876,12 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /usr/include/x86_64-linux-gnu/bits/sigstksz.h:
 
+/usr/include/eigen3/Eigen/src/Jacobi/Jacobi.h:
+
+/usr/include/eigen3/Eigen/src/LU/PartialPivLU.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
 /usr/include/c++/11/cstdint:
 
 /usr/include/c++/11/cstdio:
@@ -2888,10 +2939,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 /usr/include/c++/11/iosfwd:
 
 /usr/include/c++/11/iostream:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/color_rgba__traits.hpp:
 
@@ -3046,8 +3093,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 /opt/ros/humble/include/rclcpp/rclcpp/typesupport_helpers.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h:
-
-/usr/include/eigen3/Eigen/src/Core/CoreIterators.h:
 
 /opt/ros/humble/include/rcutils/rcutils/types.h:
 
@@ -3211,8 +3256,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /usr/include/eigen3/Eigen/src/Core/util/Memory.h:
 
-/usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
-
 /usr/include/c++/11/tr1/bessel_function.tcc:
 
 /usr/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h:
@@ -3228,6 +3271,8 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h:
+
+/usr/include/c++/11/cstdarg:
 
 /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
 
@@ -3250,12 +3295,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 /usr/include/eigen3/Eigen/src/Householder/Householder.h:
 
 /usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h:
-
-/usr/include/eigen3/Eigen/src/Jacobi/Jacobi.h:
-
-/usr/include/eigen3/Eigen/src/LU/PartialPivLU.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__traits.hpp:
 
@@ -3403,8 +3442,6 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h:
@@ -3442,13 +3479,3 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: /home/jajayu/T
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/opt/ros/humble/include/rmw/rmw/event.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:

@@ -1,0 +1,15 @@
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::octomap_callback(octomap_msgs::msg::Octomap_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:119:66:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KSdfModel::SdfModel(open3d::geometry::PointCloud&, float, int)[m[K’
+  119 |                SdfModel ModelScene(open3d_cloud_, 0.2f, 5000[01;31m[K)[m[K; //這個pcd是要從另一個topic讀過來
+      |                                                             [01;31m[K^[m[K
+
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:27[m[K:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:21:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KSdfModel::SdfModel(std::shared_ptr<open3d::geometry::PointCloud>, float, int)[m[K’
+   21 |     [01;36m[KSdfModel[m[K(std::shared_ptr<open3d::geometry::PointCloud> pcd, float radius, int num_points);
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:21:60:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kopen3d::geometry::PointCloud[m[K’ to ‘[01m[Kstd::shared_ptr<open3d::geometry::PointCloud>[m[K’
+   21 |     SdfModel([01;36m[Kstd::shared_ptr<open3d::geometry::PointCloud> pcd[m[K, float radius, int num_points);
+      |              [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

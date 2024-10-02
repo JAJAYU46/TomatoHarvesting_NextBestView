@@ -133,7 +133,7 @@ void SdfModel::ComputeSDFandOccupancy() {
     }
 }
 
-
+//這個輸入一個vector形式的陣列, 計算哪些點點在surface內（順便算出總共幾個點在surface內)
 void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //Eigen::Vector3f(x, y, z)
     // cout<< query_points_input;
     // cout<< query_points_input.size();
@@ -145,7 +145,7 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
         std::cout << "Point: (" << point_q.x() << ", " << point_q.y() << ", " << point_q.z() << ")" << std::endl;
         // auto point_q_formed = open3d::core::Tensor({{point_q.x(), point_q.y(), point_q.z()}}, {1, 3}, open3d::core::Float32);
         // auto point_q_formed = [[point_q.x(), point_q.y(), point_q.z()]];
-        //c++做tensor要分開搞, 要先建立vector和shap
+        //c++做tensor要分開搞, 要先建立vector和shape
         std::vector<float> point_values = {point_q.x(), point_q.y(), point_q.z()};
         open3d::core::SizeVector shape = {1, 3};
         auto point_q_formed = open3d::core::Tensor(point_values, shape, open3d::core::Dtype::Float32);
@@ -153,11 +153,13 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
         cout<< std::endl<< "sdf value:"<< signed_distance.Item<float>()<< std::endl;
         // auto occupancy = scene_.ComputeOccupancy(point_q_formed);
         if (signed_distance.Item<float>() <= 0) {  // Inside the mesh
+            query_points_in.push_back(point_q);////////////////////////
             AddPoint(point_q.cast<double>(), Eigen::Vector3d(1.0, 0.0, 0.0));  // Red
             //means inside the surface
             cout<<"in"<< std::endl;
             countPoint[0]+=1;
         } else {
+            query_points_in.push_back(point_q);////////////////////////
             AddPoint(point_q.cast<double>(), Eigen::Vector3d(0.0, 0.0, 1.0));  // Blue
             cout<<"out"<< std::endl;
             countPoint[1]+=1;
@@ -167,11 +169,20 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
     
 }
 //==================== [Operation Function] =========================//
-array<int, 2> SdfModel::ShowInPointCount(){
+array<int, 2> SdfModel::ShowInPointCount(){ //會回傳目前現在有幾個點在surface內
     cout<< "there are "<<countPoint[0] <<"within the surface"; 
     cout<< "there are "<<countPoint[1] <<"outside the surface";
     return countPoint;
 }
+
+vector<Eigen::Vector3f> SdfModel::ShowInQueryPoints(){
+    return query_points_in;
+}
+
+vector<float> SdfModel::GetModelCenter(){
+    return center_;
+}
+
 void SdfModel::CleanPointCount(){
     countPoint[0]=0;//每換一個candidate view要弄一次
     countPoint[1]=0;

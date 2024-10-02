@@ -211,6 +211,32 @@ nbvc_ray_generation/fast:
 .PHONY : nbvc_ray_generation/fast
 
 #=============================================================================
+# Target rules for targets named SdfModelV3
+
+# Build rule for target.
+SdfModelV3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SdfModelV3
+.PHONY : SdfModelV3
+
+# fast build rule for target.
+SdfModelV3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SdfModelV3.dir/build.make CMakeFiles/SdfModelV3.dir/build
+.PHONY : SdfModelV3/fast
+
+#=============================================================================
+# Target rules for targets named nbvc_ray_generationV3_beforeclean
+
+# Build rule for target.
+nbvc_ray_generationV3_beforeclean: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nbvc_ray_generationV3_beforeclean
+.PHONY : nbvc_ray_generationV3_beforeclean
+
+# fast build rule for target.
+nbvc_ray_generationV3_beforeclean/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/build.make CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/build
+.PHONY : nbvc_ray_generationV3_beforeclean/fast
+
+#=============================================================================
 # Target rules for targets named nbvc_lib_SdfModel
 
 # Build rule for target.
@@ -247,6 +273,30 @@ src/SdfModel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_lib_SdfModel.dir/build.make CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.s
 .PHONY : src/SdfModel.cpp.s
 
+src/SdfModelV3.o: src/SdfModelV3.cpp.o
+.PHONY : src/SdfModelV3.o
+
+# target to build an object file
+src/SdfModelV3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SdfModelV3.dir/build.make CMakeFiles/SdfModelV3.dir/src/SdfModelV3.cpp.o
+.PHONY : src/SdfModelV3.cpp.o
+
+src/SdfModelV3.i: src/SdfModelV3.cpp.i
+.PHONY : src/SdfModelV3.i
+
+# target to preprocess a source file
+src/SdfModelV3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SdfModelV3.dir/build.make CMakeFiles/SdfModelV3.dir/src/SdfModelV3.cpp.i
+.PHONY : src/SdfModelV3.cpp.i
+
+src/SdfModelV3.s: src/SdfModelV3.cpp.s
+.PHONY : src/SdfModelV3.s
+
+# target to generate assembly for a file
+src/SdfModelV3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SdfModelV3.dir/build.make CMakeFiles/SdfModelV3.dir/src/SdfModelV3.cpp.s
+.PHONY : src/SdfModelV3.cpp.s
+
 src/nbvc_ray_generation.o: src/nbvc_ray_generation.cpp.o
 .PHONY : src/nbvc_ray_generation.o
 
@@ -271,6 +321,30 @@ src/nbvc_ray_generation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_ray_generation.dir/build.make CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.s
 .PHONY : src/nbvc_ray_generation.cpp.s
 
+src/nbvc_ray_generationV3_beforeclean.o: src/nbvc_ray_generationV3_beforeclean.cpp.o
+.PHONY : src/nbvc_ray_generationV3_beforeclean.o
+
+# target to build an object file
+src/nbvc_ray_generationV3_beforeclean.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/build.make CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/src/nbvc_ray_generationV3_beforeclean.cpp.o
+.PHONY : src/nbvc_ray_generationV3_beforeclean.cpp.o
+
+src/nbvc_ray_generationV3_beforeclean.i: src/nbvc_ray_generationV3_beforeclean.cpp.i
+.PHONY : src/nbvc_ray_generationV3_beforeclean.i
+
+# target to preprocess a source file
+src/nbvc_ray_generationV3_beforeclean.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/build.make CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/src/nbvc_ray_generationV3_beforeclean.cpp.i
+.PHONY : src/nbvc_ray_generationV3_beforeclean.cpp.i
+
+src/nbvc_ray_generationV3_beforeclean.s: src/nbvc_ray_generationV3_beforeclean.cpp.s
+.PHONY : src/nbvc_ray_generationV3_beforeclean.s
+
+# target to generate assembly for a file
+src/nbvc_ray_generationV3_beforeclean.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/build.make CMakeFiles/nbvc_ray_generationV3_beforeclean.dir/src/nbvc_ray_generationV3_beforeclean.cpp.s
+.PHONY : src/nbvc_ray_generationV3_beforeclean.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -286,14 +360,22 @@ help:
 	@echo "... test"
 	@echo "... my_robot_nbv_cmake_uninstall"
 	@echo "... uninstall"
+	@echo "... SdfModelV3"
 	@echo "... nbvc_lib_SdfModel"
 	@echo "... nbvc_ray_generation"
+	@echo "... nbvc_ray_generationV3_beforeclean"
 	@echo "... src/SdfModel.o"
 	@echo "... src/SdfModel.i"
 	@echo "... src/SdfModel.s"
+	@echo "... src/SdfModelV3.o"
+	@echo "... src/SdfModelV3.i"
+	@echo "... src/SdfModelV3.s"
 	@echo "... src/nbvc_ray_generation.o"
 	@echo "... src/nbvc_ray_generation.i"
 	@echo "... src/nbvc_ray_generation.s"
+	@echo "... src/nbvc_ray_generationV3_beforeclean.o"
+	@echo "... src/nbvc_ray_generationV3_beforeclean.i"
+	@echo "... src/nbvc_ray_generationV3_beforeclean.s"
 .PHONY : help
 
 

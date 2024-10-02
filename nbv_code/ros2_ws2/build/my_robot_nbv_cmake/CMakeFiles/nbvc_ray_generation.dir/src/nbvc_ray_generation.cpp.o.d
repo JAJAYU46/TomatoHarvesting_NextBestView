@@ -1079,4 +1079,13 @@ CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o: \
  /home/jajayu/open3d_install/include/open3d/t/io/sensor/realsense/RealSenseSensorConfig.h \
  /home/jajayu/open3d_install/include/open3d/visualization/webrtc_server/WebRTCWindowSystem.h \
  /home/jajayu/open3d_install/include/open3d/visualization/gui/BitmapWindowSystem.h \
- /home/jajayu/open3d_install/include/open3d/t/geometry/RaycastingScene.h
+ /home/jajayu/open3d_install/include/open3d/t/geometry/RaycastingScene.h \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp \
+ /usr/include/c++/11/cstdarg \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp
