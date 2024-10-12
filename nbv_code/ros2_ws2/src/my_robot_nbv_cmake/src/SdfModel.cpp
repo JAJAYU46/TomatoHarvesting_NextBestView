@@ -26,6 +26,19 @@ using namespace std;
 	
 // };
 
+//for debug mode
+
+
+// #define NDEBUG //預設都會沒有define這個, 以後刪掉這個要控制就是控制若是沒define這個就怎
+
+#define DEBUG_MODE true
+
+// #ifndef NDEBUG
+//     #define DEBUG_MODE true
+// #else
+//     #define DEBUG_MODE false
+// #endif
+
 SdfModel::SdfModel(std::shared_ptr<open3d::geometry::PointCloud> pcd, float radius, int num_points)
     : pcd_(pcd), radius_(radius), num_points_(num_points) {
         
@@ -150,18 +163,33 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
         open3d::core::SizeVector shape = {1, 3};
         auto point_q_formed = open3d::core::Tensor(point_values, shape, open3d::core::Dtype::Float32);
         auto signed_distance = scene_.ComputeSignedDistance(point_q_formed);
-        cout<< std::endl<< "sdf value:"<< signed_distance.Item<float>()<< std::endl;
+        
+        
+        
+        if (DEBUG_MODE) {
+            // Add code you want only in debug mode here
+            cout<< std::endl<< "sdf value:"<< signed_distance.Item<float>()<< std::endl;
+        }
+        
         // auto occupancy = scene_.ComputeOccupancy(point_q_formed);
         if (signed_distance.Item<float>() <= 0.05) {  // Inside the mesh //0.038要是in
             query_points_in.push_back(point_q);////////////////////////
             AddPoint(point_q.cast<double>(), Eigen::Vector3d(1.0, 0.0, 0.0));  // Red
             //means inside the surface
-            cout<<"in"<< std::endl;
+            
+            if (DEBUG_MODE) {
+                // Add code you want only in debug mode here
+                cout<<"in"<< std::endl;
+            }
+            
             countPoint[0]+=1;
         } else {
             query_points_out.push_back(point_q);////////////////////////
             AddPoint(point_q.cast<double>(), Eigen::Vector3d(0.0, 0.0, 1.0));  // Blue
-            cout<<"out"<< std::endl;
+            if (DEBUG_MODE) {
+                // Add code you want only in debug mode here
+                cout<<"out"<< std::endl;
+            }
             countPoint[1]+=1;
             
         }

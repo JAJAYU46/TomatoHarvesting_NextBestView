@@ -382,20 +382,31 @@ class MyNode : public rclcpp::Node
                         // octomap::point3d direction(10, 0, 2.5); // Define the direction of the ray
                         // octomap::point3d hitPoint;
 
+
+                        // octree->setOccupancyThres(0.2);  // Set occupancy threshold (default is 0.5)
+                        // octree->setClampingThresMin(0.12);  // Minimum clamping threshold
+                        // octree->setClampingThresMax(0.97);  // Maximum
+
+
+
+
                         //[從這裡建立SdfModel]一個model就是要處理的一個"ModelScene"
                         SdfModel ModelScene(open3d_cloud_, 0.2f, 5000); //這個pcd是要從另一個topic讀過來
                         
                         vector<float> modelCenter = ModelScene.GetModelCenter();
                         octomap::point3d modelCenterOctomap_pcd = {modelCenter[0], modelCenter[1], modelCenter[2]};
-                        // std::vector<octomap::point3d> origins = RandomPoint(modelCenterOctomap_pcd , 5, 2); //中心座標, 點數, 長度
-                        std::vector<octomap::point3d> origins = {{0,0,0},{1,-0.5,0}};
+
+
+                        std::vector<octomap::point3d> origins = RandomPoint(modelCenterOctomap_pcd , 20, 0.5); //中心座標, 點數, 長度
+                        // std::vector<octomap::point3d> origins = {{0,0,0},{1,-0.5,0.15}};//{0,0,0},{1,-0.5,0.15}};//{1,-0.5,0}
                         int id_k=0;
-                        int id_t=100;
+                        
                         int id_l=200;
+                        int id_t=400;
                         for (const auto& origin : origins) {
                             id_k++;
-                            id_t++;
                             id_l++;
+                            id_t++;
                             // octomap::point3d origin(0.0, 0.0, 0.0); // Define the starting point of the ray
 
                             // // Create a vector of directions
@@ -415,7 +426,7 @@ class MyNode : public rclcpp::Node
                             //     };
 
                             //Generate Random Rays (find random end points)
-                            std::vector<octomap::point3d> directions = RandomPoint_Direction(origin, 100, 0.5, modelCenterOctomap_pcd); //modelCenterOctomap_pcd其實不用太長, 反正它只是個方向
+                            std::vector<octomap::point3d> directions = RandomPoint_Direction(origin, 50, 0.1, modelCenterOctomap_pcd); //modelCenterOctomap_pcd其實不用太長0.5, 反正它只是個方向
                             
                             // Vector to store pairs of directions and their corresponding hit points
                             // std::vector<std::pair<octomap::point3d, octomap::point3d>> rays_and_hits;
@@ -425,13 +436,18 @@ class MyNode : public rclcpp::Node
                             for (const auto& direction : directions) {
 
                                 octomap::point3d hitPoint;
-                                bool hit = octree->castRay(origin, direction, hitPoint, true);
+
+                                octomap::point3d realdirection(direction.x() - origin.x(), direction.y() - origin.y(), direction.z() - origin.z()); //<Debug8> 注意, casrRay是要傳進去"realdirection"'向量', 你現在RandomPointDirection算出來的是endpoint不是向量, 因為你publish_any_ray也是傳入一排的endpoint所以綠綠看起才是對的, 但實際計算用的藍藍是錯的
+                                // octomap::point3d greendirection(realdirection.x() + origin.x(), realdirection.y() + origin.y(), realdirection.z() + origin.z());
+                                // bool hit = octree->castRay(origin, direction, hitPoint, true);
+                                bool hit = octree->castRay(origin, realdirection, hitPoint, true);//<Debug8>
                                 RCLCPP_INFO(this->get_logger(), "Direction: (%f, %f, %f)", direction.x(), direction.y(), direction.z());
                                 if (hit) {
                                     RCLCPP_INFO(this->get_logger(), "First hit at: (%f, %f, %f)", hitPoint.x(), hitPoint.y(), hitPoint.z());
                                     // rays_and_hits.push_back(std::make_pair(direction, hitPoint));  // Store the direction and hit point
                                     hitpointV.push_back(hitPoint);
                                     directionsV.push_back(direction);
+                                    // directionsV.push_back(greendirection);
                                     RCLCPP_INFO(this->get_logger(), "Direction2: (%f, %f, %f)", direction.x(), direction.y(), direction.z());
                                     
                                 } else {
@@ -439,7 +455,9 @@ class MyNode : public rclcpp::Node
                                     // If no hit is detected, you can choose to push some default hitPoint or skip it
                                     // rays_and_hits.push_back(std::make_pair(direction, octomap::point3d(0, 0, 0)));  // Default hit point if no hit is detected
                                     // hitpointV.push_back(octomap::point3d(0, 0, 0));
+                                    // hitpointV.push_back(hitPoint);////////////////之後要刪
                                     directionsV.push_back(direction);
+                                    // directionsV.push_back(greendirection);
                                     RCLCPP_INFO(this->get_logger(), "Direction3: (%f, %f, %f)", direction.x(), direction.y(), direction.z());
                                 }
                             }
@@ -470,18 +488,25 @@ class MyNode : public rclcpp::Node
                             // std::vector<Eigen::Vector3f> eigen_hitpoints = convertToEigenVector(directions);//directions
                             ModelScene.ComputeSDF(eigen_hitpoints);//看現在總共有幾個點要看（因為現在是輸入hitpoint現在就是要看這些打到的點有幾個會在surface內)
                             array<int, 2> countIn=ModelScene.ShowInPointCount();//會回傳現在有幾個點在surface內
+
+                            int gain=countIn[0]*1;
                             RCLCPP_INFO(this->get_logger(), "There are: (%d) points in the surface", countIn[0]);
                             RCLCPP_INFO(this->get_logger(), "There are: (%d) points out the surface", countIn[1]);
+                            
+                            RCLCPP_INFO(this->get_logger(), "===============================================");
+                            RCLCPP_INFO(this->get_logger(), "The gain for candidate view at (%f, %f, %f) is %d", origin.x(), origin.y(), origin.z(), gain);
+                            RCLCPP_INFO(this->get_logger(), "===============================================");
+                            
                             std::vector<Eigen::Vector3f> query_points_in = ModelScene.ShowInQueryPoints();
                             std::vector<Eigen::Vector3f> query_points_out = ModelScene.ShowOutQueryPoints();
                             
                             // Call the conversion function
                             std::vector<octomath::Vector3> converted_points = convertEigenToOctomap(query_points_in);
                             std::vector<octomath::Vector3> converted_points_out = convertEigenToOctomap(query_points_out);
-                            // publish_any_ray_marker(origin, converted_points_out, id_k, {0,0,1}, 0.005);
-                            publish_any_ray_marker(origin, hitpointV, id_k, {0,0,1}, 0.01); //目標, 就是看怎麼讓hitpoint 有備hit 到, 現在是octomap在icp pointcloud會合近來的那邊的grid就是沒辦法hit
+                            // publish_any_ray_marker(origin, converted_points_out, id_k, {0,0,1}, 0.001);///////////////////////////////////////////////////////////////////////////////////////////////好像又可以了<待處理>不知為啥有三個id組都用就會綠色只能顯示一個的
+                            // publish_any_ray_marker(origin, hitpointV, id_k, {0,0,1}, 0.01); //目標, 就是看怎麼讓hitpoint 有備hit 到, 現在是octomap在icp pointcloud會合近來的那邊的grid就是沒辦法hit
                             //hit到的要變成藍色
-                            // publish_any_ray_marker(origin, converted_points, id_l, {1,0,0}, 0.01);
+                            publish_any_ray_marker(origin, converted_points, id_l, {1,0,0}, 0.005);
 
 
                             //for debug
@@ -490,9 +515,9 @@ class MyNode : public rclcpp::Node
                             std::vector<octomap::point3d> endPoints_x = {octomap::point3d(10, 0, 0)};
                             std::vector<octomap::point3d> endPoints_y = {octomap::point3d(0, 10, 0)};
                             std::vector<octomap::point3d> endPoints_z = {octomap::point3d(0, 0, 10)};
-                            publish_any_ray_marker(octomap::point3d(0,0,0), endPoints_x, 6, {1,0,0}, 0.01);
-                            publish_any_ray_marker(octomap::point3d(0,0,0), endPoints_y, 7, {1,1,0}, 0.01);
-                            publish_any_ray_marker(octomap::point3d(0,0,0), endPoints_z, 8, {0,0,0.5}, 0.01);
+                            publish_any_ray_marker(octomap::point3d(0,0,0), endPoints_x, 1000, {1,0,0}, 0.005);
+                            publish_any_ray_marker(octomap::point3d(0,0,0), endPoints_y, 1001, {1,1,0}, 0.005);
+                            publish_any_ray_marker(octomap::point3d(0,0,0), endPoints_z, 1002, {0,0,0.5}, 0.005);
                             // std::vector<octomap::point3d> endPoints_modelCenterOctomap_pcd = {modelCenterOctomap_pcd, {-1,0,0}};
                             // publish_any_ray_marker(octomap::point3d(0,0,0), endPoints_modelCenterOctomap_pcd, 8, {1,0,1}, 0.06);
                             
@@ -528,13 +553,19 @@ class MyNode : public rclcpp::Node
             std::uniform_real_distribution<> dist_phi(-M_PI, M_PI);//整圈////////////////////
             std::uniform_real_distribution<> dist_r(radius_, radius_);
             // std::uniform_real_distribution<> dist_theta(-1*M_PI, 1*M_PI); //如果是0的話就是z平面上
-            std::uniform_real_distribution<> dist_theta(-0.5, 0.5);
+            // std::uniform_real_distribution<> dist_theta(0, 0.5);//只要上半球
+            std::uniform_real_distribution<> dist_cos_theta(0, 1.0); //<chatgpt2>
+
+
+
             for (int i = 0; i < pointNum; ++i) {
                 RCLCPP_INFO(this->get_logger(), "%d-th ray", i);
                 RCLCPP_INFO(this->get_logger(), " ");
                 float phi = dist_phi(gen);
                 float r = dist_r(gen);
-                float theta=acos(dist_theta(gen));
+                // float theta=acos(dist_theta(gen)); //<chatgpt2> 說這樣會不能uniform, 因為acos不是uniform 的, 所以改用上下面chatgpt2
+                float theta = acos(dist_cos_theta(gen)); //<chatgpt2>
+
                 
                 float x = center_.x() + r * sin(theta)*cos(phi);
                 float y = center_.y() + r * sin(theta)*sin(phi);
@@ -548,7 +579,7 @@ class MyNode : public rclcpp::Node
 
         }
 
-        std::vector<octomap::point3d> RandomPoint_Direction(octomap::point3d center_, int pointNum, double radius_, octomap::point3d torwordP={1,0,0}){ //gazebo座標最前方是y
+        std::vector<octomap::point3d> RandomPoint_Direction(octomap::point3d center_, int pointNum, double radius_, octomap::point3d torwordP={1,0,0}){ //gazebo座標最前方是yx?？x?
             //RandomPoint_Direction 以center_ torwardP vector 為中心去建立那個ray
             std::vector<octomap::point3d> RayEndPoints;
 
@@ -556,7 +587,7 @@ class MyNode : public rclcpp::Node
             //  octomap::point3d torwordP={1,0,0};
             //現在中心是沿著x軸去generate 那個ray, 但是我希望是以center_ torwardP vector 為中心去建立那個ray, 往下什麼的也是, 所以要把這些end point做旋轉（因為往下也是, 所以要用旋轉的)
             Eigen::Vector3f direction(torwordP.x() - center_.x(), torwordP.y() - center_.y(), torwordP.z() - center_.z());
-            direction.normalize(); // Normalize the direction vector
+            // direction.normalize(); // Normalize the direction vector
 
             // Direction vector components
             float dx = torwordP.x() - center_.x();
@@ -570,7 +601,8 @@ class MyNode : public rclcpp::Node
             // if(){
             //     float torwardP_phi = std::atan(dy/dx);  // atan2 gives phi in the range [-PI, PI]
             // }
-            float torwardP_phi=atan(dy/dx);
+            // float torwardP_phi=atan(dy/dx);
+            float torwardP_phi = atan2(dy, dx);  // <Debug9> 加了綠綠的方向就正常了ㄟ好神奇喔<chatgpt> 說這樣可以generate整個circleatan2 handles full circular range
             // if(dx==0){
             //     torwardP_phi = M_PI/2;  // atan2 gives phi in the range [-PI, PI]
             // }else{
@@ -583,16 +615,20 @@ class MyNode : public rclcpp::Node
             // float torwardP_theta = std::acos(dz / r); // acos gives theta in the range [0, PI]
             float torwardP_theta = -asin(dz/r);
             //==============================
-
+            //[structured ray] <待處理> 還沒改, 原本的random ray已經留在下方了
+            
             std::random_device rd;
             std::mt19937 gen(rd());
-            // std::uniform_real_distribution<> dist_phi(-M_PI/4, M_PI/4);//0, 2 * M_PI 0, M_PI: 只有前面
-            std::uniform_real_distribution<> dist_phi(0, 0);
+            std::uniform_real_distribution<> dist_phi(-M_PI/4, M_PI/4);//0, 2 * M_PI 0, M_PI: 只有前面
+            // std::uniform_real_distribution<> dist_phi(0, 0);
             // std::uniform_real_distribution<> dist_phi(-M_PI, M_PI);//整圈////////////////////
             std::uniform_real_distribution<> dist_r(radius_, radius_);
             // std::uniform_real_distribution<> dist_theta(-1*M_PI, 1*M_PI); //如果是0的話就是z平面上
-            // std::uniform_real_distribution<> dist_theta(-0.5, 0.5);
-            std::uniform_real_distribution<> dist_theta(0, 0);
+            std::uniform_real_distribution<> dist_theta(-0.5, 0.5);
+            // std::uniform_real_distribution<> dist_theta(0, 0);
+
+            // float raytheta
+            // RayEndPoints.push_back(octomap::point3d(center_.x(), center_.y(), center_.z()));//////////////////////////////////
             for (int i = 0; i < pointNum; ++i) {
                 RCLCPP_INFO(this->get_logger(), "%d-th ray", i);
                 RCLCPP_INFO(this->get_logger(), " ");
@@ -608,6 +644,34 @@ class MyNode : public rclcpp::Node
                 RayEndPoints.push_back(octomap::point3d(x, y, z));
             }
 
+            //=======================================
+            //[random ray]
+            // std::random_device rd;
+            // std::mt19937 gen(rd());
+            // std::uniform_real_distribution<> dist_phi(-M_PI/4, M_PI/4);//0, 2 * M_PI 0, M_PI: 只有前面
+            // // std::uniform_real_distribution<> dist_phi(0, 0);
+            // // std::uniform_real_distribution<> dist_phi(-M_PI, M_PI);//整圈////////////////////
+            // std::uniform_real_distribution<> dist_r(radius_, radius_);
+            // // std::uniform_real_distribution<> dist_theta(-1*M_PI, 1*M_PI); //如果是0的話就是z平面上
+            // std::uniform_real_distribution<> dist_theta(-0.5, 0.5);
+            // // std::uniform_real_distribution<> dist_theta(0, 0);
+            // // RayEndPoints.push_back(octomap::point3d(center_.x(), center_.y(), center_.z()));//////////////////////////////////
+            // for (int i = 0; i < pointNum; ++i) {
+            //     RCLCPP_INFO(this->get_logger(), "%d-th ray", i);
+            //     RCLCPP_INFO(this->get_logger(), " ");
+            //     float phi = dist_phi(gen)+torwardP_phi;
+            //     float r = dist_r(gen);
+            //     float theta=acos(dist_theta(gen))+torwardP_theta;
+                
+            //     float x = center_.x() + r * sin(theta)*cos(phi);
+            //     float y = center_.y() + r * sin(theta)*sin(phi);
+            //     float z = center_.z() + r * cos(theta);
+
+            //     // RayEndPoints.emplace_back(Eigen::Vector3f(x, y, z));
+            //     RayEndPoints.push_back(octomap::point3d(x, y, z));
+            // }
+            //=============================================================
+            //這邊製造的是ray end points 不是direction!！要剪掉自己才會變成direction!！!
             return RayEndPoints;
 
         }
