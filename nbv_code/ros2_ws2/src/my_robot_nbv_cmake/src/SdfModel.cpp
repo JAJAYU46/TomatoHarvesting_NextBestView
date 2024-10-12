@@ -152,14 +152,14 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
         auto signed_distance = scene_.ComputeSignedDistance(point_q_formed);
         cout<< std::endl<< "sdf value:"<< signed_distance.Item<float>()<< std::endl;
         // auto occupancy = scene_.ComputeOccupancy(point_q_formed);
-        if (signed_distance.Item<float>() <= 0) {  // Inside the mesh
+        if (signed_distance.Item<float>() <= 0.05) {  // Inside the mesh //0.038要是in
             query_points_in.push_back(point_q);////////////////////////
             AddPoint(point_q.cast<double>(), Eigen::Vector3d(1.0, 0.0, 0.0));  // Red
             //means inside the surface
             cout<<"in"<< std::endl;
             countPoint[0]+=1;
         } else {
-            query_points_in.push_back(point_q);////////////////////////
+            query_points_out.push_back(point_q);////////////////////////
             AddPoint(point_q.cast<double>(), Eigen::Vector3d(0.0, 0.0, 1.0));  // Blue
             cout<<"out"<< std::endl;
             countPoint[1]+=1;
@@ -177,6 +177,10 @@ array<int, 2> SdfModel::ShowInPointCount(){ //會回傳目前現在有幾個點�
 
 vector<Eigen::Vector3f> SdfModel::ShowInQueryPoints(){
     return query_points_in;
+}
+
+vector<Eigen::Vector3f> SdfModel::ShowOutQueryPoints(){
+    return query_points_out;
 }
 
 vector<float> SdfModel::GetModelCenter(){

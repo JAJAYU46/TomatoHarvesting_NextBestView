@@ -1,0 +1,32 @@
+[0mCMake Deprecation Warning at /home/jajayu/open3d_install/lib/cmake/Open3D/Open3DConfig.cmake:18 (cmake_policy):
+  The OLD behavior for policy CMP0072 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+Call Stack (most recent call first):
+  CMakeLists.txt:43 (find_package)
+
+[0m
+[33mCMake Warning at CMakeLists.txt:145 (TARGET_LINK_LIBRARIES):
+  Target "open3d_conversions" requests linking to directory
+  "/usr/include/eigen3".  Targets may link only to libraries.  CMake is
+  dropping the item.
+
+[0m
+[33mCMake Warning at CMakeLists.txt:145 (TARGET_LINK_LIBRARIES):
+  Target "nbvc_ray_generation" requests linking to directory
+  "/usr/include/eigen3".  Targets may link only to libraries.  CMake is
+  dropping the item.
+
+[0m
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:25:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/point_cloud2_iterator.h: No such file or directory
+   25 | #include [01;31m[K<sensor_msgs/point_cloud2_iterator.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/open3d_conversions.dir/build.make:76: CMakeFiles/open3d_conversions.dir/src/open3d_conversions.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:250: CMakeFiles/open3d_conversions.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

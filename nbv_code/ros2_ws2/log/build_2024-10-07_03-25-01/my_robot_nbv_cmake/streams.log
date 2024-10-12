@@ -1,0 +1,52 @@
+[0.022s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8
+[0.149s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.467s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[0.536s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.542s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.556s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.579s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.607s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.722s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.727s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.922s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.169s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.350s] -- Found octomap_msgs: 2.0.0 (/opt/ros/humble/share/octomap_msgs/cmake)
+[1.445s] -- Found visualization_msgs: 4.2.4 (/opt/ros/humble/share/visualization_msgs/cmake)
+[1.609s] -- Found tf2: 0.25.7 (/opt/ros/humble/share/tf2/cmake)
+[1.644s] -- Found tf2_ros: 0.25.7 (/opt/ros/humble/share/tf2_ros/cmake)
+[2.166s] [0mCMake Deprecation Warning at /home/jajayu/open3d_install/lib/cmake/Open3D/Open3DConfig.cmake:18 (cmake_policy):
+[2.166s]   The OLD behavior for policy CMP0072 will be removed from a future version
+[2.166s]   of CMake.
+[2.166s] 
+[2.166s]   The cmake-policies(7) manual explains that the OLD behaviors of all
+[2.166s]   policies are deprecated and that a policy should be set to OLD only under
+[2.166s]   specific short-term circumstances.  Projects should be ported to the NEW
+[2.166s]   behavior and not rely on setting a policy to OLD.
+[2.166s] Call Stack (most recent call first):
+[2.167s]   CMakeLists.txt:49 (find_package)
+[2.167s] 
+[2.167s] [0m
+[2.169s] -- Found Open3D libraries: Open3D::Open3D;Open3D::Open3D
+[2.192s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.316s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.316s] -- Configured cppcheck include dirs: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include
+[2.316s] -- Configured cppcheck exclude dirs and/or files: 
+[2.317s] -- Added test 'lint_cmake' to check CMake code style
+[2.323s] -- Added test 'uncrustify' to check C / C++ code style
+[2.323s] -- Configured uncrustify additional arguments: 
+[2.324s] -- Added test 'xmllint' to check XML markup files
+[2.324s] -- Configuring done (2.2s)
+[2.379s] -- Generating done (0.1s)
+[2.380s] -- Build files have been written to: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake
+[2.416s] [ 25%] Built target nbvc_lib_SdfModel
+[2.417s] [ 50%] Built target SdfModelV3
+[2.442s] [ 62%] [32mBuilding CXX object CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o[0m
+[2.443s] [ 87%] Built target nbvc_ray_generationV3_beforeclean
+[3.008s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:40:10:[m[K [01;31m[Kfatal error: [m[Ktf2_eigen/tf2_eigen.h: No such file or directory
+[3.009s]    40 | #include [01;31m[K<tf2_eigen/tf2_eigen.h>[m[K // For transforming Eigen points
+[3.009s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.009s] compilation terminated.
+[3.013s] gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+[3.014s] gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+[3.014s] gmake: *** [Makefile:146: all] Error 2
+[3.033s] Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8

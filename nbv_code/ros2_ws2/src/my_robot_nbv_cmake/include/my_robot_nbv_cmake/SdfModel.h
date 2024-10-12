@@ -30,6 +30,7 @@ public:
     //==================== [Operation Function] =========================//
     array<int, 2> ShowInPointCount();
     vector<Eigen::Vector3f> ShowInQueryPoints();
+    vector<Eigen::Vector3f> ShowOutQueryPoints();
     vector<float> GetModelCenter();
     void CleanPointCount();
     void Visualize();
@@ -46,6 +47,7 @@ private:
     std::vector<Eigen::Vector3d> colors_;
     std::vector<Eigen::Vector3f> query_points_;
     std::vector<Eigen::Vector3f> query_points_in;
+    std::vector<Eigen::Vector3f> query_points_out;
 
     std::shared_ptr<open3d::geometry::TriangleMesh> mesh0_;
     open3d::t::geometry::TriangleMesh mesh_;

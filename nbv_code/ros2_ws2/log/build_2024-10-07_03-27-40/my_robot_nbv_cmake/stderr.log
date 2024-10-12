@@ -1,0 +1,10 @@
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In constructor ‘[01m[KMyNode::MyNode()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:51:51:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KMyNode[m[K’ does not have any field named ‘[01m[Ktf_listener_[m[K’
+   51 |         : Node("nbvc_ray_generation"), count_(0), [01;31m[Ktf_listener_[m[K(tf_buffer_) //node的名稱
+      |                                                   [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:51:64:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_buffer_[m[K’ was not declared in this scope
+   51 |         : Node("nbvc_ray_generation"), count_(0), tf_listener_([01;31m[Ktf_buffer_[m[K) //node的名稱
+      |                                                                [01;31m[K^~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

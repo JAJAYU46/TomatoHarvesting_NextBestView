@@ -1,0 +1,20 @@
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kstd::vector<octomath::Vector3> MyNode::RandomPoint_Direction(octomap::point3d, int, double, octomap::point3d)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:303:23:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KtorwardP_phi[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  303 |             float [01;35m[KtorwardP_phi[m[K = M_PI/2;  // atan2 gives phi in the range [-PI, PI]
+      |                   [01;35m[K^~~~~~~~~~~~[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:305:23:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KtorwardP_phi[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  305 |             float [01;35m[KtorwardP_phi[m[K = std::atan(dy/dx);
+      |                   [01;35m[K^~~~~~~~~~~~[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:327:43:[m[K [01;31m[Kerror: [m[K‘[01m[KtorwardP_phi[m[K’ was not declared in this scope; did you mean ‘[01m[KtorwardP_theta[m[K’?
+  327 | i = dist_phi(gen)+[01;31m[KtorwardP_phi[m[K;
+      |                   [01;31m[K^~~~~~~~~~~~[m[K
+      |                   [32m[KtorwardP_theta[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:280:134:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KtorwordP2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  280 |  [01;35m[Koctomap::point3d torwordP2={0,1,0}[m[K){ //gazebo座標最前方是y
+      |  [01;35m[K~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

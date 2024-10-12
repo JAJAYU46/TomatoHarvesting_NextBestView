@@ -28,6 +28,15 @@ find_package(geometry_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIRS})
 #==================
+#for trun pointcloud2 to open3d pcd
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+include_directories(${TF2_INCLUDE_DIRS})
+include_directories(${TF2_ROS_INCLUDE_DIRS})
+find_package(tf2_geometry_msgs REQUIRED)
+find_package(tf2_eigen REQUIRED)
+
+
 
 #for Sdf_Model
 #==================
@@ -38,10 +47,12 @@ set(Open3D_INCLUDE_DIRS ${HOME}/open3d_install/include)
 
 # list(APPEND CMAKE MODULEPATH ${PROJECT_SOURCE_DIR}/cmake)
 
+
 #  Open3D
 find_package(Open3D REQUIRED)
 include_directories(${Open3D_INCLUDE_DIRS})
 include_directories(include)
+# include_directories(${open3d_conversions_INCLUDE_DIRS})
 # include_directories(${Open3D_CORE_DIRS})
 # Manually specify the include directory
 # include_directories(/home/jajayu/open3d_install/include)
@@ -62,7 +73,9 @@ if (Open3D_FOUND)
 else()
     message(STATUS "Open3D not found")
 endif()
-
+#==================
+# for convert open3d pcd to 
+# find_package(open3d_conversions REQUIRED)
 
 
 #==================
@@ -78,8 +91,9 @@ add_executable(nbvc_ray_generationV3_beforeclean src/nbvc_ray_generationV3_befor
 
 # <Debug> 現在SdfModel.cpp是要當一個class library,  不是要件一個executable, 它沒有main!
 add_library(nbvc_lib_SdfModel src/SdfModel.cpp)
-
-
+# =============================================
+# add_library(open3d_conversions src/open3d_conversions.cpp)
+# =============================================
 
 #####
 ament_target_dependencies(nbvc_ray_generation #msg的是加這種的
@@ -88,7 +102,10 @@ ament_target_dependencies(nbvc_ray_generation #msg的是加這種的
   std_msgs
   visualization_msgs
   geometry_msgs
-
+  tf2
+  tf2_ros
+  tf2_geometry_msgs
+  tf2_eigen
   #for subsribe pcd topic
   sensor_msgs
 )# ${OCTOMAP_LIBRARIES}) #說這個executable 裡面有用到(dependency)rclcpp這個package
@@ -96,6 +113,10 @@ TARGET_LINK_LIBRARIES(nbvc_ray_generation #好像自己額外的要用這個加�
     nbvc_lib_SdfModel    
     ${OCTOMAP_LIBRARIES}
     ${Open3D_LIBRARIES}
+    # open3d_conversions
+    # ${TF2_LIBRARIES}
+    # ${TF2_ROS_LIBRARIES}
+    
 
 )
 
@@ -129,7 +150,20 @@ ament_target_dependencies(nbvc_lib_SdfModel #msg的是加這種的
 TARGET_LINK_LIBRARIES(nbvc_lib_SdfModel #好像自己額外的要用這個加才可以
     ${Open3D_LIBRARIES}
 )
-
+# =============================================
+# ament_target_dependencies(open3d_conversions 
+#   rclcpp 
+#   std_msgs
+#   octomap_msgs
+#   visualization_msgs
+#   geometry_msgs
+# )
+# TARGET_LINK_LIBRARIES(open3d_conversions 
+#   ${Open3D_LIBRARIES}
+#   ${EIGEN3_INCLUDE_DIR}
+  
+# )
+# =============================================
 ament_target_dependencies(SdfModelV3 #msg的是加這種的
   rclcpp 
   std_msgs
@@ -149,6 +183,7 @@ install(TARGETS
   nbvc_ray_generationV3_beforeclean
   nbvc_lib_SdfModel
   SdfModelV3
+  # open3d_conversions
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -1,0 +1,32 @@
+[0mCMake Deprecation Warning at /home/jajayu/open3d_install/lib/cmake/Open3D/Open3DConfig.cmake:18 (cmake_policy):
+  The OLD behavior for policy CMP0072 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+Call Stack (most recent call first):
+  CMakeLists.txt:43 (find_package)
+
+[0m
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:36[m[K:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:42:66:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointCloud2[m[K’ has not been declared
+   42 | pen3dToRos(const open3d::geometry::PointCloud& pointcloud, [01;31m[Ksensor_msgs[m[K::PointCloud2& ros_pc2,
+      |                                                            [01;31m[K^~~~~~~~~~~[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:53:37:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2ConstPtr[m[K’ in namespace ‘[01m[Ksensor_msgs[m[K’ does not name a type; did you mean ‘[01m[KPointCloud2Modifier[m[K’?
+   53 | void rosToOpen3d(const sensor_msgs::[01;31m[KPointCloud2ConstPtr[m[K& ros_pc2, open3d::geometry::PointCloud& o3d_pc,
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KPointCloud2Modifier[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:64:69:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointCloud2[m[K’ has not been declared
+   64 | 3dToRos(const open3d::t::geometry::PointCloud& pointcloud, [01;31m[Ksensor_msgs[m[K::PointCloud2& ros_pc2,
+      |                                                            [01;31m[K^~~~~~~~~~~[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:74:37:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2ConstPtr[m[K’ in namespace ‘[01m[Ksensor_msgs[m[K’ does not name a type; did you mean ‘[01m[KPointCloud2Modifier[m[K’?
+   74 | void rosToOpen3d(const sensor_msgs::[01;31m[KPointCloud2ConstPtr[m[K& ros_pc2, open3d::t::geometry::PointCloud& o3d_pc,
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KPointCloud2Modifier[m[K
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

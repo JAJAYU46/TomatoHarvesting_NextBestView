@@ -1,0 +1,8 @@
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::pointcloud_callback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:129:99:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst SharedPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Kheader[m[K’
+  129 | d2 ros_cloud = open3dToRos2PointCloud2(*open3d_cloud_, msg.[01;31m[Kheader[m[K.frame_id);
+      |                                                            [01;31m[K^~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

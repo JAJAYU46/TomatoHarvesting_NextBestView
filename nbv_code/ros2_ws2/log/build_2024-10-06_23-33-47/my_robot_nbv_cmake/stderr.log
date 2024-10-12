@@ -1,0 +1,34 @@
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::octomap_callback(octomap_msgs::msg::Octomap_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:221:86:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Koctomap::point3d[m[K’ {aka ‘[01m[Koctomath::Vector3[m[K’} to ‘[01m[Kstd::vector<octomath::Vector3>&[m[K’
+  221 | (0,0,0), octomap::[01;31m[Kpoint3d(10,0,0)[m[K, 6, {1,0,0}, 0.5);
+      |                   [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                   [01;31m[K|[m[K
+      |                   [01;31m[Koctomap::point3d {aka octomath::Vector3}[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:460:100:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kvoid MyNode::publish_any_ray_marker(const point3d&, std::vector<octomath::Vector3>&, int, const std::array<double, 3>&, double)[m[K’
+  460 | [01;36m[Kctomap::point3d> &endPoints[m[K, int id=0,const std::array<double, 3> &marker_color={1,0,0}, const double x_scale=0.03) {
+      | [01;36m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:222:86:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Koctomap::point3d[m[K’ {aka ‘[01m[Koctomath::Vector3[m[K’} to ‘[01m[Kstd::vector<octomath::Vector3>&[m[K’
+  222 | (0,0,0), octomap::[01;31m[Kpoint3d(0,10,0)[m[K, 7, {1,1,0}, 0.5);
+      |                   [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                   [01;31m[K|[m[K
+      |                   [01;31m[Koctomap::point3d {aka octomath::Vector3}[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:460:100:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kvoid MyNode::publish_any_ray_marker(const point3d&, std::vector<octomath::Vector3>&, int, const std::array<double, 3>&, double)[m[K’
+  460 | [01;36m[Kctomap::point3d> &endPoints[m[K, int id=0,const std::array<double, 3> &marker_color={1,0,0}, const double x_scale=0.03) {
+      | [01;36m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:223:86:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Koctomap::point3d[m[K’ {aka ‘[01m[Koctomath::Vector3[m[K’} to ‘[01m[Kstd::vector<octomath::Vector3>&[m[K’
+  223 | (0,0,0), octomap::[01;31m[Kpoint3d(0,0,10)[m[K, 8, {0,0,0.5}, 0.5);
+      |                   [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                   [01;31m[K|[m[K
+      |                   [01;31m[Koctomap::point3d {aka octomath::Vector3}[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:460:100:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kvoid MyNode::publish_any_ray_marker(const point3d&, std::vector<octomath::Vector3>&, int, const std::array<double, 3>&, double)[m[K’
+  460 | [01;36m[Kctomap::point3d> &endPoints[m[K, int id=0,const std::array<double, 3> &marker_color={1,0,0}, const double x_scale=0.03) {
+      | [01;36m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

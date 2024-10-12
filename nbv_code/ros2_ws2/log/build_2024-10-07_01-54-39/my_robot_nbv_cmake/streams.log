@@ -1,0 +1,741 @@
+[0.016s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8
+[0.155s] [ 20%] Built target nbvc_lib_SdfModel
+[0.157s] [ 40%] Built target SdfModelV3
+[0.160s] [ 50%] [32mBuilding CXX object CMakeFiles/open3d_conversions.dir/src/open3d_conversions.cpp.o[0m
+[0.180s] [ 70%] Built target nbvc_ray_generationV3_beforeclean
+[4.588s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.588s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:42:66:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointCloud2[m[K’ has not been declared
+[4.588s]    42 | pen3dToRos(const open3d::geometry::PointCloud& pointcloud, [01;31m[Ksensor_msgs[m[K::PointCloud2& ros_pc2,
+[4.588s]       |                                                            [01;31m[K^~~~~~~~~~~[m[K
+[4.589s] 
+[4.589s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:53:37:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2ConstPtr[m[K’ in namespace ‘[01m[Ksensor_msgs[m[K’ does not name a type; did you mean ‘[01m[KPointCloud2Modifier[m[K’?
+[4.589s]    53 | void rosToOpen3d(const sensor_msgs::[01;31m[KPointCloud2ConstPtr[m[K& ros_pc2, open3d::geometry::PointCloud& o3d_pc,
+[4.589s]       |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.589s]       |                                     [32m[KPointCloud2Modifier[m[K
+[4.589s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:64:69:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointCloud2[m[K’ has not been declared
+[4.589s]    64 | 3dToRos(const open3d::t::geometry::PointCloud& pointcloud, [01;31m[Ksensor_msgs[m[K::PointCloud2& ros_pc2,
+[4.589s]       |                                                            [01;31m[K^~~~~~~~~~~[m[K
+[4.589s] 
+[4.589s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:74:37:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2ConstPtr[m[K’ in namespace ‘[01m[Ksensor_msgs[m[K’ does not name a type; did you mean ‘[01m[KPointCloud2Modifier[m[K’?
+[4.589s]    74 | void rosToOpen3d(const sensor_msgs::[01;31m[KPointCloud2ConstPtr[m[K& ros_pc2, open3d::t::geometry::PointCloud& o3d_pc,
+[4.589s]       |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.590s]       |                                     [32m[KPointCloud2Modifier[m[K
+[4.590s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:18:66:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointCloud2[m[K’ has not been declared
+[4.590s]    18 | pen3dToRos(const open3d::geometry::PointCloud& pointcloud, [01;31m[Ksensor_msgs[m[K::PointCloud2& ros_pc2,
+[4.590s]       |                                                            [01;31m[K^~~~~~~~~~~[m[K
+[4.590s] 
+[4.590s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:[m[K In function ‘[01m[Kvoid open3d_conversions::open3dToRos(const open3d::geometry::PointCloud&, int&, std::string)[m[K’:
+[4.590s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:21:52:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Modifier::PointCloud2Modifier(int&)[m[K’
+[4.590s]    21 |   sensor_msgs::PointCloud2Modifier modifier(ros_pc2[01;31m[K)[m[K;
+[4.590s]       |                                                    [01;31m[K^[m[K
+[4.591s] In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:329[m[K,
+[4.591s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.591s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.592s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp:106:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Modifier::PointCloud2Modifier(sensor_msgs::msg::PointCloud2&)[m[K’
+[4.592s]   106 | inline [01;36m[KPointCloud2Modifier[m[K::PointCloud2Modifier(
+[4.592s]       |        [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.592s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp:107:35:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.592s]   107 |   [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K)
+[4.592s]       |   [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.592s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.592s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.592s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Modifier::PointCloud2Modifier(const sensor_msgs::PointCloud2Modifier&)[m[K’
+[4.593s]   104 | class [01;36m[KPointCloud2Modifier[m[K
+[4.593s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.593s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Kconst sensor_msgs::PointCloud2Modifier&[m[K’
+[4.593s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Modifier::PointCloud2Modifier(sensor_msgs::PointCloud2Modifier&&)[m[K’
+[4.593s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::PointCloud2Modifier&&[m[K’
+[4.593s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:31:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kheader[m[K’ in ‘[01m[Kros_pc2[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+[4.593s]    31 |   ros_pc2.[01;31m[Kheader[m[K.frame_id = frame_id;
+[4.594s]       |           [01;31m[K^~~~~~[m[K
+[4.594s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:32:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.594s]    32 |   sensor_msgs::PointCloud2Iterator<float> ros_pc2_x(ros_pc2, "x"[01;31m[K)[m[K;
+[4.594s]       |                                                                 [01;31m[K^[m[K
+[4.594s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.594s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.594s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.594s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.594s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.595s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.595s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.595s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.595s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)[m[K’
+[4.595s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.595s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.595s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.596s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)[m[K’
+[4.596s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.596s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:33:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.596s]    33 |   sensor_msgs::PointCloud2Iterator<float> ros_pc2_y(ros_pc2, "y"[01;31m[K)[m[K;
+[4.596s]       |                                                                 [01;31m[K^[m[K
+[4.596s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.596s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.596s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.596s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.596s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.596s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.596s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.596s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.597s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)[m[K’
+[4.597s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.597s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.597s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.598s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)[m[K’
+[4.598s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.598s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:34:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.598s]    34 |   sensor_msgs::PointCloud2Iterator<float> ros_pc2_z(ros_pc2, "z"[01;31m[K)[m[K;
+[4.598s]       |                                                                 [01;31m[K^[m[K
+[4.598s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.598s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.598s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.598s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.598s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.598s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.598s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.598s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.598s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)[m[K’
+[4.598s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.598s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.599s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.599s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)[m[K’
+[4.599s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.599s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:37:69:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.599s]    37 |     sensor_msgs::PointCloud2Iterator<uint8_t> ros_pc2_r(ros_pc2, "r"[01;31m[K)[m[K;
+[4.599s]       |                                                                     [01;31m[K^[m[K
+[4.599s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.599s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.599s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.599s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.599s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.599s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.600s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.600s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.600s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)[m[K’
+[4.600s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.600s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.600s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.600s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)[m[K’
+[4.600s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.600s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:38:69:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.601s]    38 |     sensor_msgs::PointCloud2Iterator<uint8_t> ros_pc2_g(ros_pc2, "g"[01;31m[K)[m[K;
+[4.601s]       |                                                                     [01;31m[K^[m[K
+[4.601s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.601s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.601s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.601s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.601s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.601s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.601s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.601s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.602s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)[m[K’
+[4.602s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.602s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.602s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.602s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)[m[K’
+[4.603s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.603s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:39:69:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.603s]    39 |     sensor_msgs::PointCloud2Iterator<uint8_t> ros_pc2_b(ros_pc2, "b"[01;31m[K)[m[K;
+[4.603s]       |                                                                     [01;31m[K^[m[K
+[4.603s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.603s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.603s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.603s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.603s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.604s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.604s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.604s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.604s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)[m[K’
+[4.604s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.604s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.604s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.604s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)[m[K’
+[4.604s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.604s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:[m[K At global scope:
+[4.604s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:65:37:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2ConstPtr[m[K’ in namespace ‘[01m[Ksensor_msgs[m[K’ does not name a type; did you mean ‘[01m[KPointCloud2Modifier[m[K’?
+[4.604s]    65 | void rosToOpen3d(const sensor_msgs::[01;31m[KPointCloud2ConstPtr[m[K& ros_pc2, open3d::geometry::PointCloud& o3d_pc,
+[4.604s]       |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.605s]       |                                     [32m[KPointCloud2Modifier[m[K
+[4.605s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:[m[K In function ‘[01m[Kvoid open3d_conversions::rosToOpen3d(const int&, open3d::geometry::PointCloud&, bool)[m[K’:
+[4.605s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:68:58:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.605s]    68 |   sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_x([01;31m[K*ros_pc2[m[K, "x");
+[4.605s]       |                                                          [01;31m[K^~~~~~~~[m[K
+[4.605s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:69:58:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.606s]    69 |   sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_y([01;31m[K*ros_pc2[m[K, "y");
+[4.606s]       |                                                          [01;31m[K^~~~~~~~[m[K
+[4.606s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:70:58:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.606s]    70 |   sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_z([01;31m[K*ros_pc2[m[K, "z");
+[4.606s]       |                                                          [01;31m[K^~~~~~~~[m[K
+[4.606s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:71:33:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.606s]    71 |   o3d_pc.points_.reserve(ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width);
+[4.606s]       |                                 [01;31m[K^~[m[K
+[4.607s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:71:51:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.607s]    71 |   o3d_pc.points_.reserve(ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth);
+[4.607s]       |                                                   [01;31m[K^~[m[K
+[4.607s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:72:14:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.608s]    72 |   if (ros_pc2[01;31m[K->[m[Kfields.size() == 3 || skip_colors == true)
+[4.608s]       |              [01;31m[K^~[m[K
+[4.608s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:74:35:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.608s]    74 |     for (size_t i = 0; i < ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)
+[4.608s]       |                                   [01;31m[K^~[m[K
+[4.608s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:74:53:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.608s]    74 |     for (size_t i = 0; i < ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)
+[4.608s]       |                                                     [01;31m[K^~[m[K
+[4.609s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:81:35:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.609s]    81 |     o3d_pc.colors_.reserve(ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width);
+[4.609s]       |                                   [01;31m[K^~[m[K
+[4.609s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:81:53:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.609s]    81 |     o3d_pc.colors_.reserve(ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth);
+[4.609s]       |                                                     [01;31m[K^~[m[K
+[4.610s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:82:16:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.610s]    82 |     if (ros_pc2[01;31m[K->[m[Kfields[3].name == "rgb")
+[4.610s]       |                [01;31m[K^~[m[K
+[4.610s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:84:64:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.610s]    84 |   sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_r([01;31m[K*ros_pc2[m[K, "r");
+[4.610s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.610s] 
+[4.610s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:85:64:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.611s]    85 |   sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_g([01;31m[K*ros_pc2[m[K, "g");
+[4.611s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.611s] 
+[4.611s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:86:64:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.611s]    86 |   sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_b([01;31m[K*ros_pc2[m[K, "b");
+[4.611s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.611s] 
+[4.611s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:88:37:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.611s]    88 |       for (size_t i = 0; i < ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width;
+[4.611s]       |                                     [01;31m[K^~[m[K
+[4.611s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:88:55:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.611s]    88 |       for (size_t i = 0; i < ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth;
+[4.612s]       |                                                       [01;31m[K^~[m[K
+[4.612s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:96:21:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.612s]    96 |     else if (ros_pc2[01;31m[K->[m[Kfields[3].name == "intensity")
+[4.612s]       |                     [01;31m[K^~[m[K
+[4.612s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:98:64:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.612s]    98 |   sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_i([01;31m[K*ros_pc2[m[K, "intensity");
+[4.612s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.612s] 
+[4.612s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:99:37:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.612s]    99 |       for (size_t i = 0; i < ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z, ++ros_pc2_i)
+[4.612s]       |                                     [01;31m[K^~[m[K
+[4.612s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:99:55:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.612s]    99 |       for (size_t i = 0; i < ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z, ++ros_pc2_i)
+[4.612s]       |                                                       [01;31m[K^~[m[K
+[4.612s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:[m[K At global scope:
+[4.612s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:107:69:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointCloud2[m[K’ has not been declared
+[4.613s]   107 | 3dToRos(const open3d::t::geometry::PointCloud& pointcloud, [01;31m[Ksensor_msgs[m[K::PointCloud2& ros_pc2,
+[4.613s]       |                                                            [01;31m[K^~~~~~~~~~~[m[K
+[4.613s] 
+[4.613s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:[m[K In function ‘[01m[Kvoid open3d_conversions::open3dToRos(const open3d::t::geometry::PointCloud&, int&, std::string, int, ...)[m[K’:
+[4.613s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:110:52:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Modifier::PointCloud2Modifier(int&)[m[K’
+[4.613s]   110 |   sensor_msgs::PointCloud2Modifier modifier(ros_pc2[01;31m[K)[m[K;
+[4.613s]       |                                                    [01;31m[K^[m[K
+[4.613s] In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:329[m[K,
+[4.613s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.613s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.613s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp:106:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Modifier::PointCloud2Modifier(sensor_msgs::msg::PointCloud2&)[m[K’
+[4.613s]   106 | inline [01;36m[KPointCloud2Modifier[m[K::PointCloud2Modifier(
+[4.614s]       |        [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.614s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp:107:35:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.614s]   107 |   [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K)
+[4.614s]       |   [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.614s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.614s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.614s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Modifier::PointCloud2Modifier(const sensor_msgs::PointCloud2Modifier&)[m[K’
+[4.614s]   104 | class [01;36m[KPointCloud2Modifier[m[K
+[4.614s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.614s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Kconst sensor_msgs::PointCloud2Modifier&[m[K’
+[4.614s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Modifier::PointCloud2Modifier(sensor_msgs::PointCloud2Modifier&&)[m[K’
+[4.614s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::PointCloud2Modifier&&[m[K’
+[4.614s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:111:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kfields[m[K’ in ‘[01m[Kros_pc2[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+[4.615s]   111 |   ros_pc2.[01;31m[Kfields[m[K.reserve(t_num_fields);
+[4.615s]       |           [01;31m[K^~~~~~[m[K
+[4.615s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:138:78:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.615s]   138 |  addPointField(ros_pc2, field_name + "_x", 1, sensor_msgs::[01;31m[KPointField[m[K::FLOAT32, offset);
+[4.615s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.615s] 
+[4.615s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:139:78:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.615s]   139 |  addPointField(ros_pc2, field_name + "_y", 1, sensor_msgs::[01;31m[KPointField[m[K::FLOAT32, offset);
+[4.615s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.615s] 
+[4.615s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:140:78:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.615s]   140 |  addPointField(ros_pc2, field_name + "_z", 1, sensor_msgs::[01;31m[KPointField[m[K::FLOAT32, offset);
+[4.615s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.615s] 
+[4.615s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:141:51:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.616s]   141 |           offset += sizeOfPointField(sensor_msgs::[01;31m[KPointField[m[K::FLOAT32);
+[4.616s]       |                                                   [01;31m[K^~~~~~~~~~[m[K
+[4.616s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:145:78:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.616s]   145 |  addPointField(ros_pc2, field_name + "_x", 1, sensor_msgs::[01;31m[KPointField[m[K::INT8, offset);
+[4.616s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.616s] 
+[4.616s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:146:78:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.616s]   146 |  addPointField(ros_pc2, field_name + "_y", 1, sensor_msgs::[01;31m[KPointField[m[K::INT8, offset);
+[4.616s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.616s] 
+[4.616s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:147:78:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.616s]   147 |  addPointField(ros_pc2, field_name + "_z", 1, sensor_msgs::[01;31m[KPointField[m[K::INT8, offset);
+[4.616s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.616s] 
+[4.617s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:148:51:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.617s]   148 |           offset += sizeOfPointField(sensor_msgs::[01;31m[KPointField[m[K::INT8);
+[4.617s]       |                                                   [01;31m[K^~~~~~~~~~[m[K
+[4.617s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:160:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kdata[m[K’ in ‘[01m[Kros_pc2[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+[4.617s]   160 |   ros_pc2.[01;31m[Kdata[m[K.reserve(pointcloud.GetPointAttr("positions").GetShape()[0]);
+[4.617s]       |           [01;31m[K^~~~[m[K
+[4.617s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:161:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kheader[m[K’ in ‘[01m[Kros_pc2[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+[4.617s]   161 |   ros_pc2.[01;31m[Kheader[m[K.frame_id = frame_id;
+[4.617s]       |           [01;31m[K^~~~~~[m[K
+[4.617s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:162:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.617s]   162 |   sensor_msgs::PointCloud2Iterator<float> ros_pc2_x(ros_pc2, "x"[01;31m[K)[m[K;
+[4.617s]       |                                                                 [01;31m[K^[m[K
+[4.618s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.618s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.618s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.618s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.618s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.618s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.618s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.618s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.618s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)[m[K’
+[4.618s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.618s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.618s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.618s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)[m[K’
+[4.618s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.619s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:163:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.619s]   163 |   sensor_msgs::PointCloud2Iterator<float> ros_pc2_y(ros_pc2, "y"[01;31m[K)[m[K;
+[4.619s]       |                                                                 [01;31m[K^[m[K
+[4.619s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.619s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.619s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.619s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.619s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.619s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.619s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.619s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.619s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)[m[K’
+[4.619s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.619s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.620s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.620s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)[m[K’
+[4.620s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.620s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:164:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.620s]   164 |   sensor_msgs::PointCloud2Iterator<float> ros_pc2_z(ros_pc2, "z"[01;31m[K)[m[K;
+[4.620s]       |                                                                 [01;31m[K^[m[K
+[4.620s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.620s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.620s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.620s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.620s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.620s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.620s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.620s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.621s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)[m[K’
+[4.621s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.621s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.621s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.621s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)[m[K’
+[4.621s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.621s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:171:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Klong int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[4.621s]   171 |       for (size_t i = 0; i < o3d_TensorList_points.GetShape()[0]; i++, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)
+[4.621s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:182:71:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.621s]   182 |     sensor_msgs::PointCloud2Iterator<uint8_t> ros_pc2_r(ros_pc2, "r"[01;31m[K)[m[K;
+[4.621s]       |                                                                     [01;31m[K^[m[K
+[4.621s] 
+[4.621s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.621s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.621s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.622s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.622s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.622s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.622s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.622s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.622s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)[m[K’
+[4.622s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.622s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.622s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.622s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)[m[K’
+[4.622s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.622s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:183:71:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.622s]   183 |     sensor_msgs::PointCloud2Iterator<uint8_t> ros_pc2_g(ros_pc2, "g"[01;31m[K)[m[K;
+[4.622s]       |                                                                     [01;31m[K^[m[K
+[4.622s] 
+[4.622s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.623s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.623s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.623s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.623s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.623s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.623s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.623s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.623s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)[m[K’
+[4.623s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.623s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.623s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.623s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)[m[K’
+[4.623s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.623s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:184:71:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])[m[K’
+[4.623s]   184 |     sensor_msgs::PointCloud2Iterator<uint8_t> ros_pc2_b(ros_pc2, "b"[01;31m[K)[m[K;
+[4.624s]       |                                                                     [01;31m[K^[m[K
+[4.624s] 
+[4.624s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.624s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.624s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.624s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.624s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.624s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.624s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.624s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.624s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)[m[K’
+[4.624s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.624s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.624s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.625s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)[m[K’
+[4.625s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.625s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:185:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Klong int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[4.625s]   185 |       for (size_t i = 0; i < o3d_TensorList_points.GetShape()[0]; i++, ++ros_pc2_r, ++ros_pc2_g, ++ros_pc2_b)
+[4.625s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:198:89:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)[m[K’
+[4.625s]   198 | :PointCloud2Iterator<uint8_t> ros_pc2_fx(ros_pc2, *field_name + "_x"[01;31m[K)[m[K;
+[4.625s]       |                                                                     [01;31m[K^[m[K
+[4.625s] 
+[4.625s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.625s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.625s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.625s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.625s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.625s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.625s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.626s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.626s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)[m[K’
+[4.626s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.626s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.626s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.626s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)[m[K’
+[4.626s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.626s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:199:89:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)[m[K’
+[4.626s]   199 | :PointCloud2Iterator<uint8_t> ros_pc2_fy(ros_pc2, *field_name + "_y"[01;31m[K)[m[K;
+[4.626s]       |                                                                     [01;31m[K^[m[K
+[4.626s] 
+[4.626s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.626s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.626s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.626s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.627s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.627s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.627s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.627s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.627s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)[m[K’
+[4.627s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.627s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.627s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.627s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)[m[K’
+[4.627s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.627s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:200:89:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)[m[K’
+[4.627s]   200 | :PointCloud2Iterator<uint8_t> ros_pc2_fz(ros_pc2, *field_name + "_z"[01;31m[K)[m[K;
+[4.627s]       |                                                                     [01;31m[K^[m[K
+[4.627s] 
+[4.627s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.627s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.628s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.628s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.628s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.628s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.628s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.628s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.628s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)[m[K’
+[4.628s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.628s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.628s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.628s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)[m[K’
+[4.628s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.628s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:201:30:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Klong int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[4.628s]   201 |         for (size_t i = 0; i < o3d_TensorList_points.GetShape()[0];
+[4.628s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:212:87:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)[m[K’
+[4.628s]   212 | s::PointCloud2Iterator<float> ros_pc2_fx(ros_pc2, *field_name + "_x"[01;31m[K)[m[K;
+[4.629s]       |                                                                     [01;31m[K^[m[K
+[4.629s] 
+[4.629s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.629s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.629s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.629s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.629s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.629s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.629s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.629s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.629s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)[m[K’
+[4.630s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.630s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.630s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.630s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)[m[K’
+[4.630s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.630s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:213:87:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)[m[K’
+[4.630s]   213 | s::PointCloud2Iterator<float> ros_pc2_fy(ros_pc2, *field_name + "_y"[01;31m[K)[m[K;
+[4.630s]       |                                                                     [01;31m[K^[m[K
+[4.630s] 
+[4.630s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.630s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.630s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.630s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.630s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.630s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.631s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.631s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.631s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)[m[K’
+[4.631s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.631s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.631s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.631s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)[m[K’
+[4.631s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.631s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:214:87:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)[m[K’
+[4.631s]   214 | s::PointCloud2Iterator<float> ros_pc2_fz(ros_pc2, *field_name + "_z"[01;31m[K)[m[K;
+[4.631s]       |                                                                     [01;31m[K^[m[K
+[4.631s] 
+[4.632s] In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24[m[K,
+[4.632s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.632s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>][m[K’
+[4.632s]   292 |   [01;36m[KPointCloud2Iterator[m[K(
+[4.632s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.632s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Ksensor_msgs::msg::PointCloud2&[m[K’ {aka ‘[01m[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&[m[K’}
+[4.632s]   293 |     [01;36m[Ksensor_msgs::msg::PointCloud2 & cloud_msg[m[K,
+[4.632s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[4.632s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)[m[K’
+[4.632s]   281 | class [01;36m[KPointCloud2Iterator[m[K
+[4.632s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.632s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.632s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)[m[K’
+[4.632s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[4.632s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:215:30:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Klong int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[4.633s]   215 |         for (size_t i = 0; i < o3d_TensorList_points.GetShape()[0];
+[4.633s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:195:35:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ko3d_TensorList_fields[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[4.633s]   195 |       const open3d::core::Tensor& [01;35m[Ko3d_TensorList_fields[m[K = pointcloud.GetPointAttr(*field_name);
+[4.633s]       |                                   [01;35m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[4.633s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:[m[K At global scope:
+[4.633s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:229:37:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2ConstPtr[m[K’ in namespace ‘[01m[Ksensor_msgs[m[K’ does not name a type; did you mean ‘[01m[KPointCloud2Modifier[m[K’?
+[4.633s]   229 | void rosToOpen3d(const sensor_msgs::[01;31m[KPointCloud2ConstPtr[m[K& ros_pc2, open3d::t::geometry::PointCloud& o3d_tpc,
+[4.633s]       |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[4.633s]       |                                     [32m[KPointCloud2Modifier[m[K
+[4.633s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:[m[K In function ‘[01m[Kvoid open3d_conversions::rosToOpen3d(const int&, open3d::t::geometry::PointCloud&, bool)[m[K’:
+[4.633s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:232:58:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.633s]   232 |   sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_x([01;31m[K*ros_pc2[m[K, "x");
+[4.633s]       |                                                          [01;31m[K^~~~~~~~[m[K
+[4.633s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:233:58:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.634s]   233 |   sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_y([01;31m[K*ros_pc2[m[K, "y");
+[4.634s]       |                                                          [01;31m[K^~~~~~~~[m[K
+[4.634s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:234:58:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.634s]   234 |   sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_z([01;31m[K*ros_pc2[m[K, "z");
+[4.634s]       |                                                          [01;31m[K^~~~~~~~[m[K
+[4.634s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:240:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.634s]   240 |   for (int num_fields = 0; num_fields < ros_pc2[01;31m[K->[m[Kfields.size(); num_fields++)
+[4.634s]       |                                                [01;31m[K^~[m[K
+[4.645s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:242:16:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.645s]   242 |     if (ros_pc2[01;31m[K->[m[Kfields[num_fields].name == "x")
+[4.645s]       |                [01;31m[K^~[m[K
+[4.646s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:244:37:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.646s]   244 |       for (size_t i = 0; i < ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)
+[4.646s]       |                                     [01;31m[K^~[m[K
+[4.646s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:244:55:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.646s]   244 |       for (size_t i = 0; i < ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)
+[4.646s]       |                                                       [01;31m[K^~[m[K
+[4.646s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:254:21:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.646s]   254 |     else if (ros_pc2[01;31m[K->[m[Kfields[num_fields].name == "rgb" && !skip_colors)
+[4.647s]       |                     [01;31m[K^~[m[K
+[4.647s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:256:64:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.647s]   256 |   sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_r([01;31m[K*ros_pc2[m[K, "r");
+[4.647s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.647s] 
+[4.647s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:257:64:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.648s]   257 |   sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_g([01;31m[K*ros_pc2[m[K, "g");
+[4.648s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.648s] 
+[4.648s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:258:64:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.648s]   258 |   sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_b([01;31m[K*ros_pc2[m[K, "b");
+[4.648s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.648s] 
+[4.648s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:260:37:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.648s]   260 |       for (size_t i = 0; i < ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width; ++i, ++ros_pc2_r, ++ros_pc2_g, ++ros_pc2_b)
+[4.649s]       |                                     [01;31m[K^~[m[K
+[4.649s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:260:55:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.649s]   260 |       for (size_t i = 0; i < ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth; ++i, ++ros_pc2_r, ++ros_pc2_g, ++ros_pc2_b)
+[4.649s]       |                                                       [01;31m[K^~[m[K
+[4.649s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:271:18:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.649s]   271 |       if (ros_pc2[01;31m[K->[m[Kfields[num_fields].datatype == sensor_msgs::PointField::UINT8 ||
+[4.649s]       |                  [01;31m[K^~[m[K
+[4.649s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:271:64:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.649s]   271 |   if (ros_pc2->fields[num_fields].datatype == sensor_msgs::[01;31m[KPointField[m[K::UINT8 ||
+[4.649s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.649s] 
+[4.649s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:272:18:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.649s]   272 |           ros_pc2[01;31m[K->[m[Kfields[num_fields].datatype == sensor_msgs::PointField::INT8)
+[4.649s]       |                  [01;31m[K^~[m[K
+[4.649s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:272:64:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.649s]   272 |       ros_pc2->fields[num_fields].datatype == sensor_msgs::[01;31m[KPointField[m[K::INT8)
+[4.650s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.650s] 
+[4.650s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:274:67:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.650s]   274 |  sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_fx([01;31m[K*ros_pc2[m[K, ros_pc2->fields[num_fields].name);
+[4.650s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.650s] 
+[4.650s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:274:84:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.650s]   274 | ntCloud2ConstIterator<uint8_t> ros_pc2_fx(*ros_pc2, ros_pc2[01;31m[K->[m[Kfields[num_fields].name);
+[4.650s]       |                                                            [01;31m[K^~[m[K
+[4.650s] 
+[4.650s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:275:67:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.650s]   275 |  sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_fy([01;31m[K*ros_pc2[m[K, ros_pc2->fields[num_fields].name);
+[4.650s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.650s] 
+[4.650s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:275:84:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.650s]   275 | ntCloud2ConstIterator<uint8_t> ros_pc2_fy(*ros_pc2, ros_pc2[01;31m[K->[m[Kfields[num_fields].name);
+[4.650s]       |                                                            [01;31m[K^~[m[K
+[4.651s] 
+[4.651s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:276:67:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.651s]   276 |  sensor_msgs::PointCloud2ConstIterator<uint8_t> ros_pc2_fz([01;31m[K*ros_pc2[m[K, ros_pc2->fields[num_fields].name);
+[4.651s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.651s] 
+[4.651s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:276:84:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.651s]   276 | ntCloud2ConstIterator<uint8_t> ros_pc2_fz(*ros_pc2, ros_pc2[01;31m[K->[m[Kfields[num_fields].name);
+[4.651s]       |                                                            [01;31m[K^~[m[K
+[4.651s] 
+[4.651s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:279:39:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.652s]   279 |         for (size_t i = 0; i < ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)
+[4.652s]       |                                       [01;31m[K^~[m[K
+[4.652s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:279:57:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.652s]   279 |         for (size_t i = 0; i < ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)
+[4.652s]       |                                                         [01;31m[K^~[m[K
+[4.652s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:285:37:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.652s]   285 |         o3d_tpc.SetPointAttr(ros_pc2[01;31m[K->[m[Kfields[num_fields].name, o3d_tpc_fields);
+[4.652s]       |                                     [01;31m[K^~[m[K
+[4.652s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:287:23:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.653s]   287 |       else if (ros_pc2[01;31m[K->[m[Kfields[num_fields].datatype == sensor_msgs::PointField::FLOAT32)
+[4.653s]       |                       [01;31m[K^~[m[K
+[4.653s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:287:69:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.653s]   287 | e if (ros_pc2->fields[num_fields].datatype == sensor_msgs::[01;31m[KPointField[m[K::FLOAT32)
+[4.653s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.653s] 
+[4.653s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:289:65:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.653s]   289 |    sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_fx([01;31m[K*ros_pc2[m[K, ros_pc2->fields[num_fields].name);
+[4.653s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.653s] 
+[4.653s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:289:82:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.653s]   289 | ointCloud2ConstIterator<float> ros_pc2_fx(*ros_pc2, ros_pc2[01;31m[K->[m[Kfields[num_fields].name);
+[4.653s]       |                                                            [01;31m[K^~[m[K
+[4.653s] 
+[4.653s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:290:65:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.653s]   290 |    sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_fy([01;31m[K*ros_pc2[m[K, ros_pc2->fields[num_fields].name);
+[4.653s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.653s] 
+[4.654s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:290:82:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.654s]   290 | ointCloud2ConstIterator<float> ros_pc2_fy(*ros_pc2, ros_pc2[01;31m[K->[m[Kfields[num_fields].name);
+[4.654s]       |                                                            [01;31m[K^~[m[K
+[4.654s] 
+[4.654s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:291:65:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.654s]   291 |    sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_fz([01;31m[K*ros_pc2[m[K, ros_pc2->fields[num_fields].name);
+[4.654s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.654s] 
+[4.654s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:291:82:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.654s]   291 | ointCloud2ConstIterator<float> ros_pc2_fz(*ros_pc2, ros_pc2[01;31m[K->[m[Kfields[num_fields].name);
+[4.654s]       |                                                            [01;31m[K^~[m[K
+[4.654s] 
+[4.654s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:294:39:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.654s]   294 |         for (size_t i = 0; i < ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)
+[4.654s]       |                                       [01;31m[K^~[m[K
+[4.654s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:294:57:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.655s]   294 |         for (size_t i = 0; i < ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)
+[4.655s]       |                                                         [01;31m[K^~[m[K
+[4.655s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:300:37:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.655s]   300 |         o3d_tpc.SetPointAttr(ros_pc2[01;31m[K->[m[Kfields[num_fields].name, o3d_tpc_fields);
+[4.655s]       |                                     [01;31m[K^~[m[K
+[4.655s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:304:65:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.655s]   304 |    sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_fx([01;31m[K*ros_pc2[m[K, ros_pc2->fields[num_fields].name);
+[4.655s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.655s] 
+[4.655s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:304:82:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.655s]   304 | ointCloud2ConstIterator<float> ros_pc2_fx(*ros_pc2, ros_pc2[01;31m[K->[m[Kfields[num_fields].name);
+[4.655s]       |                                                            [01;31m[K^~[m[K
+[4.655s] 
+[4.655s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:305:65:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.655s]   305 |    sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_fy([01;31m[K*ros_pc2[m[K, ros_pc2->fields[num_fields].name);
+[4.655s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.655s] 
+[4.655s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:305:82:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.656s]   305 | ointCloud2ConstIterator<float> ros_pc2_fy(*ros_pc2, ros_pc2[01;31m[K->[m[Kfields[num_fields].name);
+[4.656s]       |                                                            [01;31m[K^~[m[K
+[4.656s] 
+[4.656s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:306:65:[m[K [01;31m[Kerror: [m[Kinvalid type argument of unary ‘[01m[K*[m[K’ (have ‘[01m[Kint[m[K’)
+[4.656s]   306 |    sensor_msgs::PointCloud2ConstIterator<float> ros_pc2_fz([01;31m[K*ros_pc2[m[K, ros_pc2->fields[num_fields].name);
+[4.656s]       |                                                            [01;31m[K^~~~~~~~[m[K
+[4.656s] 
+[4.656s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:306:82:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.656s]   306 | ointCloud2ConstIterator<float> ros_pc2_fz(*ros_pc2, ros_pc2[01;31m[K->[m[Kfields[num_fields].name);
+[4.656s]       |                                                            [01;31m[K^~[m[K
+[4.656s] 
+[4.656s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:309:39:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.656s]   309 |         for (size_t i = 0; i < ros_pc2[01;31m[K->[m[Kheight * ros_pc2->width; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)
+[4.656s]       |                                       [01;31m[K^~[m[K
+[4.656s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:309:57:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.656s]   309 |         for (size_t i = 0; i < ros_pc2->height * ros_pc2[01;31m[K->[m[Kwidth; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)
+[4.656s]       |                                                         [01;31m[K^~[m[K
+[4.656s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:315:37:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+[4.656s]   315 |         o3d_tpc.SetPointAttr(ros_pc2[01;31m[K->[m[Kfields[num_fields].name, o3d_tpc_fields);
+[4.657s]       |                                     [01;31m[K^~[m[K
+[4.657s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:[m[K At global scope:
+[4.657s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:39:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’?
+[4.657s]   322 | inline int addPointField(sensor_msgs::[01;31m[KPointCloud2[m[K& cloud_msg, const std::string& name, int count, int datatype,
+[4.657s]       |                                       [01;31m[K^~~~~~~~~~~[m[K
+[4.657s] In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7[m[K,
+[4.657s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:23[m[K,
+[4.657s]                  from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15[m[K:
+[4.657s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::PointCloud2[m[K’ declared here
+[4.657s]   235 | using [01;36m[KPointCloud2[m[K =
+[4.657s]       |       [01;36m[K^~~~~~~~~~~[m[K
+[4.661s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:52:[m[K [01;31m[Kerror: [m[K‘[01m[Kcloud_msg[m[K’ was not declared in this scope
+[4.662s]   322 | inline int addPointField(sensor_msgs::PointCloud2& [01;31m[Kcloud_msg[m[K, const std::string& name, int count, int datatype,
+[4.662s]       |                                                    [01;31m[K^~~~~~~~~[m[K
+[4.662s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:63:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kconst[m[K’
+[4.662s]   322 | ine int addPointField(sensor_msgs::PointCloud2& cloud_msg, [01;31m[Kconst[m[K std::string& name, int count, int datatype,
+[4.662s]       |                                                            [01;31m[K^~~~~[m[K
+[4.662s] 
+[4.662s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:88:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+[4.662s]   322 | sor_msgs::PointCloud2& cloud_msg, const std::string& name, [01;31m[Kint[m[K count, int datatype,
+[4.662s]       |                                                            [01;31m[K^~~[m[K
+[4.662s] 
+[4.662s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:99:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+[4.662s]   322 | ointCloud2& cloud_msg, const std::string& name, int count, [01;31m[Kint[m[K datatype,
+[4.663s]       |                                                            [01;31m[K^~~[m[K
+[4.663s] 
+[4.663s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:323:26:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+[4.663s]   323 |                          [01;31m[Kint[m[K offset)
+[4.663s]       |                          [01;31m[K^~~[m[K
+[4.663s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:323:36:[m[K [01;31m[Kerror: [m[Kexpression list treated as compound expression in initializer [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[4.663s]   323 |                          int offset[01;31m[K)[m[K
+[4.663s]       |                                    [01;31m[K^[m[K
+[4.663s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:[m[K In function ‘[01m[Kint sizeOfPointField(int)[m[K’:
+[4.663s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:339:33:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.663s]   339 |   if ((datatype == sensor_msgs::[01;31m[KPointField[m[K::INT8) || (datatype == sensor_msgs::PointField::UINT8))
+[4.663s]       |                                 [01;31m[K^~~~~~~~~~[m[K
+[4.663s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:339:80:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.663s]   339 | ensor_msgs::PointField::INT8) || (datatype == sensor_msgs::[01;31m[KPointField[m[K::UINT8))
+[4.663s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.663s] 
+[4.664s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:343:38:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.664s]   343 |   else if ((datatype == sensor_msgs::[01;31m[KPointField[m[K::INT16) ||    // NOLINT
+[4.664s]       |                                      [01;31m[K^~~~~~~~~~[m[K
+[4.664s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:344:38:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.664s]   344 |            (datatype == sensor_msgs::[01;31m[KPointField[m[K::UINT16))
+[4.664s]       |                                      [01;31m[K^~~~~~~~~~[m[K
+[4.664s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:348:38:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.664s]   348 |   else if ((datatype == sensor_msgs::[01;31m[KPointField[m[K::INT32) ||    // NOLINT
+[4.664s]       |                                      [01;31m[K^~~~~~~~~~[m[K
+[4.664s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:349:38:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.664s]   349 |            (datatype == sensor_msgs::[01;31m[KPointField[m[K::UINT32) || (datatype == sensor_msgs::PointField::FLOAT32))
+[4.664s]       |                                      [01;31m[K^~~~~~~~~~[m[K
+[4.664s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:349:87:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.664s]   349 | sor_msgs::PointField::UINT32) || (datatype == sensor_msgs::[01;31m[KPointField[m[K::FLOAT32))
+[4.664s]       |                                                            [01;31m[K^~~~~~~~~~[m[K
+[4.664s] 
+[4.664s] [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:353:37:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::PointField[m[K’ has not been declared
+[4.664s]   353 |   else if (datatype == sensor_msgs::[01;31m[KPointField[m[K::FLOAT64)
+[4.665s]       |                                     [01;31m[K^~~~~~~~~~[m[K
+[6.496s] gmake[2]: *** [CMakeFiles/open3d_conversions.dir/build.make:76: CMakeFiles/open3d_conversions.dir/src/open3d_conversions.cpp.o] Error 1
+[6.497s] gmake[1]: *** [CMakeFiles/Makefile2:250: CMakeFiles/open3d_conversions.dir/all] Error 2
+[6.497s] gmake: *** [Makefile:146: all] Error 2
+[6.513s] Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8

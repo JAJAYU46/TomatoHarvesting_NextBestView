@@ -1,0 +1,30 @@
+[0mCMake Deprecation Warning at /home/jajayu/open3d_install/lib/cmake/Open3D/Open3DConfig.cmake:18 (cmake_policy):
+  The OLD behavior for policy CMP0072 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+Call Stack (most recent call first):
+  CMakeLists.txt:43 (find_package)
+
+[0m
+[31mCMake Error at CMakeLists.txt:69 (find_package):
+  By not providing "Findopen3d_conversions.cmake" in CMAKE_MODULE_PATH this
+  project has asked CMake to find a package configuration file provided by
+  "open3d_conversions", but CMake did not find one.
+
+  Could not find a package configuration file provided by
+  "open3d_conversions" with any of the following names:
+
+    open3d_conversionsConfig.cmake
+    open3d_conversions-config.cmake
+
+  Add the installation prefix of "open3d_conversions" to CMAKE_PREFIX_PATH or
+  set "open3d_conversions_DIR" to a directory containing one of the above
+  files.  If "open3d_conversions" provides a separate development package or
+  SDK, be sure it has been installed.
+
+[0m
+gmake: *** [Makefile:390: cmake_check_build_system] Error 1

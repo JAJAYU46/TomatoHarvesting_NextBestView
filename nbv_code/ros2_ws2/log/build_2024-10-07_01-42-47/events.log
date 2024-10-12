@@ -1,0 +1,961 @@
+[0.000000] (-) TimerEvent: {}
+[0.000159] (-) JobUnselected: {'identifier': 'my_bot'}
+[0.000187] (-) JobUnselected: {'identifier': 'my_robot_cam'}
+[0.000206] (-) JobUnselected: {'identifier': 'my_robot_nbv'}
+[0.000223] (-) JobUnselected: {'identifier': 'octomap_server2'}
+[0.000239] (-) JobUnselected: {'identifier': 'realsense2_camera'}
+[0.000255] (-) JobUnselected: {'identifier': 'realsense2_camera_msgs'}
+[0.000270] (-) JobUnselected: {'identifier': 'realsense2_description'}
+[0.000287] (my_robot_nbv_cmake) JobQueued: {'identifier': 'my_robot_nbv_cmake', 'dependencies': OrderedDict()}
+[0.000306] (my_robot_nbv_cmake) JobStarted: {'identifier': 'my_robot_nbv_cmake'}
+[0.013931] (my_robot_nbv_cmake) JobProgress: {'identifier': 'my_robot_nbv_cmake', 'progress': 'cmake'}
+[0.014711] (my_robot_nbv_cmake) JobProgress: {'identifier': 'my_robot_nbv_cmake', 'progress': 'build'}
+[0.015578] (my_robot_nbv_cmake) Command: {'cmd': ['/home/jajayu/.local/bin/cmake', '--build', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake', '--', '-j8', '-l8'], 'cwd': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jajayu'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jajayu/open3d_install/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_ros/lib:/home/jajayu/ros2_ws/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jajayu'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('MANAGERPID', '1598'), ('SYSTEMD_EXEC_PID', '1775'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '2748'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install:/home/jajayu/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jajayu'), ('JOURNAL_STREAM', '8:7120'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jajayu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jajayu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jajayu-virtual-machine:@/tmp/.ICE-unix/1746,unix/jajayu-virtual-machine:/tmp/.ICE-unix/1746'), ('INVOCATION_ID', '6b0176dca7d947c58531aed191e48b00'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.M8Q3U2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('TERMINATOR_UUID', 'urn:uuid:ece94159-03c5-4a30-b2f7-28de87601990'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/webots_ros2_tests/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/webots_ros2/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/pcl_msgs/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/build/pcd_demo:/home/jajayu/ros2_ws/install/pcd_demo/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/gazebo_tutorial:/home/jajayu/ros2_ws/install/gazebo_tutorial/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('Open3D_DIR', '/home/jajayu/open3d_install/lib/cmake/Open3D'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/depthimage_to_pointcloud2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble')]), 'shell': False}
+[0.098957] (-) TimerEvent: {}
+[0.133918] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.199205] (-) TimerEvent: {}
+[0.299598] (-) TimerEvent: {}
+[0.400187] (-) TimerEvent: {}
+[0.408286] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.448142] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.451947] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.460733] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.477720] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.500418] (-) TimerEvent: {}
+[0.501135] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.579621] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.582034] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.601002] (-) TimerEvent: {}
+[0.701496] (-) TimerEvent: {}
+[0.737415] (my_robot_nbv_cmake) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.801633] (-) TimerEvent: {}
+[0.902258] (-) TimerEvent: {}
+[0.945047] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[1.002607] (-) TimerEvent: {}
+[1.103065] (-) TimerEvent: {}
+[1.103822] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found octomap_msgs: 2.0.0 (/opt/ros/humble/share/octomap_msgs/cmake)\n'}
+[1.188726] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found visualization_msgs: 4.2.4 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[1.203640] (-) TimerEvent: {}
+[1.304252] (-) TimerEvent: {}
+[1.338814] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /home/jajayu/open3d_install/lib/cmake/Open3D/Open3DConfig.cmake:18 (cmake_policy):\n'}
+[1.339092] (my_robot_nbv_cmake) StderrLine: {'line': b'  The OLD behavior for policy CMP0072 will be removed from a future version\n'}
+[1.339190] (my_robot_nbv_cmake) StderrLine: {'line': b'  of CMake.\n'}
+[1.339277] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[1.339349] (my_robot_nbv_cmake) StderrLine: {'line': b'  The cmake-policies(7) manual explains that the OLD behaviors of all\n'}
+[1.339416] (my_robot_nbv_cmake) StderrLine: {'line': b'  policies are deprecated and that a policy should be set to OLD only under\n'}
+[1.339481] (my_robot_nbv_cmake) StderrLine: {'line': b'  specific short-term circumstances.  Projects should be ported to the NEW\n'}
+[1.339544] (my_robot_nbv_cmake) StderrLine: {'line': b'  behavior and not rely on setting a policy to OLD.\n'}
+[1.339606] (my_robot_nbv_cmake) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.339668] (my_robot_nbv_cmake) StderrLine: {'line': b'  CMakeLists.txt:43 (find_package)\n'}
+[1.339729] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[1.339790] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[0m\n'}
+[1.340353] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found Open3D libraries: Open3D::Open3D;Open3D::Open3D\n'}
+[1.362586] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.404676] (-) TimerEvent: {}
+[1.456201] (my_robot_nbv_cmake) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.456829] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include\n'}
+[1.456938] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.457605] (my_robot_nbv_cmake) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.458658] (my_robot_nbv_cmake) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.458903] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.459135] (my_robot_nbv_cmake) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.460069] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Configuring done (1.3s)\n'}
+[1.479872] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[33mCMake Warning at CMakeLists.txt:145 (TARGET_LINK_LIBRARIES):\n'}
+[1.480053] (my_robot_nbv_cmake) StderrLine: {'line': b'  Target "open3d_conversions" requests linking to directory\n'}
+[1.480124] (my_robot_nbv_cmake) StderrLine: {'line': b'  "/usr/include/eigen3".  Targets may link only to libraries.  CMake is\n'}
+[1.480185] (my_robot_nbv_cmake) StderrLine: {'line': b'  dropping the item.\n'}
+[1.480242] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[1.480298] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[0m\n'}
+[1.485295] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[33mCMake Warning at CMakeLists.txt:145 (TARGET_LINK_LIBRARIES):\n'}
+[1.486524] (my_robot_nbv_cmake) StderrLine: {'line': b'  Target "nbvc_ray_generation" requests linking to directory\n'}
+[1.486751] (my_robot_nbv_cmake) StderrLine: {'line': b'  "/usr/include/eigen3".  Targets may link only to libraries.  CMake is\n'}
+[1.486832] (my_robot_nbv_cmake) StderrLine: {'line': b'  dropping the item.\n'}
+[1.486896] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[1.486954] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[0m\n'}
+[1.505111] (-) TimerEvent: {}
+[1.505663] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.506245] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Build files have been written to: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake\n'}
+[1.530600] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding CXX object CMakeFiles/open3d_conversions.dir/src/open3d_conversions.cpp.o\x1b[0m\n'}
+[1.539533] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 30%] Built target nbvc_lib_SdfModel\n'}
+[1.539924] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 50%] Built target SdfModelV3\n'}
+[1.565870] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 70%] Built target nbvc_ray_generationV3_beforeclean\n'}
+[1.605338] (-) TimerEvent: {}
+[1.706325] (-) TimerEvent: {}
+[1.806914] (-) TimerEvent: {}
+[1.907685] (-) TimerEvent: {}
+[2.008529] (-) TimerEvent: {}
+[2.109349] (-) TimerEvent: {}
+[2.210761] (-) TimerEvent: {}
+[2.311978] (-) TimerEvent: {}
+[2.414642] (-) TimerEvent: {}
+[2.515183] (-) TimerEvent: {}
+[2.615983] (-) TimerEvent: {}
+[2.717757] (-) TimerEvent: {}
+[2.818285] (-) TimerEvent: {}
+[2.919185] (-) TimerEvent: {}
+[3.019624] (-) TimerEvent: {}
+[3.120121] (-) TimerEvent: {}
+[3.220863] (-) TimerEvent: {}
+[3.321643] (-) TimerEvent: {}
+[3.422563] (-) TimerEvent: {}
+[3.524755] (-) TimerEvent: {}
+[3.626041] (-) TimerEvent: {}
+[3.726884] (-) TimerEvent: {}
+[3.827994] (-) TimerEvent: {}
+[3.928368] (-) TimerEvent: {}
+[4.029096] (-) TimerEvent: {}
+[4.129713] (-) TimerEvent: {}
+[4.230167] (-) TimerEvent: {}
+[4.330955] (-) TimerEvent: {}
+[4.431587] (-) TimerEvent: {}
+[4.532198] (-) TimerEvent: {}
+[4.633187] (-) TimerEvent: {}
+[4.734120] (-) TimerEvent: {}
+[4.839476] (-) TimerEvent: {}
+[4.939929] (-) TimerEvent: {}
+[5.040613] (-) TimerEvent: {}
+[5.141640] (-) TimerEvent: {}
+[5.242023] (-) TimerEvent: {}
+[5.343035] (-) TimerEvent: {}
+[5.443503] (-) TimerEvent: {}
+[5.544350] (-) TimerEvent: {}
+[5.644785] (-) TimerEvent: {}
+[5.712352] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.712958] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:42:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.713180] (my_robot_nbv_cmake) StderrLine: {'line': b'   42 | loud& pointcloud, \x1b[01;31m\x1b[Ksensor_msgs\x1b[m\x1b[K::PointCloud2& ros_pc2,\n'}
+[5.713266] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.713333] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.713478] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:53:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2ConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.713622] (my_robot_nbv_cmake) StderrLine: {'line': b'   53 | onst sensor_msgs::\x1b[01;31m\x1b[KPointCloud2ConstPtr\x1b[m\x1b[K& ros_pc2, open3d::geometry::PointCloud& o3d_pc,\n'}
+[5.714209] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.715936] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[32m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\n'}
+[5.716081] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:64:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.716160] (my_robot_nbv_cmake) StderrLine: {'line': b'   64 | loud& pointcloud, \x1b[01;31m\x1b[Ksensor_msgs\x1b[m\x1b[K::PointCloud2& ros_pc2,\n'}
+[5.716227] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.716295] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.716359] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:74:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2ConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.716444] (my_robot_nbv_cmake) StderrLine: {'line': b'   74 | onst sensor_msgs::\x1b[01;31m\x1b[KPointCloud2ConstPtr\x1b[m\x1b[K& ros_pc2, open3d::t::geometry::PointCloud& o3d_pc,\n'}
+[5.716516] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.716585] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[32m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\n'}
+[5.716651] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:18:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.716719] (my_robot_nbv_cmake) StderrLine: {'line': b'   18 | loud& pointcloud, \x1b[01;31m\x1b[Ksensor_msgs\x1b[m\x1b[K::PointCloud2& ros_pc2,\n'}
+[5.716793] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.716859] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.716926] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid open3d_conversions::open3dToRos(const open3d::geometry::PointCloud&, int&, std::string)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.717001] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:21:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Modifier::PointCloud2Modifier(int&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.717075] (my_robot_nbv_cmake) StderrLine: {'line': b'   21 | d2Modifier modifier(ros_pc2\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.717137] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.717198] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.717258] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:329\x1b[m\x1b[K,\n'}
+[5.717345] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.717416] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.717486] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp:106:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Modifier::PointCloud2Modifier(sensor_msgs::msg::PointCloud2&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.717566] (my_robot_nbv_cmake) StderrLine: {'line': b'  106 | inline \x1b[01;36m\x1b[KPointCloud2Modifier\x1b[m\x1b[K::PointCloud2Modifier(\n'}
+[5.717639] (my_robot_nbv_cmake) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.717708] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp:107:35:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.717783] (my_robot_nbv_cmake) StderrLine: {'line': b'  107 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K)\n'}
+[5.717844] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.717905] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.717962] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.718021] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.718081] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Modifier::PointCloud2Modifier(const sensor_msgs::PointCloud2Modifier&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.718142] (my_robot_nbv_cmake) StderrLine: {'line': b'  104 | class \x1b[01;36m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\n'}
+[5.718201] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.718265] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst sensor_msgs::PointCloud2Modifier&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.718347] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Modifier::PointCloud2Modifier(sensor_msgs::PointCloud2Modifier&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.718419] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Modifier&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.718601] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:31:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kheader\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kros_pc2\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.718727] (my_robot_nbv_cmake) StderrLine: {'line': b'   31 |   ros_pc2.\x1b[01;31m\x1b[Kheader\x1b[m\x1b[K.frame_id = frame_id;\n'}
+[5.718834] (my_robot_nbv_cmake) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.718939] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:32:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.719381] (my_robot_nbv_cmake) StderrLine: {'line': b'   32 | oat> ros_pc2_x(ros_pc2, "x"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.719525] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.719665] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.719759] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.719829] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.719893] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.719967] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.720023] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.720080] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.720509] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.720601] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.720659] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.720717] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.720776] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.720831] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.720884] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.720941] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.720997] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.721050] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:33:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.721108] (my_robot_nbv_cmake) StderrLine: {'line': b'   33 | oat> ros_pc2_y(ros_pc2, "y"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.721175] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.721231] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.721287] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.721361] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.721517] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.721942] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.722030] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.722090] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.722150] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.722205] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.722259] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.722313] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.722369] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.722422] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.722475] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.722530] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.722594] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.722665] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:34:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.722731] (my_robot_nbv_cmake) StderrLine: {'line': b'   34 | oat> ros_pc2_z(ros_pc2, "z"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.722797] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.722856] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.722908] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.722962] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.723017] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.723077] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.723130] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.723183] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.723238] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.723290] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.723342] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.723393] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.723447] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.723498] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.723574] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.723629] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.723682] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.723735] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:37:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.723792] (my_robot_nbv_cmake) StderrLine: {'line': b'   37 | 8_t> ros_pc2_r(ros_pc2, "r"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.723846] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.723898] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.723949] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.724001] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.724061] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.724147] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.724201] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.724307] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.724747] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.724829] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.724892] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.724953] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.725014] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.725075] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.725145] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.725208] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.725272] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.725350] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:38:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.725804] (my_robot_nbv_cmake) StderrLine: {'line': b'   38 | 8_t> ros_pc2_g(ros_pc2, "g"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.725907] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.726123] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.726526] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.726642] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.726766] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.727222] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.727290] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.727347] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.727404] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.727579] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.727664] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.728017] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.728139] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.728283] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.728433] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.728517] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.728612] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.728977] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:39:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.729125] (my_robot_nbv_cmake) StderrLine: {'line': b'   39 | 8_t> ros_pc2_b(ros_pc2, "b"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.729270] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.729560] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.730018] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.730091] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.730150] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.730352] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.730438] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.730530] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.730609] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.730665] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.730719] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.730772] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.730827] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.730880] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.730933] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.730987] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.731061] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.731115] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:\x1b[m\x1b[K At global scope:\n'}
+[5.731169] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:65:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2ConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.731271] (my_robot_nbv_cmake) StderrLine: {'line': b'   65 | onst sensor_msgs::\x1b[01;31m\x1b[KPointCloud2ConstPtr\x1b[m\x1b[K& ros_pc2, open3d::geometry::PointCloud& o3d_pc,\n'}
+[5.731352] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.731437] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[32m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\n'}
+[5.731532] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid open3d_conversions::rosToOpen3d(const int&, open3d::geometry::PointCloud&, bool)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.731601] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:68:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.731865] (my_robot_nbv_cmake) StderrLine: {'line': b'   68 | <float> ros_pc2_x(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "x");\n'}
+[5.731933] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.731996] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.732052] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:69:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.732114] (my_robot_nbv_cmake) StderrLine: {'line': b'   69 | <float> ros_pc2_y(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "y");\n'}
+[5.732170] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.732225] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.732277] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:70:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.732336] (my_robot_nbv_cmake) StderrLine: {'line': b'   70 | <float> ros_pc2_z(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "z");\n'}
+[5.732391] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.732444] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.732498] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:71:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.732561] (my_robot_nbv_cmake) StderrLine: {'line': b'   71 | s_.reserve(ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width);\n'}
+[5.732625] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.732686] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.732788] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:71:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.732848] (my_robot_nbv_cmake) StderrLine: {'line': b'   71 | c2->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth);\n'}
+[5.732902] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.732957] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.733022] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:72:14:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.733079] (my_robot_nbv_cmake) StderrLine: {'line': b'   72 |   if (ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields.size() == 3 || skip_colors == true)\n'}
+[5.733137] (my_robot_nbv_cmake) StderrLine: {'line': b'      |              \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.733194] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:74:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.733252] (my_robot_nbv_cmake) StderrLine: {'line': b'   74 | i = 0; i < ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)\n'}
+[5.733315] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.733372] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.733431] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:74:53:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.733488] (my_robot_nbv_cmake) StderrLine: {'line': b'   74 | ->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)\n'}
+[5.733547] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.733605] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.733662] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:81:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.733754] (my_robot_nbv_cmake) StderrLine: {'line': b'   81 | s_.reserve(ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width);\n'}
+[5.733818] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.733873] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.733927] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:81:53:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.733980] (my_robot_nbv_cmake) StderrLine: {'line': b'   81 | c2->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth);\n'}
+[5.734133] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.734188] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.734241] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:82:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.734294] (my_robot_nbv_cmake) StderrLine: {'line': b'   82 |     if (ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[3].name == "rgb")\n'}
+[5.734347] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.734400] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:84:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.734473] (my_robot_nbv_cmake) StderrLine: {'line': b'   84 | int8_t> ros_pc2_r(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "r");\n'}
+[5.734532] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.734589] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.734657] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:85:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.734716] (my_robot_nbv_cmake) StderrLine: {'line': b'   85 | int8_t> ros_pc2_g(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "g");\n'}
+[5.734769] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.734821] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.734876] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:86:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.734930] (my_robot_nbv_cmake) StderrLine: {'line': b'   86 | int8_t> ros_pc2_b(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "b");\n'}
+[5.734986] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.735038] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.735091] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:88:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.735152] (my_robot_nbv_cmake) StderrLine: {'line': b'   88 | i = 0; i < ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width;\n'}
+[5.735205] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.735264] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.735320] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:88:55:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.735373] (my_robot_nbv_cmake) StderrLine: {'line': b'   88 | pc2->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth;\n'}
+[5.735426] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.735485] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.735540] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:96:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.735593] (my_robot_nbv_cmake) StderrLine: {'line': b'   96 |   else if (ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[3].name == "intensity")\n'}
+[5.735646] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.735698] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.735749] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:98:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.735804] (my_robot_nbv_cmake) StderrLine: {'line': b'   98 | int8_t> ros_pc2_i(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "intensity");\n'}
+[5.735856] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.735908] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.735961] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:99:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.736015] (my_robot_nbv_cmake) StderrLine: {'line': b'   99 | i = 0; i < ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z, ++ros_pc2_i)\n'}
+[5.736068] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.736120] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.736171] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:99:55:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.736223] (my_robot_nbv_cmake) StderrLine: {'line': b'   99 | ->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z, ++ros_pc2_i)\n'}
+[5.736276] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.736369] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.736427] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:\x1b[m\x1b[K At global scope:\n'}
+[5.736481] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:107:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.736544] (my_robot_nbv_cmake) StderrLine: {'line': b'  107 | loud& pointcloud, \x1b[01;31m\x1b[Ksensor_msgs\x1b[m\x1b[K::PointCloud2& ros_pc2,\n'}
+[5.736599] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.736653] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.736706] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid open3d_conversions::open3dToRos(const open3d::t::geometry::PointCloud&, int&, std::string, int, ...)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.736775] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:110:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Modifier::PointCloud2Modifier(int&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.736835] (my_robot_nbv_cmake) StderrLine: {'line': b'  110 | d2Modifier modifier(ros_pc2\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.736888] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.736940] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.736992] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:329\x1b[m\x1b[K,\n'}
+[5.737045] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.737098] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.737150] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp:106:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Modifier::PointCloud2Modifier(sensor_msgs::msg::PointCloud2&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.737235] (my_robot_nbv_cmake) StderrLine: {'line': b'  106 | inline \x1b[01;36m\x1b[KPointCloud2Modifier\x1b[m\x1b[K::PointCloud2Modifier(\n'}
+[5.737302] (my_robot_nbv_cmake) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.737354] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp:107:35:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.737415] (my_robot_nbv_cmake) StderrLine: {'line': b'  107 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K)\n'}
+[5.737468] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.737520] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.737571] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.737624] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.737676] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Modifier::PointCloud2Modifier(const sensor_msgs::PointCloud2Modifier&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.737729] (my_robot_nbv_cmake) StderrLine: {'line': b'  104 | class \x1b[01;36m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\n'}
+[5.737781] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.737834] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kconst sensor_msgs::PointCloud2Modifier&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.737891] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Modifier::PointCloud2Modifier(sensor_msgs::PointCloud2Modifier&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.737945] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:104:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Modifier&&\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.738023] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:111:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kfields\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kros_pc2\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.738083] (my_robot_nbv_cmake) StderrLine: {'line': b'  111 |   ros_pc2.\x1b[01;31m\x1b[Kfields\x1b[m\x1b[K.reserve(t_num_fields);\n'}
+[5.738136] (my_robot_nbv_cmake) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.738188] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:138:78:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.738240] (my_robot_nbv_cmake) StderrLine: {'line': b'  138 | , 1, sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::FLOAT32, offset);\n'}
+[5.738295] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.738349] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.738400] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:139:78:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.738452] (my_robot_nbv_cmake) StderrLine: {'line': b'  139 | , 1, sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::FLOAT32, offset);\n'}
+[5.738504] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.738555] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.738606] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:140:78:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.738660] (my_robot_nbv_cmake) StderrLine: {'line': b'  140 | , 1, sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::FLOAT32, offset);\n'}
+[5.738713] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.738766] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.738817] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:141:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.738869] (my_robot_nbv_cmake) StderrLine: {'line': b'  141 | ield(sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::FLOAT32);\n'}
+[5.738920] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.738976] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.739026] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:145:78:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.739078] (my_robot_nbv_cmake) StderrLine: {'line': b'  145 | , 1, sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::INT8, offset);\n'}
+[5.739130] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.739181] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.739233] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:146:78:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.739295] (my_robot_nbv_cmake) StderrLine: {'line': b'  146 | , 1, sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::INT8, offset);\n'}
+[5.739348] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.739399] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.739450] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:147:78:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.739503] (my_robot_nbv_cmake) StderrLine: {'line': b'  147 | , 1, sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::INT8, offset);\n'}
+[5.739555] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.739607] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.739658] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:148:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.739711] (my_robot_nbv_cmake) StderrLine: {'line': b'  148 | ield(sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::INT8);\n'}
+[5.739762] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.739813] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.739866] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:160:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kros_pc2\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.739920] (my_robot_nbv_cmake) StderrLine: {'line': b'  160 |   ros_pc2.\x1b[01;31m\x1b[Kdata\x1b[m\x1b[K.reserve(pointcloud.GetPointAttr("positions").GetShape()[0]);\n'}
+[5.739973] (my_robot_nbv_cmake) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[5.740024] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:161:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kheader\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[Kros_pc2\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.740078] (my_robot_nbv_cmake) StderrLine: {'line': b'  161 |   ros_pc2.\x1b[01;31m\x1b[Kheader\x1b[m\x1b[K.frame_id = frame_id;\n'}
+[5.740135] (my_robot_nbv_cmake) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.740186] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:162:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.740264] (my_robot_nbv_cmake) StderrLine: {'line': b'  162 | oat> ros_pc2_x(ros_pc2, "x"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.740319] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.740377] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.740429] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.740485] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.740538] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.740597] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.740652] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.740705] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.740759] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.740811] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.740867] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.740919] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.740973] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.741042] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.741104] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.741157] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.741222] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.741275] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:163:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.741329] (my_robot_nbv_cmake) StderrLine: {'line': b'  163 | oat> ros_pc2_y(ros_pc2, "y"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.741381] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.741433] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.741484] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.741536] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.741674] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.741745] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.741799] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.741850] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.741905] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.741957] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.742015] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.742068] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.742126] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.742179] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.742231] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.742284] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.742343] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.742395] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:164:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.742448] (my_robot_nbv_cmake) StderrLine: {'line': b'  164 | oat> ros_pc2_z(ros_pc2, "z"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.742499] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.742551] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.742602] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.742654] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.742707] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.742768] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.742821] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.742875] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.742934] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.742986] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.743037] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.743089] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.743144] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.743205] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.743262] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.743314] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.743374] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.743427] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:171:28:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Klong int\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.743487] (my_robot_nbv_cmake) StderrLine: {'line': b'  171 |  (size_t i = 0; i < o3d_TensorList_points.GetShape()[0]; i++, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)\n'}
+[5.743541] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.743591] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:182:71:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.743647] (my_robot_nbv_cmake) StderrLine: {'line': b'  182 | 8_t> ros_pc2_r(ros_pc2, "r"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.743699] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.743750] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.743801] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.743852] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.743906] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.743962] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.744017] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.744069] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.744162] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.744218] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.744283] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.744344] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.744430] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.744501] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.744556] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.744613] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.744673] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.744727] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:183:71:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.744781] (-) TimerEvent: {}
+[5.744933] (my_robot_nbv_cmake) StderrLine: {'line': b'  183 | 8_t> ros_pc2_g(ros_pc2, "g"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.745015] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.745073] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.745147] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.745239] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.745306] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.745375] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.745431] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.745486] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.745544] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.745632] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.745742] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.745797] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.745872] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.745926] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.745978] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.746030] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.746084] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.746136] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:184:71:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, const char [2])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.746235] (my_robot_nbv_cmake) StderrLine: {'line': b'  184 | 8_t> ros_pc2_b(ros_pc2, "b"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.746304] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.746358] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.746411] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.746467] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.746522] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.746610] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.746711] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.746806] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.746874] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.746928] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.746982] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.747035] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.747091] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.747144] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.747197] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.747256] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.747321] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.747375] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:185:28:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Klong int\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.747460] (my_robot_nbv_cmake) StderrLine: {'line': b'  185 |  (size_t i = 0; i < o3d_TensorList_points.GetShape()[0]; i++, ++ros_pc2_r, ++ros_pc2_g, ++ros_pc2_b)\n'}
+[5.747557] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.747634] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:198:89:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.747693] (my_robot_nbv_cmake) StderrLine: {'line': b'  198 | ros_pc2, *field_name + "_x"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.747748] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.747834] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.747915] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.747972] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.748027] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.748094] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.748147] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.748203] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.748264] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.748321] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.748376] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.748430] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.748510] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.748569] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.748631] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.748696] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.748753] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.748806] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:199:89:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.748867] (my_robot_nbv_cmake) StderrLine: {'line': b'  199 | ros_pc2, *field_name + "_y"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.748921] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.748975] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.749030] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.749084] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.749143] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.749200] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.749257] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.749311] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.749377] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.749444] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.749502] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.749561] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.749627] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.749688] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.749742] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.749796] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.749852] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.749905] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:200:89:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.749960] (my_robot_nbv_cmake) StderrLine: {'line': b'  200 | ros_pc2, *field_name + "_z"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.750014] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.750068] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.750122] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.750185] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.750247] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = unsigned char; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.750311] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.750368] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.750430] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.750597] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.750696] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.750798] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.750858] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<unsigned char>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.750916] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.750971] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.751024] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.751081] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<unsigned char>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<unsigned char>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.751136] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.751190] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:201:30:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Klong int\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.751283] (my_robot_nbv_cmake) StderrLine: {'line': b'  201 |  (size_t i = 0; i < o3d_TensorList_points.GetShape()[0];\n'}
+[5.751346] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.751401] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:212:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.751460] (my_robot_nbv_cmake) StderrLine: {'line': b'  212 | ros_pc2, *field_name + "_x"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.751515] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.751572] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.751629] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.751685] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.751741] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.751799] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.751854] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.751908] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.751965] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.752112] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.752178] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.752233] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.752297] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.752351] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.752405] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.752459] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.752522] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.752579] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:213:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.752640] (my_robot_nbv_cmake) StderrLine: {'line': b'  213 | ros_pc2, *field_name + "_y"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.752696] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.752754] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.752808] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.752863] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.752932] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.753100] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.753163] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.753223] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.753280] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.753333] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.753386] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.753438] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.753493] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.753547] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.753600] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.753656] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.753718] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.753774] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:214:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(int&, std::__cxx11::basic_string<char>)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.753829] (my_robot_nbv_cmake) StderrLine: {'line': b'  214 | ros_pc2, *field_name + "_z"\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[5.753881] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.753937] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.753988] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:24\x1b[m\x1b[K,\n'}
+[5.754045] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.754098] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:292:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointCloud2Iterator<T>::PointCloud2Iterator(sensor_msgs::msg::PointCloud2&, const string&) [with T = float; sensor_msgs::msg::PointCloud2 = sensor_msgs::msg::PointCloud2_<std::allocator<void> >; std::string = std::__cxx11::basic_string<char>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.754151] (my_robot_nbv_cmake) StderrLine: {'line': b'  292 |   \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K(\n'}
+[5.754202] (my_robot_nbv_cmake) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.754253] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:293:37:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2_<std::allocator<void> >&\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[5.754313] (my_robot_nbv_cmake) StderrLine: {'line': b'  293 | \x1b[01;36m\x1b[Kmsg::PointCloud2 & cloud_msg\x1b[m\x1b[K,\n'}
+[5.754371] (my_robot_nbv_cmake) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.754424] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.754480] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(const sensor_msgs::PointCloud2Iterator<float>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.754535] (my_robot_nbv_cmake) StderrLine: {'line': b'  281 | class \x1b[01;36m\x1b[KPointCloud2Iterator\x1b[m\x1b[K\n'}
+[5.754587] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.754638] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.754697] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kconstexpr sensor_msgs::PointCloud2Iterator<float>::PointCloud2Iterator(sensor_msgs::PointCloud2Iterator<float>&&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.754754] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp:281:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 2 provided\n'}
+[5.754807] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:215:30:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} and \xe2\x80\x98\x1b[01m\x1b[Klong int\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.754862] (my_robot_nbv_cmake) StderrLine: {'line': b'  215 |  (size_t i = 0; i < o3d_TensorList_points.GetShape()[0];\n'}
+[5.754915] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.754967] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:195:35:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Ko3d_TensorList_fields\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.755022] (my_robot_nbv_cmake) StderrLine: {'line': b'  195 | 3d::core::Tensor& \x1b[01;35m\x1b[Ko3d_TensorList_fields\x1b[m\x1b[K = pointcloud.GetPointAttr(*field_name);\n'}
+[5.755076] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.755128] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.755180] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:\x1b[m\x1b[K At global scope:\n'}
+[5.755234] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:229:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2ConstPtr\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.755352] (my_robot_nbv_cmake) StderrLine: {'line': b'  229 | onst sensor_msgs::\x1b[01;31m\x1b[KPointCloud2ConstPtr\x1b[m\x1b[K& ros_pc2, open3d::t::geometry::PointCloud& o3d_tpc,\n'}
+[5.755417] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.755475] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[32m\x1b[KPointCloud2Modifier\x1b[m\x1b[K\n'}
+[5.755528] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid open3d_conversions::rosToOpen3d(const int&, open3d::t::geometry::PointCloud&, bool)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.755595] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:232:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.755653] (my_robot_nbv_cmake) StderrLine: {'line': b'  232 | <float> ros_pc2_x(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "x");\n'}
+[5.755705] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.755757] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.755810] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:233:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.755905] (my_robot_nbv_cmake) StderrLine: {'line': b'  233 | <float> ros_pc2_y(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "y");\n'}
+[5.755979] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.756034] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.756085] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:234:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.756138] (my_robot_nbv_cmake) StderrLine: {'line': b'  234 | <float> ros_pc2_z(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "z");\n'}
+[5.756190] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.756242] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.756296] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:240:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.756361] (my_robot_nbv_cmake) StderrLine: {'line': b'  240 | m_fields < ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields.size(); num_fields++)\n'}
+[5.756423] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.756481] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.759951] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:242:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.760247] (my_robot_nbv_cmake) StderrLine: {'line': b'  242 |     if (ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name == "x")\n'}
+[5.760317] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.760383] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:244:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.760698] (my_robot_nbv_cmake) StderrLine: {'line': b'  244 | i = 0; i < ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)\n'}
+[5.760972] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.761042] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.761095] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:244:55:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.761155] (my_robot_nbv_cmake) StderrLine: {'line': b'  244 | ->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth; ++i, ++ros_pc2_x, ++ros_pc2_y, ++ros_pc2_z)\n'}
+[5.761229] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.761601] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.761693] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:254:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.761813] (my_robot_nbv_cmake) StderrLine: {'line': b'  254 |   else if (ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name == "rgb" && !skip_colors)\n'}
+[5.761909] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.762278] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.762409] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:256:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.762483] (my_robot_nbv_cmake) StderrLine: {'line': b'  256 | int8_t> ros_pc2_r(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "r");\n'}
+[5.762662] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.762735] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.762795] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:257:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.762898] (my_robot_nbv_cmake) StderrLine: {'line': b'  257 | int8_t> ros_pc2_g(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "g");\n'}
+[5.762962] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.763028] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.763084] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:258:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.763141] (my_robot_nbv_cmake) StderrLine: {'line': b'  258 | int8_t> ros_pc2_b(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, "b");\n'}
+[5.763196] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.763249] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.763303] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:260:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.763366] (my_robot_nbv_cmake) StderrLine: {'line': b'  260 | i = 0; i < ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width; ++i, ++ros_pc2_r, ++ros_pc2_g, ++ros_pc2_b)\n'}
+[5.763424] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.763477] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.763531] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:260:55:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.763586] (my_robot_nbv_cmake) StderrLine: {'line': b'  260 | ->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth; ++i, ++ros_pc2_r, ++ros_pc2_g, ++ros_pc2_b)\n'}
+[5.763644] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.763699] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.763754] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:271:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.763808] (my_robot_nbv_cmake) StderrLine: {'line': b'  271 |       if (ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].datatype == sensor_msgs::PointField::UINT8 ||\n'}
+[5.763864] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.763920] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:271:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.764017] (my_robot_nbv_cmake) StderrLine: {'line': b'  271 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::UINT8 ||\n'}
+[5.764129] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.764210] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.764320] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:272:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.764546] (my_robot_nbv_cmake) StderrLine: {'line': b'  272 |           ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].datatype == sensor_msgs::PointField::INT8)\n'}
+[5.764612] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.764665] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:272:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.764719] (my_robot_nbv_cmake) StderrLine: {'line': b'  272 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::INT8)\n'}
+[5.764773] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.764830] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.764886] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:274:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.764965] (my_robot_nbv_cmake) StderrLine: {'line': b'  274 | nt8_t> ros_pc2_fx(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, ros_pc2->fields[num_fields].name);\n'}
+[5.765028] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.765090] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.765147] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:274:84:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.765208] (my_robot_nbv_cmake) StderrLine: {'line': b'  274 | (*ros_pc2, ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name);\n'}
+[5.765282] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.765443] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.765556] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:275:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.765623] (my_robot_nbv_cmake) StderrLine: {'line': b'  275 | nt8_t> ros_pc2_fy(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, ros_pc2->fields[num_fields].name);\n'}
+[5.765773] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.765831] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.765884] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:275:84:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.765947] (my_robot_nbv_cmake) StderrLine: {'line': b'  275 | (*ros_pc2, ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name);\n'}
+[5.765999] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.766051] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.766101] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:276:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.766156] (my_robot_nbv_cmake) StderrLine: {'line': b'  276 | nt8_t> ros_pc2_fz(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, ros_pc2->fields[num_fields].name);\n'}
+[5.766207] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.766265] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.766337] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:276:84:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.766401] (my_robot_nbv_cmake) StderrLine: {'line': b'  276 | (*ros_pc2, ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name);\n'}
+[5.766460] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.766514] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.766568] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:279:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.766621] (my_robot_nbv_cmake) StderrLine: {'line': b'  279 | i = 0; i < ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)\n'}
+[5.766673] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.766725] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.766775] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:279:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.766826] (my_robot_nbv_cmake) StderrLine: {'line': b'  279 | ->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)\n'}
+[5.766886] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.766937] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.766988] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:285:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.767040] (my_robot_nbv_cmake) StderrLine: {'line': b'  285 | tPointAttr(ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name, o3d_tpc_fields);\n'}
+[5.767091] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.767142] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.767192] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:287:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.767247] (my_robot_nbv_cmake) StderrLine: {'line': b'  287 |   else if (ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].datatype == sensor_msgs::PointField::FLOAT32)\n'}
+[5.767305] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.767358] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.767411] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:287:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.767714] (my_robot_nbv_cmake) StderrLine: {'line': b'  287 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::FLOAT32)\n'}
+[5.767785] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.767840] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.767894] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:289:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.768049] (my_robot_nbv_cmake) StderrLine: {'line': b'  289 | float> ros_pc2_fx(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, ros_pc2->fields[num_fields].name);\n'}
+[5.768145] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.768217] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.768281] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:289:82:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.768337] (my_robot_nbv_cmake) StderrLine: {'line': b'  289 | (*ros_pc2, ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name);\n'}
+[5.768390] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.768442] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.768493] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:290:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.768547] (my_robot_nbv_cmake) StderrLine: {'line': b'  290 | float> ros_pc2_fy(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, ros_pc2->fields[num_fields].name);\n'}
+[5.768608] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.768663] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.768716] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:290:82:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.768768] (my_robot_nbv_cmake) StderrLine: {'line': b'  290 | (*ros_pc2, ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name);\n'}
+[5.768820] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.768871] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.768923] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:291:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.768982] (my_robot_nbv_cmake) StderrLine: {'line': b'  291 | float> ros_pc2_fz(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, ros_pc2->fields[num_fields].name);\n'}
+[5.769038] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.769091] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.769143] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:291:82:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.769196] (my_robot_nbv_cmake) StderrLine: {'line': b'  291 | (*ros_pc2, ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name);\n'}
+[5.769248] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.769300] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.769353] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:294:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.769419] (my_robot_nbv_cmake) StderrLine: {'line': b'  294 | i = 0; i < ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)\n'}
+[5.769483] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.769538] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.769589] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:294:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.769647] (my_robot_nbv_cmake) StderrLine: {'line': b'  294 | ->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)\n'}
+[5.769702] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.769753] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.769804] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:300:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.769855] (my_robot_nbv_cmake) StderrLine: {'line': b'  300 | tPointAttr(ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name, o3d_tpc_fields);\n'}
+[5.769906] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.769961] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.770014] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:304:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.770076] (my_robot_nbv_cmake) StderrLine: {'line': b'  304 | float> ros_pc2_fx(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, ros_pc2->fields[num_fields].name);\n'}
+[5.770127] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.770178] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.770230] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:304:82:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.770281] (my_robot_nbv_cmake) StderrLine: {'line': b'  304 | (*ros_pc2, ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name);\n'}
+[5.770332] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.770383] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.770565] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:305:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.770649] (my_robot_nbv_cmake) StderrLine: {'line': b'  305 | float> ros_pc2_fy(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, ros_pc2->fields[num_fields].name);\n'}
+[5.770763] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.770920] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.770990] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:305:82:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.771053] (my_robot_nbv_cmake) StderrLine: {'line': b'  305 | (*ros_pc2, ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name);\n'}
+[5.771112] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.771205] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.771267] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:306:65:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid type argument of unary \xe2\x80\x98\x1b[01m\x1b[K*\x1b[m\x1b[K\xe2\x80\x99 (have \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99)\n'}
+[5.771334] (my_robot_nbv_cmake) StderrLine: {'line': b'  306 | float> ros_pc2_fz(\x1b[01;31m\x1b[K*ros_pc2\x1b[m\x1b[K, ros_pc2->fields[num_fields].name);\n'}
+[5.771391] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.771490] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.771567] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:306:82:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.771630] (my_robot_nbv_cmake) StderrLine: {'line': b'  306 | (*ros_pc2, ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name);\n'}
+[5.771685] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.771747] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.771800] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:309:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.771853] (my_robot_nbv_cmake) StderrLine: {'line': b'  309 | i = 0; i < ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kheight * ros_pc2->width; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)\n'}
+[5.771906] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.771959] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.772015] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:309:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.772069] (my_robot_nbv_cmake) StderrLine: {'line': b'  309 | ->height * ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kwidth; ++i, ++ros_pc2_fx, ++ros_pc2_fy, ++ros_pc2_fz)\n'}
+[5.772122] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.772175] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.772228] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:315:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbase operand of \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 is not a pointer\n'}
+[5.772282] (my_robot_nbv_cmake) StderrLine: {'line': b'  315 | tPointAttr(ros_pc2\x1b[01;31m\x1b[K->\x1b[m\x1b[Kfields[num_fields].name, o3d_tpc_fields);\n'}
+[5.772342] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[5.772403] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.772455] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:\x1b[m\x1b[K At global scope:\n'}
+[5.772507] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPointCloud2\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.772563] (my_robot_nbv_cmake) StderrLine: {'line': b'  322 | ield(sensor_msgs::\x1b[01;31m\x1b[KPointCloud2\x1b[m\x1b[K& cloud_msg, const std::string& name, int count, int datatype,\n'}
+[5.772616] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.772667] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.772718] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp:7\x1b[m\x1b[K,\n'}
+[5.772769] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/open3d_conversions.h:23\x1b[m\x1b[K,\n'}
+[5.772822] (my_robot_nbv_cmake) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:15\x1b[m\x1b[K:\n'}
+[5.772874] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp:235:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::msg::PointCloud2\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[5.772931] (my_robot_nbv_cmake) StderrLine: {'line': b'  235 | using \x1b[01;36m\x1b[KPointCloud2\x1b[m\x1b[K =\n'}
+[5.773123] (my_robot_nbv_cmake) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.773594] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcloud_msg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.773816] (my_robot_nbv_cmake) StderrLine: {'line': b'  322 | sgs::PointCloud2& \x1b[01;31m\x1b[Kcloud_msg\x1b[m\x1b[K, const std::string& name, int count, int datatype,\n'}
+[5.773929] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.774031] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.774130] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.774265] (my_robot_nbv_cmake) StderrLine: {'line': b'  322 | loud2& cloud_msg, \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K std::string& name, int count, int datatype,\n'}
+[5.774384] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.774564] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.774921] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:88:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.774985] (my_robot_nbv_cmake) StderrLine: {'line': b'  322 | td::string& name, \x1b[01;31m\x1b[Kint\x1b[m\x1b[K count, int datatype,\n'}
+[5.775041] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.775095] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.775148] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:322:99:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.775203] (my_robot_nbv_cmake) StderrLine: {'line': b'  322 |  name, int count, \x1b[01;31m\x1b[Kint\x1b[m\x1b[K datatype,\n'}
+[5.775255] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.775307] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.775359] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:323:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.775411] (my_robot_nbv_cmake) StderrLine: {'line': b'  323 |                   \x1b[01;31m\x1b[Kint\x1b[m\x1b[K offset)\n'}
+[5.775507] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.775599] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.775656] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:323:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpression list treated as compound expression in initializer [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.775712] (my_robot_nbv_cmake) StderrLine: {'line': b'  323 |                   int offset\x1b[01;31m\x1b[K)\x1b[m\x1b[K\n'}
+[5.775771] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.775822] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.775873] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint sizeOfPointField(int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.775925] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:339:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.776013] (my_robot_nbv_cmake) StderrLine: {'line': b'  339 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::INT8) || (datatype == sensor_msgs::PointField::UINT8))\n'}
+[5.776109] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.776163] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.776216] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:339:80:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.776308] (my_robot_nbv_cmake) StderrLine: {'line': b'  339 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::UINT8))\n'}
+[5.776368] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.776421] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.776536] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:343:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.776682] (my_robot_nbv_cmake) StderrLine: {'line': b'  343 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::INT16) ||    // NOLINT\n'}
+[5.776753] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.776811] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.776864] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:344:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.776920] (my_robot_nbv_cmake) StderrLine: {'line': b'  344 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::UINT16))\n'}
+[5.777002] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.777082] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.777137] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:348:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.777192] (my_robot_nbv_cmake) StderrLine: {'line': b'  348 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::INT32) ||    // NOLINT\n'}
+[5.777245] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.777296] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.777347] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:349:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.777408] (my_robot_nbv_cmake) StderrLine: {'line': b'  349 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::UINT32) || (datatype == sensor_msgs::PointField::FLOAT32))\n'}
+[5.777464] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.777663] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.777740] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:349:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.777810] (my_robot_nbv_cmake) StderrLine: {'line': b'  349 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::FLOAT32))\n'}
+[5.777865] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.777918] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.777970] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/open3d_conversions.cpp:353:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs::PointField\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.778026] (my_robot_nbv_cmake) StderrLine: {'line': b'  353 | e == sensor_msgs::\x1b[01;31m\x1b[KPointField\x1b[m\x1b[K::FLOAT64)\n'}
+[5.778080] (my_robot_nbv_cmake) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.778132] (my_robot_nbv_cmake) StderrLine: {'line': b'\n'}
+[5.845085] (-) TimerEvent: {}
+[5.946106] (-) TimerEvent: {}
+[6.046907] (-) TimerEvent: {}
+[6.147453] (-) TimerEvent: {}
+[6.248017] (-) TimerEvent: {}
+[6.348587] (-) TimerEvent: {}
+[6.449254] (-) TimerEvent: {}
+[6.549657] (-) TimerEvent: {}
+[6.650382] (-) TimerEvent: {}
+[6.750807] (-) TimerEvent: {}
+[6.851586] (-) TimerEvent: {}
+[6.952183] (-) TimerEvent: {}
+[7.052769] (-) TimerEvent: {}
+[7.153630] (-) TimerEvent: {}
+[7.255086] (-) TimerEvent: {}
+[7.355647] (-) TimerEvent: {}
+[7.456569] (-) TimerEvent: {}
+[7.515391] (my_robot_nbv_cmake) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/open3d_conversions.dir/build.make:76: CMakeFiles/open3d_conversions.dir/src/open3d_conversions.cpp.o] Error 1\n'}
+[7.516072] (my_robot_nbv_cmake) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:250: CMakeFiles/open3d_conversions.dir/all] Error 2\n'}
+[7.516858] (my_robot_nbv_cmake) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.534340] (my_robot_nbv_cmake) CommandEnded: {'returncode': 2}
+[7.556821] (-) TimerEvent: {}
+[7.657522] (-) TimerEvent: {}
+[7.703975] (my_robot_nbv_cmake) JobEnded: {'identifier': 'my_robot_nbv_cmake', 'rc': 2}
+[7.735033] (-) EventReactorShutdown: {}

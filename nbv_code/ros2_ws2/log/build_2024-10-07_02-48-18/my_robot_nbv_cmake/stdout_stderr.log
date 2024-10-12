@@ -1,0 +1,18 @@
+[ 50%] Built target SdfModelV3
+[ 50%] Built target nbvc_lib_SdfModel
+[ 75%] Built target nbvc_ray_generationV3_beforeclean
+[ 87%] [32mBuilding CXX object CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o[0m
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:[m[K In member function ‘[01m[Kvoid MyNode::pointcloud_callback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:137:79:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::shared_ptr<open3d::geometry::PointCloud>[m[K’ to ‘[01m[Kconst open3d::geometry::PointCloud&[m[K’
+  137 |     sensor_msgs::msg::PointCloud2 ros_cloud = open3dToRos2PointCloud2([01;31m[Kopen3d_cloud_[m[K, "odom");
+      |                                                                       [01;31m[K^~~~~~~~~~~~~[m[K
+      |                                                                       [01;31m[K|[m[K
+      |                                                                       [01;31m[Kstd::shared_ptr<open3d::geometry::PointCloud>[m[K
+
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/nbvc_ray_generation.cpp:182:99:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Ksensor_msgs::msg::PointCloud2 MyNode::open3dToRos2PointCloud2(const open3d::geometry::PointCloud&, const string&)[m[K’
+  182 | g::PointCloud2 open3dToRos2PointCloud2([01;36m[Kconst open3d::geometry::PointCloud& cloud[m[K,
+      |                                        [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/nbvc_ray_generation.dir/build.make:76: CMakeFiles/nbvc_ray_generation.dir/src/nbvc_ray_generation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/nbvc_ray_generation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
