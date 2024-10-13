@@ -387,6 +387,8 @@ class MyNode : public rclcpp::Node
                         // octree->setClampingThresMin(0.12);  // Minimum clamping threshold
                         // octree->setClampingThresMax(0.97);  // Maximum
 
+                        octomap::point3d BestCandidateView_point;//用來存此輪nbv最佳點
+                        int BestCandidateView_gain=0;
 
 
 
@@ -399,7 +401,7 @@ class MyNode : public rclcpp::Node
 
                         std::vector<octomap::point3d> origins = RandomPoint(modelCenterOctomap_pcd , 20, 0.5); //中心座標, 點數, 長度
                         // std::vector<octomap::point3d> origins = {{0,0,0},{1,-0.5,0.15}};//{0,0,0},{1,-0.5,0.15}};//{1,-0.5,0}
-                        int id_k=0;
+                        int id_k=1;
                         
                         int id_l=200;
                         int id_t=400;
@@ -496,6 +498,16 @@ class MyNode : public rclcpp::Node
                             RCLCPP_INFO(this->get_logger(), "===============================================");
                             RCLCPP_INFO(this->get_logger(), "The gain for candidate view at (%f, %f, %f) is %d", origin.x(), origin.y(), origin.z(), gain);
                             RCLCPP_INFO(this->get_logger(), "===============================================");
+
+                            //To find best candidate view
+                            if(gain>BestCandidateView_gain){
+                                BestCandidateView_point=origin;
+                                BestCandidateView_gain=gain;
+                                publish_point_marker(origin.x(), origin.y(), origin.z(), 0.05, 1.0f, 1.0f, 0.0f);//scale color r g b
+    
+
+
+                            }
                             
                             std::vector<Eigen::Vector3f> query_points_in = ModelScene.ShowInQueryPoints();
                             std::vector<Eigen::Vector3f> query_points_out = ModelScene.ShowOutQueryPoints();
@@ -523,7 +535,12 @@ class MyNode : public rclcpp::Node
                             
                         }
                         
+                        RCLCPP_INFO(this->get_logger(), "===============================================");
+                        RCLCPP_INFO(this->get_logger(), "The Best candidate view for this scene is at (%f, %f, %f) \n with gain=%d", BestCandidateView_point.x(), BestCandidateView_point.y(), BestCandidateView_point.z(), BestCandidateView_gain);
+                        RCLCPP_INFO(this->get_logger(), "===============================================");
+
                         ModelScene.Visualize();
+
 
 
                     } else{
@@ -543,6 +560,42 @@ class MyNode : public rclcpp::Node
         
         }
 
+        void publish_point_marker(float x, float y, float z, float scale=0.05, float r=1, float g=0, float b=0, float a=1) {
+            visualization_msgs::msg::Marker marker;
+
+            // Set frame_id and timestamp
+            marker.header.frame_id = "odom";  // Make sure this frame exists in your tf tree
+            marker.header.stamp = this->get_clock()->now();
+
+            // Set the namespace and id for this marker
+            marker.ns = "my_point_marker";
+            marker.id = 0;
+
+            // Set the marker type
+            marker.type = visualization_msgs::msg::Marker::SPHERE;
+
+            // Set the action: add the marker
+            marker.action = visualization_msgs::msg::Marker::ADD;
+
+            // Set the position of the marker (huge point)
+            marker.pose.position.x = x;
+            marker.pose.position.y = y;
+            marker.pose.position.z = z;
+
+            // Set the scale of the marker (this will make it a "huge" point)
+            marker.scale.x = scale;
+            marker.scale.y = scale;
+            marker.scale.z = scale;
+
+            // Set the color (RGBA)
+            marker.color.r = r;
+            marker.color.g = g;
+            marker.color.b = b;
+            marker.color.a = a;
+
+            // Publish the marker 
+            marker_publisher_->publish(marker);
+        }
         std::vector<octomap::point3d> RandomPoint(octomap::point3d center_, int pointNum, double radius_){
             
             std::vector<octomap::point3d> RayEndPoints;
