@@ -121,28 +121,48 @@ def ICPoperation(source, target):
     if __debug__:
         print("corresponding point= %.2f" %paired_point_ratio)
         print("good_fitness_standard= %.2f" %((sp_tp_ratio)*0.6))
+    
+    RedoGlobalCount = 0 #<Debug6>用來計算global registration到底重做了幾次, 如果超過3次就代表真的就是correspondent point太少, 就直接不做了, 跳出來才部會卡在迴圈
+    AcceptRedoGlobalCount = 3
 
-    while (paired_point_ratio<=0.60) or (evaluation.inlier_rmse > 0.01) or (evaluation.fitness<(sp_tp_ratio)*0.6): #如果global誤差太大, 就重算global
+    print("sp_tp_ratio=%.2f" %sp_tp_ratio)
+    print("corresponding point= %.2f" %paired_point_ratio)
+    print("global registration evaluation: "+str(evaluation))
+    # GlobalRegistrationSuccessFlag = True
+    # while (paired_point_ratio<=0.60) or (evaluation.inlier_rmse > 0.01) or (evaluation.fitness<(sp_tp_ratio)*0.6): #如果global誤差太大, 就重算global #這個的好像標準太高了會一直卡在這個迴圈
+    # while (paired_point_ratio<=0.60): #如果global誤差太大, 就重算global
+    
+    while (paired_point_ratio<=0.35) or (sp_tp_ratio<=0.04): #如果global誤差太大, 就重算global
+
+    
         # evaluation.inlier_rmse 正常的時候是0.00762, 如果這次算出的global誤差太大, 就重算global
         #不知為啥有時paired_point_ratio會大於1ㄟ其實不太對的
-        if __debug__:
-            print("recalculate global registration (target_num_points/len(evaluation.correspondence_set))<0.60) or (evaluation.inlier_rmse > 0.01)")
-        #===========test=============
-        # source_down = copy.deepcopy(source_down_origin)
-        # target_down = copy.deepcopy(target_down_origin)
-        # source_fpfh = copy.deepcopy(source_fpfh_origin)
-        # target_fpfh = copy.deepcopy(target_fpfh_origin)
-        #============================
-        result_ransac = execute_global_registration(source_down, target_down,
-                                                    source_fpfh, target_fpfh,voxel_size)
-        evaluation = o3d.pipelines.registration.evaluate_registration(source_down, target_down, threshold, result_ransac.transformation)
-        paired_point_ratio=len(evaluation.correspondence_set)/target_num_points
-        
-        if __debug__:
+        if RedoGlobalCount<=AcceptRedoGlobalCount:
+            if __debug__:
+                print("recalculate global registration (target_num_points/len(evaluation.correspondence_set))<0.60) or (evaluation.inlier_rmse > 0.01)")
+            #===========test=============
+            # source_down = copy.deepcopy(source_down_origin)
+            # target_down = copy.deepcopy(target_down_origin)
+            # source_fpfh = copy.deepcopy(source_fpfh_origin)
+            # target_fpfh = copy.deepcopy(target_fpfh_origin)
+            #============================
+            result_ransac = execute_global_registration(source_down, target_down,
+                                                        source_fpfh, target_fpfh,voxel_size)
+            evaluation = o3d.pipelines.registration.evaluate_registration(source_down, target_down, threshold, result_ransac.transformation)
+            paired_point_ratio=len(evaluation.correspondence_set)/target_num_points
+            print("sp_tp_ratio=%.2f" %sp_tp_ratio)
             print("corresponding point= %.2f" %paired_point_ratio)
             print("global registration evaluation: "+str(evaluation))
-        if __debug__:
-            draw_registration_result(source_down, target_down, result_ransac.transformation, "ReGlobal_registration")
+            if __debug__:
+                print("corresponding point= %.2f" %paired_point_ratio)
+                print("global registration evaluation: "+str(evaluation))
+            if __debug__:
+                draw_registration_result(source_down, target_down, result_ransac.transformation, "ReGlobal_registration")
+            RedoGlobalCount+=1
+        else: #如果重作太多次了就跳出迴圈 , 就直接回傳None 跳出function 了
+            return None
+            # break #看看如果global沒取好照做會怎樣 #結果好像也是可以, 你可能上面標準設太高了
+            
 
 
     #[Step2] Local Registration (By ICP method)

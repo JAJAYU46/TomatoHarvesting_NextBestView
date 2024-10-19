@@ -88,6 +88,7 @@ endif()
 add_executable(nbvc_ray_generation src/nbvc_ray_generation.cpp) #要執行的node名稱/ 檔案位置(相對於現在這個package)
 add_executable(SdfModelV3 src/SdfModelV3.cpp) #要執行的node名稱/ 檔案位置(相對於現在這個package)
 add_executable(nbvc_ray_generationV3_beforeclean src/nbvc_ray_generationV3_beforeclean.cpp) #要執行的node名稱/ 檔案位置(相對於現在這個package)
+add_executable(BestViewModel src/BestViewModel.cpp) #要執行的node名稱/ 檔案位置(相對於現在這個package)
 
 # <Debug> 現在SdfModel.cpp是要當一個class library,  不是要件一個executable, 它沒有main!
 add_library(nbvc_lib_SdfModel src/SdfModel.cpp)
@@ -120,6 +121,30 @@ TARGET_LINK_LIBRARIES(nbvc_ray_generation #好像自己額外的要用這個加�
 
 )
 
+#####
+ament_target_dependencies(BestViewModel #msg的是加這種的
+  rclcpp 
+  octomap_msgs
+  std_msgs
+  visualization_msgs
+  geometry_msgs
+  tf2
+  tf2_ros
+  tf2_geometry_msgs
+  tf2_eigen
+  #for subsribe pcd topic
+  sensor_msgs
+)# ${OCTOMAP_LIBRARIES}) #說這個executable 裡面有用到(dependency)rclcpp這個package
+TARGET_LINK_LIBRARIES(BestViewModel #好像自己額外的要用這個加才可以
+    nbvc_lib_SdfModel    
+    ${OCTOMAP_LIBRARIES}
+    ${Open3D_LIBRARIES}
+    # open3d_conversions
+    # ${TF2_LIBRARIES}
+    # ${TF2_ROS_LIBRARIES}
+    
+
+)
 
 ament_target_dependencies(nbvc_ray_generationV3_beforeclean #msg的是加這種的
   rclcpp 
@@ -183,6 +208,7 @@ install(TARGETS
   nbvc_ray_generationV3_beforeclean
   nbvc_lib_SdfModel
   SdfModelV3
+  BestViewModel
   # open3d_conversions
   DESTINATION lib/${PROJECT_NAME}
 )

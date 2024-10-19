@@ -237,6 +237,19 @@ nbvc_ray_generationV3_beforeclean/fast:
 .PHONY : nbvc_ray_generationV3_beforeclean/fast
 
 #=============================================================================
+# Target rules for targets named BestViewModel
+
+# Build rule for target.
+BestViewModel: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 BestViewModel
+.PHONY : BestViewModel
+
+# fast build rule for target.
+BestViewModel/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BestViewModel.dir/build.make CMakeFiles/BestViewModel.dir/build
+.PHONY : BestViewModel/fast
+
+#=============================================================================
 # Target rules for targets named nbvc_lib_SdfModel
 
 # Build rule for target.
@@ -248,6 +261,30 @@ nbvc_lib_SdfModel: cmake_check_build_system
 nbvc_lib_SdfModel/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nbvc_lib_SdfModel.dir/build.make CMakeFiles/nbvc_lib_SdfModel.dir/build
 .PHONY : nbvc_lib_SdfModel/fast
+
+src/BestViewModel.o: src/BestViewModel.cpp.o
+.PHONY : src/BestViewModel.o
+
+# target to build an object file
+src/BestViewModel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BestViewModel.dir/build.make CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o
+.PHONY : src/BestViewModel.cpp.o
+
+src/BestViewModel.i: src/BestViewModel.cpp.i
+.PHONY : src/BestViewModel.i
+
+# target to preprocess a source file
+src/BestViewModel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BestViewModel.dir/build.make CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.i
+.PHONY : src/BestViewModel.cpp.i
+
+src/BestViewModel.s: src/BestViewModel.cpp.s
+.PHONY : src/BestViewModel.s
+
+# target to generate assembly for a file
+src/BestViewModel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BestViewModel.dir/build.make CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.s
+.PHONY : src/BestViewModel.cpp.s
 
 src/SdfModel.o: src/SdfModel.cpp.o
 .PHONY : src/SdfModel.o
@@ -360,10 +397,14 @@ help:
 	@echo "... test"
 	@echo "... my_robot_nbv_cmake_uninstall"
 	@echo "... uninstall"
+	@echo "... BestViewModel"
 	@echo "... SdfModelV3"
 	@echo "... nbvc_lib_SdfModel"
 	@echo "... nbvc_ray_generation"
 	@echo "... nbvc_ray_generationV3_beforeclean"
+	@echo "... src/BestViewModel.o"
+	@echo "... src/BestViewModel.i"
+	@echo "... src/BestViewModel.s"
 	@echo "... src/SdfModel.o"
 	@echo "... src/SdfModel.i"
 	@echo "... src/SdfModel.s"

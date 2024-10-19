@@ -182,83 +182,93 @@ class MyNode(Node): #construct Node class
 
         # Save the filtered points to a PCD file using Open3D
         point_cloud = o3d.geometry.PointCloud()
-        points = np.array(filtered_points)[:, :3] #紀錄x, y, z
-        #colors = np.array(filtered_points)[:, 3:6]  # RGB colors
+        if filtered_points: #如果有filter到東西(is not empty)再做下面的icp跟publish
+            points = np.array(filtered_points)[:, :3] #紀錄x, y, z
+            #colors = np.array(filtered_points)[:, 3:6]  # RGB colors
 
-        # # Ensure the colors are of type float64 and shape (N, 3)
-        # colors = colors.astype(np.float64)
-        # colors=int(colors/ 255.0)
-        #self.get_logger().info("colors: "+str(colors_pcd_open3d))
+            # # Ensure the colors are of type float64 and shape (N, 3)
+            # colors = colors.astype(np.float64)
+            # colors=int(colors/ 255.0)
+            #self.get_logger().info("colors: "+str(colors_pcd_open3d))
 
-        point_cloud.points = o3d.utility.Vector3dVector(points)
-        point_cloud.colors = o3d.utility.Vector3dVector(colors_pcd_open3d)
-        
-        source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
-        source = o3d.io.read_point_cloud(source_path.format(3)) #demo_pcds.paths[0])
-        # print(np.asarray(pcd.points))
-        #for debug
-        # source_np=np.array(source)
-        # self.get_logger().info(f'source_np: {source_np}')
-        # self.get_logger().info(f'Data_type of source_np: {source_np.dtype}')
+            point_cloud.points = o3d.utility.Vector3dVector(points)
+            point_cloud.colors = o3d.utility.Vector3dVector(colors_pcd_open3d)
+            
+            source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
+            source = o3d.io.read_point_cloud(source_path.format(3)) #demo_pcds.paths[0])
+            # print(np.asarray(pcd.points))
+            #for debug
+            # source_np=np.array(source)
+            # self.get_logger().info(f'source_np: {source_np}')
+            # self.get_logger().info(f'Data_type of source_np: {source_np.dtype}')
 
-        target = point_cloud
-        result_trans_final=ICPoperation(source,target)
-        source.paint_uniform_color([1, 0.706, 0])
-        source.transform(result_trans_final.transformation)
+            target = point_cloud
 
-        #debug#
-        # # Convert to numpy array and print the data type of each component
-        # source_points = np.asarray(source.points)  # Get points as a numpy array
-        # source_colors = np.asarray(source.colors)  # Get colors as a numpy array (if available)
-        
-        # # Print out the data and its type
-        # print(f"Points shape: {source_points.shape}, dtype: {source_points.dtype}")
-        # print(f"First point: {source_points[0]}")  # Example of accessing a point
+            try:
+                self.get_logger().info("start ICP")
+                result_trans_final=ICPoperation(source,target)
+                if result_trans_final is not None: #才做下面的事情
+                    source.paint_uniform_color([1, 0.706, 0])
+                    source.transform(result_trans_final.transformation)
 
-        # if source_colors.size > 0:
-        #     print(f"Colors shape: {source_colors.shape}, dtype: {source_colors.dtype}")
-        #     print(f"First color: {source_colors[0]}")  # Example of accessing a color
-        # else:
-        #     print("No colors available in the point cloud.")
-        ##
+                    #debug#
+                    # # Convert to numpy array and print the data type of each component
+                    # source_points = np.asarray(source.points)  # Get points as a numpy array
+                    # source_colors = np.asarray(source.colors)  # Get colors as a numpy array (if available)
+                    
+                    # # Print out the data and its type
+                    # print(f"Points shape: {source_points.shape}, dtype: {source_points.dtype}")
+                    # print(f"First point: {source_points[0]}")  # Example of accessing a point
+
+                    # if source_colors.size > 0:
+                    #     print(f"Colors shape: {source_colors.shape}, dtype: {source_colors.dtype}")
+                    #     print(f"First color: {source_colors[0]}")  # Example of accessing a color
+                    # else:
+                    #     print("No colors available in the point cloud.")
+                    ##
 
 
 
 
 
-        self.get_logger().info("done registering, start integrating two point cloud")
-        source_pointcloud2 = convertCloudFromOpen3dToRos(source, "camera_link_optical")
-        self.tompcd_ICPonly_pub_.publish(source_pointcloud2) #pc_array = np.array(list(pc_data)) //只publish那個轉好的model給之後算sdf用
-        
-        #把ICP data和原來的pointcloud2 data組合起來, 因為之後要給octomap算 弄不出來...20240825
-        # new_point = list(pc2.read_points(msg, field_names=("x", "y", "z", "rgb"), skip_nans=True))
-        # new_point = np.array(list(pc2.read_points(source_pointcloud2, field_names=("x", "y", "z", "rgb"))))
-        #20240905
-        whole_points_np = []
-        # gen = pc2.read_points(msg, skip_nans=True)
-        # int_data = list(gen)
-        msg_points_np = np.array(list(pc2.read_points(msg, skip_nans=True)))
-        source_points_np = np.array(list(pc2.read_points(source_pointcloud2, skip_nans=True)))
-        if __debug__:
-            self.get_logger().info(f'Shape of msg_points_np.shape: {msg_points_np.shape}')
-            self.get_logger().info(f'Shape of source_points_np.shape: {(source_points_np.shape)}')
-        # # self.get_logger().info(f'Array of msg_points_np: {msg_points_np}')
-        # self.get_logger().info(f'Data_type of msg_points_np: {msg_points_np.dtype}')
-        # self.get_logger().info(f'Array of source_points_np: {(source_points_np)}')
-        # self.get_logger().info(f'Data_type of source_points_np: {(source_points_np.dtype)}')
+                    self.get_logger().info("done registering, start integrating two point cloud")
+                    source_pointcloud2 = convertCloudFromOpen3dToRos(source, "camera_link_optical")
+                    self.tompcd_ICPonly_pub_.publish(source_pointcloud2) #pc_array = np.array(list(pc_data)) //只publish那個轉好的model給之後算sdf用
+                    
+                    #把ICP data和原來的pointcloud2 data組合起來, 因為之後要給octomap算 弄不出來...20240825
+                    # new_point = list(pc2.read_points(msg, field_names=("x", "y", "z", "rgb"), skip_nans=True))
+                    # new_point = np.array(list(pc2.read_points(source_pointcloud2, field_names=("x", "y", "z", "rgb"))))
+                    #20240905
+                    whole_points_np = []
+                    # gen = pc2.read_points(msg, skip_nans=True)
+                    # int_data = list(gen)
+                    msg_points_np = np.array(list(pc2.read_points(msg, skip_nans=True)))
+                    source_points_np = np.array(list(pc2.read_points(source_pointcloud2, skip_nans=True)))
+                    if __debug__:
+                        self.get_logger().info(f'Shape of msg_points_np.shape: {msg_points_np.shape}')
+                        self.get_logger().info(f'Shape of source_points_np.shape: {(source_points_np.shape)}')
+                    # # self.get_logger().info(f'Array of msg_points_np: {msg_points_np}')
+                    # self.get_logger().info(f'Data_type of msg_points_np: {msg_points_np.dtype}')
+                    # self.get_logger().info(f'Array of source_points_np: {(source_points_np)}')
+                    # self.get_logger().info(f'Data_type of source_points_np: {(source_points_np.dtype)}')
 
-        whole_points_np = np.append(msg_points_np, source_points_np, axis=0)#往側邊append
-        # self.get_logger().info(f'Array of whole_points_np: {(whole_points_np)}')
-        if __debug__:
-            self.get_logger().info(f'Shape of whole_points_np: {(whole_points_np.shape)}')
-        # self.get_logger().info(f'msg.fields: {(msg.fields)}')
-        # self.get_logger().info(f'filter_points: {(filtered_points)}')
-        whole_pointcloud2 = pc2.create_cloud(msg.header, msg.fields, whole_points_np.tolist())
-        self.tompcd_ICP_pub_.publish(whole_pointcloud2)
-        if __debug__:
-            self.get_logger().info("done publishing whole_pointcloud2 to ICP_topic")
-        
-        
+                    whole_points_np = np.append(msg_points_np, source_points_np, axis=0)#往側邊append
+                    # self.get_logger().info(f'Array of whole_points_np: {(whole_points_np)}')
+                    if __debug__:
+                        self.get_logger().info(f'Shape of whole_points_np: {(whole_points_np.shape)}')
+                    # self.get_logger().info(f'msg.fields: {(msg.fields)}')
+                    # self.get_logger().info(f'filter_points: {(filtered_points)}')
+                    whole_pointcloud2 = pc2.create_cloud(msg.header, msg.fields, whole_points_np.tolist())
+                    self.tompcd_ICP_pub_.publish(whole_pointcloud2)
+                    if __debug__:
+                        self.get_logger().info("done publishing whole_pointcloud2 to ICP_topic")
+                else: 
+                    self.get_logger().info("Too few correspondent point in global registration, fail to ICP")
+                    self.get_logger().info("Continue to detect filtered point...")
+            except Exception as e: #如果點太少ICP失敗, 就說ICP失敗然後continue
+                self.get_logger().info("fail to ICP")
+                self.get_logger().info("Continue to detect filtered point...")
+            
 
 
 

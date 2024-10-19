@@ -32,8 +32,9 @@ public:
     vector<Eigen::Vector3f> ShowInQueryPoints();
     vector<Eigen::Vector3f> ShowOutQueryPoints();
     vector<float> GetModelCenter();
-    void CleanPointCount();
+    // void CleanPointCount();
     void Visualize();
+    void ResetCandidatePoint(); //point count in out要歸零(即算出的gain要歸零, 因為要準備算（一個candidate view了) & queue內的東東都要歸零,ps你現在sdf model的queue vector 只有單純給open3d vis 用 跟BestViewModel marker visualization用到
 
 private:
     // std::string ply_file_path_;

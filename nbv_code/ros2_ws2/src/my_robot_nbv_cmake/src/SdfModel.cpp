@@ -31,7 +31,7 @@ using namespace std;
 
 // #define NDEBUG //預設都會沒有define這個, 以後刪掉這個要控制就是控制若是沒define這個就怎
 
-#define DEBUG_MODE true
+#define DEBUG_MODE false
 
 // #ifndef NDEBUG
 //     #define DEBUG_MODE true
@@ -155,7 +155,9 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
     
     
     for (const auto& point_q : query_points_input) {
-        std::cout << "Point: (" << point_q.x() << ", " << point_q.y() << ", " << point_q.z() << ")" << std::endl;
+        if (DEBUG_MODE) {
+            std::cout << "Point: (" << point_q.x() << ", " << point_q.y() << ", " << point_q.z() << ")" << std::endl;
+        }
         // auto point_q_formed = open3d::core::Tensor({{point_q.x(), point_q.y(), point_q.z()}}, {1, 3}, open3d::core::Float32);
         // auto point_q_formed = [[point_q.x(), point_q.y(), point_q.z()]];
         //c++做tensor要分開搞, 要先建立vector和shape
@@ -215,10 +217,10 @@ vector<float> SdfModel::GetModelCenter(){
     return center_;
 }
 
-void SdfModel::CleanPointCount(){
-    countPoint[0]=0;//每換一個candidate view要弄一次
-    countPoint[1]=0;
-}
+// void SdfModel::CleanPointCount(){
+//     countPoint[0]=0;//每換一個candidate view要弄一次
+//     countPoint[1]=0;
+// }
 
 
 void SdfModel::Visualize() {
@@ -242,6 +244,19 @@ void SdfModel::Visualize() {
     vis.AddGeometry(pcd_);
     vis.Run();
     vis.DestroyVisualizerWindow();
+}
+
+void SdfModel::ResetCandidatePoint(){//每換一個candidate view要弄一次
+    countPoint[0]=0;//每換一個candidate view要弄一次
+    countPoint[1]=0;
+
+    //clean 用visualization用的query
+    points_.clear();
+    colors_.clear();
+    query_points_in.clear();
+    query_points_out.clear();
+    query_points_.clear(); //這個變數其實是下面測試sdf自動生成candidate view的時候用的, 之後就沒用到了
+
 }
 
 //Private function

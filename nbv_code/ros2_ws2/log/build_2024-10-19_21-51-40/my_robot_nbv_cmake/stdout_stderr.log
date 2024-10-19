@@ -1,0 +1,27 @@
+[ 20%] Built target nbvc_lib_SdfModel
+[ 40%] Built target SdfModelV3
+[ 60%] Built target nbvc_ray_generation
+[ 80%] Built target nbvc_ray_generationV3_beforeclean
+[ 90%] [32mBuilding CXX object CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o[0m
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:36[m[K:
+[01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   35 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:38[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:59:158:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[K,[m[K’ token
+   59 |     BestViewModel(std::shared_ptr<open3d::geometry::PointCloud> pcdO3d_tomato, octomap::OcTree* octree, float candidateViews_radius, int candidateViews_num, [01;31m[K,[m[K int rays_num)
+      |                                                                                                                                                              [01;31m[K^[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:[m[K In member function ‘[01m[Kvoid BestViewModel::CaculateNextBestView()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:117:60:[m[K [01;31m[Kerror: [m[K‘[01m[KconvertToEigenVector[m[K’ was not declared in this scope
+  117 |             std::vector<Eigen::Vector3f> eigen_hitpoints = [01;31m[KconvertToEigenVector[m[K(hitpointV); //因為sdf model是吃vector的
+      |                                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:129:35:[m[K [01;31m[Kerror: [m[K‘[01m[KcountIn[m[K’ was not declared in this scope; did you mean ‘[01m[KcountInOut[m[K’?
+  129 |             cout<<"There are: ("<<[01;31m[KcountIn[m[K[0]<<") points in the surface"<<endl;
+      |                                   [01;31m[K^~~~~~~[m[K
+      |                                   [32m[KcountInOut[m[K
+gmake[2]: *** [CMakeFiles/BestViewModel.dir/build.make:76: CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:223: CMakeFiles/BestViewModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
