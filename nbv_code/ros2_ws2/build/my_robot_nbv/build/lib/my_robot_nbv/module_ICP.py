@@ -160,8 +160,8 @@ def ICPoperation(source, target):
                 draw_registration_result(source_down, target_down, result_ransac.transformation, "ReGlobal_registration")
             RedoGlobalCount+=1
         else: #如果重作太多次了就跳出迴圈 , 就直接回傳None 跳出function 了
-            return None
-            # break #看看如果global沒取好照做會怎樣 #結果好像也是可以, 你可能上面標準設太高了
+            # return None
+            break #看看如果global沒取好照做會怎樣 #結果好像也是可以, 你可能上面標準設太高了
             
 
 
