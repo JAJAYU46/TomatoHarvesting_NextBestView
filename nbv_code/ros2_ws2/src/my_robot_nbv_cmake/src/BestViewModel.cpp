@@ -435,6 +435,25 @@ class MyNode : public rclcpp::Node
                     octree = static_cast<octomap::OcTree*>(tree); //用這個static才跑得動 但就要確定msg type要一樣
                     RCLCPP_INFO(this->get_logger(), "Success getting tree for this scene!");
                     if (octree){
+
+
+                        octree->write("src/dataset/data_octomap/octomap_before_inter.ot"); //AbstractOcTree 是一個octomap的通用格式, 可以自動處理color octomap或是non color octomap. 但它會是以指標的方式存（所以要得到他指到的member要用->而非. 這是c++中的語法) 
+                        //<Note> octovis data/sample.ot 想要看.ot檔要在cd ros2_ws2下用這個(注意相對路徑)
+                        //把estimated tomato 換成的octomap 和 環境 octomap融合
+                        // open3d_cloud_
+                          // Iterate through Open3D point cloud and add points to the Octree
+                        for (const auto& point : cloud_o3d_icpTomato->points_) {
+                            octree->updateNode(octomap::point3d(point.x(), point.y(), point.z()), true); // Mark as occupied
+                        }
+
+                        // Update inner occupancy for the Octree
+                        octree->updateInnerOccupancy();
+                        octree->write("src/dataset/data_octomap/octomap_after_inter.ot");
+
+
+
+
+
                         RCLCPP_INFO(this->get_logger(),"Success getting octree map for this scene!");
                         
                         RCLCPP_INFO(this->get_logger(),"Map received (%zu nodes, %f m res), \n saving to src/dataset/data_octomap/octomap_from_orig.ot", octree->size(), octree->getResolution());

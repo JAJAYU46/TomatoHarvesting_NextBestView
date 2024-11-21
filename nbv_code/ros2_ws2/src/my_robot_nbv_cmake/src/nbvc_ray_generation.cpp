@@ -375,7 +375,7 @@ class MyNode : public rclcpp::Node
 
                     if (octree){
                         RCLCPP_INFO(this->get_logger(),"Map received (%zu nodes, %f m res), saving to ", octree->size(), octree->getResolution());
-                        octree->write("src/dataset/data_octomap/octomap_from_orig.ot"); //AbstractOcTree 是一個octomap的通用格式, 可以自動處理color octomap或是non color octomap. 但它會是以指標的方式存（所以要得到他指到的member要用->而非. 這是c++中的語法) 
+                        octree->write("src/dataset/data_octomap/octomap_before_inter.ot"); //AbstractOcTree 是一個octomap的通用格式, 可以自動處理color octomap或是non color octomap. 但它會是以指標的方式存（所以要得到他指到的member要用->而非. 這是c++中的語法) 
                         //<Note> octovis data/sample.ot 想要看.ot檔要在cd ros2_ws2下用這個(注意相對路徑)
                         // Example ray-casting
                         // octomap::point3d origin(0.0, 0.0, 0.0); // Define the starting point of the ray
@@ -386,6 +386,18 @@ class MyNode : public rclcpp::Node
                         // octree->setOccupancyThres(0.2);  // Set occupancy threshold (default is 0.5)
                         // octree->setClampingThresMin(0.12);  // Minimum clamping threshold
                         // octree->setClampingThresMax(0.97);  // Maximum
+                        //把estimated tomato 換成的octomap 和 環境 octomap融合
+                        // open3d_cloud_
+                          // Iterate through Open3D point cloud and add points to the Octree
+                        for (const auto& point : open3d_cloud_->points_) {
+                            octree->updateNode(octomap::point3d(point.x(), point.y(), point.z()), true); // Mark as occupied
+                        }
+
+                        // Update inner occupancy for the Octree
+                        octree->updateInnerOccupancy();
+                        octree->write("src/dataset/data_octomap/octomap_after_inter.ot");
+
+
 
                         octomap::point3d BestCandidateView_point;//用來存此輪nbv最佳點
                         int BestCandidateView_gain=0;
