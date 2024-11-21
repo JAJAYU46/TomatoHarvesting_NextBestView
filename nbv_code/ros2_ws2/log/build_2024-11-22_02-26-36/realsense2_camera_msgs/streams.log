@@ -1,0 +1,53 @@
+[0.062s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs -- -j8 -l8
+[0.816s] Traceback (most recent call last):
+[0.816s]   File "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs/ament_cmake_python/realsense2_camera_msgs/setup.py", line 1, in <module>
+[0.816s]     from setuptools import find_packages
+[0.816s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 16, in <module>
+[0.816s]     import setuptools.version
+[0.816s]   File "/usr/lib/python3/dist-packages/setuptools/version.py", line 1, in <module>
+[0.816s]     import pkg_resources
+[0.816s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 38, in <module>
+[0.816s]     import inspect
+[0.817s]   File "/usr/lib/python3.10/inspect.py", line 43, in <module>
+[0.817s]     import linecache
+[0.817s]   File "/usr/lib/python3.10/linecache.py", line 11, in <module>
+[0.820s]     import tokenize
+[0.821s]   File "/usr/lib/python3.10/tokenize.py", line 46, in <module>
+[0.821s]     class TokenInfo(collections.namedtuple('TokenInfo', 'type string start end line')):
+[0.821s]   File "/usr/lib/python3.10/collections/__init__.py", line 414, in namedtuple
+[0.822s] Traceback (most recent call last):
+[0.822s]   File "/home/jajayu/.local/bin/cmake", line 8, in <module>
+[0.823s]     sys.exit(cmake())
+[0.823s]   File "/home/jajayu/.local/lib/python3.10/site-packages/cmake/__init__.py", line 51, in cmake
+[0.823s]     __new__ = eval(code, namespace)
+[0.823s]   File "<string>", line 1, in <module>
+[0.823s]     raise SystemExit(_program('cmake', sys.argv[1:]))
+[0.823s]   File "/home/jajayu/.local/lib/python3.10/site-packages/cmake/__init__.py", line 47, in _program
+[0.823s] KeyboardInterrupt
+[0.823s]     return subprocess.call([os.path.join(CMAKE_BIN_DIR, name), *args], close_fds=False)
+[0.823s]   File "/usr/lib/python3.10/subprocess.py", line 347, in call
+[0.823s]     return p.wait(timeout=timeout)
+[0.823s]   File "/usr/lib/python3.10/subprocess.py", line 1209, in wait
+[0.823s]     return self._wait(timeout=timeout)
+[0.823s]   File "/usr/lib/python3.10/subprocess.py", line 1959, in _wait
+[0.823s]     (pid, sts) = self._try_wait(0)
+[0.824s]   File "/usr/lib/python3.10/subprocess.py", line 1917, in _try_wait
+[0.824s]     (pid, sts) = os.waitpid(self.pid, wait_flags)
+[0.824s] KeyboardInterrupt
+[0.824s] gmake[2]: *** [CMakeFiles/ament_cmake_python_build_realsense2_camera_msgs_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_realsense2_camera_msgs_egg] Interrupt
+[0.824s] gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_realsense2_camera_msgs_egg.dir/all] Interrupt
+[0.824s] gmake[1]: *** wait: No child processes.  Stop.
+[0.824s] gmake[1]: *** Waiting for unfinished jobs....
+[0.824s] gmake[1]: *** wait: No child processes.  Stop.
+[0.824s] gmake: *** [Makefile:146: all] Error 2
+[0.824s] [  1%] Built target realsense2_camera_msgs__cpp
+[0.824s] [  7%] Built target ament_cmake_python_copy_realsense2_camera_msgs
+[0.824s] [ 12%] Built target realsense2_camera_msgs__rosidl_generator_c
+[0.824s] [ 34%] Built target realsense2_camera_msgs__rosidl_typesupport_fastrtps_c
+[0.824s] [ 34%] Built target realsense2_camera_msgs__rosidl_typesupport_cpp
+[0.824s] [ 46%] Built target realsense2_camera_msgs__rosidl_typesupport_introspection_c
+[0.824s] [ 57%] Built target realsense2_camera_msgs__rosidl_typesupport_fastrtps_cpp
+[0.824s] [ 68%] Built target realsense2_camera_msgs__rosidl_typesupport_c
+[0.824s] [ 79%] Built target realsense2_camera_msgs__rosidl_typesupport_introspection_cpp
+[0.825s] [ 79%] Built target realsense2_camera_msgs
+[0.825s] [ 80%] Built target realsense2_camera_msgs__py

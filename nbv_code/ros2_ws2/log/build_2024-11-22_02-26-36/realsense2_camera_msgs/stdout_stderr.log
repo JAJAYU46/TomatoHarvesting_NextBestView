@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs/ament_cmake_python/realsense2_camera_msgs/setup.py", line 1, in <module>
+    from setuptools import find_packages
+  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 16, in <module>
+    import setuptools.version
+  File "/usr/lib/python3/dist-packages/setuptools/version.py", line 1, in <module>
+    import pkg_resources
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 38, in <module>
+    import inspect
+  File "/usr/lib/python3.10/inspect.py", line 43, in <module>
+    import linecache
+  File "/usr/lib/python3.10/linecache.py", line 11, in <module>
+    import tokenize
+  File "/usr/lib/python3.10/tokenize.py", line 46, in <module>
+    class TokenInfo(collections.namedtuple('TokenInfo', 'type string start end line')):
+  File "/usr/lib/python3.10/collections/__init__.py", line 414, in namedtuple
+Traceback (most recent call last):
+  File "/home/jajayu/.local/bin/cmake", line 8, in <module>
+    sys.exit(cmake())
+  File "/home/jajayu/.local/lib/python3.10/site-packages/cmake/__init__.py", line 51, in cmake
+    __new__ = eval(code, namespace)
+  File "<string>", line 1, in <module>
+    raise SystemExit(_program('cmake', sys.argv[1:]))
+  File "/home/jajayu/.local/lib/python3.10/site-packages/cmake/__init__.py", line 47, in _program
+KeyboardInterrupt
+    return subprocess.call([os.path.join(CMAKE_BIN_DIR, name), *args], close_fds=False)
+  File "/usr/lib/python3.10/subprocess.py", line 347, in call
+    return p.wait(timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1209, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1959, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/lib/python3.10/subprocess.py", line 1917, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt
+gmake[2]: *** [CMakeFiles/ament_cmake_python_build_realsense2_camera_msgs_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_realsense2_camera_msgs_egg] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_realsense2_camera_msgs_egg.dir/all] Interrupt
+gmake[1]: *** wait: No child processes.  Stop.
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[1]: *** wait: No child processes.  Stop.
+gmake: *** [Makefile:146: all] Error 2
+[  1%] Built target realsense2_camera_msgs__cpp
+[  7%] Built target ament_cmake_python_copy_realsense2_camera_msgs
+[ 12%] Built target realsense2_camera_msgs__rosidl_generator_c
+[ 34%] Built target realsense2_camera_msgs__rosidl_typesupport_fastrtps_c
+[ 34%] Built target realsense2_camera_msgs__rosidl_typesupport_cpp
+[ 46%] Built target realsense2_camera_msgs__rosidl_typesupport_introspection_c
+[ 57%] Built target realsense2_camera_msgs__rosidl_typesupport_fastrtps_cpp
+[ 68%] Built target realsense2_camera_msgs__rosidl_typesupport_c
+[ 79%] Built target realsense2_camera_msgs__rosidl_typesupport_introspection_cpp
+[ 79%] Built target realsense2_camera_msgs
+[ 80%] Built target realsense2_camera_msgs__py

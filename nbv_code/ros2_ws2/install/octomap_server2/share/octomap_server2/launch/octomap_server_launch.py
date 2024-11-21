@@ -9,7 +9,7 @@ from launch.actions import DeclareLaunchArgument
 def generate_launch_description():
     print("New is on")
     return LaunchDescription([
-        DeclareLaunchArgument('input_cloud_topic', default_value='/cam/cloudrate_transformer'), #/pcd  #/nbv/tompcd_ICP 
+        DeclareLaunchArgument('input_cloud_topic', default_value='/nbv/tompcd_ICP'),#/cam/cloudrate_transformer'), #/pcd  #/nbv/tompcd_ICP 
         DeclareLaunchArgument('resolution', default_value='0.05'),
         DeclareLaunchArgument('frame_id', default_value='cam_frame_pcd'),#map, camera_depth_optical_frame
         DeclareLaunchArgument('base_frame_id', default_value='base_footprint'),
