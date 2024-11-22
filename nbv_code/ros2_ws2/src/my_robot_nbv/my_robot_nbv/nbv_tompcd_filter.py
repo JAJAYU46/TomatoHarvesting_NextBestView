@@ -98,13 +98,15 @@ class MyNode(Node): #construct Node class
         
     def callback1(self, msg:sensor_msgs.PointCloud2): #construct a callback
         
+        is_frame_moving = True #用來確認frame有沒有在move, 如果有, 就算算出estimate的位置也不要做publish的動作
         TransformStamped_before_ready=False
+        
         try: #街收到新data後除非transform有成功讀到, 才繼續往下做
             # TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
             # 'odom', # target frame Moving frame #也就是現在的'camera_link_optical',    
             # msg.header.frame_id, # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
             # rclpy.time.Time())#msg.header.stamp)         # Time when the point cloud was captured
-            TransformStamped = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
+            TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
             'odom', # target frame Moving frame #也就是現在的'camera_link_optical',    
             msg.header.frame_id, # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
             msg.header.stamp)#rclpy.time.Time())#msg.header.stamp)         # Time when the point cloud was captured
@@ -215,7 +217,7 @@ class MyNode(Node): #construct Node class
             filtered_msg = pc2.create_cloud(msg.header, msg.fields, filtered_points)
             # self.get_logger().info(f"filtered_points: {filtered_points}")
             # self.tompcd_filter_pub_.publish(filtered_msg)
-            self.tompcd_filter_pub_.publish(filtered_msg)
+            self.tompcd_filter_pub_.publish(filtered_msg) #這是ICP之前, 而且後面用不到, 所以留這裡是還好, 但其實filter也是花時間
 
 
             # Save the filtered points to a PCD file using Open3D
@@ -243,7 +245,7 @@ class MyNode(Node): #construct Node class
                 target = point_cloud
 
                 # try:
-                if(1==1):
+                if(1==1):##==============================================================================================
                     self.get_logger().info("start ICP")
                     result_trans_final=ICPoperation(source,target)
                     if result_trans_final is not None: #才做下面的事情
@@ -311,15 +313,73 @@ class MyNode(Node): #construct Node class
                         #     'odom',
                         #     rclpy.duration.Duration(seconds=0)  # Correct way to create a Duration object
                         #     )         # Time when the point cloud was captured
+                        try:
+                            TransformStamped_after = self.tf_buffer.lookup_transform(
+                                'odom', msg.header.frame_id, rclpy.time.Time())#msg.header.stamp)#rclpy.time.Time())
+                              
+
+                            #  # Extract translation
+                            # translation_before = TransformStamped_before.transform.translation
+                            # x_before, y_before, z_before = translation_before.x, translation_before.y, translation_before.z
+
+                            # # Extract rotation (quaternion)
+                            # rotation_before = TransformStamped_before.transform.rotation
+                            # qx_before, qy_before, qz_before, qw_before = rotation_before.x, rotation_before.y, rotation_before.z, rotation_before.w
+
+                            # # Log the transformation
+                            # self.get_logger().info(
+                            #     f"Translation: x={x_before:.2f}, y={y_before:.2f}, z={z_before:.2f}"
+                            # )
+                            # self.get_logger().info(
+                            #     f"Rotation (quaternion): x={qx_before:.2f}, y={qy_before:.2f}, z={qz_before:.2f}, w={qw_before:.2f}"
+                            # )
+                            # # Extract translation
+                            # translation = TransformStamped_after.transform.translation
+                            # x, y, z = translation.x, translation.y, translation.z
+
+                            # # Extract rotation (quaternion)
+                            # rotation = TransformStamped_after.transform.rotation
+                            # qx, qy, qz, qw = rotation.x, rotation.y, rotation.z, rotation.w
+
+                            # # Log the transformation
+                            # self.get_logger().info(
+                            #     f"Translation: x={x:.2f}, y={y:.2f}, z={z:.2f}"
+                            # )
+                            # self.get_logger().info(
+                            #     f"Rotation (quaternion): x={qx:.2f}, y={qy:.2f}, z={qz:.2f}, w={qw:.2f}"
+                            # )
 
 
+                        #     try:
+                        #         transform1 = self.tf_buffer.lookup_transform(
+                        #             'odom',
+                        #             msg.header.frame_id,
+                        #             rclpy.time.Time()
+                        #         )
+                        #         translation1 = transform1.transform.translation
+                        #         rotation1 = transform1.transform.rotation
+                        #     except Exception as ex:
+                        #         self.get_logger().error(f'Error looking up transform: {ex}')
 
-                        TransformStamped_after = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
-                            msg.header.frame_id, # target frame Moving frame #也就是現在的'camera_link_optical',    
-                            'odom',
-                            rclpy.time.Time() , # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
-                            #rclpy.duration.Duration(seconds=0)  # Correct way to create a Duration object
-                            )         # Time when the point cloud was captured
+                        except Exception as e:
+                            self.get_logger().error(f"Transform_before lookup failed: {e}")
+                            # return
+
+
+                        # TransformStamped_after = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
+                        #     'odom', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                        #     msg.header.frame_id,
+                        #     rclpy.time.Time() , # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
+                        #     #rclpy.duration.Duration(seconds=0)  # Correct way to create a Duration object
+                        #     )         # Time when the point cloud was captured
+                        # Check if the frames are the same
+                        if self.are_frames_same(TransformStamped_before, TransformStamped_after):
+                            is_frame_moving=False #表示在ICP過程中, frame沒有move, 所以可以publish data!
+                            print("The frames are the same!")
+                            
+                        else:
+                            is_frame_moving=True
+                            print("The frames are different!")
                         # TransformStamped_between = self.tf_buffer.transform(
                         #         TransformStamped_before,
                         #         TransformStamped_after,  # Make sure we use the correct frame ID
@@ -339,19 +399,23 @@ class MyNode(Node): #construct Node class
                         # self.get_logger().info("ok1")
                         # source_pointcloud2__transformed_points= pc2.create_cloud(try_header, msg.fields, source_pointcloud2_transformed_points_np.tolist())
                         # self.get_logger().info("ok2")
-
-                        source_pointcloud2_points= pc2.create_cloud(msg.header, msg.fields, source_points_np.tolist())
-                        self.tompcd_ICPonly_pub_.publish(source_pointcloud2_points)
-                        self.get_logger().info("ok3")
-                        
-                        msg_pointcloud2 = pc2.create_cloud(msg.header, msg.fields, msg_points_np.tolist())
-                        whole_pointcloud2 = pc2.create_cloud(msg.header, msg.fields, whole_points_np.tolist())
-                        
-                        self.tompcd_ICP_pub_.publish(msg_pointcloud2) #現在這個沒有publish estimated tomato了
-                        # self.tompcd_ICP_pub_.publish(whole_pointcloud2)
-                        if __debug__:
-                            self.get_logger().info("done publishing whole_pointcloud2 to ICP_topic")
+                        if(is_frame_moving==False): #如果ICP期間frame沒有動, 才可以publish資料, 不然frame會出錯
+                            self.get_logger().info("is frame moving: "+str(is_frame_moving))
+                            source_pointcloud2_points= pc2.create_cloud(msg.header, msg.fields, source_points_np.tolist())
+                            self.tompcd_ICPonly_pub_.publish(source_pointcloud2_points)
+                            self.get_logger().info("ok3")
+                            
+                            msg_pointcloud2 = pc2.create_cloud(msg.header, msg.fields, msg_points_np.tolist())
+                            whole_pointcloud2 = pc2.create_cloud(msg.header, msg.fields, whole_points_np.tolist())
+                            
+                            self.tompcd_ICP_pub_.publish(msg_pointcloud2) #現在這個沒有publish estimated tomato了
+                            # self.tompcd_ICP_pub_.publish(whole_pointcloud2)
+                            if __debug__:
+                                self.get_logger().info("done publishing whole_pointcloud2 to ICP_topic")
+                        else:
+                            self.get_logger().info("is frame moving2: "+str(is_frame_moving))
                     else: 
+                            
                         self.get_logger().info("Too few correspondent point in global registration, fail to ICP")
                         self.get_logger().info("Continue to detect filtered point...")
                 # except Exception as e: #如果點太少ICP失敗, 就說ICP失敗然後continue
@@ -455,8 +519,117 @@ class MyNode(Node): #construct Node class
 
 
 
+    def are_frames_same(self, transform1, transform2, tol=1e-4):
 
-    def transform_pointcloud_to_np2(self, source_points_np, transform_stamped):
+
+        frame_is_same=False
+        # Extract translations
+        translation1 = transform1.transform.translation
+        translation2 = transform2.transform.translation
+
+        
+        # Extract rotations (quaternions)
+        rotation1 = transform1.transform.rotation
+        rotation2 = transform2.transform.rotation
+        
+        # Compare rotations
+        # rotation_diff = sqrt(pow(rotation1.x - rotation2.x,2))
+        # import math
+
+
+
+        # rotation_diff = np.linalg.norm([
+        #     rotation1.x - rotation2.x,
+        #     rotation1.y - rotation2.y,
+        #     rotation1.z - rotation2.z,
+        #     rotation1.w - rotation2.w
+        # ])
+
+        # self.get_logger().info(
+        #     f"rotation_diff: {rotation_diff}, translation_diff:{translation_diff}"
+        # )
+
+
+        # x_before, y_before, z_before = translation1.x, translation1.y, translation1.z
+
+        # # Extract rotation (quaternion)
+        # # rotation_before = TransformStamped1.transform.rotation
+        # qx_before, qy_before, qz_before, qw_before = rotation1.x, rotation1.y, rotation1.z, rotation1.w
+        
+        # x_after, y_after, z_after = translation2.x, translation2.y, translation2.z
+
+        # # Extract rotation (quaternion)
+        # # rotation_before = TransformStamped1.transform.rotation
+        # qx_after, qy_after, qz_after, qw_after = rotation2.x, rotation2.y, rotation2.z, rotation2.w
+        # Round translation and rotation (quaternion) components to 2 decimal places
+        x_before, y_before, z_before = round(translation1.x, 2), round(translation1.y, 2), round(translation1.z, 2)
+
+        # Extract rotation (quaternion) and round to 2 decimal places
+        qx_before, qy_before, qz_before, qw_before = round(rotation1.x, 2), round(rotation1.y, 2), round(rotation1.z, 2), round(rotation1.w, 2)
+
+        x_after, y_after, z_after = round(translation2.x, 2), round(translation2.y, 2), round(translation2.z, 2)
+
+        # Extract rotation (quaternion) and round to 2 decimal places
+        qx_after, qy_after, qz_after, qw_after = round(rotation2.x, 2), round(rotation2.y, 2), round(rotation2.z, 2), round(rotation2.w, 2)
+        #=============================================不該true的地方在那邊true
+
+         # Compare translations
+        translation_diff = np.linalg.norm([
+            x_before - x_after,
+            y_before - y_after,
+            z_before - z_after
+        ])
+                # Assuming rotation1 and rotation2 are objects with attributes x, y, z, w
+        rotation_diff = math.sqrt(
+            (qx_before - qx_after) ** 2 +
+            (qy_before - qy_after) ** 2 +
+            (qz_before - qz_after) ** 2 +
+            (qw_before - qw_after) ** 2
+        )
+        # Log the transformation
+        self.get_logger().info(
+            f"Translation1: x={x_before:.5f}, y={y_before:.5f}, z={z_before:.5f}"
+        )
+        self.get_logger().info(
+            f"Rotation1 (quaternion): x={qx_before:.5f}, y={qy_before:.5f}, z={qz_before:.5f}, w={qw_before:.5f}"
+        )
+        # Log the transformation
+        self.get_logger().info(
+            f"Translation2: x={x_after:.2f}, y={y_after:.2f}, z={z_after:.2f}"
+        )
+        self.get_logger().info(
+            f"Rotation2 (quaternion): x={qx_after:.5f}, y={qy_after:.5f}, z={qz_after:.5f}, w={qw_after:.5f}"
+        )
+
+        if(translation_diff<=tol and rotation_diff<=tol):
+            frame_is_same=True
+            # self.get_logger().info("Transformation1,2 is the same")
+            self.get_logger().info(f"rotation_diff: {rotation_diff}, translation_diff:{translation_diff}")
+
+        else:
+            frame_is_same=False
+            # self.get_logger().info("Transformation1,2 is NOT the same")
+            self.get_logger().info(f"rotation_diff: {rotation_diff}, translation_diff:{translation_diff}")
+
+        # # Extract translation
+        # # translation = TransformStamped_after.transform.translation
+        # x, y, z = translation2.x, translation2.y, translation2.z
+
+        # # Extract rotation (quaternion)
+        # # rotation = TransformStamped2.transform.rotation
+        # qx, qy, qz, qw = rotation2.x, rotation2.y, rotation2.z, rotation2.w
+
+        # # Log the transformation
+        # self.get_logger().info(
+        #     f"Translation2: x={x:.2f}, y={y:.2f}, z={z:.2f}"
+        # )
+        # self.get_logger().info(
+        #     f"Rotation2 (quaternion): x={qx:.2f}, y={qy:.2f}, z={qz:.2f}, w={qw:.2f}"
+        # )
+        
+        # Check if both translation and rotation differences are within the tolerance
+        return frame_is_same
+    def transform_pointcloud_to_np2(self, source_points_np, transform_stamped): #not used
         """
         Transform a point cloud (represented as a numpy array) from the source frame to the target frame
         using the given transformation (TransformStamped).
@@ -494,7 +667,7 @@ class MyNode(Node): #construct Node class
         return transformed_points_np
 
     # def transform_pointcloud_to_np(self,source_points_np, transform_stamped):
-    def transform_pointcloud_to_np(self,source_points_np, transform_stamped):
+    def transform_pointcloud_to_np(self,source_points_np, transform_stamped): #not used
         """source_pointcloud2
         Transforms a PointCloud2 message to a new frame using a TransformStamped object
         and returns the transformed points as a NumPy array.
@@ -693,7 +866,7 @@ class MyNode(Node): #construct Node class
 
 #     return msg
 
-def main(args=None): #construct main function
+def main(args=None): #construct main funct沒有動ㄝ
     # print("everything alright")
     
     # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato.ply"
