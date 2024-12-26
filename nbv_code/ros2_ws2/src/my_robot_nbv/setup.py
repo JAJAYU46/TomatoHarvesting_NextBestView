@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             #建立一個excecutable 
-            "nbv_tompcd_filter = my_robot_nbv.nbv_tompcd_filter:main"
+            "nbv_tompcd_filter = my_robot_nbv.nbv_tompcd_filter:main", 
+            "nbv_tom_detect = my_robot_nbv.nbv_tom_detect:main"
         ],
     },
     # package_data={ #好像沒功能

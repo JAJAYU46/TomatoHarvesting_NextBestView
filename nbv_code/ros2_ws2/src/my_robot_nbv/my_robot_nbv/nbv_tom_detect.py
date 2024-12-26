@@ -1,210 +1,288 @@
 #Detect Code
-import cv2
-# from matplotlib import pyplot as plt
-import numpy as np
-from deep_sort_realtime.deepsort_tracker import DeepSort
-from ultralytics import YOLO
+# import cv2
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.realpath(__file__))) #approach adds the current directory where the script is located to the Python path.
+from module_detect_tom import DetectTomato
+
+#!/user/bin/env python3 
+import rclpy #library for ROS2
+from rclpy.node import Node
+from rclpy.clock import Clock
+from geometry_msgs.msg import Twist #For publisher
+import sensor_msgs.msg as sensor_msgs
+import std_msgs.msg as std_msgs  #For publisher
+#import sensor_msgs.point_cloud2 as pc2
+from sensor_msgs.msg import PointCloud2
+from sensor_msgs_py import point_cloud2 as pc2
+
+import sensor_msgs.msg as sensor_msgs
+#================================
+#for 3D point cloud data
+import ctypes
+import struct
+import numpy as np
+import open3d as o3d
+
+#================================
+#for 2D visualizasion
+import cv2
+from cv_bridge import CvBridge, CvBridgeError
+#================================
 import math
 
-#Class For Detecting Tomato
-class DetectTomato:
-    # Constructor (initializer) to define attributes
-    def __init__(self, image, resizeMag=1):
-        self.classNames = ["unripe", "ripe", "unknownCLS"]
-        self.classColor = [(255,255,0),(0,255,255),(255,255,0)]
-        self.resizeMagForText=resizeMag
-        
-        # Load the YOLO model
-        self.model_tomato = YOLO("aeronbest.pt")
-        self.confidenceThreshold=0.5
-        
-        self.tracker = DeepSort(max_iou_distance=0.7, max_age=30, n_init=3)
-        # Initialize the needed set
-        self.GetNewTargetTomato=True
-        self.height, self.width, self.channels = image.shape
-        self.TopTomatoTrack = None
-        self.TopTomatoTrackY = self.height #(y最底下, y最大的地方)目標是找y最小的
-        
-        self.TargetTomatoTrack = None
-        self.TargetTomatoTrackID = None
+#===============================
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.realpath(__file__))) #approach adds the current directory where the script is located to the Python path.
+#Pesonal Module
+from module_ICP import ICPoperation
+from lib_cloud_conversion_between_Open3D_and_ROS_colorf4 import convertCloudFromOpen3dToRos, convertCloudFromRosToOpen3d
 
-    #Public Function
-    def changeGetNewTargetTomato(self,flag):
-        self.GetNewTargetTomato=flag
-        print("Now GetNewTargetTomato: "+str(self.GetNewTargetTomato))
+#=========== for TF ==================
+from tf2_ros import Buffer, TransformListener
+from geometry_msgs.msg import TransformStamped 
+
+from scipy.spatial.transform import Rotation as R
+    # import numpy as np
+from geometry_msgs.msg import Point, PointStamped
+import tf2_geometry_msgs
+
+
+# custom message
+from message_interfaces.msg import BoundingBox    # CHANGE
+# from tutorial_interfaces.msg import Num    # CHANGE
+
+#To convert pointcloud2(for ROS2) to pointcloud(for open3d)
+
+
+class MyNode(Node): #construct Node class
+    def __init__(self): #construct constructor
+        super().__init__("nbv_tompcd_filter") #set python_NodeName
         
-    # Method to display car information
-    def DetectTomato(self, image):
-        results = self.model_tomato(image)
-        detections = []
+        #[[相機參數]]
+        # Camera parameters from Gazebo
+        horizontal_fov =  1.5009832 # in radians 1.089
+        image_width = 640  # in pixels
+        image_height = 480  # in pixels
+
+        # Calculate the focal length
+        self.fx = image_width / (2 * np.tan(horizontal_fov / 2))
+        self.fy = self.fx  # Assuming square pixels, so fx == fy
+
+        # Assume cx and cy are at the center of the image
+        self.cx = image_width / 2
+        self.cy = image_height / 2
+
+
+
+
+
+
+        #[[For cv2]]
+        self.bridge = CvBridge()
+
+        #假想蕃茄物件辨識框框左上：P(345, 255) 右上：Q(393, 305)
+        self.TomatoBox_lu=(330, 230)#(253,279)#(417,166)#(240,292)#(345, 255) #蕃茄辨識框框左上點
+        self.TomatoBox_rd=(370, 290)#(387,419)#(640,317)#(407, 460) #蕃茄辨識框框右下點
+
+        # 【subscriber】#照片之後應該要改成從cam那邊讀才對 filter那邊的也是
+        self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/image_raw", self.callback_image_read, 10)
+
+        self.isFirstFrame=True
+        self.DetectionDoneFlag = True
+        # [publish]
+        self.bbox_publisher_ = self.create_publisher(BoundingBox, '/nbv/bounding_box_msg', 10)     # CHANGE
+        #[[For ROS2 publisher and subscriber]]
+        #【publisher】
+        # self.tompcd_filter_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_filter", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        # self.tompcd_ICP_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_ICP", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        # self.tompcd_ICPonly_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_ICPonly", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         
-        for result in results:
-            boxes = result.boxes.xyxy  # Bounding box coordinates (x_min, y_min, x_max, y_max)
-            scores = result.boxes.conf  # Confidence scores
-            classes = result.boxes.cls  # Class indices (e.g., 0 for tomato)
+        # #【subscriber】
+        # self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/cam/cloudrate_transformer", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        # #for image
+        # self.image_visual_pub_=self.create_publisher(sensor_msgs.Image, "/nbv/image_visual", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        # self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/image_raw", self.callback_image_visual, 10)
+
+        # self.get_logger().info("node 'nbv_tompcd_filter' have been started")
+        # #self.create_timer(1.0, self.callback1) #(time interval/ calling callback)
+        # # TF2 buffer and listener for frame transformations
+        # self.tf_buffer = Buffer()
+        # self.tf_listener = TransformListener(self.tf_buffer, self)
+        # # self.timer = self.create_timer(1.0, self.on_timer) #創見一個固定句其的定時器, 處理座標信息
+
         
-            # Loop through detections
-            for box, score, cls in zip(boxes, scores, classes):
-                x_min, y_min, x_max, y_max = box.tolist()
-                label = f"Class {int(cls)}: {score:.2f}"
-                width = x_max - x_min
-                height = y_max - y_min
-                if(score>self.confidenceThreshold): #如果confidenceScore夠大, 才加入track中
-                    bbox = [x_min, y_min, width, height]  # Bounding box in [x1, y1, x2, y2]
-                    detections.append((bbox, score.item(), int(cls.item())))
-        tracked_objects = self.tracker.update_tracks(detections, frame=image)
-        image = self.__ExtractTrackAndReturnTopAndTarget(tracked_objects, image)
+    def callback1(self, msg:sensor_msgs.PointCloud2): #construct a callback
         
-        if (self.TopTomatoTrack is not None):
-            image = self.__VisualizeTrackBoundingBox(self.TopTomatoTrack, image, 20, True, (0,100,100))
-            print(f"The Top Tomato is{self.TopTomatoTrack.to_tlbr()}")
-            
-            if(self.GetNewTargetTomato==True): #如果現在是要找到新的Tomato的話, TargetTomato就是更新為TopTomato
-                self.TargetTomatoTrack=self.TopTomatoTrack
-                self.TargetTomatoTrackID=self.TargetTomatoTrack.track_id
+        a=0
                 
-                print("Get New Tomato")
-                self.changeGetNewTargetTomato(False)  #拿到新Tomato之後才默認不找新tomato了 如果要找要再開 如果沒找到就繼續找
-            if (self.TargetTomatoTrack is not None):
-                image = self.__VisualizeTrackBoundingBox(self.TargetTomatoTrack, image, 5, True, (0,50,255))
-                print(f"The Target Tomato is{self.TargetTomatoTrack.to_tlbr()}")
-                x1_target, y1_target, x2_target, y2_target = map(int, self.TargetTomatoTrack.to_tlbr())
-                TargetBox=[x1_target, y1_target, x2_target, y2_target]
-                if (TargetBox is not None):
-                    print("TargetBox: "+str(TargetBox))
-                    return TargetBox, image #return a bounding box (x1,y1,x2, y2)
-                else: 
-                    print("TargetBox2: "+str(TargetBox))
-                    return TargetBox, image
+
+
+
+
+    #for 2D image visualizasion
+    def callback_image_read(self, msg_frame:sensor_msgs.Image):
+        #img = cv2.imread('colar.jpg')
+        # print(frame.shape)
+        try:
+            frame1 = self.bridge.imgmsg_to_cv2(msg_frame, "bgr8")
+        except CvBridgeError as e:
+            print(e)
+        (rows,cols,channels) = frame1.shape
+
+        # 只要subscribe到照片, 就用一次object detection
+        # #Load image
+        # video_path = "dataset/data_tomatoVideo_forDetection/tomato_video2.mp4"  # Path to your video
+        # cap = cv2.VideoCapture(video_path)
+
+        
+        resizeMag=1
+        # #main
+        # ret, frame1 = cap.read()
+        # if not ret:
+        #     print("End of video.")
+        if(self.isFirstFrame==True): 
+            # 只有最開始的frame要建立一個新的物件
+            frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
+            # # #initialize
+            
+            self.MyTomatoDetector = DetectTomato (frame1_resized, resizeMag) #給一個初始的圖片
+            self.MyTomatoDetector.changeGetNewTargetTomato(True) 
+            self.isFirstFrame = False
+        
+        # # MyTomatoDetector.changeGetNewTargetTomato(True) 
+        # # TargetBox, image = MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
+        # # MyTomatoDetector.changeGetNewTargetTomato(False) 
+
+        # while(True): 
+        #     #main
+        #     ret, frame1 = cap.read()
+        #     if not ret:
+        #         print("End of video.")
+        #         break
+
+        # <Debug1.1> 不可以這樣, 因為那個追蹤是線性的, 是要追蹤的, 你這樣它會找不到目標的那顆target 變成不publish東西
+        # 之後可以加個, 如果追蹤的東東不見了, 就把最上面那個當成最新的目標
+        # if(self.DetectionDoneFlag==True):# 因為yolo很花時間, 所以現在就是如果上一次的yolo還沒結束, 就不要處理新的照片, 新的msg frame就不處理（之後會變成, 在手必移動到新的點完成之前, 都不做處理）
+        if(True): # <Debug1.1> 好像就算這樣也沒用, 因為之前影片就算lag, 它基本上還是線性的, 但這個frame在處理完之後才收msg, 是會掉包的, 所以不是線性的 所以這樣的話, 現在改成如果目標消失了, 就已最高的當目標
+            self.DetectionDoneFlag=False
+            frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
+
+            TargetBox, image = self.MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
+            self.DetectionDoneFlag=True
+            if TargetBox is None:
+                print("No tomato detected.")
             else: 
-                # self.TargetTomatoTrack = None
-                return None, image #如果Target Tomato 突然消失, 但也沒有叫他重新拿新的tomato, 就回傳none
-        else: 
-            self.TargetTomatoTrack=None
-            print("There are No unmargin tomato") #根本沒有內圈的tomato的話
-            return None, image #就回傳None 表示沒有Tomato
-            
-            
-    #Private Function
-    def __VisualizeTrackBoundingBox(self,TomatoTrack, image, BoxThickness=20, colorFlag=False, color=(0,0,0)): #只會劃出top的tomato 就是一個bounding box而已
-        bbox= TomatoTrack.to_tlbr()
-        det_class_Tomato = TomatoTrack.det_class
-        det_conf_Tomato = TomatoTrack.det_conf
-        track_id_Tomato = TomatoTrack.track_id
-
-        if track_id_Tomato is None:
-            track_id_Tomato = 100  #
-        if det_class_Tomato is None:
-            det_class_Tomato = 2  # Default class name if none is found
-        if det_conf_Tomato is None:
-            det_conf_Tomato = 0.0  # Default confidence if none is found
-
-        x1_Tomato,y1_Tomato,x2_Tomato,y2_Tomato = map(int, bbox)
-        
-
-        if (colorFlag==False): #用內定顏色
-            color = self.classColor[det_class_Tomato]
-        else: 
-            color = color #用自訂顏色
-        #Draw bounding box
-        cv2.rectangle(image, (x1_Tomato, y1_Tomato), (x2_Tomato, y2_Tomato), color, math.ceil(BoxThickness*self.resizeMagForText))  # Draw red box (0,50,255)
-        #劃出資訊
-        label = f"ID: {track_id_Tomato} {self.classNames[det_class_Tomato]}"
-        label2= f"CONF: {det_conf_Tomato:.2f}"
-        # Get text size
-        (text_width, text_height), baseline = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 1.0*self.resizeMagForText, math.ceil(2*self.resizeMagForText))
-        (text_width2, text_height2), baseline2 = cv2.getTextSize(label2, cv2.FONT_HERSHEY_SIMPLEX, 1.0*self.resizeMagForText, math.ceil(2*self.resizeMagForText))
-        # Draw background rectangle
-        cv2.rectangle(image, (x1_Tomato, y1_Tomato - text_height-text_height2 - int(20*self.resizeMagForText)), (x1_Tomato + max(text_width, text_width2), y1_Tomato), color, -1)
-        cv2.rectangle(image, (x1_Tomato, y1_Tomato - text_height - int(10*self.resizeMagForText)), (x1_Tomato + max(text_width, text_width2), y1_Tomato), color, -1)
-        
-        # Put label text
-        cv2.putText(image, label, (x1_Tomato, y1_Tomato - int(40*self.resizeMagForText)), cv2.FONT_HERSHEY_SIMPLEX, 1.0*self.resizeMagForText, (0, 0, 0), math.ceil(2*self.resizeMagForText))
-        cv2.putText(image, label2, (x1_Tomato, y1_Tomato - int(10*self.resizeMagForText)), cv2.FONT_HERSHEY_SIMPLEX, 1.0*self.resizeMagForText, (0, 0, 0), math.ceil(2*self.resizeMagForText))
-        
-        
-        return image
-        
-    def __ExtractTrackAndReturnTopAndTarget(self,tracked_objects, image):
-        for track in tracked_objects:
-            if not track.is_confirmed():
-                # print("no track")#############################################################
-                continue  # Skip unconfirmed tracks
-        
-            # Extract track details
-            track_id = track.track_id
-            bbox = track.to_tlbr()  # Convert bbox to [top, left, bottom, right]
-            # print(f"Track ID: {track_id}, BBox: {bbox}")######################################
-            # Print all attributes and methods of the track object
-            # print(dir(track.__dict__))
-            # Draw the bounding box and track ID on the image
-            x1, y1, x2, y2 = map(int, bbox)
-            
-            # cv2.putText(image, f"ID: {track_id}", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
-            # Add background for the label to improve readability
-            # If det_class or det_conf is None, set a default value
-            det_class = track.det_class
-            det_conf = track.det_conf
-            if track_id is None:
-                # track.track_id = 100
-                track_id = 100  #
-            if det_class is None:
-                # track.det_class = 2 
-                det_class = 2  # Default class name if none is found
-            if det_conf is None:
-                # track.det_conf = 0.0 #<Debug>不知道為啥 救世會有det_conf=none的狀況, 所以就在這修理... 嗎 不行 這樣會爆走 再visualization修正就好
-                det_conf = 0.0  # Default confidence if none is found
-            
-            if(x1>int(self.width/15) and x2<int(self.width-self.width/15)): #detect x not in the margin
-                if(y1>int(self.height/15) and y2<int(self.height-self.height/15)): #detect y not in the margin
-                    #Top Tomato
-                    if(y1<self.TopTomatoTrackY) and self.classNames[det_class]=="ripe": #is ripe and is the toppest but not in the margin tomato
-                        self.TopTomatoTrack = track
-                        self.TopTomatoTrackY = y1 #(y最底下, y最大的地方)目標是找y最小的
-        
-            if(self.GetNewTargetTomato==False): #如果是要繼續trace前一個tomato ID的話那就把targetTomato在這裡看同個ID的那個tomato
-                if(track_id==self.TargetTomatoTrackID): #如果ID一樣的話
-                    self.TargetTomatoTrack=track #就存下來
-            
-            #Visualize the detected tomato
-            image  = self.__VisualizeTrackBoundingBox(track, image, 10)
-        return image
-        # return self.TopTomatoTrack, self.GetNewTargetTomato
+                msg_box = BoundingBox()
+                msg_box.lu_x = TargetBox[0]
+                msg_box.lu_y = TargetBox[1]
+                msg_box.rd_x = TargetBox[2]
+                msg_box.rd_y = TargetBox[3]
+                self.bbox_publisher_.publish(msg_box)
+                # self.get_logger().info('Publishing: "%d"' % msg_box.lu_x) 
+            cv2.imshow('Tomato Image', image)
+            # cv2.imshow('frame1', frame1)
+            cv2.waitKey(1)
 
 
-if __name__ == '__main__':
-    #Load image
-    video_path = "Database/tomato_video2.mp4"  # Path to your video
-    cap = cv2.VideoCapture(video_path)
 
-    resizeMag=1/3 
-    #main
-    ret, frame1 = cap.read()
-    if not ret:
-        print("End of video.")
+
+
+
+
+
+
+
+
+
+
+
+        # #if cols > 60 and rows > 60 :
+        #     # cv2.circle(cv_image, (240,50), 10, 255)
+        # # frame_wide_half=cv_image.shape[1]/2
+        # # frame_height_half=cv_image.shape[0]/2
+        # cv2.circle(cv_image, (int(cv_image.shape[1]/2), int(cv_image.shape[0]/2)), 10, 255)
+        # #假想蕃茄物件辨識框框左上：P(345, 255) 右上：Q(393, 305)
+        # cv2.rectangle(cv_image,self.TomatoBox_lu,self.TomatoBox_rd,(150, 0, 200),2)
+
+
+
+        # #<debug> 
+        # cv2.imshow("Image window", cv_image)
+        # #print(cv_image.shape)
+        
+        # cv2.waitKey(3)
+
+        # try:
+        #     self.image_visual_pub_.publish(self.bridge.cv2_to_imgmsg(cv_image, "bgr8"))
+        # except CvBridgeError as e:
+        #     print(e)
     
-    frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
-    #initialize
-    MyTomatoDetector = DetectTomato (frame1_resized, resizeMag) #給一個初始的圖片
-    MyTomatoDetector.changeGetNewTargetTomato(True) 
-    # TargetBox, image = MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
-    # MyTomatoDetector.changeGetNewTargetTomato(False) 
 
-    while(True): 
-        #main
-        ret, frame1 = cap.read()
-        if not ret:
-            print("End of video.")
-            break
-        frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
 
-        TargetBox, image = MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
+def main(args=None): #construct main funct沒有動ㄝ
+    
+    # if not __debug__:
+    #     # Your main code here
+    #     print("Running in optimized mode")
+    #     # Proceed with normal node logic
+    # else:
+    #     # Relaunch the script in optimized mode
+    #     script_path = os.path.realpath(__file__)
+    #     os.execv(sys.executable, [sys.executable, '-O', script_path] + sys.argv[1:])
+    # #===============================================================
+    
+    rclpy.init(args=args)
+    node1 = MyNode() #node1=NodeClass: MyNode
+    rclpy.spin(node1) #keep node alive until ctrl+C
+    rclpy.shutdown()
+    
 
-        if TargetBox is None:
-            print("No tomato detected.")
-        cv2.imshow('Tomato Image', image)
-        cv2.waitKey(1)
+if __name__=='__main__':
+        main()	
+
+
+
+
+
+
+
+# =============================================
+
+# if __name__ == '__main__':
+#     #Load image
+#     video_path = "dataset/data_tomatoVideo_forDetection/tomato_video2.mp4"  # Path to your video
+#     cap = cv2.VideoCapture(video_path)
+
+#     resizeMag=1/3 
+#     #main
+#     ret, frame1 = cap.read()
+#     if not ret:
+#         print("End of video.")
+    
+#     frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
+#     #initialize
+#     MyTomatoDetector = DetectTomato (frame1_resized, resizeMag) #給一個初始的圖片
+#     MyTomatoDetector.changeGetNewTargetTomato(True) 
+#     # TargetBox, image = MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
+#     # MyTomatoDetector.changeGetNewTargetTomato(False) 
+
+#     while(True): 
+#         #main
+#         ret, frame1 = cap.read()
+#         if not ret:
+#             print("End of video.")
+#             break
+#         frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
+
+#         TargetBox, image = MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
+
+#         if TargetBox is None:
+#             print("No tomato detected.")
+#         cv2.imshow('Tomato Image', image)
+#         cv2.waitKey(1)
 
 
 
