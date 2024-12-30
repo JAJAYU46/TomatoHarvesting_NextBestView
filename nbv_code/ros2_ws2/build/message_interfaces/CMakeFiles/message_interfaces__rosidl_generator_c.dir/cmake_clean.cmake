@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.o"
   "CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.o.d"
+  "CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o"
+  "CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o.d"
   "libmessage_interfaces__rosidl_generator_c.pdb"
   "libmessage_interfaces__rosidl_generator_c.so"
   "rosidl_generator_c/message_interfaces/msg/bounding_box.h"
@@ -8,6 +10,11 @@ file(REMOVE_RECURSE
   "rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.h"
   "rosidl_generator_c/message_interfaces/msg/detail/bounding_box__struct.h"
   "rosidl_generator_c/message_interfaces/msg/detail/bounding_box__type_support.h"
+  "rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c"
+  "rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.h"
+  "rosidl_generator_c/message_interfaces/msg/detail/node_status__struct.h"
+  "rosidl_generator_c/message_interfaces/msg/detail/node_status__type_support.h"
+  "rosidl_generator_c/message_interfaces/msg/node_status.h"
 )
 
 # Per-language clean rules from dependency scanning.

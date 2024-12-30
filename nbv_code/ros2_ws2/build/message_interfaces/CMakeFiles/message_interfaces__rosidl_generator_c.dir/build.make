@@ -83,6 +83,7 @@ rosidl_generator_c/message_interfaces/msg/bounding_box.h: /opt/ros/humble/share/
 rosidl_generator_c/message_interfaces/msg/bounding_box.h: /opt/ros/humble/share/rosidl_generator_c/resource/msg__type_support.h.em
 rosidl_generator_c/message_interfaces/msg/bounding_box.h: /opt/ros/humble/share/rosidl_generator_c/resource/srv__type_support.h.em
 rosidl_generator_c/message_interfaces/msg/bounding_box.h: rosidl_adapter/message_interfaces/msg/BoundingBox.idl
+rosidl_generator_c/message_interfaces/msg/bounding_box.h: rosidl_adapter/message_interfaces/msg/NodeStatus.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c --generator-arguments-file /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_c__arguments.json
 
@@ -95,8 +96,23 @@ rosidl_generator_c/message_interfaces/msg/detail/bounding_box__struct.h: rosidl_
 rosidl_generator_c/message_interfaces/msg/detail/bounding_box__type_support.h: rosidl_generator_c/message_interfaces/msg/bounding_box.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/message_interfaces/msg/detail/bounding_box__type_support.h
 
+rosidl_generator_c/message_interfaces/msg/node_status.h: rosidl_generator_c/message_interfaces/msg/bounding_box.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/message_interfaces/msg/node_status.h
+
+rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.h: rosidl_generator_c/message_interfaces/msg/bounding_box.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.h
+
+rosidl_generator_c/message_interfaces/msg/detail/node_status__struct.h: rosidl_generator_c/message_interfaces/msg/bounding_box.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/message_interfaces/msg/detail/node_status__struct.h
+
+rosidl_generator_c/message_interfaces/msg/detail/node_status__type_support.h: rosidl_generator_c/message_interfaces/msg/bounding_box.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/message_interfaces/msg/detail/node_status__type_support.h
+
 rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c: rosidl_generator_c/message_interfaces/msg/bounding_box.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c
+
+rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c: rosidl_generator_c/message_interfaces/msg/bounding_box.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c
 
 CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.o: CMakeFiles/message_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.o: rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c
@@ -112,19 +128,35 @@ CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c -o CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.s
 
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o: CMakeFiles/message_interfaces__rosidl_generator_c.dir/flags.make
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o: rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o: CMakeFiles/message_interfaces__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o -MF CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o.d -o CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o -c /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c
+
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c > CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.i
+
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c -o CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.s
+
 # Object files for target message_interfaces__rosidl_generator_c
 message_interfaces__rosidl_generator_c_OBJECTS = \
-"CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.o"
+"CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.o" \
+"CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o"
 
 # External object files for target message_interfaces__rosidl_generator_c
 message_interfaces__rosidl_generator_c_EXTERNAL_OBJECTS =
 
 libmessage_interfaces__rosidl_generator_c.so: CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.o
+libmessage_interfaces__rosidl_generator_c.so: CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o
 libmessage_interfaces__rosidl_generator_c.so: CMakeFiles/message_interfaces__rosidl_generator_c.dir/build.make
 libmessage_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libmessage_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 libmessage_interfaces__rosidl_generator_c.so: CMakeFiles/message_interfaces__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library libmessage_interfaces__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared library libmessage_interfaces__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/message_interfaces__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -140,6 +172,11 @@ CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c
 CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.h
 CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/message_interfaces/msg/detail/bounding_box__struct.h
 CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/message_interfaces/msg/detail/bounding_box__type_support.h
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.h
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/message_interfaces/msg/detail/node_status__struct.h
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/message_interfaces/msg/detail/node_status__type_support.h
+CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/message_interfaces/msg/node_status.h
 	cd /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/message_interfaces /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/message_interfaces /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/CMakeFiles/message_interfaces__rosidl_generator_c.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/message_interfaces__rosidl_generator_c.dir/depend
 

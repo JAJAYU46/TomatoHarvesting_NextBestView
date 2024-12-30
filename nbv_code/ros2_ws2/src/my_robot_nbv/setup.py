@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             #建立一個excecutable 
+            "nbv_temp_isMovingPublisher = my_robot_nbv.nbv_temp_isMovingPublisher:main", 
             "nbv_tompcd_filter = my_robot_nbv.nbv_tompcd_filter:main", 
             "nbv_tom_detect = my_robot_nbv.nbv_tom_detect:main"
         ],

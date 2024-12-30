@@ -70,6 +70,10 @@ CMakeFiles/message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/
 CMakeFiles/message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/bounding_box__builder.hpp
 CMakeFiles/message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/bounding_box__struct.hpp
 CMakeFiles/message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/bounding_box__traits.hpp
+CMakeFiles/message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/node_status.hpp
+CMakeFiles/message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/node_status__builder.hpp
+CMakeFiles/message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/node_status__struct.hpp
+CMakeFiles/message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/node_status__traits.hpp
 
 rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -87,6 +91,7 @@ rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp: /opt/ros/humble/sh
 rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__struct.hpp.em
 rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
 rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp: rosidl_adapter/message_interfaces/msg/BoundingBox.idl
+rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp: rosidl_adapter/message_interfaces/msg/NodeStatus.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_cpp__arguments.json
 
@@ -99,11 +104,27 @@ rosidl_generator_cpp/message_interfaces/msg/detail/bounding_box__struct.hpp: ros
 rosidl_generator_cpp/message_interfaces/msg/detail/bounding_box__traits.hpp: rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/message_interfaces/msg/detail/bounding_box__traits.hpp
 
+rosidl_generator_cpp/message_interfaces/msg/node_status.hpp: rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/message_interfaces/msg/node_status.hpp
+
+rosidl_generator_cpp/message_interfaces/msg/detail/node_status__builder.hpp: rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/message_interfaces/msg/detail/node_status__builder.hpp
+
+rosidl_generator_cpp/message_interfaces/msg/detail/node_status__struct.hpp: rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/message_interfaces/msg/detail/node_status__struct.hpp
+
+rosidl_generator_cpp/message_interfaces/msg/detail/node_status__traits.hpp: rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/message_interfaces/msg/detail/node_status__traits.hpp
+
 message_interfaces__cpp: CMakeFiles/message_interfaces__cpp
 message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/bounding_box.hpp
 message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/bounding_box__builder.hpp
 message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/bounding_box__struct.hpp
 message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/bounding_box__traits.hpp
+message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/node_status__builder.hpp
+message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/node_status__struct.hpp
+message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/detail/node_status__traits.hpp
+message_interfaces__cpp: rosidl_generator_cpp/message_interfaces/msg/node_status.hpp
 message_interfaces__cpp: CMakeFiles/message_interfaces__cpp.dir/build.make
 .PHONY : message_interfaces__cpp
 

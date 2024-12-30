@@ -67,6 +67,7 @@ include CMakeFiles/message_interfaces.dir/compiler_depend.make
 include CMakeFiles/message_interfaces.dir/progress.make
 
 CMakeFiles/message_interfaces: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/message_interfaces/msg/BoundingBox.msg
+CMakeFiles/message_interfaces: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/message_interfaces/msg/NodeStatus.msg
 
 message_interfaces: CMakeFiles/message_interfaces
 message_interfaces: CMakeFiles/message_interfaces.dir/build.make

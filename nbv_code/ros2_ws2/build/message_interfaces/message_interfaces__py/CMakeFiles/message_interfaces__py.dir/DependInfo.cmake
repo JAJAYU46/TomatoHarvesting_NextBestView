@@ -17,6 +17,8 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/msg/__init__.py" "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/msg/_bounding_box.py" "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/msg/_bounding_box_s.c" "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/msg/_node_status.py" "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/msg/_node_status_s.c" "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_generator_py/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   )
 
 
