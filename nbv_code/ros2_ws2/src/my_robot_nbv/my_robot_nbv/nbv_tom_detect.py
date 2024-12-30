@@ -166,7 +166,9 @@ class MyNode(Node): #construct Node class
         # <Debug1.1> 不可以這樣, 因為那個追蹤是線性的, 是要追蹤的, 你這樣它會找不到目標的那顆target 變成不publish東西
         # 之後可以加個, 如果追蹤的東東不見了, 就把最上面那個當成最新的目標
         # if(self.DetectionDoneFlag==True):# 因為yolo很花時間, 所以現在就是如果上一次的yolo還沒結束, 就不要處理新的照片, 新的msg frame就不處理（之後會變成, 在手必移動到新的點完成之前, 都不做處理）
-        if(True): # <Debug1.1> 好像就算這樣也沒用, 因為之前影片就算lag, 它基本上還是線性的, 但這個frame在處理完之後才收msg, 是會掉包的, 所以不是線性的 所以這樣的話, 現在改成如果目標消失了, 就已最高的當目標
+        # if(True): # <Debug1.1> 好像就算這樣也沒用, 因為之前影片就算lag, 它基本上還是線性的, 但這個frame在處理完之後才收msg, 是會掉包的, 所以不是線性的 所以這樣的話, 現在改成如果目標消失了, 就已最高的當目標
+            #好像一直讓它偵測也沒用, 所以還是用最好的, detect完才再去接收detect另一個
+        if(self.DetectionDoneFlag==True):
             self.DetectionDoneFlag=False
             frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
 

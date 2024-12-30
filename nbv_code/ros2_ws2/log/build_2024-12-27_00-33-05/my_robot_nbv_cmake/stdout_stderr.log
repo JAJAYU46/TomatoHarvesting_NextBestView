@@ -1,0 +1,31 @@
+[ 10%] [32mBuilding CXX object CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.o[0m
+[ 20%] [32m[1mLinking CXX static library libnbvc_lib_SdfModel.a[0m
+[ 20%] Built target nbvc_lib_SdfModel
+[ 30%] [32mBuilding CXX object CMakeFiles/SdfModelV3.dir/src/SdfModelV3.cpp.o[0m
+[ 40%] [32m[1mLinking CXX executable SdfModelV3[0m
+[ 40%] Built target SdfModelV3
+[ 50%] [32mBuilding CXX object CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o[0m
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:36[m[K:
+[01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   35 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:38[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:[m[K In member function ‘[01m[Kstd::vector<octomath::Vector3> BestViewModel::RandomPoint(octomap::point3d, int, double)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:232:13:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[KRayEndPoints[m[K’
+  232 |             [01;31m[KRayEndPoints[m[K.push_back(octomap::point3d(x, y, z));
+      |             [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:227:19:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kx[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  227 |             float [01;35m[Kx[m[K = center_.x() + r * sin(theta)*cos(phi);
+      |                   [01;35m[K^[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:228:19:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ky[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  228 |             float [01;35m[Ky[m[K = center_.y() + r * sin(theta)*sin(phi);
+      |                   [01;35m[K^[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:229:19:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kz[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  229 |             float [01;35m[Kz[m[K = 0 //現在因為是用車車測試所以就用平面地板就好//center_.z() + r * cos(theta); /////////////////////////////////////
+      |                   [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/BestViewModel.dir/build.make:76: CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:223: CMakeFiles/BestViewModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

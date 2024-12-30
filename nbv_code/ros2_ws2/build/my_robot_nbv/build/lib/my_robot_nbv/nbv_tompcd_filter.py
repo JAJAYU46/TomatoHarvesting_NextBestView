@@ -112,7 +112,8 @@ class MyNode(Node): #construct Node class
         
         is_frame_moving = True #用來確認frame有沒有在move, 如果有, 就算算出estimate的位置也不要做publish的動作
         TransformStamped_before_ready=False
-        if(self.bboxReadyFlag == True): # 如果bounding box有得到東西了, 才做下面的東東    
+        if(self.bboxReadyFlag == True): # 如果bounding box有得到東西了, 才做下面的東東 
+            self.bboxReadyFlag = False # 如果這次bounding box被用掉了, 就轉成false, 要下次有新的bounding box msg 才會再做, 防止bounding box是之前frame的bounding box
             try: #街收到新data後除非transform有成功讀到, 才繼續往下做
                 # TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
                 # 'odom', # target frame Moving frame #也就是現在的'camera_link_optical',    

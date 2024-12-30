@@ -63,6 +63,18 @@ class DetectTomato:
             image = self.__VisualizeTrackBoundingBox(self.TopTomatoTrack, image, 20, True, (0,100,100))
             print(f"The Top Tomato is{self.TopTomatoTrack.to_tlbr()}")
             
+            # <Add> <Debug> 現在變成如果target tomato一不見, 就回傳toppest tomato作為新的target tomato===============================================
+            if (self.TargetTomatoTrack is None): #<Debug> 原來那個tomato不會不見, id會保留著但是confident變成none了
+                self.changeGetNewTargetTomato(True)  #如果原來的那個id的tomato不見了, 就把最高的那個當新的target tomato
+            else: 
+                if (self.TargetTomatoTrack.det_conf is None):
+                    self.changeGetNewTargetTomato(True)
+                else: 
+                    if(self.TargetTomatoTrack.det_conf<=0.2):
+                        self.changeGetNewTargetTomato(True)
+                        # pass
+            # ===================================================
+            
             if(self.GetNewTargetTomato==True): #如果現在是要找到新的Tomato的話, TargetTomato就是更新為TopTomato
                 self.TargetTomatoTrack=self.TopTomatoTrack
                 self.TargetTomatoTrackID=self.TargetTomatoTrack.track_id
@@ -106,6 +118,8 @@ class DetectTomato:
             det_conf_Tomato = 0.0  # Default confidence if none is found
             DoNotPrint = True #<debug>就是這項如果是none的時候, 就是id還保留著但是tomato已經不見了, 但是id還是會保留一陣子. 但for visualization, 這邊就不要印出來了
 
+        if(colorFlag==True): #debug 用的 之後要刪掉 特殊block無條件都要印
+            DoNotPrint = False
         if(DoNotPrint == False):
             x1_Tomato,y1_Tomato,x2_Tomato,y2_Tomato = map(int, bbox)
         
@@ -133,6 +147,7 @@ class DetectTomato:
         return image
         
     def __ExtractTrackAndReturnTopAndTarget(self,tracked_objects, image):
+        self.TopTomatoTrackY = self.height #找這些tomato的最高tomato之前, 要初始話現在的max值
         for track in tracked_objects:
             if not track.is_confirmed():
                 # print("no track")#############################################################
@@ -172,8 +187,9 @@ class DetectTomato:
                 if(y1>int(self.height/self.height) and y2<int(self.height-self.height/self.height)): #detect y not in the margin
                     #Top Tomato
                     if(y1<self.TopTomatoTrackY) and self.classNames[det_class]=="ripe": #is ripe and is the toppest but not in the margin tomato
-                        self.TopTomatoTrack = track
-                        self.TopTomatoTrackY = y1 #(y最底下, y最大的地方)目標是找y最小的
+                        if (det_conf>=0.2): # 還要沒有消失的, 才可以當最新的top tomato
+                            self.TopTomatoTrack = track
+                            self.TopTomatoTrackY = y1 #(y最底下, y最大的地方)目標是找y最小的
         
             if(self.GetNewTargetTomato==False): #如果是要繼續trace前一個tomato ID的話那就把targetTomato在這裡看同個ID的那個tomato
                 if(track_id==self.TargetTomatoTrackID): #如果ID一樣的話

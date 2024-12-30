@@ -212,7 +212,9 @@ private:
         std::uniform_real_distribution<> dist_r(radius_, radius_);
         // std::uniform_real_distribution<> dist_theta(-1*M_PI, 1*M_PI); //如果是0的話就是z平面上
         // std::uniform_real_distribution<> dist_theta(0, 0.5);//只要上半球
-        std::uniform_real_distribution<> dist_cos_theta(0, 1.0); //<chatgpt2>
+        // std::uniform_real_distribution<> dist_cos_theta(0, 1.0); //<chatgpt2>
+        std::uniform_real_distribution<> dist_cos_theta(-1.0, 1.0); //<chatgpt2>
+
 
 
 
@@ -226,7 +228,7 @@ private:
             
             float x = center_.x() + r * sin(theta)*cos(phi);
             float y = center_.y() + r * sin(theta)*sin(phi);
-            float z = center_.z() + r * cos(theta);
+            float z = center_.z() + r * cos(theta);//0.05 ;//現在因為是用車車測試所以就用平面地板就好//center_.z() + r * cos(theta); /////////////////////////////////////
 
             // RayEndPoints.emplace_back(Eigen::Vector3f(x, y, z));
             RayEndPoints.push_back(octomap::point3d(x, y, z));
