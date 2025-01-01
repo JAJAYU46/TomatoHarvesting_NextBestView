@@ -41,6 +41,13 @@ using std::placeholders::_1;
 //for 把要publish的東東存起來留給之後的marker用
 #include <queue>
 
+
+// For custom topic status controller topic
+#include "message_interfaces/msg/node_status.hpp" //在install>>message_interfaces...中看有沒有這個.hpp檔
+
+
+
+
 #define DEBUG_MODE false
 
 class BestViewModel {
@@ -67,6 +74,8 @@ public:
         marker_ID_handler[1]=100; //for red ray id 101~200第二個candidate view要使用下一套ex若100個candidate view就會有100個red ray 100個 green ray 
         marker_ID_handler[2]=200; //for blue ray id 201~300
         
+        
+
     }
 
     //FindNextBestView //做完會把這個scene(定by現在的pcdO3d_tomato_ 跟 octree_)的nbv傳承
@@ -386,10 +395,52 @@ class MyNode : public rclcpp::Node
                 "/octomap_binary", 10, std::bind(&MyNode::octomap_callback, this, std::placeholders::_1));
             pcd_subscription_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
                 "/nbv/tompcd_ICPonly", 10, std::bind(&MyNode::pointcloud_callback, this, std::placeholders::_1));
-    
+
+            
+            // status controller topic //auto 就是讓compiler自己偵測data type, custom topic和其他classic topic不一樣, 要用auto
+            auto status_publisher_ = this->create_publisher<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10);
+            auto status_subscription_ = this->create_subscription<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10, std::bind(&MyNode::status_topic_callback, this, std::placeholders::_1));
+            
+
         }
 
     private:
+
+        //====== 0. for status controller topic ======
+        bool ready_for_next_iteration_msg_;
+        bool is_moving_msg_;
+        int iteration_msg_;
+        bool detection_done_msg_;
+        bool icp_done_msg_;
+        bool octomap_done_msg_ ;//= false; //防止第一次沒有資料的時候
+        bool nbv_done_msg_;
+        float nbv_point_x_msg_;
+        float nbv_point_y_msg_;
+        float nbv_point_z_msg_;
+        bool is_final_result_msg_;
+
+        bool finish_get_status_topic=false;
+        rclcpp::Publisher<message_interfaces::msg::NodeStatus>::SharedPtr status_publisher_;
+        rclcpp::Subscription<message_interfaces::msg::NodeStatus>::SharedPtr status_subscription_;
+
+        void status_topic_callback(const message_interfaces::msg::NodeStatus::SharedPtr msg){
+            // RCLCPP_INFO(this->get_logger(), "I heard: '%d'", msg->num);              // CHANGE
+            RCLCPP_INFO(this->get_logger(), "I heard: ");              // CHANGE
+            ready_for_next_iteration_msg_ = msg->ready_for_next_iteration;
+            is_moving_msg_ = msg->is_moving;
+            iteration_msg_ = msg->iteration;
+            detection_done_msg_ = msg->detection_done;
+            icp_done_msg_ = msg->icp_done;
+            octomap_done_msg_ = msg->octomap_done;
+            nbv_done_msg_ = msg->nbv_done;
+            nbv_point_x_msg_ = msg->nbv_point_x;
+            nbv_point_y_msg_ = msg->nbv_point_y;
+            nbv_point_z_msg_ = msg->nbv_point_z;
+            is_final_result_msg_ = msg->is_final_result;
+
+            finish_get_status_topic=true;
+        }
+
         //====== 1. node private Variables ======
         size_t count_;
 
@@ -428,102 +479,122 @@ class MyNode : public rclcpp::Node
         }
 
         void octomap_callback(const octomap_msgs::msg::Octomap::SharedPtr msg) //const
-        {   if(firstPCD_ready_flag==true){
-                RCLCPP_INFO(this->get_logger(), "Received octomap data!!");
-                octomap::OcTree* octree = NULL; // octomap::OcTree(0.01);
-                AbstractOcTree* tree = octomap_msgs::msgToMap(*msg);
-                //====== 1. convert ros2 octree into octomap octree ======
-                if (tree){
-                    octree = static_cast<octomap::OcTree*>(tree); //用這個static才跑得動 但就要確定msg type要一樣
-                    RCLCPP_INFO(this->get_logger(), "Success getting tree for this scene!");
-                    if (octree){
+        {   if(finish_get_status_topic == true){
+                if(firstPCD_ready_flag==true){
+                    RCLCPP_INFO(this->get_logger(), "Received octomap data!!");
+                    octomap::OcTree* octree = NULL; // octomap::OcTree(0.01);
+                    AbstractOcTree* tree = octomap_msgs::msgToMap(*msg);
+                    //====== 1. convert ros2 octree into octomap octree ======
+                    if (tree){
+                        octree = static_cast<octomap::OcTree*>(tree); //用這個static才跑得動 但就要確定msg type要一樣
+                        RCLCPP_INFO(this->get_logger(), "Success getting tree for this scene!");
+                        if (octree){
+                            //status controller topic ===============================
+                            if(octomap_done_msg_ == false){
+                                auto msg_status = message_interfaces::msg::NodeStatus();   
+                                msg_status.ready_for_next_iteration = ready_for_next_iteration_msg_;
+                                msg_status.is_moving = is_moving_msg_;
+                                msg_status.iteration = iteration_msg_;
+                                msg_status.detection_done = detection_done_msg_;
+                                msg_status.icp_done = icp_done_msg_;
+                                msg_status.octomap_done = true; //只幫octomap改這個
+                                msg_status.nbv_done = nbv_done_msg_;
+                                msg_status.nbv_point_x = nbv_point_x_msg_;
+                                msg_status.nbv_point_y = nbv_point_y_msg_;
+                                msg_status.nbv_point_z = nbv_point_z_msg_ ;
+                                msg_status.is_final_result = is_final_result_msg_;
+                                status_publisher_->publish(msg_status);
+                            }
+                            // ==================================================== 
+                            
+                            
+                            octree->write("src/dataset/data_octomap/octomap_before_inter.ot"); //AbstractOcTree 是一個octomap的通用格式, 可以自動處理color octomap或是non color octomap. 但它會是以指標的方式存（所以要得到他指到的member要用->而非. 這是c++中的語法) 
+                            //<Note> octovis data/sample.ot 想要看.ot檔要在cd ros2_ws2下用這個(注意相對路徑)
+                            //把estimated tomato 換成的octomap 和 環境 octomap融合
+                            // open3d_cloud_
+                            // Iterate through Open3D point cloud and add points to the Octree
+                            for (const auto& point : cloud_o3d_icpTomato->points_) {
+                                octree->updateNode(octomap::point3d(point.x(), point.y(), point.z()), true); // Mark as occupied
+                            }
+
+                            // Update inner occupancy for the Octree
+                            octree->updateInnerOccupancy();
+                            octree->write("src/dataset/data_octomap/octomap_after_inter.ot");
 
 
-                        octree->write("src/dataset/data_octomap/octomap_before_inter.ot"); //AbstractOcTree 是一個octomap的通用格式, 可以自動處理color octomap或是non color octomap. 但它會是以指標的方式存（所以要得到他指到的member要用->而非. 這是c++中的語法) 
-                        //<Note> octovis data/sample.ot 想要看.ot檔要在cd ros2_ws2下用這個(注意相對路徑)
-                        //把estimated tomato 換成的octomap 和 環境 octomap融合
-                        // open3d_cloud_
-                          // Iterate through Open3D point cloud and add points to the Octree
-                        for (const auto& point : cloud_o3d_icpTomato->points_) {
-                            octree->updateNode(octomap::point3d(point.x(), point.y(), point.z()), true); // Mark as occupied
+
+
+
+                            RCLCPP_INFO(this->get_logger(),"Success getting octree map for this scene!");
+                            
+                            RCLCPP_INFO(this->get_logger(),"Map received (%zu nodes, %f m res), \n saving to src/dataset/data_octomap/octomap_from_orig.ot", octree->size(), octree->getResolution());
+                            octree->write("src/dataset/data_octomap/octomap_from_orig.ot"); //AbstractOcTree 是一個octomap的通用格式, 可以自動處理color octomap或是non color octomap. 但它會是以指標的方式存（所以要得到他指到的member要用->而非. 這是c++中的語法) 
+                            
+                            RCLCPP_INFO(this->get_logger(),"Success saving octomap .ot, \nStart to calculate next best view for this scene...");
+                            
+
+                            //====== 2. Calculate nbv point ======
+                            float candidateViews_radius = 0.5; 
+                            int candidateViews_num = 20; //20
+                            int rays_num = 50; //50
+
+                            BestViewModel NbvScene(cloud_o3d_icpTomato, octree, candidateViews_radius, candidateViews_num, rays_num);
+                            
+
+                            NbvScene.CaculateNextBestView();
+
+
+                            //====== 3. publish visualization marker ====== (for publish visualization marker, 不停把markerQueue_xxx內的東西從第一個讀出 & publish ＆ pop 掉, 直到在queue中待publish的marker全部被publish完)
+
+                            while (!NbvScene.markerQueue_origin.empty()) {
+                                // Access the front element
+                                cout << "Publishing marker for origin: " << NbvScene.markerQueue_origin.front() << endl;
+                                
+                                // cout << "---------Publishing marker for origin: " << NbvScene.markerQueue_origin.front() <<"------------"<< endl;
+                                // cout << "Now size of NbvScene.markerQueue_origin: " << NbvScene.markerQueue_origin.size() << endl;
+                                // cout << "Now size of NbvScene.markerQueue_endPoints: " << NbvScene.markerQueue_endPoints.size() << endl;
+                                // cout << "Now size of NbvScene.markerQueue_id: " << NbvScene.markerQueue_id.size() << endl;
+                                // cout << "Now size of NbvScene.markerQueue_color: " << NbvScene.markerQueue_color.size() << endl;
+                                // cout << "Now size of NbvScene.markerQueue_xscale: " << NbvScene.markerQueue_xscale.size() << endl;
+                                
+                                // cout << "Now NbvScene.markerQueue_origin: " << NbvScene.markerQueue_origin.front() << endl;
+                                // // cout << "Now NbvScene.markerQueue_endPoints: " << NbvScene.markerQueue_endPoints.front() << endl;
+                                // cout << "Now NbvScene.markerQueue_id: " << NbvScene.markerQueue_id.front() << endl;
+                                // cout << "Now NbvScene.markerQueue_color: (" << NbvScene.markerQueue_color.front()[0] << ", " << NbvScene.markerQueue_color.front()[1] << ", " << NbvScene.markerQueue_color.front()[2]<<")" << endl;
+                                // cout << "Now NbvScene.markerQueue_xscale: " << NbvScene.markerQueue_xscale.front() << endl;
+
+                                publish_any_ray_marker(NbvScene.markerQueue_origin.front(), NbvScene.markerQueue_endPoints.front(), NbvScene.markerQueue_id.front(), NbvScene.markerQueue_color.front(), NbvScene.markerQueue_xscale.front());
+                                
+                                // Remove the front element
+                                NbvScene.markerQueue_origin.pop();
+                                NbvScene.markerQueue_endPoints.pop();
+                                NbvScene.markerQueue_id.pop();
+                                NbvScene.markerQueue_color.pop();
+                                NbvScene.markerQueue_xscale.pop();
+                                
+                            }
+                            
+                            //====== 4. Show the result of NBV point & its gain ======
+                            RCLCPP_INFO(this->get_logger(), "===============================================");
+                            RCLCPP_INFO(this->get_logger(), "The Best candidate view for this scene is at (%f, %f, %f) with gain=%d", NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), NbvScene.BestCandidateView_gain);
+                            RCLCPP_INFO(this->get_logger(), "===============================================");
+                            publish_point_marker(NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), 0.05, 1.0f, 1.0f, 0.0f);//scale color r g b
+                            // for status controller topic
+                            finish_get_status_topic=false;
+
+
+                            
+                        }else{
+                            RCLCPP_ERROR(this->get_logger(),"Error reading OcTree from stream (octree fail)");
                         }
 
-                        // Update inner occupancy for the Octree
-                        octree->updateInnerOccupancy();
-                        octree->write("src/dataset/data_octomap/octomap_after_inter.ot");
-
-
-
-
-
-                        RCLCPP_INFO(this->get_logger(),"Success getting octree map for this scene!");
+                    }else {
+                        RCLCPP_ERROR(this->get_logger(), "Failed to convert Octomap message to OcTree (tree fail)");
                         
-                        RCLCPP_INFO(this->get_logger(),"Map received (%zu nodes, %f m res), \n saving to src/dataset/data_octomap/octomap_from_orig.ot", octree->size(), octree->getResolution());
-                        octree->write("src/dataset/data_octomap/octomap_from_orig.ot"); //AbstractOcTree 是一個octomap的通用格式, 可以自動處理color octomap或是non color octomap. 但它會是以指標的方式存（所以要得到他指到的member要用->而非. 這是c++中的語法) 
-                        
-                        RCLCPP_INFO(this->get_logger(),"Success saving octomap .ot, \nStart to calculate next best view for this scene...");
-                        
-
-                        //====== 2. Calculate nbv point ======
-                        float candidateViews_radius = 0.5; 
-                        int candidateViews_num = 20; //20
-                        int rays_num = 50; //50
-
-                        BestViewModel NbvScene(cloud_o3d_icpTomato, octree, candidateViews_radius, candidateViews_num, rays_num);
-                        
-
-                        NbvScene.CaculateNextBestView();
-
-
-                        //====== 3. publish visualization marker ====== (for publish visualization marker, 不停把markerQueue_xxx內的東西從第一個讀出 & publish ＆ pop 掉, 直到在queue中待publish的marker全部被publish完)
-
-                        while (!NbvScene.markerQueue_origin.empty()) {
-                            // Access the front element
-                            cout << "Publishing marker for origin: " << NbvScene.markerQueue_origin.front() << endl;
-                            
-                            // cout << "---------Publishing marker for origin: " << NbvScene.markerQueue_origin.front() <<"------------"<< endl;
-                            // cout << "Now size of NbvScene.markerQueue_origin: " << NbvScene.markerQueue_origin.size() << endl;
-                            // cout << "Now size of NbvScene.markerQueue_endPoints: " << NbvScene.markerQueue_endPoints.size() << endl;
-                            // cout << "Now size of NbvScene.markerQueue_id: " << NbvScene.markerQueue_id.size() << endl;
-                            // cout << "Now size of NbvScene.markerQueue_color: " << NbvScene.markerQueue_color.size() << endl;
-                            // cout << "Now size of NbvScene.markerQueue_xscale: " << NbvScene.markerQueue_xscale.size() << endl;
-                            
-                            // cout << "Now NbvScene.markerQueue_origin: " << NbvScene.markerQueue_origin.front() << endl;
-                            // // cout << "Now NbvScene.markerQueue_endPoints: " << NbvScene.markerQueue_endPoints.front() << endl;
-                            // cout << "Now NbvScene.markerQueue_id: " << NbvScene.markerQueue_id.front() << endl;
-                            // cout << "Now NbvScene.markerQueue_color: (" << NbvScene.markerQueue_color.front()[0] << ", " << NbvScene.markerQueue_color.front()[1] << ", " << NbvScene.markerQueue_color.front()[2]<<")" << endl;
-                            // cout << "Now NbvScene.markerQueue_xscale: " << NbvScene.markerQueue_xscale.front() << endl;
-
-                            publish_any_ray_marker(NbvScene.markerQueue_origin.front(), NbvScene.markerQueue_endPoints.front(), NbvScene.markerQueue_id.front(), NbvScene.markerQueue_color.front(), NbvScene.markerQueue_xscale.front());
-                            
-                            // Remove the front element
-                            NbvScene.markerQueue_origin.pop();
-                            NbvScene.markerQueue_endPoints.pop();
-                            NbvScene.markerQueue_id.pop();
-                            NbvScene.markerQueue_color.pop();
-                            NbvScene.markerQueue_xscale.pop();
-                            
-                        }
-                        
-                        //====== 4. Show the result of NBV point & its gain ======
-                        RCLCPP_INFO(this->get_logger(), "===============================================");
-                        RCLCPP_INFO(this->get_logger(), "The Best candidate view for this scene is at (%f, %f, %f) with gain=%d", NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), NbvScene.BestCandidateView_gain);
-                        RCLCPP_INFO(this->get_logger(), "===============================================");
-                        publish_point_marker(NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), 0.05, 1.0f, 1.0f, 0.0f);//scale color r g b
-    
-
-
-                        
-                    }else{
-                        RCLCPP_ERROR(this->get_logger(),"Error reading OcTree from stream (octree fail)");
                     }
-
-                }else {
-                    RCLCPP_ERROR(this->get_logger(), "Failed to convert Octomap message to OcTree (tree fail)");
-                    
+                
                 }
-            
-            }
+            }    
         }
 
 

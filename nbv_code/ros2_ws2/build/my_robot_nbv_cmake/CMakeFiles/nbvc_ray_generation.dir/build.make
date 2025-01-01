@@ -110,6 +110,12 @@ nbvc_ray_generation: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fast
 nbvc_ray_generation: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
 nbvc_ray_generation: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
 nbvc_ray_generation: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_py.so
+nbvc_ray_generation: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_fastrtps_c.so
+nbvc_ray_generation: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_introspection_c.so
+nbvc_ray_generation: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_fastrtps_cpp.so
+nbvc_ray_generation: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_introspection_cpp.so
+nbvc_ray_generation: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_cpp.so
+nbvc_ray_generation: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_generator_py.so
 nbvc_ray_generation: libnbvc_lib_SdfModel.a
 nbvc_ray_generation: /opt/ros/humble/lib/x86_64-linux-gnu/liboctomap.so
 nbvc_ray_generation: /opt/ros/humble/lib/x86_64-linux-gnu/liboctomath.so
@@ -159,6 +165,8 @@ nbvc_ray_generation: /opt/ros/humble/lib/libunique_identifier_msgs__rosidl_types
 nbvc_ray_generation: /opt/ros/humble/lib/libunique_identifier_msgs__rosidl_generator_c.so
 nbvc_ray_generation: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_cpp.so
 nbvc_ray_generation: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
+nbvc_ray_generation: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_c.so
+nbvc_ray_generation: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_generator_c.so
 nbvc_ray_generation: /opt/ros/humble/lib/librclcpp.so
 nbvc_ray_generation: /opt/ros/humble/lib/liblibstatistics_collector.so
 nbvc_ray_generation: /opt/ros/humble/lib/librcl.so

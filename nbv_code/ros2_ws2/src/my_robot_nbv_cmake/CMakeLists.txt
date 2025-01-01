@@ -14,6 +14,8 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)#for subscribe ros2 pcd
 
+# for status controller topic (custom topic)
+find_package(message_interfaces REQUIRED)  
 
 #for octomap
 find_package(octomap REQUIRED)
@@ -109,6 +111,9 @@ ament_target_dependencies(nbvc_ray_generation #msg的是加這種的
   tf2_eigen
   #for subsribe pcd topic
   sensor_msgs
+
+  # custom topic
+  message_interfaces
 )# ${OCTOMAP_LIBRARIES}) #說這個executable 裡面有用到(dependency)rclcpp這個package
 TARGET_LINK_LIBRARIES(nbvc_ray_generation #好像自己額外的要用這個加才可以
     nbvc_lib_SdfModel    
@@ -117,6 +122,7 @@ TARGET_LINK_LIBRARIES(nbvc_ray_generation #好像自己額外的要用這個加�
     # open3d_conversions
     # ${TF2_LIBRARIES}
     # ${TF2_ROS_LIBRARIES}
+    # message_interfaces
     
 
 )
@@ -134,6 +140,9 @@ ament_target_dependencies(BestViewModel #msg的是加這種的
   tf2_eigen
   #for subsribe pcd topic
   sensor_msgs
+
+  # custom topic
+  message_interfaces
 )# ${OCTOMAP_LIBRARIES}) #說這個executable 裡面有用到(dependency)rclcpp這個package
 TARGET_LINK_LIBRARIES(BestViewModel #好像自己額外的要用這個加才可以
     nbvc_lib_SdfModel    
@@ -142,6 +151,7 @@ TARGET_LINK_LIBRARIES(BestViewModel #好像自己額外的要用這個加才可�
     # open3d_conversions
     # ${TF2_LIBRARIES}
     # ${TF2_ROS_LIBRARIES}
+    
     
 
 )

@@ -110,6 +110,12 @@ BestViewModel: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c
 BestViewModel: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
 BestViewModel: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
 BestViewModel: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_py.so
+BestViewModel: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_fastrtps_c.so
+BestViewModel: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_introspection_c.so
+BestViewModel: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_fastrtps_cpp.so
+BestViewModel: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_introspection_cpp.so
+BestViewModel: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_cpp.so
+BestViewModel: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_generator_py.so
 BestViewModel: libnbvc_lib_SdfModel.a
 BestViewModel: /opt/ros/humble/lib/x86_64-linux-gnu/liboctomap.so
 BestViewModel: /opt/ros/humble/lib/x86_64-linux-gnu/liboctomath.so
@@ -159,6 +165,8 @@ BestViewModel: /opt/ros/humble/lib/libunique_identifier_msgs__rosidl_typesupport
 BestViewModel: /opt/ros/humble/lib/libunique_identifier_msgs__rosidl_generator_c.so
 BestViewModel: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_cpp.so
 BestViewModel: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
+BestViewModel: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_c.so
+BestViewModel: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_generator_c.so
 BestViewModel: /opt/ros/humble/lib/librclcpp.so
 BestViewModel: /opt/ros/humble/lib/liblibstatistics_collector.so
 BestViewModel: /opt/ros/humble/lib/librcl.so

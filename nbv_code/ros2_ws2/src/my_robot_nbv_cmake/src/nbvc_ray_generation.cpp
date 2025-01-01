@@ -37,9 +37,11 @@ using std::placeholders::_1;
 #include <tf2_eigen/tf2_eigen.h>
 #include <Eigen/Geometry>
 
+// For custom topic status controller topic
+#include "message_interfaces/msg/node_status.hpp" //在install>>message_interfaces...中看有沒有這個.hpp檔
 
 
-//for pointcloud2 to open3d pcd
+// for pointcloud2 to open3d pcd
 // #include <tf2_ros/transform_listener.h>
 // #include <tf2_ros/buffer.h>
 // #include <geometry_msgs/msg/transform_stamped.hpp>
@@ -78,6 +80,11 @@ class MyNode : public rclcpp::Node
                 "/nbv/tompcd_ICPonly", 10, std::bind(&MyNode::pointcloud_callback, this, std::placeholders::_1));
     
             
+            // status controller topic //auto 就是讓compiler自己偵測data type, custom topic和其他classic topic不一樣, 要用auto
+            auto status_publisher_ = this->create_publisher<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10);
+            auto status_subscription_ = this->create_subscription<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10, std::bind(&MyNode::status_topic_callback, this, std::placeholders::_1));
+            // auto publisher = this->create_publisher<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10);
+
             // octomap_subscription_ = this->create_subscription<octomap_msgs::msg::Octomap>(
             //     "/octomap_binary", 10, std::bind(&MyNode::octomap_callback, this, std::placeholders::_1));
             // // publisher_octomap = this->create_publisher<octomap_msgs::msg::Octomap>("octomap_topicLaLa", 10);
@@ -109,6 +116,39 @@ class MyNode : public rclcpp::Node
         //<Debug> （錯的, 看debug3)不知道為啥open3d pointcloud如果用這個的話build不會出問題, 但是run的時候會直接指出現run fail 還是 run p...啥的, 查了說是因為access到了不該access的地方
         // open3d::geometry::PointCloud open3d_cloud_;//<Debug2> 但你SdfModel是吃auto pcd = std::make_shared<open3d::geometry::PointCloud>(); , 所以也不能直接傳物件
             // Callback to handle incoming PointCloud2 messages
+        bool ready_for_next_iteration_msg_;
+        bool is_moving_msg_;
+        int iteration_msg_;
+        bool detection_done_msg_;
+        bool icp_done_msg_;
+        bool octomap_done_msg_;
+        bool nbv_done_msg_;
+        float nbv_point_x_msg_;
+        float nbv_point_y_msg_;
+        float nbv_point_z_msg_;
+        bool is_final_result_msg_;
+        rclcpp::Publisher<message_interfaces::msg::NodeStatus>::SharedPtr status_publisher_;
+        rclcpp::Subscription<message_interfaces::msg::NodeStatus>::SharedPtr status_subscription_;
+
+        void status_topic_callback(const message_interfaces::msg::NodeStatus::SharedPtr msg){
+            // RCLCPP_INFO(this->get_logger(), "I heard: '%d'", msg->num);              // CHANGE
+            RCLCPP_INFO(this->get_logger(), "I heard: ");              // CHANGE
+            ready_for_next_iteration_msg_ = msg->ready_for_next_iteration;
+            is_moving_msg_ = msg->is_moving;
+            iteration_msg_ = msg->iteration;
+            detection_done_msg_ = msg->detection_done;
+            icp_done_msg_ = msg->icp_done;
+            octomap_done_msg_ = msg->octomap_done;
+            nbv_done_msg_ = msg->nbv_done;
+            nbv_point_x_msg_ = msg->nbv_point_x;
+            nbv_point_y_msg_ = msg->nbv_point_y;
+            nbv_point_z_msg_ = msg->nbv_point_z;
+            is_final_result_msg_ = msg->is_final_result;
+        }
+        
+        
+        
+        
         void pointcloud_callback(const sensor_msgs::msg::PointCloud2::SharedPtr msg) {
             // // Clear the previous data
             open3d_cloud_->Clear();//<Debug> 物件用. access 一個pointer 裡面的物件才用->
@@ -375,6 +415,30 @@ class MyNode : public rclcpp::Node
 
                     if (octree){
                         RCLCPP_INFO(this->get_logger(),"Map received (%zu nodes, %f m res), saving to ", octree->size(), octree->getResolution());
+                        //status controller topic ===============================
+                        if(octomap_done_msg_ == false){
+                            auto msg_status = message_interfaces::msg::NodeStatus();   
+                            msg_status.ready_for_next_iteration = ready_for_next_iteration_msg_;
+                            msg_status.is_moving = is_moving_msg_;
+                            msg_status.iteration = iteration_msg_;
+                            msg_status.detection_done = detection_done_msg_;
+                            msg_status.icp_done = icp_done_msg_;
+                            msg_status.octomap_done = true; //只幫octomap改這個
+                            msg_status.nbv_done = nbv_done_msg_;
+                            msg_status.nbv_point_x = nbv_point_x_msg_;
+                            msg_status.nbv_point_y = nbv_point_y_msg_;
+                            msg_status.nbv_point_z = nbv_point_z_msg_ ;
+                            msg_status.is_final_result = is_final_result_msg_;
+                            status_publisher_->publish(msg_status);
+                        }
+                        // ==================================================== 
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         octree->write("src/dataset/data_octomap/octomap_before_inter.ot"); //AbstractOcTree 是一個octomap的通用格式, 可以自動處理color octomap或是non color octomap. 但它會是以指標的方式存（所以要得到他指到的member要用->而非. 這是c++中的語法) 
                         //<Note> octovis data/sample.ot 想要看.ot檔要在cd ros2_ws2下用這個(注意相對路徑)
                         // Example ray-casting
