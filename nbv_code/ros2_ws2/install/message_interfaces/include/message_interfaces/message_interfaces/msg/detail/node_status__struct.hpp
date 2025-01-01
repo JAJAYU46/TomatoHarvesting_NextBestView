@@ -39,6 +39,15 @@ struct NodeStatus_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->is_moving = false;
+      this->iteration = 0l;
+      this->detection_done = false;
+      this->icp_done = false;
+      this->octomap_done = false;
+      this->nbv_done = false;
+      this->nbv_point_x = 0.0;
+      this->nbv_point_y = 0.0;
+      this->nbv_point_z = 0.0;
+      this->is_final_result = false;
     }
   }
 
@@ -49,6 +58,15 @@ struct NodeStatus_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->is_moving = false;
+      this->iteration = 0l;
+      this->detection_done = false;
+      this->icp_done = false;
+      this->octomap_done = false;
+      this->nbv_done = false;
+      this->nbv_point_x = 0.0;
+      this->nbv_point_y = 0.0;
+      this->nbv_point_z = 0.0;
+      this->is_final_result = false;
     }
   }
 
@@ -56,12 +74,93 @@ struct NodeStatus_
   using _is_moving_type =
     bool;
   _is_moving_type is_moving;
+  using _iteration_type =
+    int32_t;
+  _iteration_type iteration;
+  using _detection_done_type =
+    bool;
+  _detection_done_type detection_done;
+  using _icp_done_type =
+    bool;
+  _icp_done_type icp_done;
+  using _octomap_done_type =
+    bool;
+  _octomap_done_type octomap_done;
+  using _nbv_done_type =
+    bool;
+  _nbv_done_type nbv_done;
+  using _nbv_point_x_type =
+    double;
+  _nbv_point_x_type nbv_point_x;
+  using _nbv_point_y_type =
+    double;
+  _nbv_point_y_type nbv_point_y;
+  using _nbv_point_z_type =
+    double;
+  _nbv_point_z_type nbv_point_z;
+  using _is_final_result_type =
+    bool;
+  _is_final_result_type is_final_result;
 
   // setters for named parameter idiom
   Type & set__is_moving(
     const bool & _arg)
   {
     this->is_moving = _arg;
+    return *this;
+  }
+  Type & set__iteration(
+    const int32_t & _arg)
+  {
+    this->iteration = _arg;
+    return *this;
+  }
+  Type & set__detection_done(
+    const bool & _arg)
+  {
+    this->detection_done = _arg;
+    return *this;
+  }
+  Type & set__icp_done(
+    const bool & _arg)
+  {
+    this->icp_done = _arg;
+    return *this;
+  }
+  Type & set__octomap_done(
+    const bool & _arg)
+  {
+    this->octomap_done = _arg;
+    return *this;
+  }
+  Type & set__nbv_done(
+    const bool & _arg)
+  {
+    this->nbv_done = _arg;
+    return *this;
+  }
+  Type & set__nbv_point_x(
+    const double & _arg)
+  {
+    this->nbv_point_x = _arg;
+    return *this;
+  }
+  Type & set__nbv_point_y(
+    const double & _arg)
+  {
+    this->nbv_point_y = _arg;
+    return *this;
+  }
+  Type & set__nbv_point_z(
+    const double & _arg)
+  {
+    this->nbv_point_z = _arg;
+    return *this;
+  }
+  Type & set__is_final_result(
+    const bool & _arg)
+  {
+    this->is_final_result = _arg;
     return *this;
   }
 
@@ -108,6 +207,33 @@ struct NodeStatus_
   bool operator==(const NodeStatus_ & other) const
   {
     if (this->is_moving != other.is_moving) {
+      return false;
+    }
+    if (this->iteration != other.iteration) {
+      return false;
+    }
+    if (this->detection_done != other.detection_done) {
+      return false;
+    }
+    if (this->icp_done != other.icp_done) {
+      return false;
+    }
+    if (this->octomap_done != other.octomap_done) {
+      return false;
+    }
+    if (this->nbv_done != other.nbv_done) {
+      return false;
+    }
+    if (this->nbv_point_x != other.nbv_point_x) {
+      return false;
+    }
+    if (this->nbv_point_y != other.nbv_point_y) {
+      return false;
+    }
+    if (this->nbv_point_z != other.nbv_point_z) {
+      return false;
+    }
+    if (this->is_final_result != other.is_final_result) {
       return false;
     }
     return true;

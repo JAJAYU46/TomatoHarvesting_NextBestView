@@ -54,6 +54,51 @@ static bool _NodeStatus__cdr_serialize(
     cdr << (ros_message->is_moving ? true : false);
   }
 
+  // Field name: iteration
+  {
+    cdr << ros_message->iteration;
+  }
+
+  // Field name: detection_done
+  {
+    cdr << (ros_message->detection_done ? true : false);
+  }
+
+  // Field name: icp_done
+  {
+    cdr << (ros_message->icp_done ? true : false);
+  }
+
+  // Field name: octomap_done
+  {
+    cdr << (ros_message->octomap_done ? true : false);
+  }
+
+  // Field name: nbv_done
+  {
+    cdr << (ros_message->nbv_done ? true : false);
+  }
+
+  // Field name: nbv_point_x
+  {
+    cdr << ros_message->nbv_point_x;
+  }
+
+  // Field name: nbv_point_y
+  {
+    cdr << ros_message->nbv_point_y;
+  }
+
+  // Field name: nbv_point_z
+  {
+    cdr << ros_message->nbv_point_z;
+  }
+
+  // Field name: is_final_result
+  {
+    cdr << (ros_message->is_final_result ? true : false);
+  }
+
   return true;
 }
 
@@ -71,6 +116,61 @@ static bool _NodeStatus__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->is_moving = tmp ? true : false;
+  }
+
+  // Field name: iteration
+  {
+    cdr >> ros_message->iteration;
+  }
+
+  // Field name: detection_done
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->detection_done = tmp ? true : false;
+  }
+
+  // Field name: icp_done
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->icp_done = tmp ? true : false;
+  }
+
+  // Field name: octomap_done
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->octomap_done = tmp ? true : false;
+  }
+
+  // Field name: nbv_done
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->nbv_done = tmp ? true : false;
+  }
+
+  // Field name: nbv_point_x
+  {
+    cdr >> ros_message->nbv_point_x;
+  }
+
+  // Field name: nbv_point_y
+  {
+    cdr >> ros_message->nbv_point_y;
+  }
+
+  // Field name: nbv_point_z
+  {
+    cdr >> ros_message->nbv_point_z;
+  }
+
+  // Field name: is_final_result
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->is_final_result = tmp ? true : false;
   }
 
   return true;
@@ -93,6 +193,60 @@ size_t get_serialized_size_message_interfaces__msg__NodeStatus(
   // field.name is_moving
   {
     size_t item_size = sizeof(ros_message->is_moving);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name iteration
+  {
+    size_t item_size = sizeof(ros_message->iteration);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name detection_done
+  {
+    size_t item_size = sizeof(ros_message->detection_done);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name icp_done
+  {
+    size_t item_size = sizeof(ros_message->icp_done);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name octomap_done
+  {
+    size_t item_size = sizeof(ros_message->octomap_done);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name nbv_done
+  {
+    size_t item_size = sizeof(ros_message->nbv_done);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name nbv_point_x
+  {
+    size_t item_size = sizeof(ros_message->nbv_point_x);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name nbv_point_y
+  {
+    size_t item_size = sizeof(ros_message->nbv_point_y);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name nbv_point_z
+  {
+    size_t item_size = sizeof(ros_message->nbv_point_z);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name is_final_result
+  {
+    size_t item_size = sizeof(ros_message->is_final_result);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -132,6 +286,73 @@ size_t max_serialized_size_message_interfaces__msg__NodeStatus(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
+  // member: iteration
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+  // member: detection_done
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: icp_done
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: octomap_done
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: nbv_done
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: nbv_point_x
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: nbv_point_y
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: nbv_point_z
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: is_final_result
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -141,7 +362,7 @@ size_t max_serialized_size_message_interfaces__msg__NodeStatus(
     using DataType = message_interfaces__msg__NodeStatus;
     is_plain =
       (
-      offsetof(DataType, is_moving) +
+      offsetof(DataType, is_final_result) +
       last_member_size
       ) == ret_val;
   }

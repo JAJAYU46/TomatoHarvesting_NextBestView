@@ -29,6 +29,69 @@ inline void to_flow_style_yaml(
   {
     out << "is_moving: ";
     rosidl_generator_traits::value_to_yaml(msg.is_moving, out);
+    out << ", ";
+  }
+
+  // member: iteration
+  {
+    out << "iteration: ";
+    rosidl_generator_traits::value_to_yaml(msg.iteration, out);
+    out << ", ";
+  }
+
+  // member: detection_done
+  {
+    out << "detection_done: ";
+    rosidl_generator_traits::value_to_yaml(msg.detection_done, out);
+    out << ", ";
+  }
+
+  // member: icp_done
+  {
+    out << "icp_done: ";
+    rosidl_generator_traits::value_to_yaml(msg.icp_done, out);
+    out << ", ";
+  }
+
+  // member: octomap_done
+  {
+    out << "octomap_done: ";
+    rosidl_generator_traits::value_to_yaml(msg.octomap_done, out);
+    out << ", ";
+  }
+
+  // member: nbv_done
+  {
+    out << "nbv_done: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_done, out);
+    out << ", ";
+  }
+
+  // member: nbv_point_x
+  {
+    out << "nbv_point_x: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_x, out);
+    out << ", ";
+  }
+
+  // member: nbv_point_y
+  {
+    out << "nbv_point_y: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_y, out);
+    out << ", ";
+  }
+
+  // member: nbv_point_z
+  {
+    out << "nbv_point_z: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_z, out);
+    out << ", ";
+  }
+
+  // member: is_final_result
+  {
+    out << "is_final_result: ";
+    rosidl_generator_traits::value_to_yaml(msg.is_final_result, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -44,6 +107,96 @@ inline void to_block_style_yaml(
     }
     out << "is_moving: ";
     rosidl_generator_traits::value_to_yaml(msg.is_moving, out);
+    out << "\n";
+  }
+
+  // member: iteration
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "iteration: ";
+    rosidl_generator_traits::value_to_yaml(msg.iteration, out);
+    out << "\n";
+  }
+
+  // member: detection_done
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "detection_done: ";
+    rosidl_generator_traits::value_to_yaml(msg.detection_done, out);
+    out << "\n";
+  }
+
+  // member: icp_done
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "icp_done: ";
+    rosidl_generator_traits::value_to_yaml(msg.icp_done, out);
+    out << "\n";
+  }
+
+  // member: octomap_done
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "octomap_done: ";
+    rosidl_generator_traits::value_to_yaml(msg.octomap_done, out);
+    out << "\n";
+  }
+
+  // member: nbv_done
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "nbv_done: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_done, out);
+    out << "\n";
+  }
+
+  // member: nbv_point_x
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "nbv_point_x: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_x, out);
+    out << "\n";
+  }
+
+  // member: nbv_point_y
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "nbv_point_y: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_y, out);
+    out << "\n";
+  }
+
+  // member: nbv_point_z
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "nbv_point_z: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_z, out);
+    out << "\n";
+  }
+
+  // member: is_final_result
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "is_final_result: ";
+    rosidl_generator_traits::value_to_yaml(msg.is_final_result, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

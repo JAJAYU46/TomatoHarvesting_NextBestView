@@ -34,6 +34,24 @@ cdr_serialize(
 {
   // Member: is_moving
   cdr << (ros_message.is_moving ? true : false);
+  // Member: iteration
+  cdr << ros_message.iteration;
+  // Member: detection_done
+  cdr << (ros_message.detection_done ? true : false);
+  // Member: icp_done
+  cdr << (ros_message.icp_done ? true : false);
+  // Member: octomap_done
+  cdr << (ros_message.octomap_done ? true : false);
+  // Member: nbv_done
+  cdr << (ros_message.nbv_done ? true : false);
+  // Member: nbv_point_x
+  cdr << ros_message.nbv_point_x;
+  // Member: nbv_point_y
+  cdr << ros_message.nbv_point_y;
+  // Member: nbv_point_z
+  cdr << ros_message.nbv_point_z;
+  // Member: is_final_result
+  cdr << (ros_message.is_final_result ? true : false);
   return true;
 }
 
@@ -48,6 +66,53 @@ cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message.is_moving = tmp ? true : false;
+  }
+
+  // Member: iteration
+  cdr >> ros_message.iteration;
+
+  // Member: detection_done
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.detection_done = tmp ? true : false;
+  }
+
+  // Member: icp_done
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.icp_done = tmp ? true : false;
+  }
+
+  // Member: octomap_done
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.octomap_done = tmp ? true : false;
+  }
+
+  // Member: nbv_done
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.nbv_done = tmp ? true : false;
+  }
+
+  // Member: nbv_point_x
+  cdr >> ros_message.nbv_point_x;
+
+  // Member: nbv_point_y
+  cdr >> ros_message.nbv_point_y;
+
+  // Member: nbv_point_z
+  cdr >> ros_message.nbv_point_z;
+
+  // Member: is_final_result
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.is_final_result = tmp ? true : false;
   }
 
   return true;
@@ -69,6 +134,60 @@ get_serialized_size(
   // Member: is_moving
   {
     size_t item_size = sizeof(ros_message.is_moving);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: iteration
+  {
+    size_t item_size = sizeof(ros_message.iteration);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: detection_done
+  {
+    size_t item_size = sizeof(ros_message.detection_done);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: icp_done
+  {
+    size_t item_size = sizeof(ros_message.icp_done);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: octomap_done
+  {
+    size_t item_size = sizeof(ros_message.octomap_done);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: nbv_done
+  {
+    size_t item_size = sizeof(ros_message.nbv_done);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: nbv_point_x
+  {
+    size_t item_size = sizeof(ros_message.nbv_point_x);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: nbv_point_y
+  {
+    size_t item_size = sizeof(ros_message.nbv_point_y);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: nbv_point_z
+  {
+    size_t item_size = sizeof(ros_message.nbv_point_z);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: is_final_result
+  {
+    size_t item_size = sizeof(ros_message.is_final_result);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -104,6 +223,82 @@ max_serialized_size_NodeStatus(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
+  // Member: iteration
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
+  // Member: detection_done
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: icp_done
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: octomap_done
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: nbv_done
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: nbv_point_x
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: nbv_point_y
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: nbv_point_z
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: is_final_result
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -112,7 +307,7 @@ max_serialized_size_NodeStatus(
     using DataType = message_interfaces::msg::NodeStatus;
     is_plain =
       (
-      offsetof(DataType, is_moving) +
+      offsetof(DataType, is_final_result) +
       last_member_size
       ) == ret_val;
   }

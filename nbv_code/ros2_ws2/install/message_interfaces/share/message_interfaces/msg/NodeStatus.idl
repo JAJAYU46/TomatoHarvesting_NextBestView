@@ -11,6 +11,28 @@ module message_interfaces {
       @verbatim (language="comment", text=
         "<Debug> msg field 要is_moving才行, 不可isMoving")
       boolean is_moving;
+
+      @verbatim (language="comment", text=
+        "start from 1 (when 0 means it is done with this tomato nbv)")
+      int32 iteration;
+
+      boolean detection_done;
+
+      boolean icp_done;
+
+      @verbatim (language="comment", text=
+        "因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義")
+      boolean octomap_done;
+
+      boolean nbv_done;
+
+      double nbv_point_x;
+
+      double nbv_point_y;
+
+      double nbv_point_z;
+
+      boolean is_final_result;
     };
   };
 };

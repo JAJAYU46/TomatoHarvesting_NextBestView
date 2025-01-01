@@ -18,6 +18,15 @@ message_interfaces__msg__NodeStatus__init(message_interfaces__msg__NodeStatus * 
     return false;
   }
   // is_moving
+  // iteration
+  // detection_done
+  // icp_done
+  // octomap_done
+  // nbv_done
+  // nbv_point_x
+  // nbv_point_y
+  // nbv_point_z
+  // is_final_result
   return true;
 }
 
@@ -28,6 +37,15 @@ message_interfaces__msg__NodeStatus__fini(message_interfaces__msg__NodeStatus * 
     return;
   }
   // is_moving
+  // iteration
+  // detection_done
+  // icp_done
+  // octomap_done
+  // nbv_done
+  // nbv_point_x
+  // nbv_point_y
+  // nbv_point_z
+  // is_final_result
 }
 
 bool
@@ -38,6 +56,42 @@ message_interfaces__msg__NodeStatus__are_equal(const message_interfaces__msg__No
   }
   // is_moving
   if (lhs->is_moving != rhs->is_moving) {
+    return false;
+  }
+  // iteration
+  if (lhs->iteration != rhs->iteration) {
+    return false;
+  }
+  // detection_done
+  if (lhs->detection_done != rhs->detection_done) {
+    return false;
+  }
+  // icp_done
+  if (lhs->icp_done != rhs->icp_done) {
+    return false;
+  }
+  // octomap_done
+  if (lhs->octomap_done != rhs->octomap_done) {
+    return false;
+  }
+  // nbv_done
+  if (lhs->nbv_done != rhs->nbv_done) {
+    return false;
+  }
+  // nbv_point_x
+  if (lhs->nbv_point_x != rhs->nbv_point_x) {
+    return false;
+  }
+  // nbv_point_y
+  if (lhs->nbv_point_y != rhs->nbv_point_y) {
+    return false;
+  }
+  // nbv_point_z
+  if (lhs->nbv_point_z != rhs->nbv_point_z) {
+    return false;
+  }
+  // is_final_result
+  if (lhs->is_final_result != rhs->is_final_result) {
     return false;
   }
   return true;
@@ -53,6 +107,24 @@ message_interfaces__msg__NodeStatus__copy(
   }
   // is_moving
   output->is_moving = input->is_moving;
+  // iteration
+  output->iteration = input->iteration;
+  // detection_done
+  output->detection_done = input->detection_done;
+  // icp_done
+  output->icp_done = input->icp_done;
+  // octomap_done
+  output->octomap_done = input->octomap_done;
+  // nbv_done
+  output->nbv_done = input->nbv_done;
+  // nbv_point_x
+  output->nbv_point_x = input->nbv_point_x;
+  // nbv_point_y
+  output->nbv_point_y = input->nbv_point_y;
+  // nbv_point_z
+  output->nbv_point_z = input->nbv_point_z;
+  // is_final_result
+  output->is_final_result = input->is_final_result;
   return true;
 }
 

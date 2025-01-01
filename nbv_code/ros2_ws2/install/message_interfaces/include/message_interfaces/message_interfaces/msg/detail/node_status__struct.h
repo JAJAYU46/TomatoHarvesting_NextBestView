@@ -26,6 +26,17 @@ typedef struct message_interfaces__msg__NodeStatus
 {
   /// <Debug> msg field 要is_moving才行, 不可isMoving
   bool is_moving;
+  /// start from 1 (when 0 means it is done with this tomato nbv)
+  int32_t iteration;
+  bool detection_done;
+  bool icp_done;
+  /// 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
+  bool octomap_done;
+  bool nbv_done;
+  double nbv_point_x;
+  double nbv_point_y;
+  double nbv_point_z;
+  bool is_final_result;
 } message_interfaces__msg__NodeStatus;
 
 // Struct for a sequence of message_interfaces__msg__NodeStatus.

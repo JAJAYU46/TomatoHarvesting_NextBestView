@@ -59,6 +59,87 @@ bool message_interfaces__msg__node_status__convert_from_py(PyObject * _pymsg, vo
     ros_message->is_moving = (Py_True == field);
     Py_DECREF(field);
   }
+  {  // iteration
+    PyObject * field = PyObject_GetAttrString(_pymsg, "iteration");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->iteration = (int32_t)PyLong_AsLong(field);
+    Py_DECREF(field);
+  }
+  {  // detection_done
+    PyObject * field = PyObject_GetAttrString(_pymsg, "detection_done");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->detection_done = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // icp_done
+    PyObject * field = PyObject_GetAttrString(_pymsg, "icp_done");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->icp_done = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // octomap_done
+    PyObject * field = PyObject_GetAttrString(_pymsg, "octomap_done");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->octomap_done = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // nbv_done
+    PyObject * field = PyObject_GetAttrString(_pymsg, "nbv_done");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->nbv_done = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // nbv_point_x
+    PyObject * field = PyObject_GetAttrString(_pymsg, "nbv_point_x");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->nbv_point_x = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // nbv_point_y
+    PyObject * field = PyObject_GetAttrString(_pymsg, "nbv_point_y");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->nbv_point_y = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // nbv_point_z
+    PyObject * field = PyObject_GetAttrString(_pymsg, "nbv_point_z");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->nbv_point_z = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // is_final_result
+    PyObject * field = PyObject_GetAttrString(_pymsg, "is_final_result");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->is_final_result = (Py_True == field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -86,6 +167,105 @@ PyObject * message_interfaces__msg__node_status__convert_to_py(void * raw_ros_me
     field = PyBool_FromLong(ros_message->is_moving ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "is_moving", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // iteration
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->iteration);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "iteration", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // detection_done
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->detection_done ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "detection_done", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // icp_done
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->icp_done ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "icp_done", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // octomap_done
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->octomap_done ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "octomap_done", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // nbv_done
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->nbv_done ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "nbv_done", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // nbv_point_x
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->nbv_point_x);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "nbv_point_x", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // nbv_point_y
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->nbv_point_y);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "nbv_point_y", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // nbv_point_z
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->nbv_point_z);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "nbv_point_z", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // is_final_result
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->is_final_result ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "is_final_result", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
