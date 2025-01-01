@@ -6,6 +6,9 @@ import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__))) #approach adds the current directory where the script is located to the Python path.
 from module_detect_tom import DetectTomato
 
+# for status controller topic
+from message_interfaces.msg import NodeStatus
+
 #!/user/bin/env python3 
 import rclpy #library for ROS2
 from rclpy.node import Node
@@ -94,6 +97,18 @@ class MyNode(Node): #construct Node class
         self.DetectionDoneFlag = True
         # [publish]
         self.bbox_publisher_ = self.create_publisher(BoundingBox, '/nbv/bounding_box_msg', 10)     # CHANGE
+        
+        # =================================
+        # status controller topic
+        self.publish_status_=self.create_publisher(NodeStatus, "/nbv/status_communicator", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        self.status_subscription = self.create_subscription(NodeStatus, '/nbv/status_communicator',self.status_callback,10)
+        
+        self.get_logger().info("node 'nbv_tom_detect' have been started")
+        
+        self.ready_for_next_iteration_msg = False
+        self.is_moving_msg = False
+
+        # self.donePublishDetectPart = False
         #[[For ROS2 publisher and subscriber]]
         #【publisher】
         # self.tompcd_filter_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_filter", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
@@ -113,6 +128,28 @@ class MyNode(Node): #construct Node class
         # self.tf_listener = TransformListener(self.tf_buffer, self)
         # # self.timer = self.create_timer(1.0, self.on_timer) #創見一個固定句其的定時器, 處理座標信息
 
+            
+    # status controller topic
+    def status_callback(self,msg):
+        self.ready_for_next_iteration_msg = msg.ready_for_next_iteration
+        if (self.is_moving_msg != msg.is_moving): 
+            self.get_logger().info('now the is_moving_msg: '+str(self.is_moving_msg)) # CHANGE
+          
+        self.is_moving_msg = msg.is_moving
+        self.iteration_msg = msg.iteration
+        self.detection_done_msg = msg.detection_done
+        self.icp_done_msg = msg.icp_done
+        self.octomap_done_msg = msg.octomap_done# 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
+        self.nbv_done_msg = msg.nbv_done
+        self.nbv_point_x_msg = msg.nbv_point_x
+        self.nbv_point_y_msg = msg.nbv_point_y
+        self.nbv_point_z_msg = msg.nbv_point_z
+        self.is_final_result_msg = msg.is_final_result
+
+        self.doneReset = True
+    
+
+
         
     def callback1(self, msg:sensor_msgs.PointCloud2): #construct a callback
         
@@ -126,67 +163,92 @@ class MyNode(Node): #construct Node class
     def callback_image_read(self, msg_frame:sensor_msgs.Image):
         #img = cv2.imread('colar.jpg')
         # print(frame.shape)
-        try:
-            frame1 = self.bridge.imgmsg_to_cv2(msg_frame, "bgr8")
-        except CvBridgeError as e:
-            print(e)
-        (rows,cols,channels) = frame1.shape
-
-        # 只要subscribe到照片, 就用一次object detection
-        # #Load image
-        # video_path = "dataset/data_tomatoVideo_forDetection/tomato_video2.mp4"  # Path to your video
-        # cap = cv2.VideoCapture(video_path)
-
-        
-        resizeMag=1
-        # #main
-        # ret, frame1 = cap.read()
-        # if not ret:
-        #     print("End of video.")
-        if(self.isFirstFrame==True): 
-            # 只有最開始的frame要建立一個新的物件
-            frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
-            # # #initialize
             
-            self.MyTomatoDetector = DetectTomato (frame1_resized, resizeMag) #給一個初始的圖片
-            self.MyTomatoDetector.changeGetNewTargetTomato(True) 
-            self.isFirstFrame = False
-        
-        # # MyTomatoDetector.changeGetNewTargetTomato(True) 
-        # # TargetBox, image = MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
-        # # MyTomatoDetector.changeGetNewTargetTomato(False) 
 
-        # while(True): 
-        #     #main
-        #     ret, frame1 = cap.read()
-        #     if not ret:
-        #         print("End of video.")
-        #         break
+        if(self.ready_for_next_iteration_msg==True): #如果說要開始了, 才做這個detection
+                
 
-        # <Debug1.1> 不可以這樣, 因為那個追蹤是線性的, 是要追蹤的, 你這樣它會找不到目標的那顆target 變成不publish東西
-        # 之後可以加個, 如果追蹤的東東不見了, 就把最上面那個當成最新的目標
-        # if(self.DetectionDoneFlag==True):# 因為yolo很花時間, 所以現在就是如果上一次的yolo還沒結束, 就不要處理新的照片, 新的msg frame就不處理（之後會變成, 在手必移動到新的點完成之前, 都不做處理）
-        # if(True): # <Debug1.1> 好像就算這樣也沒用, 因為之前影片就算lag, 它基本上還是線性的, 但這個frame在處理完之後才收msg, 是會掉包的, 所以不是線性的 所以這樣的話, 現在改成如果目標消失了, 就已最高的當目標
-            #好像一直讓它偵測也沒用, 所以還是用最好的, detect完才再去接收detect另一個
-        if(self.DetectionDoneFlag==True):
-            self.DetectionDoneFlag=False
-            frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
+            try:
+                frame1 = self.bridge.imgmsg_to_cv2(msg_frame, "bgr8")
+            except CvBridgeError as e:
+                print(e)
+            (rows,cols,channels) = frame1.shape
 
-            TargetBox, image = self.MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
-            self.DetectionDoneFlag=True
-            if TargetBox is None:
-                print("No tomato detected.")
-            else: 
-                msg_box = BoundingBox()
-                msg_box.lu_x = TargetBox[0]
-                msg_box.lu_y = TargetBox[1]
-                msg_box.rd_x = TargetBox[2]
-                msg_box.rd_y = TargetBox[3]
-                self.bbox_publisher_.publish(msg_box)
-                # self.get_logger().info('Publishing: "%d"' % msg_box.lu_x) 
-            cv2.imshow('Tomato Image', image)
-            # cv2.imshow('frame1', frame1)
-            cv2.waitKey(1)
+            # 只要subscribe到照片, 就用一次object detection
+            # #Load image
+            # video_path = "dataset/data_tomatoVideo_forDetection/tomato_video2.mp4"  # Path to your video
+            # cap = cv2.VideoCapture(video_path)
+
+            
+            resizeMag=1
+            # #main
+            # ret, frame1 = cap.read()
+            # if not ret:
+            #     print("End of video.")
+            if(self.isFirstFrame==True): 
+                # 只有最開始的frame要建立一個新的物件
+                frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
+                # # #initialize
+                
+                self.MyTomatoDetector = DetectTomato (frame1_resized, resizeMag) #給一個初始的圖片
+                self.MyTomatoDetector.changeGetNewTargetTomato(True) 
+                self.isFirstFrame = False
+            
+            # # MyTomatoDetector.changeGetNewTargetTomato(True) 
+            # # TargetBox, image = MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
+            # # MyTomatoDetector.changeGetNewTargetTomato(False) 
+
+            # while(True): 
+            #     #main
+            #     ret, frame1 = cap.read()
+            #     if not ret:
+            #         print("End of video.")
+            #         break
+
+            # <Debug1.1> 不可以這樣, 因為那個追蹤是線性的, 是要追蹤的, 你這樣它會找不到目標的那顆target 變成不publish東西
+            # 之後可以加個, 如果追蹤的東東不見了, 就把最上面那個當成最新的目標
+            # if(self.DetectionDoneFlag==True):# 因為yolo很花時間, 所以現在就是如果上一次的yolo還沒結束, 就不要處理新的照片, 新的msg frame就不處理（之後會變成, 在手必移動到新的點完成之前, 都不做處理）
+            # if(True): # <Debug1.1> 好像就算這樣也沒用, 因為之前影片就算lag, 它基本上還是線性的, 但這個frame在處理完之後才收msg, 是會掉包的, 所以不是線性的 所以這樣的話, 現在改成如果目標消失了, 就已最高的當目標
+                #好像一直讓它偵測也沒用, 所以還是用最好的, detect完才再去接收detect另一個
+            if(self.DetectionDoneFlag==True):
+                self.DetectionDoneFlag=False
+                frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
+
+                TargetBox, image = self.MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
+                self.DetectionDoneFlag=True
+                if TargetBox is None:
+                    print("No tomato detected.")
+                else: 
+                    msg_box = BoundingBox()
+                    msg_box.lu_x = TargetBox[0]
+                    msg_box.lu_y = TargetBox[1]
+                    msg_box.rd_x = TargetBox[2]
+                    msg_box.rd_y = TargetBox[3]
+                    self.bbox_publisher_.publish(msg_box)
+
+
+                    if(self.detection_done_msg==False): #只有這時候才需要更動status controller topic #只有輪到他要父的時候, 才要去更動status, 不然會影響到其他node在publish status的結果
+                        # 因為這個node得要繼續運作
+                        # status controller (tell status controller detection done)(但是還是要繼續偵測才能做之後的tracking所以不改之前的東東)
+                        msg_status = NodeStatus()
+                        msg_status.ready_for_next_iteration = self.ready_for_next_iteration_msg #(因為還是要繼續偵測, 所以留著)
+                        msg_status.is_moving = self.is_moving_msg
+                        msg_status.iteration = self.iteration_msg
+                        msg_status.detection_done = True #只改這個
+                        msg_status.icp_done = self.icp_done_msg
+                        msg_status.octomap_done = self.octomap_done_msg# 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
+                        msg_status.nbv_done = self.nbv_done_msg
+                        msg_status.nbv_point_x = self.nbv_point_x_msg #這當預設的反正這個到時候是base也不可能
+                        msg_status.nbv_point_y = self.nbv_point_y_msg
+                        msg_status.nbv_point_z = self.nbv_point_z_msg
+                        msg_status.is_final_result = self.is_final_result_msg
+                        self.publish_status_.publish(msg_status)
+                        self.donePublishDetectPart = True
+
+                    # self.get_logger().info('Publishing: "%d"' % msg_box.lu_x) 
+                cv2.imshow('Tomato Image', image)
+                # cv2.imshow('frame1', frame1)
+                cv2.waitKey(1)
 
 
 

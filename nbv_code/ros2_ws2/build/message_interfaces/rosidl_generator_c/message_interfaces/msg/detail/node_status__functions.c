@@ -17,6 +17,7 @@ message_interfaces__msg__NodeStatus__init(message_interfaces__msg__NodeStatus * 
   if (!msg) {
     return false;
   }
+  // ready_for_next_iteration
   // is_moving
   // iteration
   // detection_done
@@ -36,6 +37,7 @@ message_interfaces__msg__NodeStatus__fini(message_interfaces__msg__NodeStatus * 
   if (!msg) {
     return;
   }
+  // ready_for_next_iteration
   // is_moving
   // iteration
   // detection_done
@@ -52,6 +54,10 @@ bool
 message_interfaces__msg__NodeStatus__are_equal(const message_interfaces__msg__NodeStatus * lhs, const message_interfaces__msg__NodeStatus * rhs)
 {
   if (!lhs || !rhs) {
+    return false;
+  }
+  // ready_for_next_iteration
+  if (lhs->ready_for_next_iteration != rhs->ready_for_next_iteration) {
     return false;
   }
   // is_moving
@@ -105,6 +111,8 @@ message_interfaces__msg__NodeStatus__copy(
   if (!input || !output) {
     return false;
   }
+  // ready_for_next_iteration
+  output->ready_for_next_iteration = input->ready_for_next_iteration;
   // is_moving
   output->is_moving = input->is_moving;
   // iteration

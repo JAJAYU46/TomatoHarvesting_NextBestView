@@ -131,6 +131,15 @@ bool message_interfaces__msg__node_status__convert_from_py(PyObject * _pymsg, vo
     ros_message->nbv_point_z = PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // is_final_result
+    PyObject * field = PyObject_GetAttrString(_pymsg, "is_final_result");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->is_final_result = (Py_True == field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -246,6 +255,17 @@ PyObject * message_interfaces__msg__node_status__convert_to_py(void * raw_ros_me
     field = PyFloat_FromDouble(ros_message->nbv_point_z);
     {
       int rc = PyObject_SetAttrString(_pymessage, "nbv_point_z", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // is_final_result
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->is_final_result ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "is_final_result", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

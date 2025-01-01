@@ -168,13 +168,29 @@ private:
 class Init_NodeStatus_is_moving
 {
 public:
-  Init_NodeStatus_is_moving()
-  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
+  explicit Init_NodeStatus_is_moving(::message_interfaces::msg::NodeStatus & msg)
+  : msg_(msg)
   {}
   Init_NodeStatus_iteration is_moving(::message_interfaces::msg::NodeStatus::_is_moving_type arg)
   {
     msg_.is_moving = std::move(arg);
     return Init_NodeStatus_iteration(msg_);
+  }
+
+private:
+  ::message_interfaces::msg::NodeStatus msg_;
+};
+
+class Init_NodeStatus_ready_for_next_iteration
+{
+public:
+  Init_NodeStatus_ready_for_next_iteration()
+  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
+  {}
+  Init_NodeStatus_is_moving ready_for_next_iteration(::message_interfaces::msg::NodeStatus::_ready_for_next_iteration_type arg)
+  {
+    msg_.ready_for_next_iteration = std::move(arg);
+    return Init_NodeStatus_is_moving(msg_);
   }
 
 private:
@@ -192,7 +208,7 @@ template<>
 inline
 auto build<::message_interfaces::msg::NodeStatus>()
 {
-  return message_interfaces::msg::builder::Init_NodeStatus_is_moving();
+  return message_interfaces::msg::builder::Init_NodeStatus_ready_for_next_iteration();
 }
 
 }  // namespace message_interfaces

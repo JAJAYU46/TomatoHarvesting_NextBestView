@@ -38,6 +38,7 @@ struct NodeStatus_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
+      this->ready_for_next_iteration = false;
       this->is_moving = false;
       this->iteration = 0l;
       this->detection_done = false;
@@ -57,6 +58,7 @@ struct NodeStatus_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
+      this->ready_for_next_iteration = false;
       this->is_moving = false;
       this->iteration = 0l;
       this->detection_done = false;
@@ -71,6 +73,9 @@ struct NodeStatus_
   }
 
   // field types and members
+  using _ready_for_next_iteration_type =
+    bool;
+  _ready_for_next_iteration_type ready_for_next_iteration;
   using _is_moving_type =
     bool;
   _is_moving_type is_moving;
@@ -103,6 +108,12 @@ struct NodeStatus_
   _is_final_result_type is_final_result;
 
   // setters for named parameter idiom
+  Type & set__ready_for_next_iteration(
+    const bool & _arg)
+  {
+    this->ready_for_next_iteration = _arg;
+    return *this;
+  }
   Type & set__is_moving(
     const bool & _arg)
   {
@@ -206,6 +217,9 @@ struct NodeStatus_
   // comparison operators
   bool operator==(const NodeStatus_ & other) const
   {
+    if (this->ready_for_next_iteration != other.ready_for_next_iteration) {
+      return false;
+    }
     if (this->is_moving != other.is_moving) {
       return false;
     }

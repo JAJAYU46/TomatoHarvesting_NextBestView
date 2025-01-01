@@ -50,6 +50,15 @@ bool message_interfaces__msg__node_status__convert_from_py(PyObject * _pymsg, vo
     assert(strncmp("message_interfaces.msg._node_status.NodeStatus", full_classname_dest, 46) == 0);
   }
   message_interfaces__msg__NodeStatus * ros_message = _ros_message;
+  {  // ready_for_next_iteration
+    PyObject * field = PyObject_GetAttrString(_pymsg, "ready_for_next_iteration");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->ready_for_next_iteration = (Py_True == field);
+    Py_DECREF(field);
+  }
   {  // is_moving
     PyObject * field = PyObject_GetAttrString(_pymsg, "is_moving");
     if (!field) {
@@ -162,6 +171,17 @@ PyObject * message_interfaces__msg__node_status__convert_to_py(void * raw_ros_me
     }
   }
   message_interfaces__msg__NodeStatus * ros_message = (message_interfaces__msg__NodeStatus *)raw_ros_message;
+  {  // ready_for_next_iteration
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->ready_for_next_iteration ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "ready_for_next_iteration", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
   {  // is_moving
     PyObject * field = NULL;
     field = PyBool_FromLong(ros_message->is_moving ? 1 : 0);

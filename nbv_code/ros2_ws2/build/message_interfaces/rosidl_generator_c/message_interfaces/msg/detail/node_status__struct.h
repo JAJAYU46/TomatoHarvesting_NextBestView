@@ -24,6 +24,7 @@ extern "C"
  */
 typedef struct message_interfaces__msg__NodeStatus
 {
+  bool ready_for_next_iteration;
   /// <Debug> msg field 要is_moving才行, 不可isMoving
   bool is_moving;
   /// start from 1 (when 0 means it is done with this tomato nbv)

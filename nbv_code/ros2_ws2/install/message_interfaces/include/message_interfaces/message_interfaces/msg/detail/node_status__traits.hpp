@@ -25,6 +25,13 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
+  // member: ready_for_next_iteration
+  {
+    out << "ready_for_next_iteration: ";
+    rosidl_generator_traits::value_to_yaml(msg.ready_for_next_iteration, out);
+    out << ", ";
+  }
+
   // member: is_moving
   {
     out << "is_moving: ";
@@ -100,6 +107,16 @@ inline void to_block_style_yaml(
   const NodeStatus & msg,
   std::ostream & out, size_t indentation = 0)
 {
+  // member: ready_for_next_iteration
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "ready_for_next_iteration: ";
+    rosidl_generator_traits::value_to_yaml(msg.ready_for_next_iteration, out);
+    out << "\n";
+  }
+
   // member: is_moving
   {
     if (indentation > 0) {

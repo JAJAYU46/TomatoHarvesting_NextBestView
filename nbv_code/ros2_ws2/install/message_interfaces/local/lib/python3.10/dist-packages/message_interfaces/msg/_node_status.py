@@ -57,6 +57,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
     """Message class 'NodeStatus'."""
 
     __slots__ = [
+        '_ready_for_next_iteration',
         '_is_moving',
         '_iteration',
         '_detection_done',
@@ -70,6 +71,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
     ]
 
     _fields_and_field_types = {
+        'ready_for_next_iteration': 'boolean',
         'is_moving': 'boolean',
         'iteration': 'int32',
         'detection_done': 'boolean',
@@ -83,6 +85,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -99,6 +102,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        self.ready_for_next_iteration = kwargs.get('ready_for_next_iteration', bool())
         self.is_moving = kwargs.get('is_moving', bool())
         self.iteration = kwargs.get('iteration', int())
         self.detection_done = kwargs.get('detection_done', bool())
@@ -139,6 +143,8 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
+        if self.ready_for_next_iteration != other.ready_for_next_iteration:
+            return False
         if self.is_moving != other.is_moving:
             return False
         if self.iteration != other.iteration:
@@ -165,6 +171,19 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
     def get_fields_and_field_types(cls):
         from copy import copy
         return copy(cls._fields_and_field_types)
+
+    @builtins.property
+    def ready_for_next_iteration(self):
+        """Message field 'ready_for_next_iteration'."""
+        return self._ready_for_next_iteration
+
+    @ready_for_next_iteration.setter
+    def ready_for_next_iteration(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'ready_for_next_iteration' field must be of type 'bool'"
+        self._ready_for_next_iteration = value
 
     @builtins.property
     def is_moving(self):

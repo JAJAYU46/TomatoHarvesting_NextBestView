@@ -66,6 +66,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         '_nbv_point_x',
         '_nbv_point_y',
         '_nbv_point_z',
+        '_is_final_result',
     ]
 
     _fields_and_field_types = {
@@ -78,6 +79,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         'nbv_point_x': 'double',
         'nbv_point_y': 'double',
         'nbv_point_z': 'double',
+        'is_final_result': 'boolean',
     }
 
     SLOT_TYPES = (
@@ -90,6 +92,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -105,6 +108,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         self.nbv_point_x = kwargs.get('nbv_point_x', float())
         self.nbv_point_y = kwargs.get('nbv_point_y', float())
         self.nbv_point_z = kwargs.get('nbv_point_z', float())
+        self.is_final_result = kwargs.get('is_final_result', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -152,6 +156,8 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         if self.nbv_point_y != other.nbv_point_y:
             return False
         if self.nbv_point_z != other.nbv_point_z:
+            return False
+        if self.is_final_result != other.is_final_result:
             return False
         return True
 
@@ -284,3 +290,16 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
             assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
                 "The 'nbv_point_z' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
         self._nbv_point_z = value
+
+    @builtins.property
+    def is_final_result(self):
+        """Message field 'is_final_result'."""
+        return self._is_final_result
+
+    @is_final_result.setter
+    def is_final_result(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'is_final_result' field must be of type 'bool'"
+        self._is_final_result = value

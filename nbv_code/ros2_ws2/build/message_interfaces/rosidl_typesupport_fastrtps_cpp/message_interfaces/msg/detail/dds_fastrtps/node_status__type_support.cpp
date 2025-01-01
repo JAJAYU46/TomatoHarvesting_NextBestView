@@ -32,6 +32,8 @@ cdr_serialize(
   const message_interfaces::msg::NodeStatus & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
+  // Member: ready_for_next_iteration
+  cdr << (ros_message.ready_for_next_iteration ? true : false);
   // Member: is_moving
   cdr << (ros_message.is_moving ? true : false);
   // Member: iteration
@@ -61,6 +63,13 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   message_interfaces::msg::NodeStatus & ros_message)
 {
+  // Member: ready_for_next_iteration
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.ready_for_next_iteration = tmp ? true : false;
+  }
+
   // Member: is_moving
   {
     uint8_t tmp;
@@ -131,6 +140,12 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
+  // Member: ready_for_next_iteration
+  {
+    size_t item_size = sizeof(ros_message.ready_for_next_iteration);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // Member: is_moving
   {
     size_t item_size = sizeof(ros_message.is_moving);
@@ -214,6 +229,14 @@ max_serialized_size_NodeStatus(
   full_bounded = true;
   is_plain = true;
 
+
+  // Member: ready_for_next_iteration
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
 
   // Member: is_moving
   {

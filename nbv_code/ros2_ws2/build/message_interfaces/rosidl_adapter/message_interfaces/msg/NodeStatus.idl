@@ -8,6 +8,8 @@ module message_interfaces {
     @verbatim (language="comment", text=
       "will record the ismoving of the camera")
     struct NodeStatus {
+      boolean ready_for_next_iteration;
+
       @verbatim (language="comment", text=
         "<Debug> msg field 要is_moving才行, 不可isMoving")
       boolean is_moving;
