@@ -398,8 +398,8 @@ class MyNode : public rclcpp::Node
 
             
             // status controller topic //auto 就是讓compiler自己偵測data type, custom topic和其他classic topic不一樣, 要用auto
-            auto status_publisher_ = this->create_publisher<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10);
-            auto status_subscription_ = this->create_subscription<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10, std::bind(&MyNode::status_topic_callback, this, std::placeholders::_1));
+            status_publisher_ = this->create_publisher<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10);
+            status_subscription_ = this->create_subscription<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10, std::bind(&MyNode::status_topic_callback, this, std::placeholders::_1));
             
 
         }
@@ -423,9 +423,13 @@ class MyNode : public rclcpp::Node
         rclcpp::Publisher<message_interfaces::msg::NodeStatus>::SharedPtr status_publisher_;
         rclcpp::Subscription<message_interfaces::msg::NodeStatus>::SharedPtr status_subscription_;
 
+
+        // <Debug>好像都讀不到 ======================
         void status_topic_callback(const message_interfaces::msg::NodeStatus::SharedPtr msg){
             // RCLCPP_INFO(this->get_logger(), "I heard: '%d'", msg->num);              // CHANGE
-            RCLCPP_INFO(this->get_logger(), "I heard: ");              // CHANGE
+            // RCLCPP_INFO(this->get_logger(), "I heard: ");              // CHANGE
+            // RCLCPP_INFO(this->get_logger(), "hahahahahahaha");
+
             ready_for_next_iteration_msg_ = msg->ready_for_next_iteration;
             is_moving_msg_ = msg->is_moving;
             iteration_msg_ = msg->iteration;
@@ -479,7 +483,9 @@ class MyNode : public rclcpp::Node
         }
 
         void octomap_callback(const octomap_msgs::msg::Octomap::SharedPtr msg) //const
-        {   if(finish_get_status_topic == true){
+        {   if(finish_get_status_topic == true){ //因為一直讀不到controller topic所以一直進不去這邊 ======================
+                RCLCPP_INFO(this->get_logger(), "in get status topic");
+
                 if(firstPCD_ready_flag==true){
                     RCLCPP_INFO(this->get_logger(), "Received octomap data!!");
                     octomap::OcTree* octree = NULL; // octomap::OcTree(0.01);

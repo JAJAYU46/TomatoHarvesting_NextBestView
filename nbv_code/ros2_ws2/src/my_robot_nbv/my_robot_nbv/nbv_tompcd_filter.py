@@ -472,7 +472,7 @@ class MyNode(Node): #construct Node class
                                         self.tompcd_ICP_pub_.publish(msg_pointcloud2) #現在這個沒有publish estimated tomato了
                                         # self.tompcd_ICP_pub_.publish(whole_pointcloud2)
                                         # status controller (tell status controller detection done)(但是還是要繼續偵測才能做之後的tracking所以不改之前的東東)
-                                        if(self.icp_done_msg==False): #只有這時候才去更改狀態 #但整個系統還是會一直繼續publish icp
+                                        if((self.icp_done_msg==False)): # or (self.octomap_done_msg == False) ): #讓他在下一步確定好之前, 都一直送東西到這個status topic上#只有這時候才去更改狀態 #但整個系統還是會一直繼續publish icp
                                             msg_status = NodeStatus()
                                             msg_status.ready_for_next_iteration = self.ready_for_next_iteration_msg #(因為還是要繼續偵測, 所以留著)
                                             msg_status.is_moving = self.is_moving_msg
