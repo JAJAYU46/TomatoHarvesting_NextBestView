@@ -55,6 +55,11 @@ public:
     //The data for outside to Get
     octomap::point3d BestCandidateView_point;
     int BestCandidateView_gain=0;
+
+    //Data for last time
+    
+
+
     queue<octomap::point3d> markerQueue_origin; //這四個是互相對應的用來存放要傳給publish_any_ray marker的東東
     queue<std::vector<octomap::point3d>> markerQueue_endPoints;
     queue<int> markerQueue_id;
@@ -424,7 +429,7 @@ class MyNode : public rclcpp::Node
         rclcpp::Subscription<message_interfaces::msg::NodeStatus>::SharedPtr status_subscription_;
 
 
-        // <Debug>好像都讀不到 ======================
+        // <Debug>好像都讀不到 <Debug> 結果釋出使化寫成local變數的問題======================
         void status_topic_callback(const message_interfaces::msg::NodeStatus::SharedPtr msg){
             // RCLCPP_INFO(this->get_logger(), "I heard: '%d'", msg->num);              // CHANGE
             // RCLCPP_INFO(this->get_logger(), "I heard: ");              // CHANGE
@@ -580,6 +585,25 @@ class MyNode : public rclcpp::Node
                                 
                             }
                             
+                            //status controller topic ===============================
+                            if(nbv_done_msg_ == false){// or is_moving_msg_ == false){ //等等只能publish一次因為要給的視同一個點, 不可以一直給不同的點 所以要接好//在下一步還沒完成之前都一直publish因為 
+                                auto msg_status2 = message_interfaces::msg::NodeStatus();   
+                                msg_status2.ready_for_next_iteration = ready_for_next_iteration_msg_;
+                                msg_status2.is_moving = is_moving_msg_;
+                                msg_status2.iteration = iteration_msg_;
+                                msg_status2.detection_done = detection_done_msg_;
+                                msg_status2.icp_done = icp_done_msg_;
+                                msg_status2.octomap_done = true; //只幫octomap改這個 現在也只有這個上次改過 預防沒更新到
+                                msg_status2.nbv_done = true;
+                                msg_status2.nbv_point_x = NbvScene.BestCandidateView_point.x();
+                                msg_status2.nbv_point_y = NbvScene.BestCandidateView_point.y();
+                                msg_status2.nbv_point_z = NbvScene.BestCandidateView_point.z();
+                                msg_status2.is_final_result = is_final_result_msg_;
+                                status_publisher_->publish(msg_status2);
+                            }
+                            // ==================================================== 
+                            
+
                             //====== 4. Show the result of NBV point & its gain ======
                             RCLCPP_INFO(this->get_logger(), "===============================================");
                             RCLCPP_INFO(this->get_logger(), "The Best candidate view for this scene is at (%f, %f, %f) with gain=%d", NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), NbvScene.BestCandidateView_gain);

@@ -21,6 +21,9 @@ class MyNode(Node): #construct Node class
         self.status_subscription = self.create_subscription(NodeStatus, '/nbv/status_communicator',self.status_callback,10)
         
         self.get_logger().info("node 'nbv_tompcd_filter' have been started")
+        
+        self.is_moving_msg = False
+        self.renew_done = False
         # self.bbox_subscription = self.create_subscription(BoundingBox, '/nbv/bounding_box_msg',self.bbox_callback,10)
         # self.bboxReadyFlag = False
         # Start a separate thread to read user input
@@ -29,10 +32,24 @@ class MyNode(Node): #construct Node class
 
     def read_user_input(self):
         while True:
-            user_input = input("Enter 'm' to publish True, 's' to publish False: ").strip()
+            self.get_logger().info("Enter 'm' to publish True, 's' to publish False: "+str(self.is_moving_msg)) # CHANGE
+        
+            user_input = input("").strip()
             msg_status = NodeStatus()
+
             while(self.renew_done != True): #要等確保是最新資料
                     continue
+            
+            msg_status.ready_for_next_iteration = self.ready_for_next_iteration_msg #(因為還是要繼續偵測, 所以留著)
+            msg_status.iteration = self.iteration_msg
+            msg_status.detection_done = self.detection_done_msg
+            msg_status.icp_done = self.icp_done_msg  #只改這個
+            msg_status.octomap_done = self.octomap_done_msg# 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
+            msg_status.nbv_done = self.nbv_done_msg
+            msg_status.nbv_point_x = self.nbv_point_x_msg #這當預設的反正這個到時候是base也不可能
+            msg_status.nbv_point_y = self.nbv_point_y_msg
+            msg_status.nbv_point_z = self.nbv_point_z_msg
+            msg_status.is_final_result = self.is_final_result_msg
             if user_input == 'm':
                 
                 # msg_status.is_moving = True
@@ -41,24 +58,25 @@ class MyNode(Node): #construct Node class
                 # msg_box.rd_y = TargetBox[3]
                 # msg_status = NodeStatus()
                 
-                msg_status.ready_for_next_iteration = self.ready_for_next_iteration_msg #(因為還是要繼續偵測, 所以留著)
+                # msg_status.ready_for_next_iteration = self.ready_for_next_iteration_msg #(因為還是要繼續偵測, 所以留著)
                 msg_status.is_moving = True #只改這個
-                msg_status.iteration = self.iteration_msg
-                msg_status.detection_done = self.detection_done_msg
-                msg_status.icp_done = self.icp_done_msg  #只改這個
-                msg_status.octomap_done = self.octomap_done_msg# 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
-                msg_status.nbv_done = self.nbv_done_msg
-                msg_status.nbv_point_x = self.nbv_point_x_msg #這當預設的反正這個到時候是base也不可能
-                msg_status.nbv_point_y = self.nbv_point_y_msg
-                msg_status.nbv_point_z = self.nbv_point_z_msg
-                msg_status.is_final_result = self.is_final_result_msg
-                self.publish_status_.publish(msg_status)
+                # msg_status.iteration = self.iteration_msg
+                # msg_status.detection_done = self.detection_done_msg
+                # msg_status.icp_done = self.icp_done_msg  #只改這個
+                # msg_status.octomap_done = self.octomap_done_msg# 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
+                # msg_status.nbv_done = self.nbv_done_msg
+                # msg_status.nbv_point_x = self.nbv_point_x_msg #這當預設的反正這個到時候是base也不可能
+                # msg_status.nbv_point_y = self.nbv_point_y_msg
+                # msg_status.nbv_point_z = self.nbv_point_z_msg
+                # msg_status.is_final_result = self.is_final_result_msg
+                
 
             elif user_input == 's':
                 msg_status.is_moving = False
                 self.publish_status_.publish(msg_status)
             else:
                 self.get_logger().warn("Invalid input. Please enter 'm' or 's'.")
+            self.publish_status_.publish(msg_status)
             self.renew_done=False
     def status_callback(self,msg):
         if (self.is_moving_msg != msg.is_moving): 
