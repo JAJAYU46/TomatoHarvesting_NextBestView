@@ -90,7 +90,7 @@ class MyNode(Node): #construct Node class
         msg_status = NodeStatus()
         msg_status.ready_for_next_iteration = True
         msg_status.is_moving = self.is_moving_msg
-        msg_status.iteration = self.iteration_msg
+        msg_status.iteration = self.iteration_msg+1
         msg_status.detection_done = False
         msg_status.icp_done = False
         msg_status.octomap_done = False# 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
@@ -176,8 +176,8 @@ class MyNode(Node): #construct Node class
             else: 
                 self.get_logger().info("Arrive the final position for grabbing")
                 self.get_logger().info(f"The NBV for the tomato is: ( {self.nbv_point_x_msg:.2f}, {self.nbv_point_y_msg:.2f}, {self.nbv_point_z_msg:.2f} )")
-                self.status_reset()
-                self.get_logger().info("Done Reset, starting NBV for next Target Tomato scene")
+                # self.status_reset() #不可以在這裡reset, 要等下令
+                # self.get_logger().info("Done Reset, starting NBV for next Target Tomato scene")
                 self.ready_for_new_Tomato = True
                 # user_input = input("Enter 'n' to start NBV process for next target tomato: ").strip()
                 

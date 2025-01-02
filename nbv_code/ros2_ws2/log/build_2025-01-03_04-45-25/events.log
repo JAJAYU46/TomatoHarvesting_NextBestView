@@ -1,0 +1,429 @@
+[0.000000] (-) TimerEvent: {}
+[0.000928] (-) JobUnselected: {'identifier': 'message_interfaces'}
+[0.001008] (-) JobUnselected: {'identifier': 'my_bot'}
+[0.001055] (-) JobUnselected: {'identifier': 'my_robot_cam'}
+[0.001074] (-) JobUnselected: {'identifier': 'my_robot_nbv'}
+[0.001090] (-) JobUnselected: {'identifier': 'octomap_server2'}
+[0.001107] (-) JobUnselected: {'identifier': 'realsense2_camera'}
+[0.001122] (-) JobUnselected: {'identifier': 'realsense2_camera_msgs'}
+[0.001138] (-) JobUnselected: {'identifier': 'realsense2_description'}
+[0.001156] (my_robot_nbv_cmake) JobQueued: {'identifier': 'my_robot_nbv_cmake', 'dependencies': OrderedDict([('message_interfaces', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces')])}
+[0.004747] (my_robot_nbv_cmake) JobStarted: {'identifier': 'my_robot_nbv_cmake'}
+[0.039224] (my_robot_nbv_cmake) JobProgress: {'identifier': 'my_robot_nbv_cmake', 'progress': 'cmake'}
+[0.039912] (my_robot_nbv_cmake) JobProgress: {'identifier': 'my_robot_nbv_cmake', 'progress': 'build'}
+[0.040696] (my_robot_nbv_cmake) Command: {'cmd': ['/home/jajayu/.local/bin/cmake', '--build', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake', '--', '-j8', '-l8'], 'cwd': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jajayu'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/open3d_install/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_ros/lib:/home/jajayu/ros2_ws/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jajayu'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('MANAGERPID', '33513'), ('SYSTEMD_EXEC_PID', '33714'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '354215'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install:/home/jajayu/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jajayu'), ('JOURNAL_STREAM', '8:1370717'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jajayu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jajayu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jajayu-virtual-machine:@/tmp/.ICE-unix/33687,unix/jajayu-virtual-machine:/tmp/.ICE-unix/33687'), ('INVOCATION_ID', '0d4e97a86fc84cb68ef5f9fb63bee1e2'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.XFMDZ2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('TERMINATOR_UUID', 'urn:uuid:eb63d406-0ec4-4920-b89f-ae3928a37b20'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/install/webots_ros2_tests/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/webots_ros2/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/pcl_msgs/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/build/pcd_demo:/home/jajayu/ros2_ws/install/pcd_demo/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/gazebo_tutorial:/home/jajayu/ros2_ws/install/gazebo_tutorial/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('Open3D_DIR', '/home/jajayu/open3d_install/lib/cmake/Open3D'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/depthimage_to_pointcloud2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble')]), 'shell': False}
+[0.100236] (-) TimerEvent: {}
+[0.200775] (-) TimerEvent: {}
+[0.285447] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 20%] Built target nbvc_lib_SdfModel\n'}
+[0.301321] (-) TimerEvent: {}
+[0.319418] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 40%] Built target SdfModelV3\n'}
+[0.364409] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o\x1b[0m\n'}
+[0.402204] (-) TimerEvent: {}
+[0.503372] (-) TimerEvent: {}
+[0.606460] (-) TimerEvent: {}
+[0.707979] (-) TimerEvent: {}
+[0.808509] (-) TimerEvent: {}
+[0.909610] (-) TimerEvent: {}
+[1.011437] (-) TimerEvent: {}
+[1.111803] (-) TimerEvent: {}
+[1.212249] (-) TimerEvent: {}
+[1.312836] (-) TimerEvent: {}
+[1.413616] (-) TimerEvent: {}
+[1.464275] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:36\x1b[m\x1b[K:\n'}
+[1.465363] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp\x07-Wcpp\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.465495] (my_robot_nbv_cmake) StderrLine: {'line': b'   35 | #\x1b[01;35m\x1b[Kwarning\x1b[m\x1b[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead\n'}
+[1.465666] (my_robot_nbv_cmake) StderrLine: {'line': b'      |  \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[1.474642] (my_robot_nbv_cmake) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:38\x1b[m\x1b[K:\n'}
+[1.474896] (my_robot_nbv_cmake) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp\x07-Wcpp\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.474985] (my_robot_nbv_cmake) StderrLine: {'line': b'   32 | #\x1b[01;35m\x1b[Kwarning\x1b[m\x1b[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead\n'}
+[1.475051] (my_robot_nbv_cmake) StderrLine: {'line': b'      |  \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[1.515363] (-) TimerEvent: {}
+[1.615796] (-) TimerEvent: {}
+[1.716964] (-) TimerEvent: {}
+[1.818332] (-) TimerEvent: {}
+[1.919184] (-) TimerEvent: {}
+[2.019851] (-) TimerEvent: {}
+[2.120622] (-) TimerEvent: {}
+[2.223821] (-) TimerEvent: {}
+[2.324670] (-) TimerEvent: {}
+[2.425521] (-) TimerEvent: {}
+[2.526313] (-) TimerEvent: {}
+[2.626637] (-) TimerEvent: {}
+[2.727314] (-) TimerEvent: {}
+[2.830347] (-) TimerEvent: {}
+[2.931384] (-) TimerEvent: {}
+[3.032583] (-) TimerEvent: {}
+[3.134463] (-) TimerEvent: {}
+[3.236092] (-) TimerEvent: {}
+[3.339085] (-) TimerEvent: {}
+[3.439892] (-) TimerEvent: {}
+[3.545130] (-) TimerEvent: {}
+[3.646544] (-) TimerEvent: {}
+[3.750209] (-) TimerEvent: {}
+[3.851261] (-) TimerEvent: {}
+[3.951800] (-) TimerEvent: {}
+[4.052308] (-) TimerEvent: {}
+[4.152809] (-) TimerEvent: {}
+[4.254856] (-) TimerEvent: {}
+[4.360061] (-) TimerEvent: {}
+[4.461449] (-) TimerEvent: {}
+[4.562707] (-) TimerEvent: {}
+[4.666510] (-) TimerEvent: {}
+[4.773217] (-) TimerEvent: {}
+[4.873557] (-) TimerEvent: {}
+[4.976282] (-) TimerEvent: {}
+[5.080132] (-) TimerEvent: {}
+[5.184282] (-) TimerEvent: {}
+[5.284708] (-) TimerEvent: {}
+[5.385476] (-) TimerEvent: {}
+[5.486473] (-) TimerEvent: {}
+[5.590896] (-) TimerEvent: {}
+[5.692302] (-) TimerEvent: {}
+[5.793243] (-) TimerEvent: {}
+[5.896687] (-) TimerEvent: {}
+[5.997392] (-) TimerEvent: {}
+[6.100150] (-) TimerEvent: {}
+[6.201497] (-) TimerEvent: {}
+[6.301861] (-) TimerEvent: {}
+[6.404403] (-) TimerEvent: {}
+[6.505579] (-) TimerEvent: {}
+[6.608757] (-) TimerEvent: {}
+[6.710148] (-) TimerEvent: {}
+[6.811246] (-) TimerEvent: {}
+[6.917428] (-) TimerEvent: {}
+[7.020979] (-) TimerEvent: {}
+[7.123148] (-) TimerEvent: {}
+[7.223560] (-) TimerEvent: {}
+[7.324647] (-) TimerEvent: {}
+[7.425965] (-) TimerEvent: {}
+[7.526937] (-) TimerEvent: {}
+[7.632431] (-) TimerEvent: {}
+[7.733566] (-) TimerEvent: {}
+[7.834414] (-) TimerEvent: {}
+[7.935384] (-) TimerEvent: {}
+[8.038422] (-) TimerEvent: {}
+[8.139768] (-) TimerEvent: {}
+[8.241013] (-) TimerEvent: {}
+[8.342867] (-) TimerEvent: {}
+[8.443501] (-) TimerEvent: {}
+[8.545477] (-) TimerEvent: {}
+[8.652150] (-) TimerEvent: {}
+[8.753070] (-) TimerEvent: {}
+[8.854084] (-) TimerEvent: {}
+[8.955421] (-) TimerEvent: {}
+[9.057067] (-) TimerEvent: {}
+[9.159598] (-) TimerEvent: {}
+[9.260734] (-) TimerEvent: {}
+[9.361510] (-) TimerEvent: {}
+[9.466517] (-) TimerEvent: {}
+[9.566919] (-) TimerEvent: {}
+[9.668327] (-) TimerEvent: {}
+[9.770037] (-) TimerEvent: {}
+[9.870528] (-) TimerEvent: {}
+[9.973386] (-) TimerEvent: {}
+[10.074299] (-) TimerEvent: {}
+[10.176927] (-) TimerEvent: {}
+[10.279971] (-) TimerEvent: {}
+[10.380415] (-) TimerEvent: {}
+[10.481605] (-) TimerEvent: {}
+[10.584973] (-) TimerEvent: {}
+[10.687074] (-) TimerEvent: {}
+[10.791259] (-) TimerEvent: {}
+[10.892111] (-) TimerEvent: {}
+[10.993672] (-) TimerEvent: {}
+[11.094522] (-) TimerEvent: {}
+[11.197246] (-) TimerEvent: {}
+[11.298131] (-) TimerEvent: {}
+[11.402011] (-) TimerEvent: {}
+[11.505953] (-) TimerEvent: {}
+[11.606736] (-) TimerEvent: {}
+[11.707856] (-) TimerEvent: {}
+[11.810306] (-) TimerEvent: {}
+[11.914775] (-) TimerEvent: {}
+[12.015948] (-) TimerEvent: {}
+[12.117461] (-) TimerEvent: {}
+[12.219745] (-) TimerEvent: {}
+[12.321141] (-) TimerEvent: {}
+[12.423705] (-) TimerEvent: {}
+[12.524187] (-) TimerEvent: {}
+[12.624879] (-) TimerEvent: {}
+[12.727642] (-) TimerEvent: {}
+[12.828214] (-) TimerEvent: {}
+[12.929034] (-) TimerEvent: {}
+[13.033193] (-) TimerEvent: {}
+[13.135401] (-) TimerEvent: {}
+[13.237184] (-) TimerEvent: {}
+[13.340044] (-) TimerEvent: {}
+[13.440492] (-) TimerEvent: {}
+[13.543121] (-) TimerEvent: {}
+[13.646209] (-) TimerEvent: {}
+[13.751852] (-) TimerEvent: {}
+[13.853558] (-) TimerEvent: {}
+[13.953902] (-) TimerEvent: {}
+[14.054360] (-) TimerEvent: {}
+[14.155323] (-) TimerEvent: {}
+[14.255822] (-) TimerEvent: {}
+[14.356552] (-) TimerEvent: {}
+[14.457985] (-) TimerEvent: {}
+[14.559450] (-) TimerEvent: {}
+[14.660110] (-) TimerEvent: {}
+[14.761005] (-) TimerEvent: {}
+[14.862716] (-) TimerEvent: {}
+[14.964243] (-) TimerEvent: {}
+[15.070238] (-) TimerEvent: {}
+[15.171344] (-) TimerEvent: {}
+[15.272374] (-) TimerEvent: {}
+[15.373936] (-) TimerEvent: {}
+[15.475913] (-) TimerEvent: {}
+[15.578104] (-) TimerEvent: {}
+[15.678586] (-) TimerEvent: {}
+[15.779545] (-) TimerEvent: {}
+[15.882912] (-) TimerEvent: {}
+[15.983675] (-) TimerEvent: {}
+[16.086010] (-) TimerEvent: {}
+[16.187913] (-) TimerEvent: {}
+[16.289116] (-) TimerEvent: {}
+[16.390269] (-) TimerEvent: {}
+[16.491205] (-) TimerEvent: {}
+[16.592115] (-) TimerEvent: {}
+[16.694455] (-) TimerEvent: {}
+[16.797213] (-) TimerEvent: {}
+[16.897968] (-) TimerEvent: {}
+[17.000066] (-) TimerEvent: {}
+[17.100678] (-) TimerEvent: {}
+[17.204140] (-) TimerEvent: {}
+[17.304963] (-) TimerEvent: {}
+[17.407981] (-) TimerEvent: {}
+[17.509105] (-) TimerEvent: {}
+[17.610396] (-) TimerEvent: {}
+[17.711863] (-) TimerEvent: {}
+[17.812736] (-) TimerEvent: {}
+[17.913734] (-) TimerEvent: {}
+[18.019094] (-) TimerEvent: {}
+[18.122086] (-) TimerEvent: {}
+[18.223263] (-) TimerEvent: {}
+[18.324503] (-) TimerEvent: {}
+[18.429663] (-) TimerEvent: {}
+[18.530637] (-) TimerEvent: {}
+[18.636662] (-) TimerEvent: {}
+[18.739161] (-) TimerEvent: {}
+[18.841677] (-) TimerEvent: {}
+[18.942598] (-) TimerEvent: {}
+[19.043837] (-) TimerEvent: {}
+[19.144908] (-) TimerEvent: {}
+[19.246022] (-) TimerEvent: {}
+[19.348079] (-) TimerEvent: {}
+[19.451009] (-) TimerEvent: {}
+[19.551514] (-) TimerEvent: {}
+[19.653791] (-) TimerEvent: {}
+[19.761590] (-) TimerEvent: {}
+[19.862281] (-) TimerEvent: {}
+[19.966641] (-) TimerEvent: {}
+[20.070665] (-) TimerEvent: {}
+[20.173293] (-) TimerEvent: {}
+[20.275136] (-) TimerEvent: {}
+[20.377503] (-) TimerEvent: {}
+[20.480189] (-) TimerEvent: {}
+[20.581570] (-) TimerEvent: {}
+[20.682407] (-) TimerEvent: {}
+[20.783249] (-) TimerEvent: {}
+[20.886927] (-) TimerEvent: {}
+[20.988616] (-) TimerEvent: {}
+[21.090783] (-) TimerEvent: {}
+[21.195082] (-) TimerEvent: {}
+[21.295648] (-) TimerEvent: {}
+[21.397118] (-) TimerEvent: {}
+[21.497916] (-) TimerEvent: {}
+[21.603330] (-) TimerEvent: {}
+[21.703701] (-) TimerEvent: {}
+[21.804892] (-) TimerEvent: {}
+[21.912475] (-) TimerEvent: {}
+[22.015158] (-) TimerEvent: {}
+[22.118680] (-) TimerEvent: {}
+[22.219794] (-) TimerEvent: {}
+[22.320383] (-) TimerEvent: {}
+[22.426454] (-) TimerEvent: {}
+[22.526792] (-) TimerEvent: {}
+[22.634272] (-) TimerEvent: {}
+[22.734913] (-) TimerEvent: {}
+[22.836022] (-) TimerEvent: {}
+[22.936416] (-) TimerEvent: {}
+[23.037735] (-) TimerEvent: {}
+[23.138159] (-) TimerEvent: {}
+[23.238793] (-) TimerEvent: {}
+[23.341254] (-) TimerEvent: {}
+[23.442115] (-) TimerEvent: {}
+[23.547786] (-) TimerEvent: {}
+[23.648687] (-) TimerEvent: {}
+[23.750661] (-) TimerEvent: {}
+[23.851553] (-) TimerEvent: {}
+[23.953657] (-) TimerEvent: {}
+[24.057734] (-) TimerEvent: {}
+[24.158331] (-) TimerEvent: {}
+[24.259502] (-) TimerEvent: {}
+[24.361021] (-) TimerEvent: {}
+[24.464211] (-) TimerEvent: {}
+[24.567006] (-) TimerEvent: {}
+[24.668335] (-) TimerEvent: {}
+[24.769219] (-) TimerEvent: {}
+[24.871222] (-) TimerEvent: {}
+[24.974582] (-) TimerEvent: {}
+[25.075054] (-) TimerEvent: {}
+[25.188390] (-) TimerEvent: {}
+[25.291357] (-) TimerEvent: {}
+[25.391878] (-) TimerEvent: {}
+[25.492524] (-) TimerEvent: {}
+[25.594297] (-) TimerEvent: {}
+[25.694739] (-) TimerEvent: {}
+[25.795732] (-) TimerEvent: {}
+[25.898703] (-) TimerEvent: {}
+[26.002747] (-) TimerEvent: {}
+[26.103453] (-) TimerEvent: {}
+[26.207853] (-) TimerEvent: {}
+[26.308962] (-) TimerEvent: {}
+[26.409458] (-) TimerEvent: {}
+[26.511742] (-) TimerEvent: {}
+[26.612553] (-) TimerEvent: {}
+[26.716076] (-) TimerEvent: {}
+[26.817406] (-) TimerEvent: {}
+[26.918873] (-) TimerEvent: {}
+[27.021954] (-) TimerEvent: {}
+[27.123389] (-) TimerEvent: {}
+[27.230943] (-) TimerEvent: {}
+[27.331770] (-) TimerEvent: {}
+[27.432329] (-) TimerEvent: {}
+[27.532970] (-) TimerEvent: {}
+[27.634912] (-) TimerEvent: {}
+[27.742908] (-) TimerEvent: {}
+[27.843950] (-) TimerEvent: {}
+[27.946481] (-) TimerEvent: {}
+[28.047400] (-) TimerEvent: {}
+[28.148086] (-) TimerEvent: {}
+[28.251022] (-) TimerEvent: {}
+[28.352276] (-) TimerEvent: {}
+[28.452954] (-) TimerEvent: {}
+[28.557794] (-) TimerEvent: {}
+[28.658265] (-) TimerEvent: {}
+[28.759586] (-) TimerEvent: {}
+[28.862375] (-) TimerEvent: {}
+[28.963573] (-) TimerEvent: {}
+[29.064808] (-) TimerEvent: {}
+[29.166771] (-) TimerEvent: {}
+[29.268208] (-) TimerEvent: {}
+[29.369008] (-) TimerEvent: {}
+[29.469803] (-) TimerEvent: {}
+[29.571405] (-) TimerEvent: {}
+[29.676799] (-) TimerEvent: {}
+[29.779577] (-) TimerEvent: {}
+[29.880373] (-) TimerEvent: {}
+[29.981456] (-) TimerEvent: {}
+[30.082369] (-) TimerEvent: {}
+[30.192762] (-) TimerEvent: {}
+[30.297762] (-) TimerEvent: {}
+[30.398341] (-) TimerEvent: {}
+[30.499397] (-) TimerEvent: {}
+[30.600318] (-) TimerEvent: {}
+[30.704080] (-) TimerEvent: {}
+[30.804940] (-) TimerEvent: {}
+[30.906040] (-) TimerEvent: {}
+[31.006908] (-) TimerEvent: {}
+[31.108874] (-) TimerEvent: {}
+[31.209205] (-) TimerEvent: {}
+[31.310236] (-) TimerEvent: {}
+[31.413312] (-) TimerEvent: {}
+[31.514399] (-) TimerEvent: {}
+[31.616465] (-) TimerEvent: {}
+[31.717038] (-) TimerEvent: {}
+[31.823603] (-) TimerEvent: {}
+[31.925008] (-) TimerEvent: {}
+[32.028703] (-) TimerEvent: {}
+[32.130672] (-) TimerEvent: {}
+[32.233180] (-) TimerEvent: {}
+[32.341824] (-) TimerEvent: {}
+[32.447553] (-) TimerEvent: {}
+[32.550864] (-) TimerEvent: {}
+[32.651900] (-) TimerEvent: {}
+[32.752953] (-) TimerEvent: {}
+[32.853838] (-) TimerEvent: {}
+[32.956960] (-) TimerEvent: {}
+[33.057304] (-) TimerEvent: {}
+[33.159148] (-) TimerEvent: {}
+[33.259885] (-) TimerEvent: {}
+[33.363823] (-) TimerEvent: {}
+[33.464420] (-) TimerEvent: {}
+[33.568092] (-) TimerEvent: {}
+[33.669241] (-) TimerEvent: {}
+[33.772373] (-) TimerEvent: {}
+[33.874472] (-) TimerEvent: {}
+[33.980387] (-) TimerEvent: {}
+[34.060770] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 60%] \x1b[32m\x1b[1mLinking CXX executable BestViewModel\x1b[0m\n'}
+[34.080694] (-) TimerEvent: {}
+[34.182025] (-) TimerEvent: {}
+[34.283021] (-) TimerEvent: {}
+[34.383605] (-) TimerEvent: {}
+[34.484047] (-) TimerEvent: {}
+[34.584605] (-) TimerEvent: {}
+[34.685522] (-) TimerEvent: {}
+[34.787315] (-) TimerEvent: {}
+[34.888836] (-) TimerEvent: {}
+[34.990150] (-) TimerEvent: {}
+[35.092255] (-) TimerEvent: {}
+[35.193068] (-) TimerEvent: {}
+[35.296958] (-) TimerEvent: {}
+[35.404445] (-) TimerEvent: {}
+[35.505092] (-) TimerEvent: {}
+[35.609522] (-) TimerEvent: {}
+[35.710409] (-) TimerEvent: {}
+[35.815360] (-) TimerEvent: {}
+[35.915965] (-) TimerEvent: {}
+[36.017155] (-) TimerEvent: {}
+[36.118876] (-) TimerEvent: {}
+[36.221660] (-) TimerEvent: {}
+[36.327355] (-) TimerEvent: {}
+[36.428736] (-) TimerEvent: {}
+[36.531557] (-) TimerEvent: {}
+[36.632428] (-) TimerEvent: {}
+[36.734863] (-) TimerEvent: {}
+[36.814465] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 60%] Built target BestViewModel\n'}
+[36.835056] (-) TimerEvent: {}
+[36.923011] (my_robot_nbv_cmake) StdoutLine: {'line': b'[ 80%] Built target nbvc_ray_generationV3_beforeclean\n'}
+[36.936582] (-) TimerEvent: {}
+[36.973540] (my_robot_nbv_cmake) StdoutLine: {'line': b'[100%] Built target nbvc_ray_generation\n'}
+[37.003887] (my_robot_nbv_cmake) CommandEnded: {'returncode': 0}
+[37.037999] (-) TimerEvent: {}
+[37.139036] (-) TimerEvent: {}
+[37.242775] (-) TimerEvent: {}
+[37.315793] (my_robot_nbv_cmake) JobProgress: {'identifier': 'my_robot_nbv_cmake', 'progress': 'install'}
+[37.343014] (-) TimerEvent: {}
+[37.445429] (-) TimerEvent: {}
+[37.528994] (my_robot_nbv_cmake) Command: {'cmd': ['/home/jajayu/.local/bin/cmake', '--install', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake'], 'cwd': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jajayu'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/open3d_install/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_ros/lib:/home/jajayu/ros2_ws/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jajayu'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('MANAGERPID', '33513'), ('SYSTEMD_EXEC_PID', '33714'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '354215'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install:/home/jajayu/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jajayu'), ('JOURNAL_STREAM', '8:1370717'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jajayu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jajayu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jajayu-virtual-machine:@/tmp/.ICE-unix/33687,unix/jajayu-virtual-machine:/tmp/.ICE-unix/33687'), ('INVOCATION_ID', '0d4e97a86fc84cb68ef5f9fb63bee1e2'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.XFMDZ2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('TERMINATOR_UUID', 'urn:uuid:eb63d406-0ec4-4920-b89f-ae3928a37b20'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/install/webots_ros2_tests/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/webots_ros2/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/pcl_msgs/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/build/pcd_demo:/home/jajayu/ros2_ws/install/pcd_demo/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/gazebo_tutorial:/home/jajayu/ros2_ws/install/gazebo_tutorial/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('Open3D_DIR', '/home/jajayu/open3d_install/lib/cmake/Open3D'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/depthimage_to_pointcloud2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble')]), 'shell': False}
+[37.547330] (-) TimerEvent: {}
+[37.651701] (-) TimerEvent: {}
+[37.668474] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[37.669785] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/my_robot_nbv_cmake/nbvc_ray_generation\n'}
+[37.675282] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/my_robot_nbv_cmake/nbvc_ray_generationV3_beforeclean\n'}
+[37.675473] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/my_robot_nbv_cmake/libnbvc_lib_SdfModel.a\n'}
+[37.675540] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/my_robot_nbv_cmake/SdfModelV3\n'}
+[37.675603] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/my_robot_nbv_cmake/BestViewModel\n'}
+[37.685220] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/my_robot_nbv_cmake/BestViewModel" to ""\n'}
+[37.688903] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/ament_index/resource_index/package_run_dependencies/my_robot_nbv_cmake\n'}
+[37.689236] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/ament_index/resource_index/parent_prefix_path/my_robot_nbv_cmake\n'}
+[37.689321] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/environment/ament_prefix_path.sh\n'}
+[37.689385] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/environment/ament_prefix_path.dsv\n'}
+[37.689541] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/environment/path.sh\n'}
+[37.689672] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/environment/path.dsv\n'}
+[37.689810] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/local_setup.bash\n'}
+[37.690311] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/local_setup.sh\n'}
+[37.690385] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/local_setup.zsh\n'}
+[37.690445] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/local_setup.dsv\n'}
+[37.690503] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.dsv\n'}
+[37.690636] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/ament_index/resource_index/packages/my_robot_nbv_cmake\n'}
+[37.690975] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/cmake/my_robot_nbv_cmakeConfig.cmake\n'}
+[37.691060] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/cmake/my_robot_nbv_cmakeConfig-version.cmake\n'}
+[37.691843] (my_robot_nbv_cmake) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.xml\n'}
+[37.707512] (my_robot_nbv_cmake) CommandEnded: {'returncode': 0}
+[37.754102] (-) TimerEvent: {}
+[37.856550] (-) TimerEvent: {}
+[37.962466] (my_robot_nbv_cmake) JobEnded: {'identifier': 'my_robot_nbv_cmake', 'rc': 0}
+[37.963473] (-) TimerEvent: {}
+[37.963602] (-) EventReactorShutdown: {}

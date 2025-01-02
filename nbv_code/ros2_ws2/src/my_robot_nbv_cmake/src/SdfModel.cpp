@@ -62,8 +62,9 @@ SdfModel::SdfModel(std::shared_ptr<open3d::geometry::PointCloud> pcd, float radi
     // float radii = [0.005, 0.01, 0.02, 0.04];
     // vector<double> radii={0.005, 0.01, 0.02, 0.04}; //<Debug> radii要是 Double, 因為CreateFromPointCloudBallPivoting(*pcd_, radii)吃double的
     // mesh0_ = open3d::geometry::TriangleMesh::CreateFromPointCloudBallPivoting(*pcd_, radii);//<Debug> *pcd_ 才是object本身, 如果錯誤顯示的是pcd& 什麼的, 代表它其實要的是object 本身, 你給成指標了, *pcd 才可以得到指標只的內容
-
-    open3d::visualization::DrawGeometries({mesh0_});//<Debug: c++中, list, array都要用[]這個！!>////////////
+    if(DEBUG_MODE){
+        open3d::visualization::DrawGeometries({mesh0_});//<Debug: c++中, list, array都要用[]這個！!>////////////
+    }
     mesh_ = open3d::t::geometry::TriangleMesh::FromLegacy(*mesh0_);
 
     //<check>

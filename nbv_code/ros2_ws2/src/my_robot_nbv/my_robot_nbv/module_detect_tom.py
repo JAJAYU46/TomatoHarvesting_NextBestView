@@ -35,6 +35,8 @@ class DetectTomato:
         self.TargetTomatoTrack = None
         self.TargetTomatoTrackID = None
 
+        self.is_NewTomato = True
+
     #Public Function
     def changeGetNewTargetTomato(self,flag):
         self.GetNewTargetTomato=flag
@@ -69,6 +71,7 @@ class DetectTomato:
             # <Add> <Debug> 現在變成如果target tomato一不見, 就回傳toppest tomato作為新的target tomato===============================================
             if (self.TargetTomatoTrack is None): #<Debug> 原來那個tomato不會不見, id會保留著但是confident變成none了
                 self.changeGetNewTargetTomato(True)  #如果原來的那個id的tomato不見了, 就把最高的那個當新的target tomato
+            
             else: 
                 if (self.TargetTomatoTrack.det_conf is None):
                     self.changeGetNewTargetTomato(True)
