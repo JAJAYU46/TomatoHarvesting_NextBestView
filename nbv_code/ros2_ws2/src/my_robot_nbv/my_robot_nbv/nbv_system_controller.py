@@ -144,7 +144,7 @@ class MyNode(Node): #construct Node class
             self.get_logger().info("Doing the filter & ICP for tomato...")
             while(self.icp_done_msg != True): #等待完成ICP
                 continue  
-            self.get_logger().info("Done Detection")
+            self.get_logger().info("Done filter & ICP")
 
             #4. 等待完成Octomap  ======================================
             self.get_logger().info("Doing the pcd to Octomap convertion...")

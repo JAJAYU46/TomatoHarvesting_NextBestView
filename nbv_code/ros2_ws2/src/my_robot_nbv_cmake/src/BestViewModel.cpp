@@ -109,9 +109,65 @@ public:
         octomap::point3d modelCenterOctomap_pcd = {modelCenter[0], modelCenter[1], modelCenter[2]};
 
         //====== 2. 建立Candidate views ====== (已Target tomato 的 center為中心（算by Sdf model), r=0.5為半徑製造上半球的random candidate views
-        std::vector<octomap::point3d> origins = RandomPoint(modelCenterOctomap_pcd , candidateViews_num_, 0.5); //中心座標, 點數, 長度
+        std::vector<octomap::point3d> origins_original = RandomPoint(modelCenterOctomap_pcd , candidateViews_num_, 0.5); //中心座標, 點數, 長度
+        std::vector<octomap::point3d> origins;
+        octomap::point3d RobotArmBase(0.0,0.0,0.0); // 之後會被真正的base位置取代（應概就是0,0,0)車車是代表camera, end effector
+        octomap::point3d RobotArmFrontAxisVec(1.0,0.0,0.0);
+        
+        cout<<"There are total "<<origins_original.size()<<" candidate view"<<endl;  
+        //在這邊過濾點（因為candidate view 頂多100個所以這裡過濾不太影響時間複雜度)
+        //也可以在上面製造的時候就過濾好, 但這裡邏輯是先隨機製造, 再過濾掉不能到達點
+        // int origin_size = origins_original.size();
+        // for (int i=0; i<origin_original_size;i++) {
+        // int k=0;
+        for (const auto& origin : origins_original){// && (int i=0; i<origin_size;i++) ){
+            // if (k >= origin_size) {
+            //     break; // Exit the loop if `i` exceeds `origin_size`
+            // }
+            // k++;
+            
+            
+            // octomap::point3d origin = origins_original.pop_back();
+            octomap::point3d vectorBO = origin-RobotArmBase;
+            octomap::point3d vectorOT = modelCenterOctomap_pcd - origin;
+            octomap::point3d vectorBT = modelCenterOctomap_pcd - RobotArmBase; //
+            
+            // calculate u project to v 
+            // u : any
+            // v : octomap::point3d RobotArmFrontAxisVec(1.0,0.0,0.0);
+            double dotProductVV_RA_RA = RobotArmFrontAxisVec.dot(RobotArmFrontAxisVec);
+            if (dotProductVV_RA_RA == 0) {
+                std::cerr << "Error: Cannot project onto a zero vector." << std::endl;
+                continue;
+            }
+            double dotProductUV_BO_RA = vectorBO.dot(RobotArmFrontAxisVec);
+            double dotProductUV_OT_RA = vectorOT.dot(RobotArmFrontAxisVec);
+            
+            double scalarProjection_BO_RA = dotProductUV_BO_RA / dotProductVV_RA_RA;
+            double scalarProjection_OT_RA = dotProductUV_OT_RA / dotProductVV_RA_RA;
+            // Calculate the projection vector
+            // octomap::point3d projection_BO_RA = RobotArmFrontAxisVec * scalarProjection_BO_RA;
+            // octomap::point3d projection_OT_RA = RobotArmFrontAxisVec * scalarProjection_OT_RA;
+            // 如果投影長度是負數的話
+            // cout<<"OK1.......scalarProjection_OT_RA: "<<scalarProjection_OT_RA<<"scalarProjection_BO_RA: "<<scalarProjection_BO_RA<<endl;  
+        
+            if(scalarProjection_OT_RA<=0){ // 蕃茄背面不行
+                // cout<<"Ok2...... "<<origins.size()<<" candidate views after back filtering"<<endl;  
+        
+                continue;
+            }
+            if(scalarProjection_BO_RA<=0){//手臂背面不行
+                continue; //就不會做下面了, 會直接跳到下個origin
+            }   
+            
+            origins.push_back(origin); //過審核的話再從後面丟進去
+            
 
-        cout<<"There are total "<<origins.size()<<" candidate view"<<endl;  
+        }
+        origins_original.clear();  // Clears all elements in the vector
+        std::vector<octomap::point3d>().swap(origins_original);  // Releases the memory to shrink the capacity
+        cout<<"There are total "<<origins.size()<<" candidate views after back filtering"<<endl;  
+        
         //====== 3. 跑每個candidate view看每個candidate view的gain為多少
         for (const auto& origin : origins) {
             marker_ID_handler[0]++;
@@ -254,10 +310,12 @@ private:
     //=================== 必要的function ================================
     //[Generate RandomPoint around a origin and return the end points vector]
     std::vector<octomap::point3d> RandomPoint(octomap::point3d center_, int pointNum, double radius_){
+    // std::deque<octomap::point3d> RandomPoint(octomap::point3d center_, int pointNum, double radius_){
         if (DEBUG_MODE) {
             cout<<"generating "<<pointNum<<"candidate views..."<<endl;    
         }
         std::vector<octomap::point3d> RayEndPoints;
+        // std::deque<octomap::point3d> origins; //因為要從前面pop從後面加
 
         std::random_device rd;
         std::mt19937 gen(rd());

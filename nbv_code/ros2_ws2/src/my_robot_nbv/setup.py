@@ -10,6 +10,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        # Register the launch file located in 'launch/launch_nbv.py'
+        ('share/'+package_name, ['launch/launch_nbv.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -25,6 +27,8 @@ setup(
             "nbv_system_controller = my_robot_nbv.nbv_system_controller:main", 
             "nbv_tompcd_filter = my_robot_nbv.nbv_tompcd_filter:main", 
             "nbv_tom_detect = my_robot_nbv.nbv_tom_detect:main"
+# robot_launch = my_robot_nbv.robot_launch:main'
+            # "launch_nbv = my_robot_nbv.nbv_tom_detect:main"
         ],
     },
     # package_data={ #好像沒功能

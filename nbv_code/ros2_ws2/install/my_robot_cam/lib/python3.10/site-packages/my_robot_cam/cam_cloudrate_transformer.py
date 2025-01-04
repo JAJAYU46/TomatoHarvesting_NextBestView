@@ -184,15 +184,19 @@ class MyNode(Node): #construct Node class
         #self.get_logger().info("key:"+str(key))
         #key_str = str(key)
         try: 
-            if key.char == 'r':#reload frame
-                self.ReloadFlag=True
-                self.get_logger().info("key be pressed(reload):"+str(key))
-            if key.char == 'c':#continued mode
-                self.Mode=0
-                self.get_logger().info("key be pressed(now mode):"+str(key))
-            if key.char == 'p':#loading mode
-                self.Mode=1
-                self.get_logger().info("key be pressed(nowload):"+str(key))
+            # 因為在run node 的時候也沒半法, 所以都先關掉了
+            # ========== 不可刪 ============
+            # if key.char == 'r':#reload frame
+            #     self.ReloadFlag=True
+            #     self.get_logger().info("key be pressed(reload):"+str(key))
+            # if key.char == 'c':#continued mode
+            #     self.Mode=0
+            #     self.get_logger().info("key be pressed(now mode):"+str(key))
+            # if key.char == 'p':#loading mode
+            #     self.Mode=1
+            #     self.get_logger().info("key be pressed(nowload):"+str(key))
+            # ==============================
+            pass
         except: 
             pass
     # def on_release(self,key):

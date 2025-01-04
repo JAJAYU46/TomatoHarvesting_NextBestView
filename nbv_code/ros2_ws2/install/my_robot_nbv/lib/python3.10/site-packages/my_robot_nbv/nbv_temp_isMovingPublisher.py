@@ -81,7 +81,7 @@ class MyNode(Node): #construct Node class
             self.renew_done=False
     def status_callback(self,msg):
         if (self.is_moving_msg != msg.is_moving): 
-            self.get_logger().info('now the is_moving_msg: '+str(self.is_moving_msg)) # CHANGE
+            self.get_logger().info('now the is_moving_msg: '+str(msg.is_moving)) # CHANGE
         self.ready_for_next_iteration_msg = msg.ready_for_next_iteration
         self.is_moving_msg = msg.is_moving
         self.target_box_id_msg = msg.target_box_id
