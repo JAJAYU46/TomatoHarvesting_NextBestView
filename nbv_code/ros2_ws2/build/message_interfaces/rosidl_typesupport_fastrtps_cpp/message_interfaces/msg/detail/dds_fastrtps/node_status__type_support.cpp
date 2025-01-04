@@ -36,6 +36,8 @@ cdr_serialize(
   cdr << (ros_message.ready_for_next_iteration ? true : false);
   // Member: is_moving
   cdr << (ros_message.is_moving ? true : false);
+  // Member: target_box_id
+  cdr << ros_message.target_box_id;
   // Member: iteration
   cdr << ros_message.iteration;
   // Member: detection_done
@@ -76,6 +78,9 @@ cdr_deserialize(
     cdr >> tmp;
     ros_message.is_moving = tmp ? true : false;
   }
+
+  // Member: target_box_id
+  cdr >> ros_message.target_box_id;
 
   // Member: iteration
   cdr >> ros_message.iteration;
@@ -149,6 +154,12 @@ get_serialized_size(
   // Member: is_moving
   {
     size_t item_size = sizeof(ros_message.is_moving);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: target_box_id
+  {
+    size_t item_size = sizeof(ros_message.target_box_id);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -244,6 +255,15 @@ max_serialized_size_NodeStatus(
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: target_box_id
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   // Member: iteration

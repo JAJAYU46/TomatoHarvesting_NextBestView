@@ -130,6 +130,7 @@ class MyNode(Node): #construct Node class
             self.get_logger().info('now the is_moving_msg: '+str(self.is_moving_msg)) # CHANGE
         self.ready_for_next_iteration_msg = msg.ready_for_next_iteration
         self.is_moving_msg = msg.is_moving
+        self.target_box_id_msg = msg.target_box_id
         self.iteration_msg = msg.iteration
         self.detection_done_msg = msg.detection_done
         self.icp_done_msg = msg.icp_done
@@ -476,6 +477,7 @@ class MyNode(Node): #construct Node class
                                             msg_status = NodeStatus()
                                             msg_status.ready_for_next_iteration = self.ready_for_next_iteration_msg #(因為還是要繼續偵測, 所以留著)
                                             msg_status.is_moving = self.is_moving_msg
+                                            msg_status.target_box_id = self.target_box_id_msg
                                             msg_status.iteration = self.iteration_msg
                                             msg_status.detection_done = self.detection_done_msg
                                             msg_status.icp_done = True  #只改這個

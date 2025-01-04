@@ -54,8 +54,9 @@ class MyNode(Node): #construct Node class
         self.ready_for_next_iteration_msg = msg.ready_for_next_iteration
         if (self.is_moving_msg != msg.is_moving): 
             self.get_logger().info('now the is_moving_msg: '+str(self.is_moving_msg)) # CHANGE
-          
+        
         self.is_moving_msg = msg.is_moving
+        self.target_box_id_msg = msg.target_box_id
         self.iteration_msg = msg.iteration
         self.detection_done_msg = msg.detection_done
         self.icp_done_msg = msg.icp_done
@@ -72,6 +73,7 @@ class MyNode(Node): #construct Node class
           
         msg_status = NodeStatus()
         msg_status.ready_for_next_iteration = True
+        msg_status.target_box_id = 0
         msg_status.is_moving = False
         msg_status.iteration = 0
         msg_status.detection_done = False
@@ -89,6 +91,7 @@ class MyNode(Node): #construct Node class
     def status_reset_within_iteration(self): #初始化所有參數, 再把iteration設為0（表示前一個iteration已完成, 可執行下移步驟後, 各個node才會接續著跟著動作）
         msg_status = NodeStatus()
         msg_status.ready_for_next_iteration = True
+        msg_status.target_box_id = self.target_box_id_msg
         msg_status.is_moving = self.is_moving_msg
         msg_status.iteration = self.iteration_msg+1
         msg_status.detection_done = False
@@ -133,6 +136,7 @@ class MyNode(Node): #construct Node class
             while(self.detection_done_msg != True): #等待完成
                 continue
             self.get_logger().info("Done Detection")
+            self.get_logger().info("Target Box ID = "+str(self.target_box_id_msg))
 
             
             

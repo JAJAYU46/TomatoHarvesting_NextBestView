@@ -31,7 +31,7 @@ void message_interfaces__msg__NodeStatus__rosidl_typesupport_introspection_c__No
   message_interfaces__msg__NodeStatus__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember message_interfaces__msg__NodeStatus__rosidl_typesupport_introspection_c__NodeStatus_message_member_array[11] = {
+static rosidl_typesupport_introspection_c__MessageMember message_interfaces__msg__NodeStatus__rosidl_typesupport_introspection_c__NodeStatus_message_member_array[12] = {
   {
     "ready_for_next_iteration",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
@@ -58,6 +58,23 @@ static rosidl_typesupport_introspection_c__MessageMember message_interfaces__msg
     0,  // array size
     false,  // is upper bound
     offsetof(message_interfaces__msg__NodeStatus, is_moving),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "target_box_id",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(message_interfaces__msg__NodeStatus, target_box_id),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -224,7 +241,7 @@ static rosidl_typesupport_introspection_c__MessageMember message_interfaces__msg
 static const rosidl_typesupport_introspection_c__MessageMembers message_interfaces__msg__NodeStatus__rosidl_typesupport_introspection_c__NodeStatus_message_members = {
   "message_interfaces__msg",  // message namespace
   "NodeStatus",  // message name
-  11,  // number of fields
+  12,  // number of fields
   sizeof(message_interfaces__msg__NodeStatus),
   message_interfaces__msg__NodeStatus__rosidl_typesupport_introspection_c__NodeStatus_message_member_array,  // message members
   message_interfaces__msg__NodeStatus__rosidl_typesupport_introspection_c__NodeStatus_init_function,  // function to initialize message memory (memory has to be allocated)

@@ -137,6 +137,7 @@ class MyNode(Node): #construct Node class
           
         self.is_moving_msg = msg.is_moving
         self.iteration_msg = msg.iteration
+        self.target_box_id_msg = msg.target_box_id
         self.detection_done_msg = msg.detection_done
         self.icp_done_msg = msg.icp_done
         self.octomap_done_msg = msg.octomap_done# 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
@@ -214,7 +215,7 @@ class MyNode(Node): #construct Node class
                 self.DetectionDoneFlag=False
                 frame1_resized = cv2.resize(frame1, (int(frame1.shape[1]*resizeMag), int(frame1.shape[0]*resizeMag)))
 
-                TargetBox, image = self.MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
+                TargetBox, image, TargetBoxID = self.MyTomatoDetector.DetectTomato(frame1_resized) #先得到初始的ID
                 self.DetectionDoneFlag=True
                 if TargetBox is None:
                     print("No tomato detected.")
@@ -231,9 +232,20 @@ class MyNode(Node): #construct Node class
                         # 因為這個node得要繼續運作
                         # status controller (tell status controller detection done)(但是還是要繼續偵測才能做之後的tracking所以不改之前的東東)
                         msg_status = NodeStatus()
+                        if(self.target_box_id_msg!=TargetBox):
+                            msg_status.iteration = 0 #如果target換人 iteration就成0表示這是新的tomato了
+                        else:
+                            msg_status.iteration = self.iteration_msg
+                        
+                        # if(TargetBoxID is None):
+                            # TargetBoxID = 100
+                        msg_status.target_box_id = int(TargetBoxID) #<debug>要轉int不知道為啥本不算
+                        # msg_status.target_box_id = 100
                         msg_status.ready_for_next_iteration = self.ready_for_next_iteration_msg #(因為還是要繼續偵測, 所以留著)
                         msg_status.is_moving = self.is_moving_msg
-                        msg_status.iteration = self.iteration_msg
+
+
+                        # 
                         msg_status.detection_done = True #只改這個
                         msg_status.icp_done = self.icp_done_msg
                         msg_status.octomap_done = self.octomap_done_msg# 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義

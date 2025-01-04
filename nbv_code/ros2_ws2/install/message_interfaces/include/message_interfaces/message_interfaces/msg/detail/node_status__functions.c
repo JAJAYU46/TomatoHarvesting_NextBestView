@@ -19,6 +19,7 @@ message_interfaces__msg__NodeStatus__init(message_interfaces__msg__NodeStatus * 
   }
   // ready_for_next_iteration
   // is_moving
+  // target_box_id
   // iteration
   // detection_done
   // icp_done
@@ -39,6 +40,7 @@ message_interfaces__msg__NodeStatus__fini(message_interfaces__msg__NodeStatus * 
   }
   // ready_for_next_iteration
   // is_moving
+  // target_box_id
   // iteration
   // detection_done
   // icp_done
@@ -62,6 +64,10 @@ message_interfaces__msg__NodeStatus__are_equal(const message_interfaces__msg__No
   }
   // is_moving
   if (lhs->is_moving != rhs->is_moving) {
+    return false;
+  }
+  // target_box_id
+  if (lhs->target_box_id != rhs->target_box_id) {
     return false;
   }
   // iteration
@@ -115,6 +121,8 @@ message_interfaces__msg__NodeStatus__copy(
   output->ready_for_next_iteration = input->ready_for_next_iteration;
   // is_moving
   output->is_moving = input->is_moving;
+  // target_box_id
+  output->target_box_id = input->target_box_id;
   // iteration
   output->iteration = input->iteration;
   // detection_done

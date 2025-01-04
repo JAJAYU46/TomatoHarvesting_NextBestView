@@ -35,6 +35,8 @@ class DetectTomato:
         self.TargetTomatoTrack = None
         self.TargetTomatoTrackID = None
 
+        self.is_NewTomato = True
+
     #Public Function
     def changeGetNewTargetTomato(self,flag):
         self.GetNewTargetTomato=flag
@@ -69,6 +71,7 @@ class DetectTomato:
             # <Add> <Debug> 現在變成如果target tomato一不見, 就回傳toppest tomato作為新的target tomato===============================================
             if (self.TargetTomatoTrack is None): #<Debug> 原來那個tomato不會不見, id會保留著但是confident變成none了
                 self.changeGetNewTargetTomato(True)  #如果原來的那個id的tomato不見了, 就把最高的那個當新的target tomato
+            
             else: 
                 if (self.TargetTomatoTrack.det_conf is None):
                     self.changeGetNewTargetTomato(True)
@@ -89,19 +92,20 @@ class DetectTomato:
                 print(f"The Target Tomato is{self.TargetTomatoTrack.to_tlbr()}")
                 x1_target, y1_target, x2_target, y2_target = map(int, self.TargetTomatoTrack.to_tlbr())
                 TargetBox=[x1_target, y1_target, x2_target, y2_target]
+                self.TargetTomatoTrackID=self.TargetTomatoTrack.track_id
                 if (TargetBox is not None):
                     print("TargetBox: "+str(TargetBox))
-                    return TargetBox, image #return a bounding box (x1,y1,x2, y2)
+                    return TargetBox, image, self.TargetTomatoTrackID #return a bounding box (x1,y1,x2, y2)
                 else: 
                     print("TargetBox2: "+str(TargetBox))
-                    return TargetBox, image
+                    return TargetBox, image, self.TargetTomatoTrackID
             else: 
                 # self.TargetTomatoTrack = None
-                return None, image #如果Target Tomato 突然消失, 但也沒有叫他重新拿新的tomato, 就回傳none
+                return None, image, 0#None #如果Target Tomato 突然消失, 但也沒有叫他重新拿新的tomato, 就回傳none
         else: 
             self.TargetTomatoTrack=None
             print("There are No unmargin tomato") #根本沒有內圈的tomato的話
-            return None, image #就回傳None 表示沒有Tomato
+            return None, image, 0#None #就回傳None 表示沒有Tomato
             
             
     #Private Function

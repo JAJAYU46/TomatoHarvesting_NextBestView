@@ -165,16 +165,32 @@ private:
   ::message_interfaces::msg::NodeStatus msg_;
 };
 
+class Init_NodeStatus_target_box_id
+{
+public:
+  explicit Init_NodeStatus_target_box_id(::message_interfaces::msg::NodeStatus & msg)
+  : msg_(msg)
+  {}
+  Init_NodeStatus_iteration target_box_id(::message_interfaces::msg::NodeStatus::_target_box_id_type arg)
+  {
+    msg_.target_box_id = std::move(arg);
+    return Init_NodeStatus_iteration(msg_);
+  }
+
+private:
+  ::message_interfaces::msg::NodeStatus msg_;
+};
+
 class Init_NodeStatus_is_moving
 {
 public:
   explicit Init_NodeStatus_is_moving(::message_interfaces::msg::NodeStatus & msg)
   : msg_(msg)
   {}
-  Init_NodeStatus_iteration is_moving(::message_interfaces::msg::NodeStatus::_is_moving_type arg)
+  Init_NodeStatus_target_box_id is_moving(::message_interfaces::msg::NodeStatus::_is_moving_type arg)
   {
     msg_.is_moving = std::move(arg);
-    return Init_NodeStatus_iteration(msg_);
+    return Init_NodeStatus_target_box_id(msg_);
   }
 
 private:

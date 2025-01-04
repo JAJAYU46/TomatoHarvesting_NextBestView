@@ -39,6 +39,13 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: target_box_id
+  {
+    out << "target_box_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.target_box_id, out);
+    out << ", ";
+  }
+
   // member: iteration
   {
     out << "iteration: ";
@@ -124,6 +131,16 @@ inline void to_block_style_yaml(
     }
     out << "is_moving: ";
     rosidl_generator_traits::value_to_yaml(msg.is_moving, out);
+    out << "\n";
+  }
+
+  // member: target_box_id
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "target_box_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.target_box_id, out);
     out << "\n";
   }
 

@@ -1,6 +1,7 @@
 # will record the ismoving of the camera
 bool ready_for_next_iteration
 bool is_moving  # <Debug> msg field 要is_moving才行, 不可isMoving
+int32 target_box_id
 int32 iteration #start from 1 (when 0 means it is done with this tomato nbv)
 bool detection_done
 bool icp_done

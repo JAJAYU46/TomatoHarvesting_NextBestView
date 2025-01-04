@@ -14,6 +14,8 @@ module message_interfaces {
         "<Debug> msg field 要is_moving才行, 不可isMoving")
       boolean is_moving;
 
+      int32 target_box_id;
+
       @verbatim (language="comment", text=
         "start from 1 (when 0 means it is done with this tomato nbv)")
       int32 iteration;

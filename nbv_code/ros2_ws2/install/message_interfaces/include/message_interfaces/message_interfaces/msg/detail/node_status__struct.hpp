@@ -40,6 +40,7 @@ struct NodeStatus_
     {
       this->ready_for_next_iteration = false;
       this->is_moving = false;
+      this->target_box_id = 0l;
       this->iteration = 0l;
       this->detection_done = false;
       this->icp_done = false;
@@ -60,6 +61,7 @@ struct NodeStatus_
     {
       this->ready_for_next_iteration = false;
       this->is_moving = false;
+      this->target_box_id = 0l;
       this->iteration = 0l;
       this->detection_done = false;
       this->icp_done = false;
@@ -79,6 +81,9 @@ struct NodeStatus_
   using _is_moving_type =
     bool;
   _is_moving_type is_moving;
+  using _target_box_id_type =
+    int32_t;
+  _target_box_id_type target_box_id;
   using _iteration_type =
     int32_t;
   _iteration_type iteration;
@@ -118,6 +123,12 @@ struct NodeStatus_
     const bool & _arg)
   {
     this->is_moving = _arg;
+    return *this;
+  }
+  Type & set__target_box_id(
+    const int32_t & _arg)
+  {
+    this->target_box_id = _arg;
     return *this;
   }
   Type & set__iteration(
@@ -221,6 +232,9 @@ struct NodeStatus_
       return false;
     }
     if (this->is_moving != other.is_moving) {
+      return false;
+    }
+    if (this->target_box_id != other.target_box_id) {
       return false;
     }
     if (this->iteration != other.iteration) {

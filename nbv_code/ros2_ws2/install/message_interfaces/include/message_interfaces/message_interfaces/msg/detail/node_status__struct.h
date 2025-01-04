@@ -27,6 +27,7 @@ typedef struct message_interfaces__msg__NodeStatus
   bool ready_for_next_iteration;
   /// <Debug> msg field 要is_moving才行, 不可isMoving
   bool is_moving;
+  int32_t target_box_id;
   /// start from 1 (when 0 means it is done with this tomato nbv)
   int32_t iteration;
   bool detection_done;

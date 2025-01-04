@@ -678,6 +678,7 @@ class MyNode : public rclcpp::Node
         //====== 0. for status controller topic ======
         bool ready_for_next_iteration_msg_;
         bool is_moving_msg_;
+        int target_box_id_msg_;
         int iteration_msg_;
         bool detection_done_msg_;
         bool icp_done_msg_;
@@ -701,6 +702,8 @@ class MyNode : public rclcpp::Node
 
             ready_for_next_iteration_msg_ = msg->ready_for_next_iteration;
             is_moving_msg_ = msg->is_moving;
+            target_box_id_msg_ = msg->target_box_id;
+
             iteration_msg_ = msg->iteration;
             detection_done_msg_ = msg->detection_done;
             icp_done_msg_ = msg->icp_done;
@@ -781,6 +784,7 @@ class MyNode : public rclcpp::Node
                                     auto msg_status = message_interfaces::msg::NodeStatus();   
                                     msg_status.ready_for_next_iteration = ready_for_next_iteration_msg_;
                                     msg_status.is_moving = is_moving_msg_;
+                                    msg_status.target_box_id = target_box_id_msg_; 
                                     msg_status.iteration = iteration_msg_;
                                     msg_status.detection_done = detection_done_msg_;
                                     msg_status.icp_done = icp_done_msg_;
@@ -822,7 +826,7 @@ class MyNode : public rclcpp::Node
 
                                 //====== 2. Calculate nbv point ======
                                 float candidateViews_radius = 0.5; 
-                                int candidateViews_num = 80; //20
+                                int candidateViews_num =50; //20
                                 int rays_num = 64;//要是完全平方數最好   50; //50
 
                                 BestViewModel NbvScene(cloud_o3d_icpTomato, octree, candidateViews_radius, candidateViews_num, rays_num);
@@ -893,6 +897,7 @@ class MyNode : public rclcpp::Node
                                     auto msg_status2 = message_interfaces::msg::NodeStatus();   
                                     msg_status2.ready_for_next_iteration = ready_for_next_iteration_msg_;
                                     msg_status2.is_moving = is_moving_msg_;
+                                    msg_status2.target_box_id = target_box_id_msg_;
                                     msg_status2.iteration = iteration_msg_;
                                     msg_status2.detection_done = detection_done_msg_;
                                     msg_status2.icp_done = icp_done_msg_;
