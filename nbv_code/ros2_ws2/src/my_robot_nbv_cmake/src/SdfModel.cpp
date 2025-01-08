@@ -33,6 +33,10 @@ using namespace std;
 
 #define DEBUG_MODE false
 
+//在sdf.h那裡
+int INPUT_MODE2=2; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
+
+
 // #ifndef NDEBUG
 //     #define DEBUG_MODE true
 // #else
@@ -175,7 +179,14 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
         }
         
         // auto occupancy = scene_.ComputeOccupancy(point_q_formed);
-        if (signed_distance.Item<float>() <= 0.05) {  // Inside the mesh //0.038要是in
+        
+        float signed_distance_threshold = 0.0;
+        if(INPUT_MODE2==1){
+            signed_distance_threshold=0.05;
+        }else{
+            signed_distance_threshold=0.016;
+        }
+        if (signed_distance.Item<float>() <=signed_distance_threshold){//<= 0.05) {  // Inside the mesh //0.038要是in/////////////////////////////////////////////// 20250118
             query_points_in.push_back(point_q);////////////////////////
             AddPoint(point_q.cast<double>(), Eigen::Vector3d(1.0, 0.0, 0.0));  // Red
             //means inside the surface

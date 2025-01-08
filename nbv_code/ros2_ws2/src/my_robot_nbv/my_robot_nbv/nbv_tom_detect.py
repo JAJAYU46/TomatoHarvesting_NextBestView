@@ -133,7 +133,7 @@ class MyNode(Node): #construct Node class
     def status_callback(self,msg):
         self.ready_for_next_iteration_msg = msg.ready_for_next_iteration
         if (self.is_moving_msg != msg.is_moving): 
-            self.get_logger().info('now the is_moving_msg: '+str(self.is_moving_msg)) # CHANGE
+            self.get_logger().info('now the is_moving_msg: '+str(msg.is_moving)) # CHANGE
           
         self.is_moving_msg = msg.is_moving
         self.iteration_msg = msg.iteration
@@ -232,10 +232,18 @@ class MyNode(Node): #construct Node class
                         # 因為這個node得要繼續運作
                         # status controller (tell status controller detection done)(但是還是要繼續偵測才能做之後的tracking所以不改之前的東東)
                         msg_status = NodeStatus()
-                        if(self.target_box_id_msg!=TargetBox):
+                        print("===================================================================")
+                        print(f"self.target_box_id_msg: {self.target_box_id_msg}")
+                        print(f"TargetBoxID: {TargetBoxID}")
+                        print("===================================================================")
+                        if(int(self.target_box_id_msg) != int(TargetBoxID)): #<Debug> 這邊比大小都要轉int可能是int32啥的關西？
+                            print("in1")
                             msg_status.iteration = 0 #如果target換人 iteration就成0表示這是新的tomato了
                         else:
+                            print("in2")
                             msg_status.iteration = self.iteration_msg
+                            print(f"self.iteration_msg: {self.iteration_msg}")
+                            print(f"msg_status.iteration: {msg_status.iteration}")
                         
                         # if(TargetBoxID is None):
                             # TargetBoxID = 100

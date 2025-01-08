@@ -1,0 +1,31 @@
+[ 20%] Built target SdfModelV3
+[ 30%] [32mBuilding CXX object CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.o[0m
+[ 40%] [32m[1mLinking CXX static library libnbvc_lib_SdfModel.a[0m
+[ 40%] Built target nbvc_lib_SdfModel
+[ 70%] [32m[1mLinking CXX executable nbvc_ray_generation[0m
+[ 70%] [32m[1mLinking CXX executable nbvc_ray_generationV3_beforeclean[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o[0m
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:36[m[K:
+[01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   35 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:38[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[ 80%] Built target nbvc_ray_generationV3_beforeclean
+[ 90%] Built target nbvc_ray_generation
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:[m[K In member function ‘[01m[Kvoid BestViewModel::CaculateNextBestView()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:136:30:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KvectorBT[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  136 |             octomap::point3d [01;35m[KvectorBT[m[K = modelCenterOctomap_pcd - RobotArmBase; //
+      |                              [01;35m[K^~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:[m[K In member function ‘[01m[Kvoid MyNode::publish_any_ray_marker(const point3d&, std::vector<octomath::Vector3>&, int, const std::array<double, 3>&, double)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1137:24:[m[K [01;31m[Kerror: [m[Kassignment of read-only parameter ‘[01m[Kx_scale[m[K’
+ 1137 |                 [01;31m[Kx_scale=x_scale[m[K;
+      |                 [01;31m[K~~~~~~~^~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1139:24:[m[K [01;31m[Kerror: [m[Kassignment of read-only parameter ‘[01m[Kx_scale[m[K’
+ 1139 |                 [01;31m[Kx_scale=x_scale/3.0[m[K
+      |                 [01;31m[K~~~~~~~^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/BestViewModel.dir/build.make:76: CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:223: CMakeFiles/BestViewModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -49,34 +49,38 @@ import tf2_geometry_msgs
 
 #To convert pointcloud2(for ROS2) to pointcloud(for open3d)
 
+INPUT_MODE=2 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
         super().__init__("nbv_tompcd_filter") #set python_NodeName
         
-        #[[相機參數]] #for gazebo
-        # # Camera parameters from Gazebo
-        # horizontal_fov =  1.5009832 # in radians 1.089
-        # image_width = 640  # in pixels
-        # image_height = 480  # in pixels
+        #[[相機參數]] 
+        
+        
+        if(INPUT_MODE==1 or INPUT_MODE==2):
+        #for gazebo
+            # Camera parameters from Gazebo
+            horizontal_fov =  1.5009832 # in radians 1.089
+            image_width = 640  # in pixels
+            image_height = 480  # in pixels
 
-        # # Calculate the focal length
-        # self.fx = image_width / (2 * np.tan(horizontal_fov / 2))
-        # self.fy = self.fx  # Assuming square pixels, so fx == fy
+            # Calculate the focal length
+            self.fx = image_width / (2 * np.tan(horizontal_fov / 2))
+            self.fy = self.fx  # Assuming square pixels, so fx == fy
 
-        # # Assume cx and cy are at the center of the image
-        # self.cx = image_width / 2
-        # self.cy = image_height / 2
+            # Assume cx and cy are at the center of the image
+            self.cx = image_width / 2
+            self.cy = image_height / 2
+        else: 
+            # for realsense hardcode calibration
+            self.fx = 610#600#540#550#384.0613098144531#image_width / (2 * np.tan(horizontal_fov / 2))
+            # self.fx = 384.0613098144531
+            self.fy = self.fx  # Assuming square pixels, so fx == fy
 
-
-        # for realsense hardcode calibration
-        self.fx = 610#600#540#550#384.0613098144531#image_width / (2 * np.tan(horizontal_fov / 2))
-        # self.fx = 384.0613098144531
-        self.fy = self.fx  # Assuming square pixels, so fx == fy
-
-        # Assume cx and cy are at the center of the image
-        self.cx = 345#350#340#360#(324.42742919921875)#image_width / 2
-        self.cy = (237.085205078125) #image_height / 2
+            # Assume cx and cy are at the center of the image
+            self.cx = 345#350#340#360#(324.42742919921875)#image_width / 2
+            self.cy = (237.085205078125) #image_height / 2
 
 
 
@@ -155,7 +159,7 @@ class MyNode(Node): #construct Node class
         self.TomatoBox_lu=(msg.lu_x, msg.lu_y)#(253,279)#(417,166)#(240,292)#(345, 255) #蕃茄辨識框框左上點
         self.TomatoBox_rd=(msg.rd_x, msg.rd_y)#(387,419)#(640,317)#(407, 460) #蕃茄辨識框框右下點
         self.bboxReadyFlag = True
-        self.get_logger().info('get new bbox!') # CHANGE
+        # self.get_logger().info('get new bbox!') # CHANGE
 
         
     def callback1(self, msg:sensor_msgs.PointCloud2): #construct a callback
@@ -163,7 +167,7 @@ class MyNode(Node): #construct Node class
             # self.renew_done=False
         if(True):
             if(self.is_moving_msg==False and self.detection_done_msg==True): # and self.icp_done_msg==False): #因為octomap也需要一直書資料, 所以它也要繼續一直做icp一直publish(其實也可以不用一直icp, 就一直publish就好了)#要做完detection但是還沒做icp才要重作這裡 #要整個指示沒在動, 才會做下面的事情, 不然就不做
-                self.get_logger().info('Do icp!!!') # CHANGE
+                # self.get_logger().info('Do icp!!!') # CHANGE
         
                 # is_frame_moving = True #用來確認frame有沒有在move, 如果有, 就算算出estimate的位置也不要做publish的動作
                 is_frame_moving = True
@@ -303,7 +307,12 @@ class MyNode(Node): #construct Node class
                             point_cloud.points = o3d.utility.Vector3dVector(points)
                             point_cloud.colors = o3d.utility.Vector3dVector(colors_pcd_open3d)
                             
-                            source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
+                            if(INPUT_MODE==1): 
+                                source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
+                            else: 
+                                source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
+                            
+                            
                             source = o3d.io.read_point_cloud(source_path.format(3)) #demo_pcds.paths[0])
                             # print(np.asarray(pcd.points))
                             #for debug
@@ -472,7 +481,7 @@ class MyNode(Node): #construct Node class
                                         self.get_logger().info("is frame moving: "+str(is_frame_moving))
                                         source_pointcloud2_points= pc2.create_cloud(msg.header, msg.fields, source_points_np.tolist())
                                         self.tompcd_ICPonly_pub_.publish(source_pointcloud2_points)
-                                        self.get_logger().info("ok3")
+                                        self.get_logger().info("ok3 Done publishing ICP tomato")
                                         
                                         msg_pointcloud2 = pc2.create_cloud(msg.header, msg.fields, msg_points_np.tolist())
                                         whole_pointcloud2 = pc2.create_cloud(msg.header, msg.fields, whole_points_np.tolist())

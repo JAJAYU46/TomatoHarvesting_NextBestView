@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import open3d as o3d
 import copy
 
-
+# INPUT_MODE=1 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 
 #Functions
@@ -100,6 +100,9 @@ def ICPoperation(source, target):
     #< c. 得到轉換矩陣>（target轉成sample orientation的轉換矩陣（存成result_ransac.transformation））
     result_ransac = execute_global_registration(source_down, target_down,
                                                 source_fpfh, target_fpfh,voxel_size)
+    
+    result_ransac_largestNow = result_ransac #紀錄corresponding point ratio最大者 (所以如果超過5次還沒能到達標準, 就取這5次中corresponding point ratio最大者)
+    
     if __debug__:
         draw_registration_result(source_down, target_down, result_ransac.transformation, "Global registration")
 
@@ -118,12 +121,14 @@ def ICPoperation(source, target):
         print("target_num_points=%d" %target_num_points)
         print("paired_point_num=%d" %len(evaluation.correspondence_set))
     paired_point_ratio=len(evaluation.correspondence_set)/target_num_points #target中有幾趴的點又被配對到, 配對到的點太少就要重算global registration
+    paired_point_ratio_largestNow=paired_point_ratio
+    
     if __debug__:
         print("corresponding point= %.2f" %paired_point_ratio)
         print("good_fitness_standard= %.2f" %((sp_tp_ratio)*0.6))
     
     RedoGlobalCount = 0 #<Debug6>用來計算global registration到底重做了幾次, 如果超過3次就代表真的就是correspondent point太少, 就直接不做了, 跳出來才部會卡在迴圈
-    AcceptRedoGlobalCount = 3
+    AcceptRedoGlobalCount = 10#3
 
     print("sp_tp_ratio=%.2f" %sp_tp_ratio)
     print("corresponding point= %.2f" %paired_point_ratio)
@@ -131,9 +136,10 @@ def ICPoperation(source, target):
     # GlobalRegistrationSuccessFlag = True
     # while (paired_point_ratio<=0.60) or (evaluation.inlier_rmse > 0.01) or (evaluation.fitness<(sp_tp_ratio)*0.6): #如果global誤差太大, 就重算global #這個的好像標準太高了會一直卡在這個迴圈
     # while (paired_point_ratio<=0.60): #如果global誤差太大, 就重算global
-    
-    while (paired_point_ratio<=0.35) or (sp_tp_ratio<=0.04): #如果global誤差太大, 就重算global
 
+    
+    # while (paired_point_ratio<=0.35) or (sp_tp_ratio<=0.04): #如果global誤差太大, 就重算global #20250108
+    while (paired_point_ratio<0.83) or (evaluation.inlier_rmse > 0.11) or (evaluation.fitness<(sp_tp_ratio)*0.6):
     
         # evaluation.inlier_rmse 正常的時候是0.00762, 如果這次算出的global誤差太大, 就重算global
         #不知為啥有時paired_point_ratio會大於1ㄟ其實不太對的
@@ -158,15 +164,24 @@ def ICPoperation(source, target):
                 print("global registration evaluation: "+str(evaluation))
             if __debug__:
                 draw_registration_result(source_down, target_down, result_ransac.transformation, "ReGlobal_registration")
+
+
+            if(paired_point_ratio>paired_point_ratio_largestNow):
+                result_ransac_largestNow = result_ransac
+                paired_point_ratio_largestNow = paired_point_ratio
+
+
             RedoGlobalCount+=1
         else: #如果重作太多次了就跳出迴圈 , 就直接回傳None 跳出function 了
             # return None
+            result_ransac=result_ransac_largestNow
             break #看看如果global沒取好照做會怎樣 #結果好像也是可以, 你可能上面標準設太高了
             
+    # if(RedoGlobalCount>)
 
 
     #[Step2] Local Registration (By ICP method)
-    icp_count=3
+    icp_count=10
     result_icp_final=ICP_helper(source, target, result_ransac, icp_count, threshold)
     if __debug__:
         print("Total "+str(icp_count)+"th time of point-to-point ICP")
@@ -175,6 +190,8 @@ def ICPoperation(source, target):
     if __debug__:
         print("The final transformation matrics is: ")
         print(result_icp_final.transformation)  
+
+    print("Done ICP and Everything")
     return result_icp_final  
     
     

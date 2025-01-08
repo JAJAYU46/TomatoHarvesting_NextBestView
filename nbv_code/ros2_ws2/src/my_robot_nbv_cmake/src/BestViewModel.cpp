@@ -50,6 +50,10 @@ using std::placeholders::_1;
 
 #define DEBUG_MODE false
 
+// 在SDF.h那裡
+int INPUT_MODE1=2; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
+
+
 class BestViewModel {
 public:
     //The data for outside to Get
@@ -109,7 +113,7 @@ public:
         octomap::point3d modelCenterOctomap_pcd = {modelCenter[0], modelCenter[1], modelCenter[2]};
 
         //====== 2. 建立Candidate views ====== (已Target tomato 的 center為中心（算by Sdf model), r=0.5為半徑製造上半球的random candidate views
-        std::vector<octomap::point3d> origins_original = RandomPoint(modelCenterOctomap_pcd , candidateViews_num_, 0.5); //中心座標, 點數, 長度
+        std::vector<octomap::point3d> origins_original = RandomPoint(modelCenterOctomap_pcd , candidateViews_num_, candidateViews_radius_); //中心座標, 點數, 長度
         std::vector<octomap::point3d> origins;
         octomap::point3d RobotArmBase(0.0,0.0,0.0); // 之後會被真正的base位置取代（應概就是0,0,0)車車是代表camera, end effector
         octomap::point3d RobotArmFrontAxisVec(1.0,0.0,0.0);
@@ -499,10 +503,23 @@ private:
         // int theta_steps=5, phi_steps=pointNum/5;
         int theta_steps=sqrt(pointNum);
         int phi_steps=pointNum/theta_steps;
-        float theta_min = -0.5, theta_max = 0.5;
+        float theta_min = -0.0, theta_max = 0.0;
         // float theta_min = -M_PI / 8, theta_max = M_PI / 8;
-        float phi_min = -M_PI / 8, phi_max = M_PI / 8;
+        float phi_min = 0.0, phi_max = 0.0;
+        if(INPUT_MODE1==1){
+            theta_min = -0.5;
+            theta_max = 0.5;
+            // float theta_min = -M_PI / 8, theta_max = M_PI / 8;
+            phi_min = -M_PI / 8;
+            phi_max = M_PI / 8;
+        }else{
+            theta_min = -0.5/3.0;
+            theta_max = 0.5/3.0;
+            // float theta_min = -M_PI / 8, theta_max = M_PI / 8;
+            phi_min = -M_PI / 8/3.0;
+            phi_max = M_PI / 8/3.0;
 
+        }
         float theta_step = float(theta_max - theta_min) / float(theta_steps- 1);
         float phi_step = float(phi_max - phi_min) / float(phi_steps - 1);  //<Debug float/int = int!!>      
 
@@ -881,9 +898,13 @@ class MyNode : public rclcpp::Node
                                 
                                 RCLCPP_INFO(this->get_logger(),"Success saving octomap .ot, \nStart to calculate next best view for this scene...");
                                 
-
+                                float candidateViews_radius = 0.0;
                                 //====== 2. Calculate nbv point ======
-                                float candidateViews_radius = 0.5; 
+                                if(INPUT_MODE1==1){
+                                    candidateViews_radius = 0.5; 
+                                }else{
+                                    candidateViews_radius = 0.32;
+                                }
                                 int candidateViews_num =50; //20
                                 int rays_num = 64;//要是完全平方數最好   50; //50
 
@@ -938,7 +959,7 @@ class MyNode : public rclcpp::Node
                                 RCLCPP_INFO(this->get_logger(), "LastBestCandidateView_gain_percent=%f", LastBestCandidateView_gain_percent);
                                 RCLCPP_INFO(this->get_logger(), "LastBestCandidateView_gain=%d", LastBestCandidateView_gain);
                                 
-                                if(((NbvScene.BestCandidateView_gain_percent-LastBestCandidateView_gain_percent)<0.05) && LastBestCandidateView_gain_percent!=0.0){ //如果新的點比舊的點少於5% 那表示這就是最終的NBV點了
+                                if(((NbvScene.BestCandidateView_gain_percent-LastBestCandidateView_gain_percent)<0.05) && ((LastBestCandidateView_gain_percent)>0.0001)){ //如果新的點比舊的點少於5% 那表示這就是最終的NBV點了
                                     NbvScene.BestCandidateView_point = LastBestCandidateView_point;
                                     NbvScene.BestCandidateView_gain = LastBestCandidateView_gain;
                                     NbvScene.BestCandidateView_gain_percent = LastBestCandidateView_gain_percent;
@@ -1111,7 +1132,14 @@ class MyNode : public rclcpp::Node
         }
 
         // 3-2: Function to publish ray markers
-        void publish_any_ray_marker(const octomap::point3d &origin, std::vector<octomap::point3d> &endPoints, int id=0,const std::array<double, 3> &marker_color={1,0,0}, const double x_scale=0.03) {
+        void publish_any_ray_marker(const octomap::point3d &origin, std::vector<octomap::point3d> &endPoints, int id=0,const std::array<double, 3> &marker_color={1,0,0}, double x_scale=0.03) {
+            
+            if(INPUT_MODE1==1){
+                x_scale=x_scale;
+            }else{
+                x_scale=x_scale/3.0;
+            }
+            
             visualization_msgs::msg::Marker any_ray_marker;
             
             any_ray_marker.header.frame_id = "base_link";   // Change if you have another frame map
@@ -1122,6 +1150,8 @@ class MyNode : public rclcpp::Node
             any_ray_marker.type = visualization_msgs::msg::Marker::LINE_LIST;
             any_ray_marker.action = visualization_msgs::msg::Marker::ADD;
             any_ray_marker.scale.x = x_scale;  // Line width
+
+            
             any_ray_marker.color.a = 1.0;
             any_ray_marker.color.r = marker_color[0];
             any_ray_marker.color.g = marker_color[1];

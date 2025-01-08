@@ -36,14 +36,14 @@ class MyNode(Node): #construct Node class
         #【publisher】(publish to /cam/cloudrate_transformer)
         self.cloudrate_transformer_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/cam/cloudrate_transformer", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         #【subscriber】(subscribe from /camera/camera/depth/color/points)
-        # self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/camera/points", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
-        self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/camera/camera/depth/color/points", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/camera/points", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        # self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/camera/camera/depth/color/points", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         # /camera/camera/depth/color/points
         #/camera/points （for gazebo) "/camera/camera/depth/color/points"(for realsense)
 
         # for 統一觀禮, 沒有做處理
-        # self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/image_raw", self.callback_image_read, 10)
-        self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/camera/color/image_raw", self.callback_image_read, 10)
+        self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/image_raw", self.callback_image_read, 10)
+        # self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/camera/color/image_raw", self.callback_image_read, 10)
         self.Image_publisher_ = self.create_publisher(sensor_msgs.Image, '/cam/image_raw_original', 10)     # CHANGE
         
         
