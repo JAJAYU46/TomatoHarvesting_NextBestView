@@ -23,7 +23,9 @@ setup(
 
 		    #建立一個excecutable 
         "cam_point_cloud_publisher = my_robot_cam.cam_point_cloud_publisher:main",
-        "cam_cloudrate_transformer = my_robot_cam.cam_cloudrate_transformer:main"
+        "cam_cloudrate_transformer = my_robot_cam.cam_cloudrate_transformer:main", 
+        "cam_tf_broadcaster = my_robot_cam.cam_tf_broadcaster:main"
+        
         ],
     },
 )

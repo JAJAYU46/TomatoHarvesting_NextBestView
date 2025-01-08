@@ -54,22 +54,29 @@ class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
         super().__init__("nbv_tompcd_filter") #set python_NodeName
         
-        #[[相機參數]]
-        # Camera parameters from Gazebo
-        horizontal_fov =  1.5009832 # in radians 1.089
-        image_width = 640  # in pixels
-        image_height = 480  # in pixels
+        #[[相機參數]] #for gazebo
+        # # Camera parameters from Gazebo
+        # horizontal_fov =  1.5009832 # in radians 1.089
+        # image_width = 640  # in pixels
+        # image_height = 480  # in pixels
 
-        # Calculate the focal length
-        self.fx = image_width / (2 * np.tan(horizontal_fov / 2))
+        # # Calculate the focal length
+        # self.fx = image_width / (2 * np.tan(horizontal_fov / 2))
+        # self.fy = self.fx  # Assuming square pixels, so fx == fy
+
+        # # Assume cx and cy are at the center of the image
+        # self.cx = image_width / 2
+        # self.cy = image_height / 2
+
+
+        # for realsense hardcode calibration
+        self.fx = 610#600#540#550#384.0613098144531#image_width / (2 * np.tan(horizontal_fov / 2))
+        # self.fx = 384.0613098144531
         self.fy = self.fx  # Assuming square pixels, so fx == fy
 
         # Assume cx and cy are at the center of the image
-        self.cx = image_width / 2
-        self.cy = image_height / 2
-
-
-
+        self.cx = 345#350#340#360#(324.42742919921875)#image_width / 2
+        self.cy = (237.085205078125) #image_height / 2
 
 
 
@@ -164,12 +171,12 @@ class MyNode(Node): #construct Node class
                 if(self.bboxReadyFlag == True): # 如果bounding box有得到東西了, 才做下面的東東 
                     self.bboxReadyFlag = False # 如果這次bounding box被用掉了, 就轉成false, 要下次有新的bounding box msg 才會再做, 防止bounding box是之前frame的bounding box
                     try: #街收到新data後除非transform有成功讀到, 才繼續往下做
-                        # TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
-                        # 'odom', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                        # TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成base_link的座標用的TransformStamped
+                        # 'base_link', # target frame Moving frame #也就是現在的'camera_link_optical',    
                         # msg.header.frame_id, # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                         # rclpy.time.Time())#msg.header.stamp)         # Time when the point cloud was captured
-                        TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
-                        'odom', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                        TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成base_link的座標用的TransformStamped
+                        'base_link', # target frame Moving frame #也就是現在的'camera_link_optical',    
                         msg.header.frame_id, # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                         msg.header.stamp)#rclpy.time.Time())#msg.header.stamp)         # Time when the point cloud was captured
 
@@ -367,17 +374,17 @@ class MyNode(Node): #construct Node class
                                     # self.get_logger().info(f'filter_points: {(filtered_points)}')                    self.get_logger().info("ok0")
                                     # source_pointcloud2_transformed_points_np = self.transform_pointcloud_to_np(source_points_np, TransformStamped)
                                     
-                                    # TransformStamped = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
+                                    # TransformStamped = self.tf_buffer.lookup_transform( #先把它轉成base_link的座標用的TransformStamped
                                     #     msg.header.frame_id, # target frame Moving frame #也就是現在的'camera_link_optical',    
                                     #     rclpy.time.Time() , # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                                     #     msg.header.frame_id, #現在是camera link
                                     #     msg.header.stamp,
-                                    #     'odom',
+                                    #     'base_link',
                                     #     rclpy.duration.Duration(seconds=0)  # Correct way to create a Duration object
                                     #     )         # Time when the point cloud was captured
                                     try:
                                         TransformStamped_after = self.tf_buffer.lookup_transform(
-                                            'odom', msg.header.frame_id, rclpy.time.Time())#msg.header.stamp)#rclpy.time.Time())
+                                            'base_link', msg.header.frame_id, rclpy.time.Time())#msg.header.stamp)#rclpy.time.Time())
                                         
 
                                         #  # Extract translation
@@ -414,7 +421,7 @@ class MyNode(Node): #construct Node class
 
                                     #     try:
                                     #         transform1 = self.tf_buffer.lookup_transform(
-                                    #             'odom',
+                                    #             'base_link',
                                     #             msg.header.frame_id,
                                     #             rclpy.time.Time()
                                     #         )
@@ -428,8 +435,8 @@ class MyNode(Node): #construct Node class
                                         # return
 
 
-                                    # TransformStamped_after = self.tf_buffer.lookup_transform( #先把它轉成odom的座標用的TransformStamped
-                                    #     'odom', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                                    # TransformStamped_after = self.tf_buffer.lookup_transform( #先把它轉成base_link的座標用的TransformStamped
+                                    #     'base_link', # target frame Moving frame #也就是現在的'camera_link_optical',    
                                     #     msg.header.frame_id,
                                     #     rclpy.time.Time() , # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                                     #     #rclpy.duration.Duration(seconds=0)  # Correct way to create a Duration object
@@ -457,7 +464,7 @@ class MyNode(Node): #construct Node class
                                     # source_pointcloud2_transformed_points_np = self.transform_pointcloud_to_np(source_pointcloud2_transformed_points_np1, TransformStamped_after)
                                     
                                     # source_pointcloud2_transformed_points_np = self.transform_pointcloud_to_np(source_points_np, TransformStamped_between)
-                                    # try_header=std_msgs.Header(frame_id='odom')
+                                    # try_header=std_msgs.Header(frame_id='base_link')
                                     # self.get_logger().info("ok1")
                                     # source_pointcloud2__transformed_points= pc2.create_cloud(try_header, msg.fields, source_pointcloud2_transformed_points_np.tolist())
                                     # self.get_logger().info("ok2")

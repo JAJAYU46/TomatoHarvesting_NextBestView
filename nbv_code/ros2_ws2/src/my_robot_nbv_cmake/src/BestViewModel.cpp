@@ -802,12 +802,12 @@ class MyNode : public rclcpp::Node
             cloud_o3d_icpTomato->Clear();//<Debug> 物件用. access 一個pointer 裡面的物件才用->
 
             // open3d_cloud_ = ConvertPointCloud2ToOpen3D(msg);
-            cloud_o3d_icpTomato = pointCloud2ToOpen3D(msg, "odom", tf_buffer_);
+            cloud_o3d_icpTomato = pointCloud2ToOpen3D(msg, "base_link", tf_buffer_);
             if (DEBUG_MODE) {
                 RCLCPP_INFO(this->get_logger(), "Success Received a new point cloud with %lu points", cloud_o3d_icpTomato->points_.size());
             }
             // [for Debug] 可以不用publish回去, 只是用來檢查這樣有沒有抓到的工具而已
-            // sensor_msgs::msg::PointCloud2 cloud_ros_icpTomato = open3dToRos2PointCloud2(*open3d_cloud_, "odom");//msg->header.frame_id
+            // sensor_msgs::msg::PointCloud2 cloud_ros_icpTomato = open3dToRos2PointCloud2(*open3d_cloud_, "base_link");//msg->header.frame_id
             // pcd_publisher_->publish(cloud_ros_icpTomato);
             
             firstPCD_ready_flag=true;
@@ -1114,7 +1114,7 @@ class MyNode : public rclcpp::Node
         void publish_any_ray_marker(const octomap::point3d &origin, std::vector<octomap::point3d> &endPoints, int id=0,const std::array<double, 3> &marker_color={1,0,0}, const double x_scale=0.03) {
             visualization_msgs::msg::Marker any_ray_marker;
             
-            any_ray_marker.header.frame_id = "odom";   // Change if you have another frame map
+            any_ray_marker.header.frame_id = "base_link";   // Change if you have another frame map
             any_ray_marker.header.stamp = this->get_clock()->now();
             any_ray_marker.ns = "any_ray_visualization";
             any_ray_marker.id = id;  // Unique ID for each marker  #<Note> 不同次的的publish如果ID同就會被替代掉
@@ -1164,7 +1164,7 @@ class MyNode : public rclcpp::Node
             visualization_msgs::msg::Marker marker;
 
             // Set frame_id and timestamp
-            marker.header.frame_id = "odom";  // Make sure this frame exists in your tf tree
+            marker.header.frame_id = "base_link";  // Make sure this frame exists in your tf tree
             marker.header.stamp = this->get_clock()->now();
 
             // Set the namespace and id for this marker

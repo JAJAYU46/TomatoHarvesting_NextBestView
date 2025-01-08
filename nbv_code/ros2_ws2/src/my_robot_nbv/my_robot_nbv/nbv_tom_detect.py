@@ -91,7 +91,7 @@ class MyNode(Node): #construct Node class
         self.TomatoBox_rd=(370, 290)#(387,419)#(640,317)#(407, 460) #蕃茄辨識框框右下點
 
         # 【subscriber】#照片之後應該要改成從cam那邊讀才對 filter那邊的也是
-        self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/image_raw", self.callback_image_read, 10)
+        self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/cam/image_raw_original", self.callback_image_read, 10)
 
         self.isFirstFrame=True
         self.DetectionDoneFlag = True
