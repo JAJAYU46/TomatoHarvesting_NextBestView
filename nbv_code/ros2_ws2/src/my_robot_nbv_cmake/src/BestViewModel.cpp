@@ -51,7 +51,7 @@ using std::placeholders::_1;
 #define DEBUG_MODE false
 
 // 在SDF.h那裡
-int INPUT_MODE1=2; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
+int INPUT_MODE1=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 
 class BestViewModel {

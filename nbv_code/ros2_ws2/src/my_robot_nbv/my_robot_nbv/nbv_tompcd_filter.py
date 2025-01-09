@@ -49,7 +49,7 @@ import tf2_geometry_msgs
 
 #To convert pointcloud2(for ROS2) to pointcloud(for open3d)
 
-INPUT_MODE=2 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+INPUT_MODE=3 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor

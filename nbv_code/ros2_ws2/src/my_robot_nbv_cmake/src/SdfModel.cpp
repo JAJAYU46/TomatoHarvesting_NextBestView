@@ -34,7 +34,7 @@ using namespace std;
 #define DEBUG_MODE false
 
 //在sdf.h那裡
-int INPUT_MODE2=2; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
+int INPUT_MODE2=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 
 // #ifndef NDEBUG
