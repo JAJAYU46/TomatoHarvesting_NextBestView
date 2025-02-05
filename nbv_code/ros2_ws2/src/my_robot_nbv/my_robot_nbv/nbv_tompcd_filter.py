@@ -110,7 +110,7 @@ class MyNode(Node): #construct Node class
         
         
 
-        self.get_logger().info("node 'nbv_tompcd_filter' have been started")
+        self.get_logger().info("node 'nbv_tompcd_filter' have been started lalala")
         #self.create_timer(1.0, self.callback1) #(time interval/ calling callback)
         # TF2 buffer and listener for frame transformations
         self.tf_buffer = Buffer()
@@ -308,9 +308,16 @@ class MyNode(Node): #construct Node class
                             point_cloud.colors = o3d.utility.Vector3dVector(colors_pcd_open3d)
                             
                             if(INPUT_MODE==1): 
-                                source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
+                                # /home/rmml02/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv/my_robot_nbv/nbv_tompcd_filter.py
+                                # source_path="/home/rmml02/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
+                                source_path="./src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
+                            
+                                # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
                             else: 
-                                source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
+                                # source_path="/home/rmml02/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
+                                source_path="./src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
+                            
+                                # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
                             
                             
                             source = o3d.io.read_point_cloud(source_path.format(3)) #demo_pcds.paths[0])
