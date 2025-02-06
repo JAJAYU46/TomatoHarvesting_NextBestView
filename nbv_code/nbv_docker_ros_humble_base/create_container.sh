@@ -29,7 +29,7 @@ CONTAINER_NAME="nbv_container${index}_nbv_image_fullinstall1"
 docker run --rm -it \
   --runtime=nvidia --gpus all \
   -v /dev/bus/usb:/dev/bus/usb \
-  -v /home/rmml02/nbv_JaJaYu/nbv_docker_ros_humble_base/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src:/home/ros2_ws2/src \
+  -v /home/rmml05/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src:/home/ros2_ws2/src \
   --device-cgroup-rule='c 189:* rmw' \
   --name=$CONTAINER_NAME \
   --env="DISPLAY=$DISPLAY" \
@@ -38,7 +38,7 @@ docker run --rm -it \
   --env="XAUTHORITY=$XAUTH" \
   --volume="$XAUTH:$XAUTH" \
   --privileged \
-  nbv_image_fullinstall1\
+  nbv_image_fullinstall4\
   bash
 # nbv_image_fullinstall1
 # --net=host \

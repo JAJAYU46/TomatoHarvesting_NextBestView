@@ -152,10 +152,10 @@ RUN cd /home/Open3D && \
     cmake -DBUILD_CUDA_MODULE=OFF -DBUILD_GUI=ON .. && \
     make -j$(nproc) || true
     # Run make, allow failure (building the first time to get the /ImageSampler.cpp file)
-RUN cd /home/Open3D/bulid && \    
+RUN cd /home/Open3D/build && \    
     sed -i 's/M_PIf/M_PI_f/g' /home/Open3D/build/filament/src/ext_filament/libs/image/src/ImageSampler.cpp && \
     make -j$(nproc)
-RUN cd /home/Open3D/bulid && \   
+RUN cd /home/Open3D/build && \   
     sudo make install
 
 # Set working directory
