@@ -87,6 +87,33 @@ RUN apt-get install -y \
 RUN apt-get update && apt-get install -y ros-humble-cv-bridge && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y ros-humble-diagnostic-updater && rm -rf /var/lib/apt/lists/*
 
+
+# For Open3D
+# For Install Open3D
+# 1. Upgrade cmake to 3.24.1 (because building Open3D cmake from source need cmake 3.24+, the one we got was 3.22 (cmake --version) (by directly apt install cmake) )
+RUN cd /home && \
+    wget https://github.com/Kitware/CMake/releases/download/v3.24.1/cmake-3.24.1.tar.gz && \
+    tar zxvf cmake-3.24.1.tar.gz && \
+    cd cmake-3.24.1 && \
+    sudo ./bootstrap && \
+    sudo make && \
+    sudo make install
+ENV PATH="/usr/local/bin:$PATH"
+RUN apt update && apt install nano -y
+
+# clone Open3D files
+RUN cd /home && \
+    git clone https://github.com/isl-org/Open3D.git
+
+# Install Dependencies
+RUN cd /home/Open3D && \
+    sed -i 's/apt-get install/apt-get install -y/g' ./util/install_deps_ubuntu.sh && \
+    ./util/install_deps_ubuntu.sh
+
+
+
+
+
 # Set working directory
 WORKDIR /home/ros2_ws2
 
