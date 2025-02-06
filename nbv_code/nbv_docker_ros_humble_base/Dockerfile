@@ -101,18 +101,62 @@ RUN cd /home && \
 ENV PATH="/usr/local/bin:$PATH"
 RUN apt update && apt install nano -y
 
-# clone Open3D files
+# 2. clone Open3D files
 RUN cd /home && \
     git clone https://github.com/isl-org/Open3D.git
 
-# Install Dependencies
+# 3. Install Dependencies
 RUN cd /home/Open3D && \
     sed -i 's/apt-get install/apt-get install -y/g' ./util/install_deps_ubuntu.sh && \
     ./util/install_deps_ubuntu.sh
 
 
+# 4. Install required packages
+RUN apt-get update && apt-get install -y \
+    libtbb-dev \
+    libvtk9-dev \
+    libopenblas-dev \
+    python3-dev \
+    xorg-dev \
+    libglu1-mesa-dev \
+    libblas-dev \
+    liblapack-dev \
+    libsdl2-dev \
+    libjpeg-dev \
+    gfortran \
+    build-essential \
+    cmake \
+    git \
+    libgl1-mesa-dev \
+    libxi-dev \
+    libxmu-dev \
+    python3-numpy \
+    libeigen3-dev \
+    libjsoncpp-dev \
+    libpng-dev \
+    libglew-dev \
+    libglfw3-dev \
+    libassimp-dev \
+    && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y \  
+    nasm \
+    && rm -rf /var/lib/apt/lists/*
 
+# Set up Python3 as the default Python
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
+RUN cd /home/Open3D && \
+    mkdir build && \
+    cd build && \
+    cmake -DBUILD_CUDA_MODULE=OFF -DBUILD_GUI=ON .. && \
+    make -j$(nproc) || true
+    # Run make, allow failure (building the first time to get the /ImageSampler.cpp file)
+RUN cd /home/Open3D/bulid && \    
+    sed -i 's/M_PIf/M_PI_f/g' /home/Open3D/build/filament/src/ext_filament/libs/image/src/ImageSampler.cpp && \
+    make -j$(nproc) && \
+RUN cd /home/Open3D/bulid && \   
+    sudo make install
 
 # Set working directory
 WORKDIR /home/ros2_ws2
