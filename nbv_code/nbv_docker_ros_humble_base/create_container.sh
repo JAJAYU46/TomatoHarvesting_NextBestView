@@ -13,7 +13,7 @@ container_exists() {
     docker ps -a --format '{{.Names}}' | grep -w "$1" > /dev/null 2>&1
 }
 # Starting index for the container name
-index=3
+index=1
 # Check if container with the name exists
 while container_exists "nbv_container${index}_nbv_image_fullinstall1"; do
     # If container exists, increment the index
@@ -26,7 +26,8 @@ CONTAINER_NAME="nbv_container${index}_nbv_image_fullinstall1"
 # CONTAINER_NAME="nbv_container3_nbv_image_fullinstall1"
 
 # Run the Docker container
-docker run --rm -it \
+# docker run --rm -it \
+docker run -it \
   --runtime=nvidia --gpus all \
   -v /dev/bus/usb:/dev/bus/usb \
   -v /home/rmml05/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src:/home/ros2_ws2/src \
