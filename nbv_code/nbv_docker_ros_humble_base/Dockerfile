@@ -154,7 +154,7 @@ RUN cd /home/Open3D && \
     # Run make, allow failure (building the first time to get the /ImageSampler.cpp file)
 RUN cd /home/Open3D/bulid && \    
     sed -i 's/M_PIf/M_PI_f/g' /home/Open3D/build/filament/src/ext_filament/libs/image/src/ImageSampler.cpp && \
-    make -j$(nproc) && \
+    make -j$(nproc)
 RUN cd /home/Open3D/bulid && \   
     sudo make install
 
