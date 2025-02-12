@@ -10,24 +10,24 @@
 #         super().__init__('frame_publisher')
 #         self.tf_broadcaster = TransformBroadcaster(self)
 
-#         # Create and publish transform from base_link to camera_link_optical
+#         # Create and publish transform from base to camera_link_optical
 #         self.create_timer(0.1, self.broadcast_transform)
 
 #     def broadcast_transform(self):
-#         # Create TransformStamped object for the base_link to camera_link_optical transform
+#         # Create TransformStamped object for the base to camera_link_optical transform
 #         transform = TransformStamped()
 
 #         # Header information
 #         transform.header.stamp = self.get_clock().now().to_msg()
-#         transform.header.frame_id = 'base_link'  # Parent frame
+#         transform.header.frame_id = 'base'  # Parent frame
 #         transform.child_frame_id = 'camera_link_optical'  # Child frame
 
-#         # Define the translation (position of the camera with respect to the base_link)
+#         # Define the translation (position of the camera with respect to the base)
 #         transform.transform.translation.x = 0.5  # Example value (meters)
 #         transform.transform.translation.y = 0.0  # Example value (meters)
 #         transform.transform.translation.z = 0.0  # Example value (meters)
 
-#         # Define the rotation (orientation of the camera with respect to the base_link)
+#         # Define the rotation (orientation of the camera with respect to the base)
 #         transform.transform.rotation.x = 0.0#0.7071#0.0
 #         transform.transform.rotation.y = 0.0
 #         transform.transform.rotation.z = 0.0
@@ -76,7 +76,7 @@ class CameraTransformBroadcaster(Node):
 
         # Fill in the header information
         transform2.header.stamp = self.get_clock().now().to_msg()
-        transform2.header.frame_id = 'base_link'  # Parent frame
+        transform2.header.frame_id = 'base'  # Parent frame
         transform2.child_frame_id = 'camera_link_temp'  # Child frame
 
         # Define the translation (position) of camera_link_optical relative to camera_depth_optical_frame
