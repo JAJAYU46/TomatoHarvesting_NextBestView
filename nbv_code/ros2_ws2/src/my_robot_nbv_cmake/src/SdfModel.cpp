@@ -37,6 +37,10 @@ using namespace std;
 int INPUT_MODE2=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 
+/* Parameters that can Modified: 
+signed_distance_threshold //=0.005 //now
+*/
+
 // #ifndef NDEBUG
 //     #define DEBUG_MODE true
 // #else
@@ -184,7 +188,7 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
         if(INPUT_MODE2==1){
             signed_distance_threshold=0.05;
         }else{
-            signed_distance_threshold=0.016;
+            signed_distance_threshold=0.005;
         }
         if (signed_distance.Item<float>() <=signed_distance_threshold){//<= 0.05) {  // Inside the mesh //0.038要是in/////////////////////////////////////////////// 20250118
             query_points_in.push_back(point_q);////////////////////////

@@ -116,8 +116,10 @@ public:
         std::vector<octomap::point3d> origins_original = RandomPoint(modelCenterOctomap_pcd , candidateViews_num_, candidateViews_radius_); //中心座標, 點數, 長度
         std::vector<octomap::point3d> origins;
         octomap::point3d RobotArmBase(0.0,0.0,0.0); // 之後會被真正的base位置取代（應概就是0,0,0)車車是代表camera, end effector
-        octomap::point3d RobotArmFrontAxisVec(1.0,0.0,0.0);
-        
+        octomap::point3d RobotArmFrontAxisVec(1.0,-1.0,0.0); // The front axis(to determine where is "the back of the Tomato" & "the back of the robot arm")
+        // (1.0,0.0,0.0): car front/ (0.0,-1.0,0.0): car right/ (0.0,0.0,-1.0): car up
+        // <For Improve>
+        octomap::point3d RobotArmSecondAxisVec(0.0,-1.0,0.0); //The second direction you want to delete
         cout<<"There are total "<<origins_original.size()<<" candidate view"<<endl;  
         //在這邊過濾點（因為candidate view 頂多100個所以這裡過濾不太影響時間複雜度)
         //也可以在上面製造的時候就過濾好, 但這裡邏輯是先隨機製造, 再過濾掉不能到達點
@@ -155,14 +157,39 @@ public:
             // 如果投影長度是負數的話
             // cout<<"OK1.......scalarProjection_OT_RA: "<<scalarProjection_OT_RA<<"scalarProjection_BO_RA: "<<scalarProjection_BO_RA<<endl;  
         
-            if(scalarProjection_OT_RA<=0){ // 蕃茄背面不行
+            if(scalarProjection_OT_RA<=0){ // 蕃茄背面不行 the front axis be the front
                 // cout<<"Ok2...... "<<origins.size()<<" candidate views after back filtering"<<endl;  
         
                 continue;
             }
             if(scalarProjection_BO_RA<=0){//手臂背面不行
                 continue; //就不會做下面了, 會直接跳到下個origin
-            }   
+            } 
+
+            // <For Improve> =============================
+            double dotProductVV_RSA_RSA = RobotArmSecondAxisVec.dot(RobotArmSecondAxisVec);
+            if (dotProductVV_RSA_RSA == 0) {
+                std::cerr << "Error: Cannot project onto a zero vector." << std::endl;
+                continue;
+            }
+            double dotProductUV_BO_RSA = vectorBO.dot(RobotArmSecondAxisVec);
+            double dotProductUV_OT_RSA = vectorOT.dot(RobotArmSecondAxisVec);
+            
+            double scalarProjection_BO_RSA = dotProductUV_BO_RSA / dotProductVV_RSA_RSA;
+            double scalarProjection_OT_RSA = dotProductUV_OT_RSA / dotProductVV_RSA_RSA;
+            // Calculate the projection vector
+            // octomap::point3d projection_BO_RA = RobotArmFrontAxisVec * scalarProjection_BO_RA;
+            // octomap::point3d projection_OT_RA = RobotArmFrontAxisVec * scalarProjection_OT_RA;
+            // 如果投影長度是負數的話
+            // cout<<"OK1.......scalarProjection_OT_RA: "<<scalarProjection_OT_RA<<"scalarProjection_BO_RA: "<<scalarProjection_BO_RA<<endl;  
+        
+            if(scalarProjection_OT_RSA<=0){ // 蕃茄背面不行 the front axis be the front
+                // cout<<"Ok2...... "<<origins.size()<<" candidate views after back filtering"<<endl;  
+        
+                continue;
+            }
+            
+            // ==================================================
             
             origins.push_back(origin); //過審核的話再從後面丟進去
             
@@ -329,9 +356,11 @@ private:
         // std::uniform_real_distribution<> dist_theta(-1*M_PI, 1*M_PI); //如果是0的話就是z平面上
         // std::uniform_real_distribution<> dist_theta(0, 0.5);//只要上半球
         // std::uniform_real_distribution<> dist_cos_theta(0, 1.0); //<chatgpt2>
-        std::uniform_real_distribution<> dist_cos_theta(-1.0, 1.0); //<chatgpt2>
-
-
+        
+        //////////////// Before is this 20250212 //////////////
+        // std::uniform_real_distribution<> dist_cos_theta(-1.0, 1.0); //<chatgpt2>
+        // std::uniform_real_distribution<> dist_cos_theta(0.0, 1.0); //only the upper half 
+        std::uniform_real_distribution<> dist_cos_theta(0.0, 0.5); 
 
 
         for (int i = 0; i < pointNum; ++i) {
@@ -819,12 +848,12 @@ class MyNode : public rclcpp::Node
             cloud_o3d_icpTomato->Clear();//<Debug> 物件用. access 一個pointer 裡面的物件才用->
 
             // open3d_cloud_ = ConvertPointCloud2ToOpen3D(msg);
-            cloud_o3d_icpTomato = pointCloud2ToOpen3D(msg, "base_link", tf_buffer_);
+            cloud_o3d_icpTomato = pointCloud2ToOpen3D(msg, "base", tf_buffer_);
             if (DEBUG_MODE) {
                 RCLCPP_INFO(this->get_logger(), "Success Received a new point cloud with %lu points", cloud_o3d_icpTomato->points_.size());
             }
             // [for Debug] 可以不用publish回去, 只是用來檢查這樣有沒有抓到的工具而已
-            // sensor_msgs::msg::PointCloud2 cloud_ros_icpTomato = open3dToRos2PointCloud2(*open3d_cloud_, "base_link");//msg->header.frame_id
+            // sensor_msgs::msg::PointCloud2 cloud_ros_icpTomato = open3dToRos2PointCloud2(*open3d_cloud_, "base");//msg->header.frame_id
             // pcd_publisher_->publish(cloud_ros_icpTomato);
             
             firstPCD_ready_flag=true;
@@ -832,7 +861,7 @@ class MyNode : public rclcpp::Node
 
         void octomap_callback(const octomap_msgs::msg::Octomap::SharedPtr msg) //const
         {   if(finish_get_status_topic == true){ //因為一直讀不到controller topic所以一直進不去這邊 ======================
-                RCLCPP_INFO(this->get_logger(), "in get status topic");
+                // RCLCPP_INFO(this->get_logger(), "in get status topic");
                 
                 
                 
@@ -966,6 +995,8 @@ class MyNode : public rclcpp::Node
                                     isFinalNBVpoint = true;
 
 
+                                }else{
+                                    isFinalNBVpoint = false;
                                 }
                                 LastBestCandidateView_gain = NbvScene.BestCandidateView_gain;
                                 LastBestCandidateView_point = NbvScene.BestCandidateView_point;
@@ -1142,7 +1173,7 @@ class MyNode : public rclcpp::Node
             
             visualization_msgs::msg::Marker any_ray_marker;
             
-            any_ray_marker.header.frame_id = "base_link";   // Change if you have another frame map
+            any_ray_marker.header.frame_id = "base";   // Change if you have another frame map
             any_ray_marker.header.stamp = this->get_clock()->now();
             any_ray_marker.ns = "any_ray_visualization";
             any_ray_marker.id = id;  // Unique ID for each marker  #<Note> 不同次的的publish如果ID同就會被替代掉
@@ -1194,7 +1225,7 @@ class MyNode : public rclcpp::Node
             visualization_msgs::msg::Marker marker;
 
             // Set frame_id and timestamp
-            marker.header.frame_id = "base_link";  // Make sure this frame exists in your tf tree
+            marker.header.frame_id = "base";  // Make sure this frame exists in your tf tree
             marker.header.stamp = this->get_clock()->now();
 
             // Set the namespace and id for this marker
