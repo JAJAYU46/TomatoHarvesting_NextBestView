@@ -60,6 +60,7 @@ public:
     octomap::point3d BestCandidateView_point;
     int BestCandidateView_gain=0;
     float BestCandidateView_gain_percent=0.0;
+    octomap::point3d modelCenterOctomap_pcd;
 
     // //Data for last time
     // //The data for outside to Get
@@ -110,7 +111,8 @@ public:
         //[從這裡建立SdfModel] sdf model就是件一個surface表格, 可判斷點在surface 內部還是外部一個model就是要處理的一個"ModelScene"
         SdfModel ModelScene(pcdO3d_tomato_, 0.2f, 5000); //這個pcd是要從另一個topic讀過來
         vector<float> modelCenter = ModelScene.GetModelCenter();
-        octomap::point3d modelCenterOctomap_pcd = {modelCenter[0], modelCenter[1], modelCenter[2]};
+        //octomap::point3d modelCenterOctomap_pcd = {modelCenter[0], modelCenter[1], modelCenter[2]};
+        modelCenterOctomap_pcd = {modelCenter[0], modelCenter[1], modelCenter[2]}; //become public variable for ros nbv node to get
 
         //====== 2. 建立Candidate views ====== (已Target tomato 的 center為中心（算by Sdf model), r=0.5為半徑製造上半球的random candidate views
         std::vector<octomap::point3d> origins_original = RandomPoint(modelCenterOctomap_pcd , candidateViews_num_, candidateViews_radius_); //中心座標, 點數, 長度
@@ -935,7 +937,7 @@ class MyNode : public rclcpp::Node
                                     candidateViews_radius = 0.32;
                                 }
                                 int candidateViews_num =50; //20
-                                int rays_num = 64;//要是完全平方數最好   50; //50
+                                int rays_num = 100;//64;//要是完全平方數最好   50; //50
 
                                 BestViewModel NbvScene(cloud_o3d_icpTomato, octree, candidateViews_radius, candidateViews_num, rays_num);
                                 
@@ -1040,6 +1042,7 @@ class MyNode : public rclcpp::Node
                                 RCLCPP_INFO(this->get_logger(), "===============================================");
                                 RCLCPP_INFO(this->get_logger(), "The Best candidate view for this scene is at (%f, %f, %f) with gain percentage = %f", NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), NbvScene.BestCandidateView_gain_percent);
                                 RCLCPP_INFO(this->get_logger(), "The Best candidate view for this scene is at (%f, %f, %f) with gain = %d", NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), NbvScene.BestCandidateView_gain);
+                                RCLCPP_INFO(this->get_logger(), "The Tomato for this scene is at (%f, %f, %f) ", NbvScene.modelCenterOctomap_pcd.x(), NbvScene.modelCenterOctomap_pcd.y(), NbvScene.modelCenterOctomap_pcd.z());
                                 
                                 RCLCPP_INFO(this->get_logger(), "===============================================");
                                 publish_point_marker(NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), 0.05, 1.0f, 1.0f, 0.0f);//scale color r g b
