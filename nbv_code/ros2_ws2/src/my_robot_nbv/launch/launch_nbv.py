@@ -48,7 +48,7 @@ def generate_launch_description():
         IncludeLaunchDescription(
             octomap_server_launch_file,
             launch_arguments={
-                'resolution': '0.003', #0.001: too small, leaving too much space# 0.01(for gazebo mode1) --> 0.001 (realsense real tomato size)
+                'resolution': '0.004', #0.03: will have space... but is good for now , but 0.04 is better 0.001: too small, leaving too much space# 0.01(for gazebo mode1) --> 0.001 (realsense real tomato size)
                 'frame_id': 'base_link', #remember odom(for gazebo mode1,2) --> base_link(realsense)
                 'input_cloud_topic': '/nbv/tompcd_ICP' #/cam/cloudrate_transformer
             }.items()
