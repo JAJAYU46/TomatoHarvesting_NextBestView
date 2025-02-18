@@ -12,6 +12,7 @@ import math
 
 # CHANGE
 # import threading
+IS_DEBUG=True
 
 #Class For Detecting Tomato
 class DetectTomato:
@@ -23,7 +24,10 @@ class DetectTomato:
         
         # Load the YOLO model
         self.model_tomato = YOLO("src/my_robot_nbv/my_robot_nbv/aeronbest.pt")
-        self.confidenceThreshold=0.5 #0.5 
+        if(IS_DEBUG==True): 
+            self.confidenceThreshold=0.0 #0.5 
+        else: 
+            self.confidenceThreshold=0.5 #0.5 
         
         self.tracker = DeepSort(max_iou_distance=0.7, max_age=30, n_init=3)
         # Initialize the needed set
@@ -127,6 +131,8 @@ class DetectTomato:
 
         if(colorFlag==True): #debug 用的 之後要刪掉 特殊block無條件都要印
             DoNotPrint = False
+        if(IS_DEBUG==True):
+            DoNotPrint = False
         if(DoNotPrint == False):
             x1_Tomato,y1_Tomato,x2_Tomato,y2_Tomato = map(int, bbox)
         
@@ -187,17 +193,24 @@ class DetectTomato:
                 # 所以for visualization, 這個是0的就不印出來了
                 det_conf = 0.0  # Default confidence if none is found
                 
-            
+            if(IS_DEBUG==True): 
+                #Top Tomato
+                if(y1<self.TopTomatoTrackY) and self.classNames[det_class]=="ripe": #is ripe and is the toppest but not in the margin tomato
+                    if (det_conf>=0.2): # 還要沒有消失的, 才可以當最新的top tomato
+                        self.TopTomatoTrack = track
+                        self.TopTomatoTrackY = y1 #(y最底下, y最大的地方)目標是找y最小的
             # if(x1>int(self.width/15) and x2<int(self.width-self.width/15)): #detect x not in the margin
             #     if(y1>int(self.height/15) and y2<int(self.height-self.height/15)): #detect y not in the margin
-            if(x1>int(self.width/self.width) and x2<int(self.width-self.width/self.width)): #detect x not in the margin #關掉margin功能 #==================================================
-                if(y1>int(self.height/self.height) and y2<int(self.height-self.height/self.height)): #detect y not in the margin
-                    #Top Tomato
-                    if(y1<self.TopTomatoTrackY) and self.classNames[det_class]=="ripe": #is ripe and is the toppest but not in the margin tomato
-                        if (det_conf>=0.2): # 還要沒有消失的, 才可以當最新的top tomato
-                            self.TopTomatoTrack = track
-                            self.TopTomatoTrackY = y1 #(y最底下, y最大的地方)目標是找y最小的
-        
+            
+            else: 
+                if(x1>int(self.width/self.width) and x2<int(self.width-self.width/self.width)): #detect x not in the margin #關掉margin功能 #==================================================
+                    if(y1>int(self.height/self.height) and y2<int(self.height-self.height/self.height)): #detect y not in the margin
+                        #Top Tomato
+                        if(y1<self.TopTomatoTrackY) and self.classNames[det_class]=="ripe": #is ripe and is the toppest but not in the margin tomato
+                            if (det_conf>=0.2): # 還要沒有消失的, 才可以當最新的top tomato
+                                self.TopTomatoTrack = track
+                                self.TopTomatoTrackY = y1 #(y最底下, y最大的地方)目標是找y最小的
+            
             if(self.GetNewTargetTomato==False): #如果是要繼續trace前一個tomato ID的話那就把targetTomato在這裡看同個ID的那個tomato
                 if(track_id==self.TargetTomatoTrackID): #如果ID一樣的話
                     self.TargetTomatoTrack=track #就存下來

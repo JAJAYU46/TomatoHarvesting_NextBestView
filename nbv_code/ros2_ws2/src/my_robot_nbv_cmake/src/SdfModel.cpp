@@ -34,7 +34,7 @@ using namespace std;
 #define DEBUG_MODE false
 
 //在sdf.h那裡
-int INPUT_MODE2=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
+// int INPUT_MODE=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 
 /* Parameters that can Modified: 
@@ -47,8 +47,8 @@ signed_distance_threshold //=0.005 //now
 //     #define DEBUG_MODE false
 // #endif
 
-SdfModel::SdfModel(std::shared_ptr<open3d::geometry::PointCloud> pcd, float radius, int num_points)
-    : pcd_(pcd), radius_(radius), num_points_(num_points) {
+SdfModel::SdfModel(std::shared_ptr<open3d::geometry::PointCloud> pcd, float radius, int num_points, int INPUT_MODE) // INPUT_MODE for determin is gazebo or realsense ... 
+    : pcd_(pcd), radius_(radius), num_points_(num_points), INPUT_MODE(INPUT_MODE) {
         
     //[check if pcd load success and color it into green]
     // pcd_ = open3d::io::CreatePointCloudFromFile(ply_file_path_);
@@ -185,7 +185,7 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
         // auto occupancy = scene_.ComputeOccupancy(point_q_formed);
         
         float signed_distance_threshold = 0.0;
-        if(INPUT_MODE2==1){
+        if(INPUT_MODE==1){
             signed_distance_threshold=0.05;
         }else{
             signed_distance_threshold=0.005;

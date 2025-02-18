@@ -49,7 +49,7 @@ import tf2_geometry_msgs
 
 #To convert pointcloud2(for ROS2) to pointcloud(for open3d)
 
-INPUT_MODE=3 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+INPUT_MODE=0 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
@@ -110,7 +110,7 @@ class MyNode(Node): #construct Node class
         
         
 
-        self.get_logger().info("node 'nbv_tompcd_filter' have been started lalala")
+        self.get_logger().info("node 'nbv_tompcd_filter' have been started lalala aaa")
         #self.create_timer(1.0, self.callback1) #(time interval/ calling callback)
         # TF2 buffer and listener for frame transformations
         self.tf_buffer = Buffer()
@@ -969,9 +969,17 @@ class MyNode(Node): #construct Node class
 #     return msg
 
 def main(args=None): #construct main funct沒有動ㄝ
-    # print("everything alright")
-    
-    # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato.ply"
+
+
+
+    # # print("everything alright")
+    # global INPUT_MODE  # Allow modification of the global variable
+    # if args is not None:
+    #     INPUT_MODE = args
+    # else: 
+    #     INPUT_MODE = 3 # default value if no args are provided  #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+    # print("INPUT_MODE:", INPUT_MODE)
+    # # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato.ply"
     # target_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/copy_of_filtered_msg.pcd"
     # num=3
 
@@ -995,6 +1003,15 @@ def main(args=None): #construct main funct沒有動ㄝ
     #===============================================================
     
     rclpy.init(args=args)
+
+    global INPUT_MODE
+    if len(sys.argv) > 1:
+        INPUT_MODE = int(sys.argv[1])  # Get the argument from the command line
+    else:
+        INPUT_MODE = 3  # Default value  # default value if no args are provided  #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+    # run with 'ros2 run my_robot_nbv nbv_tompcd_filter 2'
+    print("INPUT_MODE:", INPUT_MODE)
+
     node1 = MyNode() #node1=NodeClass: MyNode
     rclpy.spin(node1) #keep node alive until ctrl+C
     rclpy.shutdown()

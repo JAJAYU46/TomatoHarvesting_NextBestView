@@ -469,7 +469,7 @@ class MyNode : public rclcpp::Node
 
 
                         //[從這裡建立SdfModel]一個model就是要處理的一個"ModelScene"
-                        SdfModel ModelScene(open3d_cloud_, 0.2f, 5000); //這個pcd是要從另一個topic讀過來
+                        SdfModel ModelScene(open3d_cloud_, 0.2f, 5000, 3); //這個pcd是要從另一個topic讀過來  //3: INPUT_MODE 是因為之後改了才需要加的
                         
                         vector<float> modelCenter = ModelScene.GetModelCenter();
                         octomap::point3d modelCenterOctomap_pcd = {modelCenter[0], modelCenter[1], modelCenter[2]};

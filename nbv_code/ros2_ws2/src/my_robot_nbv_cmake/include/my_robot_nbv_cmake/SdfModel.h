@@ -18,7 +18,7 @@ using namespace std;
 
 class SdfModel {
 public:
-    SdfModel(std::shared_ptr<open3d::geometry::PointCloud> pcd, float radius, int num_points);
+    SdfModel(std::shared_ptr<open3d::geometry::PointCloud> pcd, float radius, int num_points, int INPUT_MODE); // INPUT_MODE for determin is gazebo or realsense ... 
         
     vector<float> ComputeMeshCenter();
 
@@ -40,7 +40,7 @@ private:
     // std::string ply_file_path_;
     std::shared_ptr<open3d::geometry::PointCloud> pcd_;
     float radius_;
-    int num_points_;
+    int num_points_, INPUT_MODE;
     float center_x_, center_y_, center_z_;
 
     std::vector<float> center_;

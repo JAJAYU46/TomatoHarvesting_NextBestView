@@ -59,6 +59,9 @@ from message_interfaces.msg import BoundingBox    # CHANGE
 
 #To convert pointcloud2(for ROS2) to pointcloud(for open3d)
 
+INPUT_MODE=0
+
+
 
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
@@ -91,7 +94,12 @@ class MyNode(Node): #construct Node class
         self.TomatoBox_rd=(370, 290)#(387,419)#(640,317)#(407, 460) #蕃茄辨識框框右下點
 
         # 【subscriber】#照片之後應該要改成從cam那邊讀才對 filter那邊的也是
-        self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/cam/image_raw_original", self.callback_image_read, 10)
+        # <Debug> 不能這樣, 這樣會讓image更新律很慢, 因為cloud_rate...本來就慢, 那個node再做其他是的時候就會影響這個publish的速度, 所以還是要直接從camera上面讀image資料, 真的要統一處理的話就是加一個node單純把camera資料讀取然後publish
+        # self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/cam/image_raw_original", self.callback_image_read, 10)
+        if(INPUT_MODE==1 or INPUT_MODE==2):
+            self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/image_raw", self.callback_image_read, 10)
+        else: 
+            self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/camera/color/image_raw", self.callback_image_read, 10)
 
         self.isFirstFrame=True
         self.DetectionDoneFlag = True
@@ -319,6 +327,15 @@ def main(args=None): #construct main funct沒有動ㄝ
     # #===============================================================
     
     rclpy.init(args=args)
+
+    global INPUT_MODE
+    if len(sys.argv) > 1:
+        INPUT_MODE = int(sys.argv[1])  # Get the argument from the command line
+    else:
+        INPUT_MODE = 3  # Default value  # default value if no args are provided  #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+    # run with 'ros2 run my_robot_nbv nbv_tompcd_filter 2'
+    print("INPUT_MODE:", INPUT_MODE)
+
     node1 = MyNode() #node1=NodeClass: MyNode
     rclpy.spin(node1) #keep node alive until ctrl+C
     rclpy.shutdown()

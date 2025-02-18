@@ -51,7 +51,7 @@ using std::placeholders::_1;
 #define DEBUG_MODE false
 
 // 在SDF.h那裡
-int INPUT_MODE1=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
+int INPUT_MODE=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 
 class BestViewModel {
@@ -109,7 +109,7 @@ public:
         int Now_BestCandidateView_gain=0;
         //====== 1. 建立此scene的蕃茄的SDF model: ======
         //[從這裡建立SdfModel] sdf model就是件一個surface表格, 可判斷點在surface 內部還是外部一個model就是要處理的一個"ModelScene"
-        SdfModel ModelScene(pcdO3d_tomato_, 0.2f, 5000); //這個pcd是要從另一個topic讀過來
+        SdfModel ModelScene(pcdO3d_tomato_, 0.2f, 5000, INPUT_MODE); //這個pcd是要從另一個topic讀過來
         vector<float> modelCenter = ModelScene.GetModelCenter();
         //octomap::point3d modelCenterOctomap_pcd = {modelCenter[0], modelCenter[1], modelCenter[2]};
         modelCenterOctomap_pcd = {modelCenter[0], modelCenter[1], modelCenter[2]}; //become public variable for ros nbv node to get
@@ -537,7 +537,7 @@ private:
         float theta_min = -0.0, theta_max = 0.0;
         // float theta_min = -M_PI / 8, theta_max = M_PI / 8;
         float phi_min = 0.0, phi_max = 0.0;
-        if(INPUT_MODE1==1){
+        if(INPUT_MODE==1){
             theta_min = -0.5;
             theta_max = 0.5;
             // float theta_min = -M_PI / 8, theta_max = M_PI / 8;
@@ -745,7 +745,7 @@ private:
 
 //================= ROS2 node class =================
 class MyNode : public rclcpp::Node
-{
+{   
     public:
         MyNode()
         : Node("nbvc_ray_generation"), count_(0), tf_buffer_(this->get_clock())//, tf_listener_(tf_buffer_) //node的名稱
@@ -770,6 +770,8 @@ class MyNode : public rclcpp::Node
             // status controller topic //auto 就是讓compiler自己偵測data type, custom topic和其他classic topic不一樣, 要用auto
             status_publisher_ = this->create_publisher<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10);
             status_subscription_ = this->create_subscription<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10, std::bind(&MyNode::status_topic_callback, this, std::placeholders::_1));
+            
+            RCLCPP_INFO(this->get_logger(), "node 'BestViewModel' have been started lalala newnew");
             
 
         }
@@ -931,7 +933,7 @@ class MyNode : public rclcpp::Node
                                 
                                 float candidateViews_radius = 0.0;
                                 //====== 2. Calculate nbv point ======
-                                if(INPUT_MODE1==1){
+                                if(INPUT_MODE==1){
                                     candidateViews_radius = 0.5; 
                                 }else{
                                     candidateViews_radius = 0.32;
@@ -1004,6 +1006,14 @@ class MyNode : public rclcpp::Node
                                 LastBestCandidateView_point = NbvScene.BestCandidateView_point;
                                 LastBestCandidateView_gain_percent = NbvScene.BestCandidateView_gain_percent;
 
+
+
+                                // 3.5 Calculating the Orientation(Rotation) for the robot arm
+                                //CalculateRotationForArm
+
+                                // For Testing octomap::point3d(x, y, z)
+                                // vector<float> RotationForArm = CalculateRotationForArm(octomap::point3d(x, y, z), octomap::point3d(x, y, z));
+                                vector<float> RotationForArm = CalculateRotationForArm(NbvScene.BestCandidateView_point, NbvScene.modelCenterOctomap_pcd);
                                 //status controller topic ===============================
                                 if(nbv_done_msg_ == false){// or is_moving_msg_ == false){ //等等只能publish一次因為要給的視同一個點, 不可以一直給不同的點 所以要接好//在下一步還沒完成之前都一直publish因為 
                                     auto msg_status2 = message_interfaces::msg::NodeStatus();   
@@ -1037,14 +1047,18 @@ class MyNode : public rclcpp::Node
                                 }
                                 // ==================================================== 
                                 
-
                                 //====== 4. Show the result of NBV point & its gain ======
                                 RCLCPP_INFO(this->get_logger(), "===============================================");
                                 RCLCPP_INFO(this->get_logger(), "The Best candidate view for this scene is at (%f, %f, %f) with gain percentage = %f", NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), NbvScene.BestCandidateView_gain_percent);
                                 RCLCPP_INFO(this->get_logger(), "The Best candidate view for this scene is at (%f, %f, %f) with gain = %d", NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), NbvScene.BestCandidateView_gain);
                                 RCLCPP_INFO(this->get_logger(), "The Tomato for this scene is at (%f, %f, %f) ", NbvScene.modelCenterOctomap_pcd.x(), NbvScene.modelCenterOctomap_pcd.y(), NbvScene.modelCenterOctomap_pcd.z());
-                                
+                                RCLCPP_INFO(this->get_logger(), "The Rotation For Arm is (%f, %f, %f) ", RotationForArm[0], RotationForArm[1], RotationForArm[2]);
                                 RCLCPP_INFO(this->get_logger(), "===============================================");
+                                RCLCPP_INFO(this->get_logger(), "Sending To Robot Topic: (%f, %f, %f, %f, %f, %f)", NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), RotationForArm[0], RotationForArm[1], RotationForArm[2]);
+                                RCLCPP_INFO(this->get_logger(), "===============================================");
+
+                                
+
                                 publish_point_marker(NbvScene.BestCandidateView_point.x(), NbvScene.BestCandidateView_point.y(), NbvScene.BestCandidateView_point.z(), 0.05, 1.0f, 1.0f, 0.0f);//scale color r g b
                                 // for status controller topic
                                 finish_get_status_topic=false;
@@ -1168,7 +1182,7 @@ class MyNode : public rclcpp::Node
         // 3-2: Function to publish ray markers
         void publish_any_ray_marker(const octomap::point3d &origin, std::vector<octomap::point3d> &endPoints, int id=0,const std::array<double, 3> &marker_color={1,0,0}, double x_scale=0.03) {
             
-            if(INPUT_MODE1==1){
+            if(INPUT_MODE==1){
                 x_scale=x_scale;
             }else{
                 x_scale=x_scale/3.0;
@@ -1260,12 +1274,47 @@ class MyNode : public rclcpp::Node
             // Publish the marker 
             marker_publisher_->publish(marker);
         }
+
+        vector<float> CalculateRotationForArm(octomap::point3d &StartPoint, octomap::point3d &EndPoint) {
+            octomap::point3d vectorSE = EndPoint-StartPoint;
+            float x=vectorSE.x();
+            float y=vectorSE.y();
+            float z=vectorSE.z();
+
+            float cosDegree_Axis_x = z/(sqrt(z*z+y*y));
+            float cosDegree_Axis_y = z/(sqrt(z*z+x*x));
+            RCLCPP_INFO(this->get_logger(), "cosDegree_Axis_x: %f, cosDegree_Axis_y: %f ", cosDegree_Axis_x, cosDegree_Axis_y);
+            RCLCPP_INFO(this->get_logger(), "===============================================");
+
+            float degree_Axis_x = acos(cosDegree_Axis_x)* 180.0 / M_PI;
+            float degree_Axis_y = acos(cosDegree_Axis_y)* 180.0 / M_PI*(-1);
+            float degree_Axis_z = 0.0;
+
+            vector<float> botArmRotateDegree = {degree_Axis_x, degree_Axis_y, degree_Axis_z};
+
+            return botArmRotateDegree;
+
+        }
 };
 
 
 int main(int argc, char **argv)
 {   //ROS2
 	rclcpp::init(argc, argv);
+
+    int INPUT_MODE = 0;  
+
+    if (argc > 1) {
+        INPUT_MODE = std::stoi(argv[1]);  // Convert argument to int
+    }else{
+        INPUT_MODE = 3; // Default value if no args are given #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+    }
+
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "INPUT_MODE: %d", INPUT_MODE);
+
+
+
+
 	auto node = std::make_shared<MyNode>();
 	rclcpp::spin(node);
 	rclcpp::shutdown();

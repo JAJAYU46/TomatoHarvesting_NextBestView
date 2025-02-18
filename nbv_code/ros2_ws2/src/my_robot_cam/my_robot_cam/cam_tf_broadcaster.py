@@ -66,7 +66,7 @@ class CameraTransformBroadcaster(Node):
 
         # Create a timer to continuously broadcast the transform
         self.create_timer(0.001, self.broadcast_transform)
-        self.get_logger().info("tf broadcaster have been started")
+        self.get_logger().info("tf broadcaster have been startedaaa")
         
     def broadcast_transform(self):
         
@@ -162,7 +162,7 @@ class CameraTransformBroadcaster(Node):
         self.tf_broadcaster.sendTransform(transform)
 
 
-        self.get_logger().info("ok123")
+        self.get_logger().info("ok1234")
         
 
 def main(args=None):

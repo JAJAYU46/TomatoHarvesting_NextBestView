@@ -40,13 +40,13 @@
 
 
     <!-- set baselink(1st link for mobile robot) -->
-    <link name="base_link">
+    <link name="base">
 
     </link>
     
     <!-- box link -->
     <joint name="chassis_joint" type="fixed">   
-        <parent link="base_link"/>
+        <parent link="base"/>
         <child link="chassis"/>
         <origin xyz="-0.1 0 0"/> <!-- car_box link"的origin" 和base link的相對位置-->
     </joint>
@@ -84,7 +84,7 @@
 
     <!-- Left wheel link -->
     <joint name="left_wheel_joint" type="continuous"><!-- 因為車車輪子會contunuously轉 --> 
-        <parent link="base_link"/>
+        <parent link="base"/>
         <child link="left_wheel"/>
         <origin xyz="0.0 0.175 0.0" rpy="-${pi/2} 0 0"/><!-- 因為在ros defult 的cylindeer是直統向上的,但輪子我們想讓它以x為軸去轉90度轉向側邊（想要輪子的z指向世界的外邊) -->
         <axis xyz="0.0 0.0 1.0"/><!--因為joint 是"continuous"所以要定希望以哪個方向（此link的座標係下, 即z現在指向世界得車車外側)為軸旋轉-->
@@ -114,7 +114,7 @@
     
     <!-- Right wheel link -->
     <joint name="right_wheel_joint" type="continuous"><!-- 因為車車輪子會contunuously轉 --> 
-        <parent link="base_link"/>
+        <parent link="base"/>
         <child link="right_wheel"/><!--origin xyz: 相對於parrent link的相對座標-->
         <origin xyz="0.0 -0.175 0.0" rpy="+${pi/2} 0 0"/><!-- 因為在ros defult 的cylindeer是直統向上的,但輪子我們想讓它以x為軸去轉90度轉向側邊（想要輪子的z指向世界的外邊) -->
         <axis xyz="0.0 0.0 -1.0"/><!--因為joint 是"continuous"所以要定希望以哪個方向（此link的座標係下, 即z現在指向世界得車車外側)為軸旋轉-->

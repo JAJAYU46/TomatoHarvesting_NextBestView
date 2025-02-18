@@ -68,6 +68,15 @@ bool message_interfaces__msg__node_status__convert_from_py(PyObject * _pymsg, vo
     ros_message->is_moving = (Py_True == field);
     Py_DECREF(field);
   }
+  {  // target_box_id
+    PyObject * field = PyObject_GetAttrString(_pymsg, "target_box_id");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->target_box_id = (int32_t)PyLong_AsLong(field);
+    Py_DECREF(field);
+  }
   {  // iteration
     PyObject * field = PyObject_GetAttrString(_pymsg, "iteration");
     if (!field) {
@@ -187,6 +196,17 @@ PyObject * message_interfaces__msg__node_status__convert_to_py(void * raw_ros_me
     field = PyBool_FromLong(ros_message->is_moving ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "is_moving", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // target_box_id
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->target_box_id);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "target_box_id", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -1,0 +1,19 @@
+[ 20%] Built target SdfModelV3
+[ 30%] [32mBuilding CXX object CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.o[0m
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:50:1:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[KSdfModel::SdfModel(std::shared_ptr<open3d::geometry::PointCloud>, float, int, int)[m[K’
+   50 | [01;31m[KSdfModel[m[K::SdfModel(std::shared_ptr<open3d::geometry::PointCloud> pcd, float radius, int num_points, int INPUT_MODE=3) // INPUT_MODE for determin is gazebo or realsense ...
+      | [01;31m[K^~~~~~~~[m[K
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/SdfModel.cpp:1[m[K:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:19:7:[m[K [01;36m[Knote: [m[Kcandidates are: ‘[01m[KSdfModel::SdfModel(SdfModel&&)[m[K’
+   19 | class [01;36m[KSdfModel[m[K {
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:19:7:[m[K [01;36m[Knote: [m[K                ‘[01m[KSdfModel::SdfModel(const SdfModel&)[m[K’
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:21:5:[m[K [01;36m[Knote: [m[K                ‘[01m[KSdfModel::SdfModel(std::shared_ptr<open3d::geometry::PointCloud>, float, int)[m[K’
+   21 |     [01;36m[KSdfModel[m[K(std::shared_ptr<open3d::geometry::PointCloud> pcd, float radius, int num_points);
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:19:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass SdfModel[m[K’ defined here
+   19 | class [01;36m[KSdfModel[m[K {
+      |       [01;36m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/nbvc_lib_SdfModel.dir/build.make:76: CMakeFiles/nbvc_lib_SdfModel.dir/src/SdfModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:249: CMakeFiles/nbvc_lib_SdfModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

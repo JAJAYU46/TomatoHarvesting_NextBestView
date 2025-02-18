@@ -59,6 +59,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
     __slots__ = [
         '_ready_for_next_iteration',
         '_is_moving',
+        '_target_box_id',
         '_iteration',
         '_detection_done',
         '_icp_done',
@@ -73,6 +74,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
     _fields_and_field_types = {
         'ready_for_next_iteration': 'boolean',
         'is_moving': 'boolean',
+        'target_box_id': 'int32',
         'iteration': 'int32',
         'detection_done': 'boolean',
         'icp_done': 'boolean',
@@ -87,6 +89,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -104,6 +107,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.ready_for_next_iteration = kwargs.get('ready_for_next_iteration', bool())
         self.is_moving = kwargs.get('is_moving', bool())
+        self.target_box_id = kwargs.get('target_box_id', int())
         self.iteration = kwargs.get('iteration', int())
         self.detection_done = kwargs.get('detection_done', bool())
         self.icp_done = kwargs.get('icp_done', bool())
@@ -146,6 +150,8 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         if self.ready_for_next_iteration != other.ready_for_next_iteration:
             return False
         if self.is_moving != other.is_moving:
+            return False
+        if self.target_box_id != other.target_box_id:
             return False
         if self.iteration != other.iteration:
             return False
@@ -197,6 +203,21 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
                 isinstance(value, bool), \
                 "The 'is_moving' field must be of type 'bool'"
         self._is_moving = value
+
+    @builtins.property
+    def target_box_id(self):
+        """Message field 'target_box_id'."""
+        return self._target_box_id
+
+    @target_box_id.setter
+    def target_box_id(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'target_box_id' field must be of type 'int'"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'target_box_id' field must be an integer in [-2147483648, 2147483647]"
+        self._target_box_id = value
 
     @builtins.property
     def iteration(self):

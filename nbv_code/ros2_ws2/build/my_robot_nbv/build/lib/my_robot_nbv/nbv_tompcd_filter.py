@@ -49,7 +49,7 @@ import tf2_geometry_msgs
 
 #To convert pointcloud2(for ROS2) to pointcloud(for open3d)
 
-INPUT_MODE=3 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+INPUT_MODE=0 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
@@ -110,7 +110,7 @@ class MyNode(Node): #construct Node class
         
         
 
-        self.get_logger().info("node 'nbv_tompcd_filter' have been started")
+        self.get_logger().info("node 'nbv_tompcd_filter' have been started lalala aaa")
         #self.create_timer(1.0, self.callback1) #(time interval/ calling callback)
         # TF2 buffer and listener for frame transformations
         self.tf_buffer = Buffer()
@@ -175,12 +175,12 @@ class MyNode(Node): #construct Node class
                 if(self.bboxReadyFlag == True): # 如果bounding box有得到東西了, 才做下面的東東 
                     self.bboxReadyFlag = False # 如果這次bounding box被用掉了, 就轉成false, 要下次有新的bounding box msg 才會再做, 防止bounding box是之前frame的bounding box
                     try: #街收到新data後除非transform有成功讀到, 才繼續往下做
-                        # TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成base_link的座標用的TransformStamped
-                        # 'base_link', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                        # TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成base的座標用的TransformStamped
+                        # 'base', # target frame Moving frame #也就是現在的'camera_link_optical',    
                         # msg.header.frame_id, # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                         # rclpy.time.Time())#msg.header.stamp)         # Time when the point cloud was captured
-                        TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成base_link的座標用的TransformStamped
-                        'base_link', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                        TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成base的座標用的TransformStamped
+                        'base', # target frame Moving frame #也就是現在的'camera_link_optical',    
                         msg.header.frame_id, # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                         msg.header.stamp)#rclpy.time.Time())#msg.header.stamp)         # Time when the point cloud was captured
 
@@ -308,9 +308,16 @@ class MyNode(Node): #construct Node class
                             point_cloud.colors = o3d.utility.Vector3dVector(colors_pcd_open3d)
                             
                             if(INPUT_MODE==1): 
-                                source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
+                                # /home/rmml02/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv/my_robot_nbv/nbv_tompcd_filter.py
+                                # source_path="/home/rmml02/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
+                                source_path="./src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
+                            
+                                # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato_onlyRed.ply"
                             else: 
-                                source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
+                                # source_path="/home/rmml02/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
+                                source_path="./src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
+                            
+                                # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
                             
                             
                             source = o3d.io.read_point_cloud(source_path.format(3)) #demo_pcds.paths[0])
@@ -383,17 +390,17 @@ class MyNode(Node): #construct Node class
                                     # self.get_logger().info(f'filter_points: {(filtered_points)}')                    self.get_logger().info("ok0")
                                     # source_pointcloud2_transformed_points_np = self.transform_pointcloud_to_np(source_points_np, TransformStamped)
                                     
-                                    # TransformStamped = self.tf_buffer.lookup_transform( #先把它轉成base_link的座標用的TransformStamped
+                                    # TransformStamped = self.tf_buffer.lookup_transform( #先把它轉成base的座標用的TransformStamped
                                     #     msg.header.frame_id, # target frame Moving frame #也就是現在的'camera_link_optical',    
                                     #     rclpy.time.Time() , # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                                     #     msg.header.frame_id, #現在是camera link
                                     #     msg.header.stamp,
-                                    #     'base_link',
+                                    #     'base',
                                     #     rclpy.duration.Duration(seconds=0)  # Correct way to create a Duration object
                                     #     )         # Time when the point cloud was captured
                                     try:
                                         TransformStamped_after = self.tf_buffer.lookup_transform(
-                                            'base_link', msg.header.frame_id, rclpy.time.Time())#msg.header.stamp)#rclpy.time.Time())
+                                            'base', msg.header.frame_id, rclpy.time.Time())#msg.header.stamp)#rclpy.time.Time())
                                         
 
                                         #  # Extract translation
@@ -430,7 +437,7 @@ class MyNode(Node): #construct Node class
 
                                     #     try:
                                     #         transform1 = self.tf_buffer.lookup_transform(
-                                    #             'base_link',
+                                    #             'base',
                                     #             msg.header.frame_id,
                                     #             rclpy.time.Time()
                                     #         )
@@ -444,8 +451,8 @@ class MyNode(Node): #construct Node class
                                         # return
 
 
-                                    # TransformStamped_after = self.tf_buffer.lookup_transform( #先把它轉成base_link的座標用的TransformStamped
-                                    #     'base_link', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                                    # TransformStamped_after = self.tf_buffer.lookup_transform( #先把它轉成base的座標用的TransformStamped
+                                    #     'base', # target frame Moving frame #也就是現在的'camera_link_optical',    
                                     #     msg.header.frame_id,
                                     #     rclpy.time.Time() , # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                                     #     #rclpy.duration.Duration(seconds=0)  # Correct way to create a Duration object
@@ -473,7 +480,7 @@ class MyNode(Node): #construct Node class
                                     # source_pointcloud2_transformed_points_np = self.transform_pointcloud_to_np(source_pointcloud2_transformed_points_np1, TransformStamped_after)
                                     
                                     # source_pointcloud2_transformed_points_np = self.transform_pointcloud_to_np(source_points_np, TransformStamped_between)
-                                    # try_header=std_msgs.Header(frame_id='base_link')
+                                    # try_header=std_msgs.Header(frame_id='base')
                                     # self.get_logger().info("ok1")
                                     # source_pointcloud2__transformed_points= pc2.create_cloud(try_header, msg.fields, source_pointcloud2_transformed_points_np.tolist())
                                     # self.get_logger().info("ok2")
@@ -499,7 +506,7 @@ class MyNode(Node): #construct Node class
                                             msg_status.icp_done = True  #只改這個
                                             msg_status.octomap_done = self.octomap_done_msg# 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
                                             msg_status.nbv_done = self.nbv_done_msg
-                                            msg_status.nbv_point_x = self.nbv_point_x_msg #這當預設的反正這個到時候是base也不可能
+                                            msg_status.nbv_point_x = self.nbv_point_x_msg #這當預設的反正這個到時候是Base也不可能
                                             msg_status.nbv_point_y = self.nbv_point_y_msg
                                             msg_status.nbv_point_z = self.nbv_point_z_msg
                                             msg_status.is_final_result = self.is_final_result_msg
@@ -962,9 +969,17 @@ class MyNode(Node): #construct Node class
 #     return msg
 
 def main(args=None): #construct main funct沒有動ㄝ
-    # print("everything alright")
-    
-    # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato.ply"
+
+
+
+    # # print("everything alright")
+    # global INPUT_MODE  # Allow modification of the global variable
+    # if args is not None:
+    #     INPUT_MODE = args
+    # else: 
+    #     INPUT_MODE = 3 # default value if no args are provided  #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+    # print("INPUT_MODE:", INPUT_MODE)
+    # # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_size_modified_only1tomato.ply"
     # target_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/copy_of_filtered_msg.pcd"
     # num=3
 
@@ -988,6 +1003,15 @@ def main(args=None): #construct main funct沒有動ㄝ
     #===============================================================
     
     rclpy.init(args=args)
+
+    global INPUT_MODE
+    if len(sys.argv) > 1:
+        INPUT_MODE = int(sys.argv[1])  # Get the argument from the command line
+    else:
+        INPUT_MODE = 3  # Default value  # default value if no args are provided  #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+    # run with 'ros2 run my_robot_nbv nbv_tompcd_filter 2'
+    print("INPUT_MODE:", INPUT_MODE)
+
     node1 = MyNode() #node1=NodeClass: MyNode
     rclpy.spin(node1) #keep node alive until ctrl+C
     rclpy.shutdown()

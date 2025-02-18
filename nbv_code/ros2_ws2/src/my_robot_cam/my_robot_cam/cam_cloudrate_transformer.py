@@ -25,7 +25,9 @@ import math
 from tf2_ros import Buffer, TransformListener
 from geometry_msgs.msg import TransformStamped
 
-INPUT_MODE=3 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+import sys
+
+INPUT_MODE=0 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 class MyNode(Node): #construct Node class
     
@@ -48,6 +50,7 @@ class MyNode(Node): #construct Node class
         #/camera/points （for gazebo) "/camera/camera/depth/color/points"(for realsense)
 
         # for 統一觀禮, 沒有做處理
+        # <Debug>"/camera/image_raw" 不可以統一處理, 因為這個node還在做其他事情, 所以那個給detector 的image更新律也會因此便慢, 但是這個慢是沒必要的, 所以detector還是直接從源頭subscribe
         if(INPUT_MODE==1 or INPUT_MODE==2):
             self.Image_subscriber_=self.create_subscription(sensor_msgs.Image, "/camera/image_raw", self.callback_image_read, 10)
         else: 
@@ -59,7 +62,7 @@ class MyNode(Node): #construct Node class
         
         
         
-        self.get_logger().info("python_NodeName have been started")
+        self.get_logger().info("python_NodeName have been startedaa")
         
         # Time when the last message was received
         # self.last_received_time = time.time() ###
@@ -231,6 +234,17 @@ class MyNode(Node): #construct Node class
 
 def main(args=None): #construct main function
     rclpy.init(args=args)
+
+    global INPUT_MODE
+    if len(sys.argv) > 1:
+        INPUT_MODE = int(sys.argv[1])  # Get the argument from the command line
+    else:
+        INPUT_MODE = 3  # Default value  # default value if no args are provided  #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+    # run with 'ros2 run my_robot_nbv nbv_tompcd_filter 2'
+    print("INPUT_MODE:", INPUT_MODE)
+
+
+
     node1 = MyNode() #node1=NodeClass: MyNode
     rclpy.spin(node1) #keep node alive until ctrl+C
     rclpy.shutdown()
