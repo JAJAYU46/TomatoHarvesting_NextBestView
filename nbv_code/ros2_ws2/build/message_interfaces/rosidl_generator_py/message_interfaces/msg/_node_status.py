@@ -68,6 +68,9 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         '_nbv_point_x',
         '_nbv_point_y',
         '_nbv_point_z',
+        '_nbv_point_rx',
+        '_nbv_point_ry',
+        '_nbv_point_rz',
         '_is_final_result',
     ]
 
@@ -83,6 +86,9 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         'nbv_point_x': 'double',
         'nbv_point_y': 'double',
         'nbv_point_z': 'double',
+        'nbv_point_rx': 'double',
+        'nbv_point_ry': 'double',
+        'nbv_point_rz': 'double',
         'is_final_result': 'boolean',
     }
 
@@ -95,6 +101,9 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
@@ -116,6 +125,9 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         self.nbv_point_x = kwargs.get('nbv_point_x', float())
         self.nbv_point_y = kwargs.get('nbv_point_y', float())
         self.nbv_point_z = kwargs.get('nbv_point_z', float())
+        self.nbv_point_rx = kwargs.get('nbv_point_rx', float())
+        self.nbv_point_ry = kwargs.get('nbv_point_ry', float())
+        self.nbv_point_rz = kwargs.get('nbv_point_rz', float())
         self.is_final_result = kwargs.get('is_final_result', bool())
 
     def __repr__(self):
@@ -168,6 +180,12 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         if self.nbv_point_y != other.nbv_point_y:
             return False
         if self.nbv_point_z != other.nbv_point_z:
+            return False
+        if self.nbv_point_rx != other.nbv_point_rx:
+            return False
+        if self.nbv_point_ry != other.nbv_point_ry:
+            return False
+        if self.nbv_point_rz != other.nbv_point_rz:
             return False
         if self.is_final_result != other.is_final_result:
             return False
@@ -330,6 +348,51 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
             assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
                 "The 'nbv_point_z' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
         self._nbv_point_z = value
+
+    @builtins.property
+    def nbv_point_rx(self):
+        """Message field 'nbv_point_rx'."""
+        return self._nbv_point_rx
+
+    @nbv_point_rx.setter
+    def nbv_point_rx(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'nbv_point_rx' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'nbv_point_rx' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._nbv_point_rx = value
+
+    @builtins.property
+    def nbv_point_ry(self):
+        """Message field 'nbv_point_ry'."""
+        return self._nbv_point_ry
+
+    @nbv_point_ry.setter
+    def nbv_point_ry(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'nbv_point_ry' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'nbv_point_ry' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._nbv_point_ry = value
+
+    @builtins.property
+    def nbv_point_rz(self):
+        """Message field 'nbv_point_rz'."""
+        return self._nbv_point_rz
+
+    @nbv_point_rz.setter
+    def nbv_point_rz(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'nbv_point_rz' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'nbv_point_rz' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._nbv_point_rz = value
 
     @builtins.property
     def is_final_result(self):

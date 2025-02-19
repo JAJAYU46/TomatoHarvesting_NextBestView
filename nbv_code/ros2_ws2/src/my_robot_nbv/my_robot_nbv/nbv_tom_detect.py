@@ -153,6 +153,9 @@ class MyNode(Node): #construct Node class
         self.nbv_point_x_msg = msg.nbv_point_x
         self.nbv_point_y_msg = msg.nbv_point_y
         self.nbv_point_z_msg = msg.nbv_point_z
+        self.nbv_point_rx_msg = msg.nbv_point_rx
+        self.nbv_point_ry_msg = msg.nbv_point_ry
+        self.nbv_point_rz_msg = msg.nbv_point_rz
         self.is_final_result_msg = msg.is_final_result
 
         self.doneReset = True
@@ -269,6 +272,9 @@ class MyNode(Node): #construct Node class
                         msg_status.nbv_point_x = self.nbv_point_x_msg #這當預設的反正這個到時候是base也不可能
                         msg_status.nbv_point_y = self.nbv_point_y_msg
                         msg_status.nbv_point_z = self.nbv_point_z_msg
+                        msg_status.nbv_point_rx = self.nbv_point_rx_msg #這當預設的反正這個到時候是base也不可能
+                        msg_status.nbv_point_ry = self.nbv_point_ry_msg
+                        msg_status.nbv_point_rz = self.nbv_point_rz_msg
                         msg_status.is_final_result = self.is_final_result_msg
                         self.publish_status_.publish(msg_status)
                         self.donePublishDetectPart = True

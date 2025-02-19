@@ -49,6 +49,9 @@ struct NodeStatus_
       this->nbv_point_x = 0.0;
       this->nbv_point_y = 0.0;
       this->nbv_point_z = 0.0;
+      this->nbv_point_rx = 0.0;
+      this->nbv_point_ry = 0.0;
+      this->nbv_point_rz = 0.0;
       this->is_final_result = false;
     }
   }
@@ -70,6 +73,9 @@ struct NodeStatus_
       this->nbv_point_x = 0.0;
       this->nbv_point_y = 0.0;
       this->nbv_point_z = 0.0;
+      this->nbv_point_rx = 0.0;
+      this->nbv_point_ry = 0.0;
+      this->nbv_point_rz = 0.0;
       this->is_final_result = false;
     }
   }
@@ -108,6 +114,15 @@ struct NodeStatus_
   using _nbv_point_z_type =
     double;
   _nbv_point_z_type nbv_point_z;
+  using _nbv_point_rx_type =
+    double;
+  _nbv_point_rx_type nbv_point_rx;
+  using _nbv_point_ry_type =
+    double;
+  _nbv_point_ry_type nbv_point_ry;
+  using _nbv_point_rz_type =
+    double;
+  _nbv_point_rz_type nbv_point_rz;
   using _is_final_result_type =
     bool;
   _is_final_result_type is_final_result;
@@ -177,6 +192,24 @@ struct NodeStatus_
     const double & _arg)
   {
     this->nbv_point_z = _arg;
+    return *this;
+  }
+  Type & set__nbv_point_rx(
+    const double & _arg)
+  {
+    this->nbv_point_rx = _arg;
+    return *this;
+  }
+  Type & set__nbv_point_ry(
+    const double & _arg)
+  {
+    this->nbv_point_ry = _arg;
+    return *this;
+  }
+  Type & set__nbv_point_rz(
+    const double & _arg)
+  {
+    this->nbv_point_rz = _arg;
     return *this;
   }
   Type & set__is_final_result(
@@ -259,6 +292,15 @@ struct NodeStatus_
       return false;
     }
     if (this->nbv_point_z != other.nbv_point_z) {
+      return false;
+    }
+    if (this->nbv_point_rx != other.nbv_point_rx) {
+      return false;
+    }
+    if (this->nbv_point_ry != other.nbv_point_ry) {
+      return false;
+    }
+    if (this->nbv_point_rz != other.nbv_point_rz) {
       return false;
     }
     if (this->is_final_result != other.is_final_result) {
