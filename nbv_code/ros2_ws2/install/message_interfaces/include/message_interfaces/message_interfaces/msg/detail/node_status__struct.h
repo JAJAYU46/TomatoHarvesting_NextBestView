@@ -38,6 +38,9 @@ typedef struct message_interfaces__msg__NodeStatus
   double nbv_point_x;
   double nbv_point_y;
   double nbv_point_z;
+  double nbv_point_rx;
+  double nbv_point_ry;
+  double nbv_point_rz;
   bool is_final_result;
 } message_interfaces__msg__NodeStatus;
 

@@ -138,7 +138,7 @@ class MyNode(Node): #construct Node class
     #     self.get_logger().info('now the is_moving_msg: '+str(self.is_moving_msg)) # CHANGE
     def status_callback(self,msg):
         if (self.is_moving_msg != msg.is_moving): 
-            self.get_logger().info('now the is_moving_msg: '+str(self.is_moving_msg)) # CHANGE
+            self.get_logger().info('now the is_moving_msg: '+str(msg.is_moving)) # CHANGE
         self.ready_for_next_iteration_msg = msg.ready_for_next_iteration
         self.is_moving_msg = msg.is_moving
         self.target_box_id_msg = msg.target_box_id
@@ -150,6 +150,9 @@ class MyNode(Node): #construct Node class
         self.nbv_point_x_msg = msg.nbv_point_x
         self.nbv_point_y_msg = msg.nbv_point_y
         self.nbv_point_z_msg = msg.nbv_point_z
+        self.nbv_point_rx_msg = msg.nbv_point_rx
+        self.nbv_point_ry_msg = msg.nbv_point_ry
+        self.nbv_point_rz_msg = msg.nbv_point_rz
         self.is_final_result_msg = msg.is_final_result
         
         self.renew_done = True
@@ -509,6 +512,9 @@ class MyNode(Node): #construct Node class
                                             msg_status.nbv_point_x = self.nbv_point_x_msg #這當預設的反正這個到時候是Base也不可能
                                             msg_status.nbv_point_y = self.nbv_point_y_msg
                                             msg_status.nbv_point_z = self.nbv_point_z_msg
+                                            msg_status.nbv_point_rx = self.nbv_point_rx_msg #這當預設的反正這個到時候是Base也不可能
+                                            msg_status.nbv_point_ry = self.nbv_point_ry_msg
+                                            msg_status.nbv_point_rz = self.nbv_point_rz_msg
                                             msg_status.is_final_result = self.is_final_result_msg
                                             self.publish_status_.publish(msg_status)
 

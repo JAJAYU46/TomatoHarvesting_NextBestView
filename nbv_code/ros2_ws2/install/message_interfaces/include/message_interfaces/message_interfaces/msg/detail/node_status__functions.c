@@ -28,6 +28,9 @@ message_interfaces__msg__NodeStatus__init(message_interfaces__msg__NodeStatus * 
   // nbv_point_x
   // nbv_point_y
   // nbv_point_z
+  // nbv_point_rx
+  // nbv_point_ry
+  // nbv_point_rz
   // is_final_result
   return true;
 }
@@ -49,6 +52,9 @@ message_interfaces__msg__NodeStatus__fini(message_interfaces__msg__NodeStatus * 
   // nbv_point_x
   // nbv_point_y
   // nbv_point_z
+  // nbv_point_rx
+  // nbv_point_ry
+  // nbv_point_rz
   // is_final_result
 }
 
@@ -102,6 +108,18 @@ message_interfaces__msg__NodeStatus__are_equal(const message_interfaces__msg__No
   if (lhs->nbv_point_z != rhs->nbv_point_z) {
     return false;
   }
+  // nbv_point_rx
+  if (lhs->nbv_point_rx != rhs->nbv_point_rx) {
+    return false;
+  }
+  // nbv_point_ry
+  if (lhs->nbv_point_ry != rhs->nbv_point_ry) {
+    return false;
+  }
+  // nbv_point_rz
+  if (lhs->nbv_point_rz != rhs->nbv_point_rz) {
+    return false;
+  }
   // is_final_result
   if (lhs->is_final_result != rhs->is_final_result) {
     return false;
@@ -139,6 +157,12 @@ message_interfaces__msg__NodeStatus__copy(
   output->nbv_point_y = input->nbv_point_y;
   // nbv_point_z
   output->nbv_point_z = input->nbv_point_z;
+  // nbv_point_rx
+  output->nbv_point_rx = input->nbv_point_rx;
+  // nbv_point_ry
+  output->nbv_point_ry = input->nbv_point_ry;
+  // nbv_point_rz
+  output->nbv_point_rz = input->nbv_point_rz;
   // is_final_result
   output->is_final_result = input->is_final_result;
   return true;

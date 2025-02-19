@@ -37,16 +37,64 @@ private:
   ::message_interfaces::msg::NodeStatus msg_;
 };
 
+class Init_NodeStatus_nbv_point_rz
+{
+public:
+  explicit Init_NodeStatus_nbv_point_rz(::message_interfaces::msg::NodeStatus & msg)
+  : msg_(msg)
+  {}
+  Init_NodeStatus_is_final_result nbv_point_rz(::message_interfaces::msg::NodeStatus::_nbv_point_rz_type arg)
+  {
+    msg_.nbv_point_rz = std::move(arg);
+    return Init_NodeStatus_is_final_result(msg_);
+  }
+
+private:
+  ::message_interfaces::msg::NodeStatus msg_;
+};
+
+class Init_NodeStatus_nbv_point_ry
+{
+public:
+  explicit Init_NodeStatus_nbv_point_ry(::message_interfaces::msg::NodeStatus & msg)
+  : msg_(msg)
+  {}
+  Init_NodeStatus_nbv_point_rz nbv_point_ry(::message_interfaces::msg::NodeStatus::_nbv_point_ry_type arg)
+  {
+    msg_.nbv_point_ry = std::move(arg);
+    return Init_NodeStatus_nbv_point_rz(msg_);
+  }
+
+private:
+  ::message_interfaces::msg::NodeStatus msg_;
+};
+
+class Init_NodeStatus_nbv_point_rx
+{
+public:
+  explicit Init_NodeStatus_nbv_point_rx(::message_interfaces::msg::NodeStatus & msg)
+  : msg_(msg)
+  {}
+  Init_NodeStatus_nbv_point_ry nbv_point_rx(::message_interfaces::msg::NodeStatus::_nbv_point_rx_type arg)
+  {
+    msg_.nbv_point_rx = std::move(arg);
+    return Init_NodeStatus_nbv_point_ry(msg_);
+  }
+
+private:
+  ::message_interfaces::msg::NodeStatus msg_;
+};
+
 class Init_NodeStatus_nbv_point_z
 {
 public:
   explicit Init_NodeStatus_nbv_point_z(::message_interfaces::msg::NodeStatus & msg)
   : msg_(msg)
   {}
-  Init_NodeStatus_is_final_result nbv_point_z(::message_interfaces::msg::NodeStatus::_nbv_point_z_type arg)
+  Init_NodeStatus_nbv_point_rx nbv_point_z(::message_interfaces::msg::NodeStatus::_nbv_point_z_type arg)
   {
     msg_.nbv_point_z = std::move(arg);
-    return Init_NodeStatus_is_final_result(msg_);
+    return Init_NodeStatus_nbv_point_rx(msg_);
   }
 
 private:

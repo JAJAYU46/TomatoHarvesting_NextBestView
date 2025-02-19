@@ -102,6 +102,27 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: nbv_point_rx
+  {
+    out << "nbv_point_rx: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_rx, out);
+    out << ", ";
+  }
+
+  // member: nbv_point_ry
+  {
+    out << "nbv_point_ry: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_ry, out);
+    out << ", ";
+  }
+
+  // member: nbv_point_rz
+  {
+    out << "nbv_point_rz: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_rz, out);
+    out << ", ";
+  }
+
   // member: is_final_result
   {
     out << "is_final_result: ";
@@ -221,6 +242,36 @@ inline void to_block_style_yaml(
     }
     out << "nbv_point_z: ";
     rosidl_generator_traits::value_to_yaml(msg.nbv_point_z, out);
+    out << "\n";
+  }
+
+  // member: nbv_point_rx
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "nbv_point_rx: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_rx, out);
+    out << "\n";
+  }
+
+  // member: nbv_point_ry
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "nbv_point_ry: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_ry, out);
+    out << "\n";
+  }
+
+  // member: nbv_point_rz
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "nbv_point_rz: ";
+    rosidl_generator_traits::value_to_yaml(msg.nbv_point_rz, out);
     out << "\n";
   }
 

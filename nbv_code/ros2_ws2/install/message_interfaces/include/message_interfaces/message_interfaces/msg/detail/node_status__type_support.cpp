@@ -37,7 +37,7 @@ void NodeStatus_fini_function(void * message_memory)
   typed_message->~NodeStatus();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember NodeStatus_message_member_array[12] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember NodeStatus_message_member_array[15] = {
   {
     "ready_for_next_iteration",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
@@ -226,6 +226,57 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NodeStatus_me
     nullptr  // resize(index) function pointer
   },
   {
+    "nbv_point_rx",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(message_interfaces::msg::NodeStatus, nbv_point_rx),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "nbv_point_ry",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(message_interfaces::msg::NodeStatus, nbv_point_ry),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "nbv_point_rz",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(message_interfaces::msg::NodeStatus, nbv_point_rz),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "is_final_result",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
@@ -247,7 +298,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NodeStatus_me
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers NodeStatus_message_members = {
   "message_interfaces::msg",  // message namespace
   "NodeStatus",  // message name
-  12,  // number of fields
+  15,  // number of fields
   sizeof(message_interfaces::msg::NodeStatus),
   NodeStatus_message_member_array,  // message members
   NodeStatus_init_function,  // function to initialize message memory (memory has to be allocated)

@@ -149,6 +149,33 @@ bool message_interfaces__msg__node_status__convert_from_py(PyObject * _pymsg, vo
     ros_message->nbv_point_z = PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // nbv_point_rx
+    PyObject * field = PyObject_GetAttrString(_pymsg, "nbv_point_rx");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->nbv_point_rx = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // nbv_point_ry
+    PyObject * field = PyObject_GetAttrString(_pymsg, "nbv_point_ry");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->nbv_point_ry = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // nbv_point_rz
+    PyObject * field = PyObject_GetAttrString(_pymsg, "nbv_point_rz");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->nbv_point_rz = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
   {  // is_final_result
     PyObject * field = PyObject_GetAttrString(_pymsg, "is_final_result");
     if (!field) {
@@ -295,6 +322,39 @@ PyObject * message_interfaces__msg__node_status__convert_to_py(void * raw_ros_me
     field = PyFloat_FromDouble(ros_message->nbv_point_z);
     {
       int rc = PyObject_SetAttrString(_pymessage, "nbv_point_z", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // nbv_point_rx
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->nbv_point_rx);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "nbv_point_rx", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // nbv_point_ry
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->nbv_point_ry);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "nbv_point_ry", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // nbv_point_rz
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->nbv_point_rz);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "nbv_point_rz", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

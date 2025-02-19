@@ -1,0 +1,50 @@
+[0.015s] Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces -- -j8 -l8
+[0.149s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.335s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.342s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.346s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.396s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.686s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.687s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[0.687s]   message_interfaces --arguments-file
+[0.687s]   /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_adapter__arguments__message_interfaces.json
+[0.687s]   --output-dir
+[0.687s]   /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_adapter/message_interfaces
+[0.687s]   --output-file
+[0.687s]   /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces/rosidl_adapter/message_interfaces.idls)
+[0.687s]   returned error code 1:
+[0.687s] 
+[0.687s]   Error processing 'float64 nbv_point_Rx' of 'message_interfaces/NodeStatus':
+[0.687s]   ''nbv_point_Rx' is an invalid field name.  It should have the pattern
+[0.687s]   '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$''
+[0.687s] 
+[0.687s]   Traceback (most recent call last):
+[0.687s] 
+[0.687s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.687s]       return _run_code(code, main_globals, None,
+[0.687s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.687s]       exec(code, run_globals)
+[0.687s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.687s]       sys.exit(main())
+[0.687s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.687s]       abs_idl_file = convert_to_idl(
+[0.687s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[0.687s]       return convert_msg_to_idl(
+[0.687s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[0.687s]       msg = parse_message_string(package_name, input_file.stem, content)
+[0.687s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 519, in parse_message_string
+[0.687s]       fields.append(Field(
+[0.687s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 354, in __init__
+[0.687s]       raise NameError(
+[0.687s] 
+[0.688s]   NameError: 'nbv_point_Rx' is an invalid field name.  It should have the
+[0.688s]   pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$'
+[0.688s] 
+[0.688s] Call Stack (most recent call first):
+[0.688s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.688s]   CMakeLists.txt:15 (rosidl_generate_interfaces)
+[0.688s] 
+[0.688s] [0m
+[0.688s] -- Configuring incomplete, errors occurred!
+[0.690s] gmake: *** [Makefile:963: cmake_check_build_system] Error 1
+[0.707s] Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces -- -j8 -l8

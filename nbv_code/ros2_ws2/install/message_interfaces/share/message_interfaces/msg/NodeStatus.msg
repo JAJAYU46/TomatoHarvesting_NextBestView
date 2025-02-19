@@ -10,6 +10,9 @@ bool nbv_done
 float64 nbv_point_x
 float64 nbv_point_y
 float64 nbv_point_z
+float64 nbv_point_rx
+float64 nbv_point_ry
+float64 nbv_point_rz
 bool is_final_result
 # bool 
 # int32 lu_y  # Top-left corner y-coordinate

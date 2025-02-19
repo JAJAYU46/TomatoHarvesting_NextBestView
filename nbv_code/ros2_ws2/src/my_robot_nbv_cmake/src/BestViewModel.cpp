@@ -795,6 +795,9 @@ class MyNode : public rclcpp::Node
         float nbv_point_x_msg_;
         float nbv_point_y_msg_;
         float nbv_point_z_msg_;
+        float nbv_point_rx_msg_;
+        float nbv_point_ry_msg_;
+        float nbv_point_rz_msg_;
         bool is_final_result_msg_;
 
         bool finish_get_status_topic=false;
@@ -820,6 +823,9 @@ class MyNode : public rclcpp::Node
             nbv_point_x_msg_ = msg->nbv_point_x;
             nbv_point_y_msg_ = msg->nbv_point_y;
             nbv_point_z_msg_ = msg->nbv_point_z;
+            nbv_point_rx_msg_ = msg->nbv_point_rx;
+            nbv_point_ry_msg_ = msg->nbv_point_ry;
+            nbv_point_rz_msg_ = msg->nbv_point_rz;
             is_final_result_msg_ = msg->is_final_result;
 
             finish_get_status_topic=true;
@@ -901,6 +907,9 @@ class MyNode : public rclcpp::Node
                                     msg_status.nbv_point_x = nbv_point_x_msg_;
                                     msg_status.nbv_point_y = nbv_point_y_msg_;
                                     msg_status.nbv_point_z = nbv_point_z_msg_ ;
+                                    msg_status.nbv_point_rx = nbv_point_rx_msg_;
+                                    msg_status.nbv_point_ry = nbv_point_ry_msg_;
+                                    msg_status.nbv_point_rz = nbv_point_rz_msg_ ;
                                     msg_status.is_final_result = is_final_result_msg_;
                                     status_publisher_->publish(msg_status);
                                 // }
@@ -1028,6 +1037,9 @@ class MyNode : public rclcpp::Node
                                     msg_status2.nbv_point_x = NbvScene.BestCandidateView_point.x();
                                     msg_status2.nbv_point_y = NbvScene.BestCandidateView_point.y();
                                     msg_status2.nbv_point_z = NbvScene.BestCandidateView_point.z();
+                                    msg_status2.nbv_point_rx = RotationForArm[0];
+                                    msg_status2.nbv_point_ry = RotationForArm[1];
+                                    msg_status2.nbv_point_rz = RotationForArm[2];
                                     if(isFinalNBVpoint==true){ //如果已經是最終點了
                                         //就要把下面這個改true
                                         msg_status2.is_final_result = true;
