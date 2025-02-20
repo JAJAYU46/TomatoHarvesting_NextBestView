@@ -53,6 +53,7 @@ struct NodeStatus_
       this->nbv_point_ry = 0.0;
       this->nbv_point_rz = 0.0;
       this->is_final_result = false;
+      this->arm_move_done_status = 0;
     }
   }
 
@@ -77,6 +78,7 @@ struct NodeStatus_
       this->nbv_point_ry = 0.0;
       this->nbv_point_rz = 0.0;
       this->is_final_result = false;
+      this->arm_move_done_status = 0;
     }
   }
 
@@ -126,6 +128,9 @@ struct NodeStatus_
   using _is_final_result_type =
     bool;
   _is_final_result_type is_final_result;
+  using _arm_move_done_status_type =
+    int8_t;
+  _arm_move_done_status_type arm_move_done_status;
 
   // setters for named parameter idiom
   Type & set__ready_for_next_iteration(
@@ -218,6 +223,12 @@ struct NodeStatus_
     this->is_final_result = _arg;
     return *this;
   }
+  Type & set__arm_move_done_status(
+    const int8_t & _arg)
+  {
+    this->arm_move_done_status = _arg;
+    return *this;
+  }
 
   // constant declarations
 
@@ -304,6 +315,9 @@ struct NodeStatus_
       return false;
     }
     if (this->is_final_result != other.is_final_result) {
+      return false;
+    }
+    if (this->arm_move_done_status != other.arm_move_done_status) {
       return false;
     }
     return true;

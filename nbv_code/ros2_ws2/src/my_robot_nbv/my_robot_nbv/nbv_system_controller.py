@@ -69,6 +69,7 @@ class MyNode(Node): #construct Node class
         self.nbv_point_ry_msg = msg.nbv_point_ry
         self.nbv_point_rz_msg = msg.nbv_point_rz
         self.is_final_result_msg = msg.is_final_result
+        self.arm_move_done_status_msg = msg.arm_move_done_status
 
         self.doneReset = True
 
@@ -90,6 +91,7 @@ class MyNode(Node): #construct Node class
         msg_status.nbv_point_ry = 0.0
         msg_status.nbv_point_rz = 0.0
         msg_status.is_final_result = False
+        msg_status.arm_move_done_status=False
         self.publish_status_.publish(msg_status)
         self.get_logger().info('Reset Status1 done') # CHANGE
         
@@ -111,6 +113,7 @@ class MyNode(Node): #construct Node class
         msg_status.nbv_point_ry = self.nbv_point_ry_msg
         msg_status.nbv_point_rz = self.nbv_point_rz_msg
         msg_status.is_final_result = self.is_final_result_msg
+        msg_status.arm_move_done_status = self.arm_move_done_status_msg
         self.publish_status_.publish(msg_status)
         self.get_logger().info('Reset Status2 done') # CHANGE
         
@@ -174,13 +177,17 @@ class MyNode(Node): #construct Node class
             self.get_logger().info("===================================")
 
             if(self.is_final_result_msg==False): 
-                self.get_logger().info("SENDINT COMMAND TO ROBOT ARM...")
-                while(self.is_moving_msg != True): #等待變成true表示在move
+                self.get_logger().info("SENDINT MOVING COMMAND TO ROBOT ARM NODE...")
+                
+                while(self.arm_move_done_status_msg == 0): #等待robot arm 移動完, 如果還沒移動完就會是0, 就會卡在這個while loop
                     continue  
-                self.get_logger().info("MOVING THE ROBOT ARM...")
-                while(self.is_moving_msg != False): #等待移動好變回靜止
-                    continue  
-                self.get_logger().info("CAMERA ARRIVE BEST VIEW POSITION")
+                # self.get_logger().info("MOVING THE ROBOT ARM...")
+                # while(self.is_moving_msg != False): #等待移動好變回靜止
+                #     continue  
+                if (self.arm_move_done_status_msg == 1):
+                    self.get_logger().info("SUCCESSFULLY MOVE CAMERA TO BEST VIEW POSITION")
+                elif (self.arm_move_done_status_msg == 2):
+                    self.get_logger().info("This nbv point is unreachable, needs to recalculate the nbv point")
                 
                 self.doneReset=False
                 # self.status_reset_within_iteration() #didn't reset iteration... x, y, z

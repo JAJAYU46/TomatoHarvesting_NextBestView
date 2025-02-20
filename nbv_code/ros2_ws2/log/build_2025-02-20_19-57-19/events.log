@@ -1,0 +1,412 @@
+[0.000000] (-) TimerEvent: {}
+[0.001152] (-) JobUnselected: {'identifier': 'my_bot'}
+[0.001220] (-) JobUnselected: {'identifier': 'my_robot_arm'}
+[0.001241] (-) JobUnselected: {'identifier': 'my_robot_cam'}
+[0.001257] (-) JobUnselected: {'identifier': 'my_robot_nbv'}
+[0.001271] (-) JobUnselected: {'identifier': 'my_robot_nbv_cmake'}
+[0.001307] (-) JobUnselected: {'identifier': 'octomap_server2'}
+[0.001322] (-) JobUnselected: {'identifier': 'realsense2_camera'}
+[0.001336] (-) JobUnselected: {'identifier': 'realsense2_camera_msgs'}
+[0.001353] (-) JobUnselected: {'identifier': 'realsense2_description'}
+[0.001373] (message_interfaces) JobQueued: {'identifier': 'message_interfaces', 'dependencies': OrderedDict()}
+[0.001408] (message_interfaces) JobStarted: {'identifier': 'message_interfaces'}
+[0.016287] (message_interfaces) JobProgress: {'identifier': 'message_interfaces', 'progress': 'cmake'}
+[0.017289] (message_interfaces) JobProgress: {'identifier': 'message_interfaces', 'progress': 'build'}
+[0.017798] (message_interfaces) Command: {'cmd': ['/home/jajayu/.local/bin/cmake', '--build', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces', '--', '-j8', '-l8'], 'cwd': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jajayu'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/ros2_ws/install/pcl_ros/lib:/home/jajayu/ros2_ws/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jajayu'), ('OLDPWD', '/home/jajayu/TomatoHarvesting_NextBestView'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('MANAGERPID', '1643'), ('SYSTEMD_EXEC_PID', '1830'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '46790'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install:/home/jajayu/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jajayu'), ('JOURNAL_STREAM', '8:26687'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jajayu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jajayu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jajayu-virtual-machine:@/tmp/.ICE-unix/1798,unix/jajayu-virtual-machine:/tmp/.ICE-unix/1798'), ('INVOCATION_ID', '887f6af4ebbc4af3b958c0f252aa7be4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.64LQ12'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('TERMINATOR_UUID', 'urn:uuid:4dc7bc44-2bd1-4583-897b-71fedb782b9e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/install/webots_ros2_tests/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/webots_ros2/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/pcl_msgs/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/build/pcd_demo:/home/jajayu/ros2_ws/install/pcd_demo/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/gazebo_tutorial:/home/jajayu/ros2_ws/install/gazebo_tutorial/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/depthimage_to_pointcloud2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble')]), 'shell': False}
+[0.100771] (-) TimerEvent: {}
+[0.201286] (-) TimerEvent: {}
+[0.214970] (message_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.301745] (-) TimerEvent: {}
+[0.402195] (-) TimerEvent: {}
+[0.500631] (message_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.502791] (-) TimerEvent: {}
+[0.506656] (message_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.510670] (message_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.559303] (message_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.603207] (-) TimerEvent: {}
+[0.703672] (-) TimerEvent: {}
+[0.804031] (-) TimerEvent: {}
+[0.905324] (-) TimerEvent: {}
+[1.006243] (-) TimerEvent: {}
+[1.106771] (-) TimerEvent: {}
+[1.145981] (message_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.207676] (-) TimerEvent: {}
+[1.308486] (-) TimerEvent: {}
+[1.410515] (-) TimerEvent: {}
+[1.511324] (-) TimerEvent: {}
+[1.612556] (-) TimerEvent: {}
+[1.693356] (message_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.717354] (-) TimerEvent: {}
+[1.817831] (-) TimerEvent: {}
+[1.918400] (-) TimerEvent: {}
+[2.019463] (-) TimerEvent: {}
+[2.120811] (-) TimerEvent: {}
+[2.222012] (-) TimerEvent: {}
+[2.322771] (-) TimerEvent: {}
+[2.423385] (-) TimerEvent: {}
+[2.448210] (message_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.450371] (message_interfaces) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:20 (find_package):\n'}
+[2.450502] (message_interfaces) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[2.450569] (message_interfaces) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[2.450602] (message_interfaces) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[2.450625] (message_interfaces) StderrLine: {'line': b'\n'}
+[2.450649] (message_interfaces) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[2.450672] (message_interfaces) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[2.450695] (message_interfaces) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[2.450716] (message_interfaces) StderrLine: {'line': b'  CMakeLists.txt:15 (rosidl_generate_interfaces)\n'}
+[2.450737] (message_interfaces) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[2.450759] (message_interfaces) StderrLine: {'line': b'\x1b[0m\n'}
+[2.478066] (message_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[2.479459] (message_interfaces) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/humble/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:52 (find_package):\n'}
+[2.479594] (message_interfaces) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[2.479663] (message_interfaces) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[2.479724] (message_interfaces) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[2.479782] (message_interfaces) StderrLine: {'line': b'\n'}
+[2.479839] (message_interfaces) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[2.479896] (message_interfaces) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)\n'}
+[2.479952] (message_interfaces) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[2.480008] (message_interfaces) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[2.480063] (message_interfaces) StderrLine: {'line': b'  CMakeLists.txt:15 (rosidl_generate_interfaces)\n'}
+[2.480117] (message_interfaces) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[2.480170] (message_interfaces) StderrLine: {'line': b'\x1b[0m\n'}
+[2.506707] (message_interfaces) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/humble/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:140 (find_package):\n'}
+[2.506889] (message_interfaces) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[2.507022] (message_interfaces) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[2.507089] (message_interfaces) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[2.507147] (message_interfaces) StderrLine: {'line': b'\n'}
+[2.507206] (message_interfaces) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[2.507334] (message_interfaces) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)\n'}
+[2.507414] (message_interfaces) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[2.507477] (message_interfaces) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[2.507532] (message_interfaces) StderrLine: {'line': b'  CMakeLists.txt:15 (rosidl_generate_interfaces)\n'}
+[2.507587] (message_interfaces) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[2.507641] (message_interfaces) StderrLine: {'line': b'\x1b[0m\n'}
+[2.510977] (message_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[2.511103] (message_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[2.511168] (message_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[2.523641] (-) TimerEvent: {}
+[2.535818] (message_interfaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.564096] (message_interfaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.566187] (message_interfaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.573422] (message_interfaces) StdoutLine: {'line': b'-- Configuring done (2.4s)\n'}
+[2.623778] (-) TimerEvent: {}
+[2.645212] (message_interfaces) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[2.645429] (message_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces\n'}
+[2.669574] (message_interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[2.723954] (-) TimerEvent: {}
+[2.824322] (-) TimerEvent: {}
+[2.925468] (-) TimerEvent: {}
+[3.026258] (-) TimerEvent: {}
+[3.120880] (message_interfaces) StdoutLine: {'line': b'[  2%] Built target message_interfaces__cpp\n'}
+[3.127401] (-) TimerEvent: {}
+[3.133747] (message_interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_copy_message_interfaces\n'}
+[3.136844] (message_interfaces) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[3.228003] (-) TimerEvent: {}
+[3.328474] (-) TimerEvent: {}
+[3.429011] (-) TimerEvent: {}
+[3.529629] (-) TimerEvent: {}
+[3.553481] (message_interfaces) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/message_interfaces/msg/detail/bounding_box__type_support.cpp.o\x1b[0m\n'}
+[3.629731] (-) TimerEvent: {}
+[3.730456] (-) TimerEvent: {}
+[3.831698] (-) TimerEvent: {}
+[3.932088] (-) TimerEvent: {}
+[4.032669] (-) TimerEvent: {}
+[4.105429] (message_interfaces) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/message_interfaces/msg/detail/node_status__type_support.cpp.o\x1b[0m\n'}
+[4.132822] (-) TimerEvent: {}
+[4.233532] (-) TimerEvent: {}
+[4.334295] (-) TimerEvent: {}
+[4.435053] (-) TimerEvent: {}
+[4.535848] (-) TimerEvent: {}
+[4.566127] (message_interfaces) StdoutLine: {'line': b'[ 12%] \x1b[32m\x1b[1mLinking CXX shared library libmessage_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[4.616493] (message_interfaces) StdoutLine: {'line': b'[ 12%] Built target message_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[4.636379] (-) TimerEvent: {}
+[4.737789] (-) TimerEvent: {}
+[4.838229] (-) TimerEvent: {}
+[4.939413] (-) TimerEvent: {}
+[4.968656] (message_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[4.969254] (message_interfaces) StdoutLine: {'line': b'writing message_interfaces.egg-info/PKG-INFO\n'}
+[4.969580] (message_interfaces) StdoutLine: {'line': b'writing dependency_links to message_interfaces.egg-info/dependency_links.txt\n'}
+[4.970076] (message_interfaces) StdoutLine: {'line': b'writing top-level names to message_interfaces.egg-info/top_level.txt\n'}
+[4.974924] (message_interfaces) StdoutLine: {'line': b"reading manifest file 'message_interfaces.egg-info/SOURCES.txt'\n"}
+[4.975732] (message_interfaces) StdoutLine: {'line': b"writing manifest file 'message_interfaces.egg-info/SOURCES.txt'\n"}
+[5.001586] (message_interfaces) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_build_message_interfaces_egg\n'}
+[5.007962] (message_interfaces) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.039979] (-) TimerEvent: {}
+[5.140444] (-) TimerEvent: {}
+[5.240970] (-) TimerEvent: {}
+[5.342783] (-) TimerEvent: {}
+[5.443158] (-) TimerEvent: {}
+[5.446790] (message_interfaces) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/message_interfaces/msg/detail/dds_fastrtps/bounding_box__type_support.cpp.o\x1b[0m\n'}
+[5.543868] (-) TimerEvent: {}
+[5.645278] (-) TimerEvent: {}
+[5.746025] (-) TimerEvent: {}
+[5.846618] (-) TimerEvent: {}
+[5.907331] (message_interfaces) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/message_interfaces/msg/detail/dds_fastrtps/node_status__type_support.cpp.o\x1b[0m\n'}
+[5.946826] (-) TimerEvent: {}
+[6.047988] (-) TimerEvent: {}
+[6.148507] (-) TimerEvent: {}
+[6.249314] (-) TimerEvent: {}
+[6.350197] (-) TimerEvent: {}
+[6.412082] (message_interfaces) StdoutLine: {'line': b'[ 23%] \x1b[32m\x1b[1mLinking CXX shared library libmessage_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[6.450520] (-) TimerEvent: {}
+[6.506391] (message_interfaces) StdoutLine: {'line': b'[ 23%] Built target message_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[6.513528] (message_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[6.550762] (-) TimerEvent: {}
+[6.651464] (-) TimerEvent: {}
+[6.751915] (-) TimerEvent: {}
+[6.852325] (-) TimerEvent: {}
+[6.913135] (message_interfaces) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/message_interfaces/msg/bounding_box__type_support.cpp.o\x1b[0m\n'}
+[6.954407] (-) TimerEvent: {}
+[7.055481] (-) TimerEvent: {}
+[7.156778] (-) TimerEvent: {}
+[7.221708] (message_interfaces) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/message_interfaces/msg/node_status__type_support.cpp.o\x1b[0m\n'}
+[7.256964] (-) TimerEvent: {}
+[7.357384] (-) TimerEvent: {}
+[7.458145] (-) TimerEvent: {}
+[7.558740] (-) TimerEvent: {}
+[7.560136] (message_interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32m\x1b[1mLinking CXX shared library libmessage_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[7.596943] (message_interfaces) StdoutLine: {'line': b'[ 33%] Built target message_interfaces__rosidl_typesupport_cpp\n'}
+[7.602813] (message_interfaces) StdoutLine: {'line': b'[ 35%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[7.659738] (-) TimerEvent: {}
+[7.760439] (-) TimerEvent: {}
+[7.861213] (-) TimerEvent: {}
+[7.961458] (-) TimerEvent: {}
+[8.061868] (-) TimerEvent: {}
+[8.073133] (message_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding C object CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/bounding_box__functions.c.o\x1b[0m\n'}
+[8.157424] (message_interfaces) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding C object CMakeFiles/message_interfaces__rosidl_generator_c.dir/rosidl_generator_c/message_interfaces/msg/detail/node_status__functions.c.o\x1b[0m\n'}
+[8.164553] (-) TimerEvent: {}
+[8.210669] (message_interfaces) StdoutLine: {'line': b'[ 43%] \x1b[32m\x1b[1mLinking C shared library libmessage_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[8.245378] (message_interfaces) StdoutLine: {'line': b'[ 43%] Built target message_interfaces__rosidl_generator_c\n'}
+[8.251406] (message_interfaces) StdoutLine: {'line': b'[ 46%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[8.265291] (-) TimerEvent: {}
+[8.365717] (-) TimerEvent: {}
+[8.466634] (-) TimerEvent: {}
+[8.567005] (-) TimerEvent: {}
+[8.667717] (-) TimerEvent: {}
+[8.696104] (message_interfaces) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/message_interfaces/msg/detail/bounding_box__type_support_c.cpp.o\x1b[0m\n'}
+[8.768192] (-) TimerEvent: {}
+[8.868808] (-) TimerEvent: {}
+[8.969384] (-) TimerEvent: {}
+[9.070695] (-) TimerEvent: {}
+[9.104037] (message_interfaces) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/message_interfaces/msg/detail/node_status__type_support_c.cpp.o\x1b[0m\n'}
+[9.171206] (-) TimerEvent: {}
+[9.272055] (-) TimerEvent: {}
+[9.373149] (-) TimerEvent: {}
+[9.473922] (-) TimerEvent: {}
+[9.521362] (message_interfaces) StdoutLine: {'line': b'[ 53%] \x1b[32m\x1b[1mLinking CXX shared library libmessage_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[9.574481] (-) TimerEvent: {}
+[9.614214] (message_interfaces) StdoutLine: {'line': b'[ 53%] Built target message_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[9.620330] (message_interfaces) StdoutLine: {'line': b'[ 56%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[9.675709] (-) TimerEvent: {}
+[9.776489] (-) TimerEvent: {}
+[9.877380] (-) TimerEvent: {}
+[9.978406] (-) TimerEvent: {}
+[10.002347] (message_interfaces) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/message_interfaces/msg/bounding_box__type_support.cpp.o\x1b[0m\n'}
+[10.031771] (message_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/message_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/message_interfaces/msg/node_status__type_support.cpp.o\x1b[0m\n'}
+[10.059856] (message_interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32m\x1b[1mLinking CXX shared library libmessage_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[10.079027] (-) TimerEvent: {}
+[10.096387] (message_interfaces) StdoutLine: {'line': b'[ 64%] Built target message_interfaces__rosidl_typesupport_c\n'}
+[10.102976] (message_interfaces) StdoutLine: {'line': b'[ 66%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[10.179449] (-) TimerEvent: {}
+[10.280794] (-) TimerEvent: {}
+[10.381329] (-) TimerEvent: {}
+[10.482500] (-) TimerEvent: {}
+[10.515110] (message_interfaces) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding C object CMakeFiles/message_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/message_interfaces/msg/detail/bounding_box__type_support.c.o\x1b[0m\n'}
+[10.546550] (message_interfaces) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding C object CMakeFiles/message_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/message_interfaces/msg/detail/node_status__type_support.c.o\x1b[0m\n'}
+[10.566778] (message_interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking C shared library libmessage_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[10.582733] (-) TimerEvent: {}
+[10.591775] (message_interfaces) StdoutLine: {'line': b'[ 74%] Built target message_interfaces__rosidl_typesupport_introspection_c\n'}
+[10.604282] (message_interfaces) StdoutLine: {'line': b'[ 74%] Built target message_interfaces\n'}
+[10.616470] (message_interfaces) StdoutLine: {'line': b'[ 76%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[10.684274] (-) TimerEvent: {}
+[10.784737] (-) TimerEvent: {}
+[10.886137] (-) TimerEvent: {}
+[10.986783] (-) TimerEvent: {}
+[11.087275] (-) TimerEvent: {}
+[11.187807] (-) TimerEvent: {}
+[11.284475] (message_interfaces) StdoutLine: {'line': b'[ 76%] Built target message_interfaces__py\n'}
+[11.288231] (-) TimerEvent: {}
+[11.319135] (message_interfaces) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding C object CMakeFiles/message_interfaces__rosidl_generator_py.dir/rosidl_generator_py/message_interfaces/msg/_bounding_box_s.c.o\x1b[0m\n'}
+[11.388433] (-) TimerEvent: {}
+[11.461545] (message_interfaces) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/message_interfaces__rosidl_generator_py.dir/rosidl_generator_py/message_interfaces/msg/_node_status_s.c.o\x1b[0m\n'}
+[11.488861] (-) TimerEvent: {}
+[11.585534] (message_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/message_interfaces/libmessage_interfaces__rosidl_generator_py.so\x1b[0m\n'}
+[11.589063] (-) TimerEvent: {}
+[11.621891] (message_interfaces) StdoutLine: {'line': b'[ 84%] Built target message_interfaces__rosidl_generator_py\n'}
+[11.636517] (message_interfaces) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/message_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[11.689259] (-) TimerEvent: {}
+[11.738643] (message_interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/message_interfaces/message_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[11.767177] (message_interfaces) StdoutLine: {'line': b'[ 89%] Built target message_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[11.781429] (message_interfaces) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/message_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[11.789847] (-) TimerEvent: {}
+[11.885570] (message_interfaces) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/message_interfaces/message_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[11.891041] (-) TimerEvent: {}
+[11.910834] (message_interfaces) StdoutLine: {'line': b'[ 94%] Built target message_interfaces__rosidl_typesupport_c__pyext\n'}
+[11.925536] (message_interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding C object CMakeFiles/message_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[11.991388] (-) TimerEvent: {}
+[12.031737] (message_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/message_interfaces/message_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[12.057440] (message_interfaces) StdoutLine: {'line': b'[100%] Built target message_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[12.077714] (message_interfaces) CommandEnded: {'returncode': 0}
+[12.092825] (-) TimerEvent: {}
+[12.193349] (-) TimerEvent: {}
+[12.284469] (message_interfaces) JobProgress: {'identifier': 'message_interfaces', 'progress': 'install'}
+[12.293725] (-) TimerEvent: {}
+[12.397193] (-) TimerEvent: {}
+[12.405601] (message_interfaces) Command: {'cmd': ['/home/jajayu/.local/bin/cmake', '--install', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces'], 'cwd': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jajayu'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/ros2_ws/install/pcl_ros/lib:/home/jajayu/ros2_ws/install/octomap_server2/lib:/home/jajayu/ros2_ws/install/pcl_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jajayu'), ('OLDPWD', '/home/jajayu/TomatoHarvesting_NextBestView'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('MANAGERPID', '1643'), ('SYSTEMD_EXEC_PID', '1830'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '46790'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install:/home/jajayu/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jajayu'), ('JOURNAL_STREAM', '8:26687'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jajayu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/jajayu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/jajayu-virtual-machine:@/tmp/.ICE-unix/1798,unix/jajayu-virtual-machine:/tmp/.ICE-unix/1798'), ('INVOCATION_ID', '887f6af4ebbc4af3b958c0f252aa7be4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.64LQ12'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('TERMINATOR_UUID', 'urn:uuid:4dc7bc44-2bd1-4583-897b-71fedb782b9e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/install/webots_ros2_tests/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/webots_ros2/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/pcl_msgs/local/lib/python3.10/dist-packages:/home/jajayu/ros2_ws/build/pcd_demo:/home/jajayu/ros2_ws/install/pcd_demo/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/jajayu/ros2_ws/install/my_robot_cam/lib/python3.10/site-packages:/home/jajayu/ros2_ws/build/gazebo_tutorial:/home/jajayu/ros2_ws/install/gazebo_tutorial/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/ros2_ws/install/urdf_example:/home/jajayu/ros2_ws/install/perception_pcl:/home/jajayu/ros2_ws/install/pcl_ros:/home/jajayu/ros2_ws/install/octomap_server2:/home/jajayu/ros2_ws/install/pcl_conversions:/home/jajayu/ros2_ws/install/pcl_msgs:/home/jajayu/ros2_ws/install/my_robot_cam_cmake:/home/jajayu/ros2_ws/install/my_bot:/home/jajayu/ros2_ws/install/depthimage_to_pointcloud2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/ros2_ws/install/webots_ros2_tests:/home/jajayu/ros2_ws/install/webots_ros2:/home/jajayu/ros2_ws/install/pcd_demo:/home/jajayu/ros2_ws/install/my_robot_controller:/home/jajayu/ros2_ws/install/my_robot_cam:/home/jajayu/ros2_ws/install/gazebo_tutorial:/opt/ros/humble')]), 'shell': False}
+[12.497784] (-) TimerEvent: {}
+[12.522544] (message_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[12.524503] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/ament_index/resource_index/rosidl_interfaces/message_interfaces\n'}
+[12.525816] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces\n'}
+[12.526448] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg\n'}
+[12.526808] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/node_status.h\n'}
+[12.526924] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail\n'}
+[12.527242] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__functions.c\n'}
+[12.527325] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__struct.h\n'}
+[12.527401] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__functions.h\n'}
+[12.527485] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__functions.c\n'}
+[12.527524] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__type_support.h\n'}
+[12.527647] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__type_support.h\n'}
+[12.527678] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__struct.h\n'}
+[12.527711] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__functions.h\n'}
+[12.527814] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[12.527941] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/bounding_box.h\n'}
+[12.528346] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/environment/library_path.sh\n'}
+[12.528415] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/environment/library_path.dsv\n'}
+[12.528536] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_generator_c.so\n'}
+[12.528674] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_generator_c.so" to ""\n'}
+[12.528801] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces\n'}
+[12.528833] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg\n'}
+[12.528888] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail\n'}
+[12.528946] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__rosidl_typesupport_fastrtps_c.h\n'}
+[12.528970] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__rosidl_typesupport_fastrtps_c.h\n'}
+[12.529053] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[12.529150] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[12.529307] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[12.529342] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces\n'}
+[12.529387] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg\n'}
+[12.529412] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail\n'}
+[12.529493] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__type_support.c\n'}
+[12.529550] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__rosidl_typesupport_introspection_c.h\n'}
+[12.529646] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__rosidl_typesupport_introspection_c.h\n'}
+[12.529737] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__type_support.c\n'}
+[12.529834] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[12.529931] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[12.529978] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[12.530072] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_c.so\n'}
+[12.530102] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[12.530125] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces\n'}
+[12.530151] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg\n'}
+[12.530183] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/bounding_box.hpp\n'}
+[12.530248] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail\n'}
+[12.530304] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__builder.hpp\n'}
+[12.530374] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__traits.hpp\n'}
+[12.530442] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__builder.hpp\n'}
+[12.530531] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__struct.hpp\n'}
+[12.530636] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__traits.hpp\n'}
+[12.530713] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__struct.hpp\n'}
+[12.530742] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/node_status.hpp\n'}
+[12.530768] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces\n'}
+[12.530791] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg\n'}
+[12.530813] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail\n'}
+[12.530835] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[12.530858] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/dds_fastrtps\n'}
+[12.530914] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[12.530943] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[12.531343] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[12.531535] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[12.531621] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces\n'}
+[12.531702] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg\n'}
+[12.531747] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail\n'}
+[12.531818] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__rosidl_typesupport_introspection_cpp.hpp\n'}
+[12.531851] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__type_support.cpp\n'}
+[12.531874] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/bounding_box__type_support.cpp\n'}
+[12.531896] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/include/message_interfaces/message_interfaces/msg/detail/node_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[12.532185] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[12.532363] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[12.532538] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_cpp.so\n'}
+[12.532621] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[12.532670] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/environment/pythonpath.sh\n'}
+[12.532798] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/environment/pythonpath.dsv\n'}
+[12.532831] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces-0.0.0-py3.10.egg-info\n'}
+[12.532902] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[12.532946] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[12.532986] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[12.533025] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[12.533112] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces\n'}
+[12.533171] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/message_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[12.533262] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/message_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[12.533420] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[12.533716] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[12.533817] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/message_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[12.533891] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/_message_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[12.533953] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/libmessage_interfaces__rosidl_generator_py.so\n'}
+[12.534012] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg\n'}
+[12.534316] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg/_bounding_box_s.c\n'}
+[12.534468] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg/_node_status_s.c\n'}
+[12.534624] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg/_bounding_box.py\n'}
+[12.534766] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg/__init__.py\n'}
+[12.534894] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg/_node_status.py\n'}
+[12.535275] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/__init__.py\n'}
+[12.590097] (message_interfaces) StdoutLine: {'line': b"Listing '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces'...\n"}
+[12.590283] (message_interfaces) StdoutLine: {'line': b"Compiling '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/__init__.py'...\n"}
+[12.590354] (message_interfaces) StdoutLine: {'line': b"Listing '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg'...\n"}
+[12.590416] (message_interfaces) StdoutLine: {'line': b"Compiling '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg/__init__.py'...\n"}
+[12.590476] (message_interfaces) StdoutLine: {'line': b"Compiling '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg/_bounding_box.py'...\n"}
+[12.590533] (message_interfaces) StdoutLine: {'line': b"Compiling '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/msg/_node_status.py'...\n"}
+[12.595003] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/message_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[12.596346] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/message_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[12.596623] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/message_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[12.596978] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/message_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[12.597386] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/message_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[12.597549] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/local/lib/python3.10/dist-packages/message_interfaces/message_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[12.597726] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_generator_py.so\n'}
+[12.597818] (-) TimerEvent: {}
+[12.598143] (message_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/libmessage_interfaces__rosidl_generator_py.so" to ""\n'}
+[12.598832] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/msg/BoundingBox.idl\n'}
+[12.599014] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/msg/NodeStatus.idl\n'}
+[12.599085] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/msg/BoundingBox.msg\n'}
+[12.599189] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/msg/NodeStatus.msg\n'}
+[12.599257] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/ament_index/resource_index/package_run_dependencies/message_interfaces\n'}
+[12.599830] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/ament_index/resource_index/parent_prefix_path/message_interfaces\n'}
+[12.600064] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/environment/ament_prefix_path.sh\n'}
+[12.600369] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/environment/ament_prefix_path.dsv\n'}
+[12.600504] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/environment/path.sh\n'}
+[12.600679] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/environment/path.dsv\n'}
+[12.601267] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/local_setup.bash\n'}
+[12.601460] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/local_setup.sh\n'}
+[12.601527] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/local_setup.zsh\n'}
+[12.601585] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/local_setup.dsv\n'}
+[12.601814] (message_interfaces) StdoutLine: {'line': b'-- Installing: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.dsv\n'}
+[12.602403] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/ament_index/resource_index/packages/message_interfaces\n'}
+[12.603471] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/export_message_interfaces__rosidl_generator_cExport.cmake\n'}
+[12.603558] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/export_message_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[12.603937] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/export_message_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[12.604235] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/export_message_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[12.604572] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[12.604700] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[12.604890] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[12.604986] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[12.605171] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/export_message_interfaces__rosidl_generator_cppExport.cmake\n'}
+[12.605683] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/export_message_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[12.605857] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/export_message_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[12.606589] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[12.606719] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[12.606801] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[12.606862] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[12.607577] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/export_message_interfaces__rosidl_generator_pyExport.cmake\n'}
+[12.607708] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/export_message_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[12.607777] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[12.607837] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[12.607906] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[12.607966] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[12.608025] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[12.608172] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[12.608243] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[12.608309] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfacesConfig.cmake\n'}
+[12.608369] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/cmake/message_interfacesConfig-version.cmake\n'}
+[12.608482] (message_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.xml\n'}
+[12.623048] (message_interfaces) CommandEnded: {'returncode': 0}
+[12.699399] (-) TimerEvent: {}
+[12.799843] (-) TimerEvent: {}
+[12.868849] (message_interfaces) JobEnded: {'identifier': 'message_interfaces', 'rc': 0}
+[12.870213] (-) EventReactorShutdown: {}

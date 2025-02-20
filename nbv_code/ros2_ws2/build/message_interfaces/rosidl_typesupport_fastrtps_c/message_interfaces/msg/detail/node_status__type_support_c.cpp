@@ -124,6 +124,11 @@ static bool _NodeStatus__cdr_serialize(
     cdr << (ros_message->is_final_result ? true : false);
   }
 
+  // Field name: arm_move_done_status
+  {
+    cdr << ros_message->arm_move_done_status;
+  }
+
   return true;
 }
 
@@ -223,6 +228,11 @@ static bool _NodeStatus__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->is_final_result = tmp ? true : false;
+  }
+
+  // Field name: arm_move_done_status
+  {
+    cdr >> ros_message->arm_move_done_status;
   }
 
   return true;
@@ -329,6 +339,12 @@ size_t get_serialized_size_message_interfaces__msg__NodeStatus(
   // field.name is_final_result
   {
     size_t item_size = sizeof(ros_message->is_final_result);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name arm_move_done_status
+  {
+    size_t item_size = sizeof(ros_message->arm_move_done_status);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -474,6 +490,13 @@ size_t max_serialized_size_message_interfaces__msg__NodeStatus(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
+  // member: arm_move_done_status
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -483,7 +506,7 @@ size_t max_serialized_size_message_interfaces__msg__NodeStatus(
     using DataType = message_interfaces__msg__NodeStatus;
     is_plain =
       (
-      offsetof(DataType, is_final_result) +
+      offsetof(DataType, arm_move_done_status) +
       last_member_size
       ) == ret_val;
   }

@@ -176,6 +176,15 @@ bool message_interfaces__msg__node_status__convert_from_py(PyObject * _pymsg, vo
     ros_message->nbv_point_rz = PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // arm_move_done_status
+    PyObject * field = PyObject_GetAttrString(_pymsg, "arm_move_done_status");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->arm_move_done_status = (int8_t)PyLong_AsLong(field);
+    Py_DECREF(field);
+  }
   {  // is_final_result
     PyObject * field = PyObject_GetAttrString(_pymsg, "is_final_result");
     if (!field) {
@@ -355,6 +364,17 @@ PyObject * message_interfaces__msg__node_status__convert_to_py(void * raw_ros_me
     field = PyFloat_FromDouble(ros_message->nbv_point_rz);
     {
       int rc = PyObject_SetAttrString(_pymessage, "nbv_point_rz", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // arm_move_done_status
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->arm_move_done_status);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "arm_move_done_status", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

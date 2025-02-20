@@ -32,6 +32,7 @@ message_interfaces__msg__NodeStatus__init(message_interfaces__msg__NodeStatus * 
   // nbv_point_ry
   // nbv_point_rz
   // is_final_result
+  // arm_move_done_status
   return true;
 }
 
@@ -56,6 +57,7 @@ message_interfaces__msg__NodeStatus__fini(message_interfaces__msg__NodeStatus * 
   // nbv_point_ry
   // nbv_point_rz
   // is_final_result
+  // arm_move_done_status
 }
 
 bool
@@ -124,6 +126,10 @@ message_interfaces__msg__NodeStatus__are_equal(const message_interfaces__msg__No
   if (lhs->is_final_result != rhs->is_final_result) {
     return false;
   }
+  // arm_move_done_status
+  if (lhs->arm_move_done_status != rhs->arm_move_done_status) {
+    return false;
+  }
   return true;
 }
 
@@ -165,6 +171,8 @@ message_interfaces__msg__NodeStatus__copy(
   output->nbv_point_rz = input->nbv_point_rz;
   // is_final_result
   output->is_final_result = input->is_final_result;
+  // arm_move_done_status
+  output->arm_move_done_status = input->arm_move_done_status;
   return true;
 }
 

@@ -42,6 +42,8 @@ typedef struct message_interfaces__msg__NodeStatus
   double nbv_point_ry;
   double nbv_point_rz;
   bool is_final_result;
+  /// 用來紀錄moving robot arm的成功狀態 # 0: 還沒move, 1: move 完了 2: unreachable nbv point, recalculate nbv point
+  int8_t arm_move_done_status;
 } message_interfaces__msg__NodeStatus;
 
 // Struct for a sequence of message_interfaces__msg__NodeStatus.
