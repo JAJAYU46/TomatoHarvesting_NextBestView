@@ -54,6 +54,7 @@ class MyNode(Node): #construct Node class
             msg_status.nbv_point_ry = self.nbv_point_ry_msg
             msg_status.nbv_point_rz = self.nbv_point_rz_msg
             msg_status.is_final_result = self.is_final_result_msg
+            msg_status.arm_move_done_status = self.arm_move_done_status_msg
             if user_input == 'm':
                 
                 # msg_status.is_moving = True
@@ -100,6 +101,7 @@ class MyNode(Node): #construct Node class
         self.nbv_point_ry_msg = msg.nbv_point_ry
         self.nbv_point_rz_msg = msg.nbv_point_rz
         self.is_final_result_msg = msg.is_final_result
+        self.arm_move_done_status_msg = msg.arm_move_done_status
         
         self.renew_done = True
     

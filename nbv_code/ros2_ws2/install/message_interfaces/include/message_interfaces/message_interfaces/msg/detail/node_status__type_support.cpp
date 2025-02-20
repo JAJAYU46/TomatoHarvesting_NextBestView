@@ -37,7 +37,7 @@ void NodeStatus_fini_function(void * message_memory)
   typed_message->~NodeStatus();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember NodeStatus_message_member_array[15] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember NodeStatus_message_member_array[16] = {
   {
     "ready_for_next_iteration",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
@@ -292,13 +292,30 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NodeStatus_me
     nullptr,  // fetch(index, &value) function pointer
     nullptr,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
+  },
+  {
+    "arm_move_done_status",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT8,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(message_interfaces::msg::NodeStatus, arm_move_done_status),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers NodeStatus_message_members = {
   "message_interfaces::msg",  // message namespace
   "NodeStatus",  // message name
-  15,  // number of fields
+  16,  // number of fields
   sizeof(message_interfaces::msg::NodeStatus),
   NodeStatus_message_member_array,  // message members
   NodeStatus_init_function,  // function to initialize message memory (memory has to be allocated)

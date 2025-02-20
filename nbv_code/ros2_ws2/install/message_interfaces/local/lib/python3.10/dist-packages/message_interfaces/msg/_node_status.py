@@ -72,6 +72,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         '_nbv_point_ry',
         '_nbv_point_rz',
         '_is_final_result',
+        '_arm_move_done_status',
     ]
 
     _fields_and_field_types = {
@@ -90,6 +91,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         'nbv_point_ry': 'double',
         'nbv_point_rz': 'double',
         'is_final_result': 'boolean',
+        'arm_move_done_status': 'int8',
     }
 
     SLOT_TYPES = (
@@ -108,6 +110,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int8'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -129,6 +132,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         self.nbv_point_ry = kwargs.get('nbv_point_ry', float())
         self.nbv_point_rz = kwargs.get('nbv_point_rz', float())
         self.is_final_result = kwargs.get('is_final_result', bool())
+        self.arm_move_done_status = kwargs.get('arm_move_done_status', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -188,6 +192,8 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         if self.nbv_point_rz != other.nbv_point_rz:
             return False
         if self.is_final_result != other.is_final_result:
+            return False
+        if self.arm_move_done_status != other.arm_move_done_status:
             return False
         return True
 
@@ -406,3 +412,18 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
                 isinstance(value, bool), \
                 "The 'is_final_result' field must be of type 'bool'"
         self._is_final_result = value
+
+    @builtins.property
+    def arm_move_done_status(self):
+        """Message field 'arm_move_done_status'."""
+        return self._arm_move_done_status
+
+    @arm_move_done_status.setter
+    def arm_move_done_status(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'arm_move_done_status' field must be of type 'int'"
+            assert value >= -128 and value < 128, \
+                "The 'arm_move_done_status' field must be an integer in [-128, 127]"
+        self._arm_move_done_status = value

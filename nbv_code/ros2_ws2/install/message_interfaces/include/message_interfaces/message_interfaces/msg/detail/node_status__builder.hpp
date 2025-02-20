@@ -21,16 +21,32 @@ namespace msg
 namespace builder
 {
 
+class Init_NodeStatus_arm_move_done_status
+{
+public:
+  explicit Init_NodeStatus_arm_move_done_status(::message_interfaces::msg::NodeStatus & msg)
+  : msg_(msg)
+  {}
+  ::message_interfaces::msg::NodeStatus arm_move_done_status(::message_interfaces::msg::NodeStatus::_arm_move_done_status_type arg)
+  {
+    msg_.arm_move_done_status = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::message_interfaces::msg::NodeStatus msg_;
+};
+
 class Init_NodeStatus_is_final_result
 {
 public:
   explicit Init_NodeStatus_is_final_result(::message_interfaces::msg::NodeStatus & msg)
   : msg_(msg)
   {}
-  ::message_interfaces::msg::NodeStatus is_final_result(::message_interfaces::msg::NodeStatus::_is_final_result_type arg)
+  Init_NodeStatus_arm_move_done_status is_final_result(::message_interfaces::msg::NodeStatus::_is_final_result_type arg)
   {
     msg_.is_final_result = std::move(arg);
-    return std::move(msg_);
+    return Init_NodeStatus_arm_move_done_status(msg_);
   }
 
 private:

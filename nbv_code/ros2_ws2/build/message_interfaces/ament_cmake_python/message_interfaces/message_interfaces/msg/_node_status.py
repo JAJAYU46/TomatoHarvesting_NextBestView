@@ -71,6 +71,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         '_nbv_point_rx',
         '_nbv_point_ry',
         '_nbv_point_rz',
+        '_arm_move_done_status',
         '_is_final_result',
     ]
 
@@ -89,6 +90,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         'nbv_point_rx': 'double',
         'nbv_point_ry': 'double',
         'nbv_point_rz': 'double',
+        'arm_move_done_status': 'int8',
         'is_final_result': 'boolean',
     }
 
@@ -107,6 +109,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int8'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
@@ -128,6 +131,7 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         self.nbv_point_rx = kwargs.get('nbv_point_rx', float())
         self.nbv_point_ry = kwargs.get('nbv_point_ry', float())
         self.nbv_point_rz = kwargs.get('nbv_point_rz', float())
+        self.arm_move_done_status = kwargs.get('arm_move_done_status', int())
         self.is_final_result = kwargs.get('is_final_result', bool())
 
     def __repr__(self):
@@ -186,6 +190,8 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
         if self.nbv_point_ry != other.nbv_point_ry:
             return False
         if self.nbv_point_rz != other.nbv_point_rz:
+            return False
+        if self.arm_move_done_status != other.arm_move_done_status:
             return False
         if self.is_final_result != other.is_final_result:
             return False
@@ -393,6 +399,21 @@ class NodeStatus(metaclass=Metaclass_NodeStatus):
             assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
                 "The 'nbv_point_rz' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
         self._nbv_point_rz = value
+
+    @builtins.property
+    def arm_move_done_status(self):
+        """Message field 'arm_move_done_status'."""
+        return self._arm_move_done_status
+
+    @arm_move_done_status.setter
+    def arm_move_done_status(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'arm_move_done_status' field must be of type 'int'"
+            assert value >= -128 and value < 128, \
+                "The 'arm_move_done_status' field must be an integer in [-128, 127]"
+        self._arm_move_done_status = value
 
     @builtins.property
     def is_final_result(self):

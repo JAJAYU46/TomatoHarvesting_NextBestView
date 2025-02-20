@@ -799,6 +799,7 @@ class MyNode : public rclcpp::Node
         float nbv_point_ry_msg_;
         float nbv_point_rz_msg_;
         bool is_final_result_msg_;
+        int arm_move_done_status_msg_;
 
         bool finish_get_status_topic=false;
         rclcpp::Publisher<message_interfaces::msg::NodeStatus>::SharedPtr status_publisher_;
@@ -827,6 +828,7 @@ class MyNode : public rclcpp::Node
             nbv_point_ry_msg_ = msg->nbv_point_ry;
             nbv_point_rz_msg_ = msg->nbv_point_rz;
             is_final_result_msg_ = msg->is_final_result;
+            arm_move_done_status_msg_ = msg->arm_move_done_status;
 
             finish_get_status_topic=true;
         }
@@ -911,6 +913,7 @@ class MyNode : public rclcpp::Node
                                     msg_status.nbv_point_ry = nbv_point_ry_msg_;
                                     msg_status.nbv_point_rz = nbv_point_rz_msg_ ;
                                     msg_status.is_final_result = is_final_result_msg_;
+                                    msg_status.arm_move_done_status = arm_move_done_status_msg_
                                     status_publisher_->publish(msg_status);
                                 // }
                                 // ==================================================== 
@@ -1040,6 +1043,7 @@ class MyNode : public rclcpp::Node
                                     msg_status2.nbv_point_rx = RotationForArm[0];
                                     msg_status2.nbv_point_ry = RotationForArm[1];
                                     msg_status2.nbv_point_rz = RotationForArm[2];
+                                    msg_status2.arm_move_done_status = arm_move_done_status_msg_
                                     if(isFinalNBVpoint==true){ //如果已經是最終點了
                                         //就要把下面這個改true
                                         msg_status2.is_final_result = true;
