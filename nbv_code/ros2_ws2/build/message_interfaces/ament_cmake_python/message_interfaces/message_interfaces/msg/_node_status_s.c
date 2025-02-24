@@ -176,15 +176,6 @@ bool message_interfaces__msg__node_status__convert_from_py(PyObject * _pymsg, vo
     ros_message->nbv_point_rz = PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
-  {  // arm_move_done_status
-    PyObject * field = PyObject_GetAttrString(_pymsg, "arm_move_done_status");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->arm_move_done_status = (int8_t)PyLong_AsLong(field);
-    Py_DECREF(field);
-  }
   {  // is_final_result
     PyObject * field = PyObject_GetAttrString(_pymsg, "is_final_result");
     if (!field) {
@@ -192,6 +183,15 @@ bool message_interfaces__msg__node_status__convert_from_py(PyObject * _pymsg, vo
     }
     assert(PyBool_Check(field));
     ros_message->is_final_result = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // arm_move_done_status
+    PyObject * field = PyObject_GetAttrString(_pymsg, "arm_move_done_status");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->arm_move_done_status = (int8_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
 
@@ -370,22 +370,22 @@ PyObject * message_interfaces__msg__node_status__convert_to_py(void * raw_ros_me
       }
     }
   }
-  {  // arm_move_done_status
+  {  // is_final_result
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->arm_move_done_status);
+    field = PyBool_FromLong(ros_message->is_final_result ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "arm_move_done_status", field);
+      int rc = PyObject_SetAttrString(_pymessage, "is_final_result", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // is_final_result
+  {  // arm_move_done_status
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->is_final_result ? 1 : 0);
+    field = PyLong_FromLong(ros_message->arm_move_done_status);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "is_final_result", field);
+      int rc = PyObject_SetAttrString(_pymessage, "arm_move_done_status", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

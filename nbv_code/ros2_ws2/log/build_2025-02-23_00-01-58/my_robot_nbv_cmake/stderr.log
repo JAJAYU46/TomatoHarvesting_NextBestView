@@ -1,0 +1,367 @@
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:36[m[K:
+[01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   35 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:38[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:[m[K In member function ‘[01m[Kvoid BestViewModel::CaculateNextBestView()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:143:30:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KvectorBT[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  143 |             octomap::point3d [01;35m[KvectorBT[m[K = modelCenterOctomap_pcd - RobotArmBase; //
+      |                              [01;35m[K^~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:182:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KscalarProjection_BO_RSA[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  182 |             double [01;35m[KscalarProjection_BO_RSA[m[K = dotProductUV_BO_RSA / dotProductVV_RSA_RSA;
+      |                    [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:[m[K In member function ‘[01m[Kstd::vector<float> MyNode::CalculateRotationForArm(octomap::point3d&, octomap::point3d&)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(Eigen::Vector3f {aka Eigen::Matrix<float, 3, 1>}) ()[m[K’
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;31m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;31m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:73:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndices, class ColIndices> typename Eigen::internal::enable_if<(Eigen::internal::valid_indexed_view_overload<RowIndices, ColIndices>::value && Eigen::internal::traits<typename Eigen::DenseBase<Derived>::ConstIndexedViewType<RowIndices, ColIndices>::type>::ReturnAsIndexedView), typename Eigen::DenseBase<Derived>::ConstIndexedViewType<RowIndices, ColIndices>::type>::type Eigen::DenseBase<Derived>::operator()(const RowIndices&, const ColIndices&) const [with RowIndices = RowIndices; ColIndices = ColIndices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+   73 | [01;36m[Koperator[m[K()(const RowIndices& rowIndices, const ColIndices& colIndices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:73:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:85:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndices, class ColIndices> typename Eigen::internal::enable_if<(Eigen::internal::valid_indexed_view_overload<RowIndices, ColIndices>::value && Eigen::internal::traits<typename Eigen::DenseBase<Derived>::ConstIndexedViewType<RowIndices, ColIndices>::type>::ReturnAsBlock), typename Eigen::internal::traits<typename Eigen::DenseBase<Derived>::ConstIndexedViewType<RowIndices, ColIndices>::type>::BlockType>::type Eigen::DenseBase<Derived>::operator()(const RowIndices&, const ColIndices&) const [with RowIndices = RowIndices; ColIndices = ColIndices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+   85 | [01;36m[Koperator[m[K()(const RowIndices& rowIndices, const ColIndices& colIndices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:85:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:103:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndices, class ColIndices> typename Eigen::internal::enable_if<(Eigen::internal::valid_indexed_view_overload<RowIndices, ColIndices>::value && Eigen::internal::traits<typename Eigen::DenseBase<Derived>::ConstIndexedViewType<RowIndices, ColIndices>::type>::ReturnAsScalar), typename Eigen::DenseCoeffsBase<Derived, Eigen::internal::accessors_level<Derived>::value>::CoeffReturnType>::type Eigen::DenseBase<Derived>::operator()(const RowIndices&, const ColIndices&) const [with RowIndices = RowIndices; ColIndices = ColIndices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  103 | [01;36m[Koperator[m[K()(const RowIndices& rowIndices, const ColIndices& colIndices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:103:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:114:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndicesT, long unsigned int RowIndicesN, class ColIndices> Eigen::IndexedView<const Derived, const RowIndicesT (&)[RowIndicesN], typename Eigen::DenseBase<Derived>::IvcColType<ColIndices>::type> Eigen::DenseBase<Derived>::operator()(const RowIndicesT (&)[RowIndicesN], const ColIndices&) const [with RowIndicesT = RowIndicesT; long unsigned int RowIndicesN = RowIndicesN; ColIndices = ColIndices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  114 | [01;36m[Koperator[m[K()(const RowIndicesT (&rowIndices)[RowIndicesN], const ColIndices& colIndices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:114:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:122:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndices, class ColIndicesT, long unsigned int ColIndicesN> Eigen::IndexedView<const Derived, typename Eigen::DenseBase<Derived>::IvcRowType<Indices>::type, const ColIndicesT (&)[ColIndicesN]> Eigen::DenseBase<Derived>::operator()(const RowIndices&, const ColIndicesT (&)[ColIndicesN]) const [with RowIndices = RowIndices; ColIndicesT = ColIndicesT; long unsigned int ColIndicesN = ColIndicesN; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  122 | [01;36m[Koperator[m[K()(const RowIndices& rowIndices, const ColIndicesT (&colIndices)[ColIndicesN]) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:122:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:130:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndicesT, long unsigned int RowIndicesN, class ColIndicesT, long unsigned int ColIndicesN> Eigen::IndexedView<const Derived, const RowIndicesT (&)[RowIndicesN], const ColIndicesT (&)[ColIndicesN]> Eigen::DenseBase<Derived>::operator()(const RowIndicesT (&)[RowIndicesN], const ColIndicesT (&)[ColIndicesN]) const [with RowIndicesT = RowIndicesT; long unsigned int RowIndicesN = RowIndicesN; ColIndicesT = ColIndicesT; long unsigned int ColIndicesN = ColIndicesN; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  130 | [01;36m[Koperator[m[K()(const RowIndicesT (&rowIndices)[RowIndicesN], const ColIndicesT (&colIndices)[ColIndicesN]) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:130:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:144:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Indices> typename Eigen::internal::enable_if<(Eigen::DenseBase<Derived>::IsRowMajor && (!((Eigen::internal::get_compile_time_incr<typename Eigen::DenseBase<Derived>::IvcType<Indices>::type>::value == 1) || Eigen::internal::is_valid_index_type<Indices>::value))), Eigen::IndexedView<const Derived, Eigen::internal::SingleRange, typename Eigen::DenseBase<Derived>::IvcType<Indices>::type> >::type Eigen::DenseBase<Derived>::operator()(const Indices&) const [with Indices = Indices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  144 | [01;36m[Koperator[m[K()(const Indices& indices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:144:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:155:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Indices> typename Eigen::internal::enable_if<((! Eigen::DenseBase<Derived>::IsRowMajor) && (!((Eigen::internal::get_compile_time_incr<typename Eigen::DenseBase<Derived>::IvcType<Indices>::type>::value == 1) || Eigen::internal::is_valid_index_type<Indices>::value))), Eigen::IndexedView<const Derived, typename Eigen::DenseBase<Derived>::IvcType<Indices>::type, Eigen::internal::SingleRange> >::type Eigen::DenseBase<Derived>::operator()(const Indices&) const [with Indices = Indices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  155 | [01;36m[Koperator[m[K()(const Indices& indices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:155:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:166:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Indices> typename Eigen::internal::enable_if<(((Eigen::internal::get_compile_time_incr<typename Eigen::DenseBase<Derived>::IvcType<Indices>::type>::value == 1) && (! Eigen::internal::is_valid_index_type<Indices>::value)) && (! Eigen::symbolic::is_symbolic<Indices>::value)), Eigen::VectorBlock<const Derived, Eigen::internal::array_size<Indices>::value> >::type Eigen::DenseBase<Derived>::operator()(const Indices&) const [with Indices = Indices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  166 | [01;36m[Koperator[m[K()(const Indices& indices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:166:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:176:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class IndexType> typename Eigen::internal::enable_if<Eigen::symbolic::is_symbolic<Indices>::value, typename Eigen::DenseCoeffsBase<Derived, Eigen::internal::accessors_level<Derived>::value>::CoeffReturnType>::type Eigen::DenseBase<Derived>::operator()(const IndexType&) const [with IndexType = IndexType; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  176 | [01;36m[Koperator[m[K()(const IndexType& id) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:176:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:186:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class IndicesT, long unsigned int IndicesN> typename Eigen::internal::enable_if<Eigen::DenseBase<Derived>::IsRowMajor, Eigen::IndexedView<const Derived, Eigen::internal::SingleRange, const IndicesT (&)[IndicesN]> >::type Eigen::DenseBase<Derived>::operator()(const IndicesT (&)[IndicesN]) const [with IndicesT = IndicesT; long unsigned int IndicesN = IndicesN; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  186 | [01;36m[Koperator[m[K()(const IndicesT (&indices)[IndicesN]) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:186:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:196:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class IndicesT, long unsigned int IndicesN> typename Eigen::internal::enable_if<(! Eigen::DenseBase<Derived>::IsRowMajor), Eigen::IndexedView<const Derived, const IndicesT (&)[IndicesN], Eigen::internal::SingleRange> >::type Eigen::DenseBase<Derived>::operator()(const IndicesT (&)[IndicesN]) const [with IndicesT = IndicesT; long unsigned int IndicesN = IndicesN; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  196 | [01;36m[Koperator[m[K()(const IndicesT (&indices)[IndicesN]) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:196:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:73:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndices, class ColIndices> typename Eigen::internal::enable_if<(Eigen::internal::valid_indexed_view_overload<RowIndices, ColIndices>::value && Eigen::internal::traits<typename Eigen::DenseBase<Derived>::IndexedViewType<RowIndices, ColIndices>::type>::ReturnAsIndexedView), typename Eigen::DenseBase<Derived>::IndexedViewType<RowIndices, ColIndices>::type>::type Eigen::DenseBase<Derived>::operator()(const RowIndices&, const ColIndices&) [with RowIndices = RowIndices; ColIndices = ColIndices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+   73 | [01;36m[Koperator[m[K()(const RowIndices& rowIndices, const ColIndices& colIndices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:73:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:85:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndices, class ColIndices> typename Eigen::internal::enable_if<(Eigen::internal::valid_indexed_view_overload<RowIndices, ColIndices>::value && Eigen::internal::traits<typename Eigen::DenseBase<Derived>::IndexedViewType<RowIndices, ColIndices>::type>::ReturnAsBlock), typename Eigen::internal::traits<typename Eigen::DenseBase<Derived>::IndexedViewType<RowIndices, ColIndices>::type>::BlockType>::type Eigen::DenseBase<Derived>::operator()(const RowIndices&, const ColIndices&) [with RowIndices = RowIndices; ColIndices = ColIndices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+   85 | [01;36m[Koperator[m[K()(const RowIndices& rowIndices, const ColIndices& colIndices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:85:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:103:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndices, class ColIndices> typename Eigen::internal::enable_if<(Eigen::internal::valid_indexed_view_overload<RowIndices, ColIndices>::value && Eigen::internal::traits<typename Eigen::DenseBase<Derived>::IndexedViewType<RowIndices, ColIndices>::type>::ReturnAsScalar), typename Eigen::DenseCoeffsBase<Derived, Eigen::internal::accessors_level<Derived>::value>::CoeffReturnType>::type Eigen::DenseBase<Derived>::operator()(const RowIndices&, const ColIndices&) [with RowIndices = RowIndices; ColIndices = ColIndices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  103 | [01;36m[Koperator[m[K()(const RowIndices& rowIndices, const ColIndices& colIndices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:103:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:114:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndicesT, long unsigned int RowIndicesN, class ColIndices> Eigen::IndexedView<Derived, const RowIndicesT (&)[RowIndicesN], typename Eigen::DenseBase<Derived>::IvcColType<ColIndices>::type> Eigen::DenseBase<Derived>::operator()(const RowIndicesT (&)[RowIndicesN], const ColIndices&) [with RowIndicesT = RowIndicesT; long unsigned int RowIndicesN = RowIndicesN; ColIndices = ColIndices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  114 | [01;36m[Koperator[m[K()(const RowIndicesT (&rowIndices)[RowIndicesN], const ColIndices& colIndices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:114:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:122:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndices, class ColIndicesT, long unsigned int ColIndicesN> Eigen::IndexedView<Derived, typename Eigen::DenseBase<Derived>::IvcRowType<Indices>::type, const ColIndicesT (&)[ColIndicesN]> Eigen::DenseBase<Derived>::operator()(const RowIndices&, const ColIndicesT (&)[ColIndicesN]) [with RowIndices = RowIndices; ColIndicesT = ColIndicesT; long unsigned int ColIndicesN = ColIndicesN; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  122 | [01;36m[Koperator[m[K()(const RowIndices& rowIndices, const ColIndicesT (&colIndices)[ColIndicesN]) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:122:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:130:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class RowIndicesT, long unsigned int RowIndicesN, class ColIndicesT, long unsigned int ColIndicesN> Eigen::IndexedView<Derived, const RowIndicesT (&)[RowIndicesN], const ColIndicesT (&)[ColIndicesN]> Eigen::DenseBase<Derived>::operator()(const RowIndicesT (&)[RowIndicesN], const ColIndicesT (&)[ColIndicesN]) [with RowIndicesT = RowIndicesT; long unsigned int RowIndicesN = RowIndicesN; ColIndicesT = ColIndicesT; long unsigned int ColIndicesN = ColIndicesN; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  130 | [01;36m[Koperator[m[K()(const RowIndicesT (&rowIndices)[RowIndicesN], const ColIndicesT (&colIndices)[ColIndicesN]) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:130:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:144:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Indices> typename Eigen::internal::enable_if<(Eigen::DenseBase<Derived>::IsRowMajor && (!((Eigen::internal::get_compile_time_incr<typename Eigen::DenseBase<Derived>::IvcType<Indices>::type>::value == 1) || Eigen::internal::is_valid_index_type<Indices>::value))), Eigen::IndexedView<Derived, Eigen::internal::SingleRange, typename Eigen::DenseBase<Derived>::IvcType<Indices>::type> >::type Eigen::DenseBase<Derived>::operator()(const Indices&) [with Indices = Indices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  144 | [01;36m[Koperator[m[K()(const Indices& indices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:144:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:155:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Indices> typename Eigen::internal::enable_if<((! Eigen::DenseBase<Derived>::IsRowMajor) && (!((Eigen::internal::get_compile_time_incr<typename Eigen::DenseBase<Derived>::IvcType<Indices>::type>::value == 1) || Eigen::internal::is_valid_index_type<Indices>::value))), Eigen::IndexedView<Derived, typename Eigen::DenseBase<Derived>::IvcType<Indices>::type, Eigen::internal::SingleRange> >::type Eigen::DenseBase<Derived>::operator()(const Indices&) [with Indices = Indices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  155 | [01;36m[Koperator[m[K()(const Indices& indices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:155:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:166:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Indices> typename Eigen::internal::enable_if<(((Eigen::internal::get_compile_time_incr<typename Eigen::DenseBase<Derived>::IvcType<Indices>::type>::value == 1) && (! Eigen::internal::is_valid_index_type<Indices>::value)) && (! Eigen::symbolic::is_symbolic<Indices>::value)), Eigen::VectorBlock<Derived, Eigen::internal::array_size<Indices>::value> >::type Eigen::DenseBase<Derived>::operator()(const Indices&) [with Indices = Indices; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  166 | [01;36m[Koperator[m[K()(const Indices& indices) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:166:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:176:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class IndexType> typename Eigen::internal::enable_if<Eigen::symbolic::is_symbolic<Indices>::value, typename Eigen::DenseCoeffsBase<Derived, Eigen::internal::accessors_level<Derived>::value>::CoeffReturnType>::type Eigen::DenseBase<Derived>::operator()(const IndexType&) [with IndexType = IndexType; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  176 | [01;36m[Koperator[m[K()(const IndexType& id) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:176:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:186:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class IndicesT, long unsigned int IndicesN> typename Eigen::internal::enable_if<Eigen::DenseBase<Derived>::IsRowMajor, Eigen::IndexedView<Derived, Eigen::internal::SingleRange, const IndicesT (&)[IndicesN]> >::type Eigen::DenseBase<Derived>::operator()(const IndicesT (&)[IndicesN]) [with IndicesT = IndicesT; long unsigned int IndicesN = IndicesN; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  186 | [01;36m[Koperator[m[K()(const IndicesT (&indices)[IndicesN]) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:186:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:210[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:660[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:196:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class IndicesT, long unsigned int IndicesN> typename Eigen::internal::enable_if<(! Eigen::DenseBase<Derived>::IsRowMajor), Eigen::IndexedView<Derived, const IndicesT (&)[IndicesN], Eigen::internal::SingleRange> >::type Eigen::DenseBase<Derived>::operator()(const IndicesT (&)[IndicesN]) [with IndicesT = IndicesT; long unsigned int IndicesN = IndicesN; Derived = Eigen::Matrix<float, 3, 1>][m[K’
+  196 | [01;36m[Koperator[m[K()(const IndicesT (&indices)[IndicesN]) EIGEN_INDEXED_VIEW_METHOD_CONST
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:196:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1313:80:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+ 1313 |             float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*[01;36m[Kvector_b()[m[K.norm()));
+      |                                                                        [01;36m[K~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:271[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/camera/PinholeCameraIntrinsic.h:10[m[K,
+                 from [01m[K/home/jajayu/open3d_install/include/open3d/Open3D.h:12[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/include/my_robot_nbv_cmake/SdfModel.h:4[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:28[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:116:41:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::DenseCoeffsBase<Derived, 0>::CoeffReturnType Eigen::DenseCoeffsBase<Derived, 0>::operator()(Eigen::Index, Eigen::Index) const [with Derived = Eigen::Matrix<float, 3, 1>; Eigen::DenseCoeffsBase<Derived, 0>::CoeffReturnType = const float&; Eigen::Index = long int][m[K’
+  116 |     EIGEN_STRONG_INLINE CoeffReturnType [01;36m[Koperator[m[K()(Index row, Index col) const
+      |                                         [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:116:41:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[01m[K/usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:179:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::DenseCoeffsBase<Derived, 0>::CoeffReturnType Eigen::DenseCoeffsBase<Derived, 0>::operator()(Eigen::Index) const [with Derived = Eigen::Matrix<float, 3, 1>; Eigen::DenseCoeffsBase<Derived, 0>::CoeffReturnType = const float&; Eigen::Index = long int][m[K’
+  179 |     [01;36m[Koperator[m[K()(Index index) const
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:179:5:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:425:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::DenseCoeffsBase<Derived, 1>::Scalar& Eigen::DenseCoeffsBase<Derived, 1>::operator()(Eigen::Index) [with Derived = Eigen::Matrix<float, 3, 1>; Eigen::DenseCoeffsBase<Derived, 1>::Scalar = float; Eigen::Index = long int][m[K’
+  425 |     [01;36m[Koperator[m[K()(Index index)
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:425:5:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:364:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::DenseCoeffsBase<Derived, 1>::Scalar& Eigen::DenseCoeffsBase<Derived, 1>::operator()(Eigen::Index, Eigen::Index) [with Derived = Eigen::Matrix<float, 3, 1>; Eigen::DenseCoeffsBase<Derived, 1>::Scalar = float; Eigen::Index = long int][m[K’
+  364 |     [01;36m[Koperator[m[K()(Index row, Index col)
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:364:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+gmake[2]: *** [CMakeFiles/BestViewModel.dir/build.make:76: CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:223: CMakeFiles/BestViewModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
