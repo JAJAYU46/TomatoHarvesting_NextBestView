@@ -1,0 +1,138 @@
+[ 20%] Built target nbvc_lib_SdfModel
+[ 40%] Built target SdfModelV3
+[ 60%] Built target nbvc_ray_generation
+[ 80%] Built target nbvc_ray_generationV3_beforeclean
+[ 90%] [32mBuilding CXX object CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o[0m
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:36[m[K:
+[01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   35 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:38[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:[m[K In member function ‘[01m[Kvoid BestViewModel::CaculateNextBestView()[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:143:30:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KvectorBT[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  143 |             octomap::point3d [01;35m[KvectorBT[m[K = modelCenterOctomap_pcd - RobotArmBase; //
+      |                              [01;35m[K^~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:182:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KscalarProjection_BO_RSA[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  182 |             double [01;35m[KscalarProjection_BO_RSA[m[K = dotProductUV_BO_RSA / dotProductVV_RSA_RSA;
+      |                    [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:[m[K In member function ‘[01m[Kstd::vector<float> MyNode::CalculateRotationForArm(octomap::point3d&, octomap::point3d&)[m[K’:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1310:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kvector3f[m[K’ was not declared in this scope; did you mean ‘[01m[KvectorSE[m[K’?
+ 1310 |             [01;31m[Kvector3f[m[K vector_a(0.0, 0.0, 1.0); //(vector_a) 從z軸轉到b(vector_SE)向量
+      |             [01;31m[K^~~~~~~~[m[K
+      |             [32m[KvectorSE[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1311:22:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kvector_b[m[K’
+ 1311 |             vector3f [01;31m[Kvector_b[m[K(x, y, z); //要轉到的target向量
+      |                      [01;31m[K^~~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1312:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kvector_a[m[K’ was not declared in this scope; did you mean ‘[01m[Kvector_u[m[K’?
+ 1312 |             Vector3f vector_u = [01;31m[Kvector_a[m[K.cross(vector_b); //以vector_u為軸去轉（u向量=a向量外積b向量）
+      |                                 [01;31m[K^~~~~~~~[m[K
+      |                                 [32m[Kvector_u[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1312:48:[m[K [01;31m[Kerror: [m[K‘[01m[Kvector_b[m[K’ was not declared in this scope; did you mean ‘[01m[Kvector_u[m[K’?
+ 1312 |             Vector3f vector_u = vector_a.cross([01;31m[Kvector_b[m[K); //以vector_u為軸去轉（u向量=a向量外積b向量）
+      |                                                [01;31m[K^~~~~~~~[m[K
+      |                                                [32m[Kvector_u[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1321:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kcos[m[K’ cannot be used as a function
+ 1321 |             float cos = [01;31m[Kcos(theta)[m[K;
+      |                         [01;31m[K~~~^~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1322:28:[m[K [01;31m[Kerror: [m[K‘[01m[Ksin[m[K’ cannot be used as a function
+ 1322 |             float sin = [01;31m[Ksin(theta)[m[K;
+      |                         [01;31m[K~~~^~~~~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1323:27:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator^[m[K’ (operand types are ‘[01m[KEigen::CommaInitializer<Eigen::Matrix<float, 3, 3> >[m[K’ and ‘[01m[Kfloat[m[K’)
+ 1323 |             [32m[Kmatrix_R << ux[m[K[01;31m[K^[m[K[34m[K2*(one_cos)+cos[m[K, ux*uy*(one_cos)-uz*sin, ux*uz*(one_cos)+uy*sin,
+      |             [32m[K~~~~~~~~~~~~~~[m[K[01;31m[K^[m[K[34m[K~~~~~~~~~~~~~~~[m[K
+      |                      [32m[K|[m[K                [34m[K|[m[K
+      |                      [32m[K|[m[K                [34m[Kfloat[m[K
+      |                      [32m[KEigen::CommaInitializer<Eigen::Matrix<float, 3, 3> >[m[K
+In file included from [01m[K/opt/ros/humble/include/octomap/OcTreeBaseImpl.h:42[m[K,
+                 from [01m[K/opt/ros/humble/include/octomap/OccupancyOcTreeBase.h:44[m[K,
+                 from [01m[K/opt/ros/humble/include/octomap/OcTree.h:38[m[K,
+                 from [01m[K/opt/ros/humble/include/octomap/octomap.h:37[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:6[m[K:
+[01m[K/usr/include/c++/11/bitset:1453:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<long unsigned int _Nb> std::bitset<_Nb> std::operator^(const std::bitset<_Nb>&, const std::bitset<_Nb>&)[m[K’
+ 1453 |     [01;36m[Koperator[m[K^(const bitset<_Nb>& __x, const bitset<_Nb>& __y) _GLIBCXX_NOEXCEPT
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bitset:1453:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1323:40:[m[K [01;36m[Knote: [m[K  ‘[01m[KEigen::CommaInitializer<Eigen::Matrix<float, 3, 3> >[m[K’ is not derived from ‘[01m[Kconst std::bitset<_Nb>[m[K’
+ 1323 |             matrix_R << ux^2*(one_cos)+[01;36m[Kcos[m[K, ux*uy*(one_cos)-uz*sin, ux*uz*(one_cos)+uy*sin,
+      |                                        [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:5[m[K:
+[01m[K/usr/include/c++/11/future:154:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::launch std::operator^(std::launch, std::launch)[m[K’
+  154 |   constexpr launch [01;36m[Koperator[m[K^(launch __x, launch __y) noexcept
+      |                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/future:154:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::CommaInitializer<Eigen::Matrix<float, 3, 3> >[m[K’ to ‘[01m[Kstd::launch[m[K’
+  154 |   constexpr launch operator^([01;36m[Klaunch __x[m[K, launch __y) noexcept
+      |                              [01;36m[K~~~~~~~^~~[m[K
+In file included from [01m[K/usr/include/c++/11/ios:42[m[K,
+                 from [01m[K/usr/include/c++/11/ostream:38[m[K,
+                 from [01m[K/usr/include/c++/11/iostream:39[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:5[m[K:
+[01m[K/usr/include/c++/11/bits/ios_base.h:91:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::_Ios_Fmtflags std::operator^(std::_Ios_Fmtflags, std::_Ios_Fmtflags)[m[K’
+   91 |   [01;36m[Koperator[m[K^(_Ios_Fmtflags __a, _Ios_Fmtflags __b)
+      |   [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/ios_base.h:91:27:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::CommaInitializer<Eigen::Matrix<float, 3, 3> >[m[K’ to ‘[01m[Kstd::_Ios_Fmtflags[m[K’
+   91 |   operator^([01;36m[K_Ios_Fmtflags __a[m[K, _Ios_Fmtflags __b)
+      |             [01;36m[K~~~~~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/11/bits/ios_base.h:133:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::_Ios_Openmode std::operator^(std::_Ios_Openmode, std::_Ios_Openmode)[m[K’
+  133 |   [01;36m[Koperator[m[K^(_Ios_Openmode __a, _Ios_Openmode __b)
+      |   [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/ios_base.h:133:27:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::CommaInitializer<Eigen::Matrix<float, 3, 3> >[m[K’ to ‘[01m[Kstd::_Ios_Openmode[m[K’
+  133 |   operator^([01;36m[K_Ios_Openmode __a[m[K, _Ios_Openmode __b)
+      |             [01;36m[K~~~~~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/11/bits/ios_base.h:173:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::_Ios_Iostate std::operator^(std::_Ios_Iostate, std::_Ios_Iostate)[m[K’
+  173 |   [01;36m[Koperator[m[K^(_Ios_Iostate __a, _Ios_Iostate __b)
+      |   [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/ios_base.h:173:26:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::CommaInitializer<Eigen::Matrix<float, 3, 3> >[m[K’ to ‘[01m[Kstd::_Ios_Iostate[m[K’
+  173 |   operator^([01;36m[K_Ios_Iostate __a[m[K, _Ios_Iostate __b)
+      |             [01;36m[K~~~~~~~~~~~~~^~~[m[K
+In file included from [01m[K/opt/ros/humble/include/octomap/AbstractOcTree.h:37[m[K,
+                 from [01m[K/opt/ros/humble/include/octomap/AbstractOccupancyOcTree.h:37[m[K,
+                 from [01m[K/opt/ros/humble/include/octomap/OccupancyOcTreeBase.h:45[m[K,
+                 from [01m[K/opt/ros/humble/include/octomap/OcTree.h:38[m[K,
+                 from [01m[K/opt/ros/humble/include/octomap/octomap.h:37[m[K,
+                 from [01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:6[m[K:
+[01m[K/usr/include/c++/11/cstddef:147:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::byte std::operator^(std::byte, std::byte)[m[K’
+  147 |   [01;36m[Koperator[m[K^(byte __l, byte __r) noexcept
+      |   [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/cstddef:147:18:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KEigen::CommaInitializer<Eigen::Matrix<float, 3, 3> >[m[K’ to ‘[01m[Kstd::byte[m[K’
+  147 |   operator^([01;36m[Kbyte __l[m[K, byte __r) noexcept
+      |             [01;36m[K~~~~~^~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1323:39:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around arithmetic in operand of ‘[01m[K^[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+ 1323 |             matrix_R << ux^[01;35m[K2*(one_cos)+cos[m[K, ux*uy*(one_cos)-uz*sin, ux*uz*(one_cos)+uy*sin,
+      |                            [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1324:51:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kfloat[m[K’ and ‘[01m[Kfloat[m[K’ to binary ‘[01m[Koperator^[m[K’
+ 1324 |                         ux*uy*(one_cos)+uz*sin, [32m[Kuy[m[K[01;31m[K^[m[K[34m[K2*(one_cos)+cos[m[K, uy*uz*(one_cos)-ux*sin,
+      |                                                 [32m[K~~[m[K[01;31m[K^[m[K[34m[K~~~~~~~~~~~~~~~[m[K
+      |                                                 [32m[K|[m[K             [34m[K|[m[K
+      |                                                 [32m[Kfloat[m[K         [34m[Kfloat[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1324:63:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around arithmetic in operand of ‘[01m[K^[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+ 1324 |                         ux*uy*(one_cos)+uz*sin, uy^[01;35m[K2*(one_cos)+cos[m[K, uy*uz*(one_cos)-ux*sin,
+      |                                                    [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1325:75:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kfloat[m[K’ and ‘[01m[Kfloat[m[K’ to binary ‘[01m[Koperator^[m[K’
+ 1325 |                         ux*uz*(one_cos)-uy*sin, uy*uz*(one_cos)+ux*sin, [32m[Kuz[m[K[01;31m[K^[m[K[34m[K2*(one_cos)+cos[m[K;
+      |                                                                         [32m[K~~[m[K[01;31m[K^[m[K[34m[K~~~~~~~~~~~~~~~[m[K
+      |                                                                         [32m[K|[m[K             [34m[K|[m[K
+      |                                                                         [32m[Kfloat[m[K         [34m[Kfloat[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1325:87:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around arithmetic in operand of ‘[01m[K^[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+ 1325 |                         ux*uz*(one_cos)-uy*sin, uy*uz*(one_cos)+ux*sin, uz^[01;35m[K2*(one_cos)+cos[m[K;
+      |                                                                            [01;35m[K~~~~~~~~~~~^~~~[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1298:19:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kx[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+ 1298 |             float [01;35m[Kx[m[K=vectorSE.x();
+      |                   [01;35m[K^[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1299:19:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ky[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+ 1299 |             float [01;35m[Ky[m[K=vectorSE.y();
+      |                   [01;35m[K^[m[K
+[01m[K/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake/src/BestViewModel.cpp:1300:19:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kz[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+ 1300 |             float [01;35m[Kz[m[K=vectorSE.z();
+      |                   [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/BestViewModel.dir/build.make:76: CMakeFiles/BestViewModel.dir/src/BestViewModel.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:223: CMakeFiles/BestViewModel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

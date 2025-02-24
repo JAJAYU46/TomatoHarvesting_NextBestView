@@ -45,7 +45,9 @@ using std::placeholders::_1;
 // For custom topic status controller topic
 #include "message_interfaces/msg/node_status.hpp" //在install>>message_interfaces...中看有沒有這個.hpp檔
 
-
+// for calculating rotation for robot arm 
+#include <Eigen/Dense>
+using namespace Eigen;
 
 
 #define DEBUG_MODE false
@@ -913,7 +915,7 @@ class MyNode : public rclcpp::Node
                                     msg_status.nbv_point_ry = nbv_point_ry_msg_;
                                     msg_status.nbv_point_rz = nbv_point_rz_msg_ ;
                                     msg_status.is_final_result = is_final_result_msg_;
-                                    msg_status.arm_move_done_status = arm_move_done_status_msg_
+                                    msg_status.arm_move_done_status = arm_move_done_status_msg_;
                                     status_publisher_->publish(msg_status);
                                 // }
                                 // ==================================================== 
@@ -1043,7 +1045,7 @@ class MyNode : public rclcpp::Node
                                     msg_status2.nbv_point_rx = RotationForArm[0];
                                     msg_status2.nbv_point_ry = RotationForArm[1];
                                     msg_status2.nbv_point_rz = RotationForArm[2];
-                                    msg_status2.arm_move_done_status = arm_move_done_status_msg_
+                                    msg_status2.arm_move_done_status = 0; // 讓robot arm node 准許再送一次command給手臂
                                     if(isFinalNBVpoint==true){ //如果已經是最終點了
                                         //就要把下面這個改true
                                         msg_status2.is_final_result = true;
@@ -1297,16 +1299,55 @@ class MyNode : public rclcpp::Node
             float y=vectorSE.y();
             float z=vectorSE.z();
 
-            float cosDegree_Axis_x = z/(sqrt(z*z+y*y));
-            float cosDegree_Axis_y = z/(sqrt(z*z+x*x));
-            RCLCPP_INFO(this->get_logger(), "cosDegree_Axis_x: %f, cosDegree_Axis_y: %f ", cosDegree_Axis_x, cosDegree_Axis_y);
-            RCLCPP_INFO(this->get_logger(), "===============================================");
+            // 1. Calculate Rotation matrix sudo apt install libeigen3-dev
+            // Using Eigen for more advanced operations: First, install Eigen (sudo apt install libeigen3-dev on Ubuntu).
+            // vector3f vector_start(0.0, 0.0, 1.0); //(vector_a) 從z軸轉到b(vector_SE)向量
+            // vector3f vector_SE(x, y, z); //要轉到的target向量
+            // Vector3f vector_u = vector_start.cross(vectorSE); //以vector_u為軸去轉（u向量=a向量外積b向量）
+            // float theta = acos(vector_start.dot(vector_SE))
+            
+            //[Calculate vector_u and theta]
+            Vector3f vector_a(0.0, 0.0, 1.0); //(vector_a) 從z軸轉到b(vector_SE)向量
+            Vector3f vector_b(x, y, z); //要轉到的target向量
+            Vector3f vector_u = vector_a.cross(vector_b); //以vector_u為軸去轉（u向量=a向量外積b向量）
+            float theta = acos(vector_a.dot(vector_b)/(vector_a.norm()*vector_b.norm()));
+            vector_u = vector_u/vector_u.norm(); //normalize才可代那個Ru(theta)公式！
 
-            float degree_Axis_x = acos(cosDegree_Axis_x)* 180.0 / M_PI;
-            float degree_Axis_y = acos(cosDegree_Axis_y)* 180.0 / M_PI*(-1);
-            float degree_Axis_z = 0.0;
+            // [Calculate rotation matrix] matrixR=以u向量為軸鄭方向轉theta度
+            Matrix3f matrix_R; 
+            float ux=vector_u(0); //vector的unit vector的第一個元素就是ux 
+            float uy=vector_u(1);
+            float uz=vector_u(2);
+            float one_cos = 1-cos(theta);
+            float cos_theta = cos(theta);
+            float sin_theta = sin(theta);
 
-            vector<float> botArmRotateDegree = {degree_Axis_x, degree_Axis_y, degree_Axis_z};
+            matrix_R << 
+                ux * ux * one_cos + cos_theta, ux * uy * one_cos - uz * sin_theta, ux * uz * one_cos + uy * sin_theta,
+                ux * uy * one_cos + uz * sin_theta, uy * uy * one_cos + cos_theta, uy * uz * one_cos - ux * sin_theta,
+                ux * uz * one_cos - uy * sin_theta, uy * uz * one_cos + ux * sin_theta, uz * uz * one_cos + cos_theta;
+
+            // matrix_R << ux^2*(one_cos)+cos_theta, ux*uy*(one_cos)-uz*sin_theta, ux*uz*(one_cos)+uy*sin_theta, 
+            //             ux*uy*(one_cos)+uz*sin_theta, uy^2*(one_cos)+cos_theta, uy*uz*(one_cos)-ux*sin_theta, 
+            //             ux*uz*(one_cos)-uy*sin_theta, uy*uz*(one_cos)+ux*sin_theta, uz^2*(one_cos)+cos_theta; 
+            cout << "Rotation Matrix:\n" << matrix_R << endl;
+                  
+            // 2. Get the ZYX Euler Angle (alpha, beta, gama)=(theta_x, theta_y, theta_z)
+            // 注意因為是從0開始index所以要-1
+            float alpha = atan2(matrix_R(1,0), matrix_R(0,0));
+            float beta = asin(-matrix_R(2,0));
+            float gama = atan2(matrix_R(2,1), matrix_R(2,2));
+            vector<float> botArmRotateDegree = {alpha*180/M_PI, beta*180/M_PI, gama*180/M_PI};
+
+            // float cosDegree_Axis_x = z/(sqrt(z*z+y*y));
+            // float cosDegree_Axis_y = z/(sqrt(z*z+x*x));
+            // RCLCPP_INFO(this->get_logger(), "cosDegree_Axis_x: %f, cosDegree_Axis_y: %f ", cosDegree_Axis_x, cosDegree_Axis_y);
+            // RCLCPP_INFO(this->get_logger(), "===============================================");
+
+            // float degree_Axis_x = acos(cosDegree_Axis_x)* 180.0 / M_PI;
+            // float degree_Axis_y = acos(cosDegree_Axis_y)* 180.0 / M_PI*(-1);
+            // float degree_Axis_z = 0.0;
+
 
             return botArmRotateDegree;
 

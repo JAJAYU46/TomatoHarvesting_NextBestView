@@ -87,18 +87,22 @@ class MyNode(Node): #construct Node class
                         
                         # self.change_is_moving_status(True)
                         self.send_MovingCommandToArm()
-                        self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, False, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, 1)
+                        self.arm_move_done_status_msg = 1
+                        self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, False, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
                         
                         # self.change_is_moving_status(False)
                     else: 
                         self.get_logger().info('Not Sending Moving Command tO Robot Arm') # CHANGE
                         self.get_logger().info('Need to recalculate the next-best-view for this scene')
-                        self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg,self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, 2) # 2 means it is out of range or need to recalculate the nbv value
+                        self.arm_move_done_status_msg = 2 # 先改好自己再改大家
+
+                        self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg,self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg) # 2 means it is out of range or need to recalculate the nbv value
                         
                 else: 
                     self.get_logger().info('The Next-Best-View is unreachable for the robot arm') # CHANGE
                     self.get_logger().info('Need to recalculate the next-best-view for this scene') # CHANGE
-                    self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg,self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, 2) # 2 means it is out of range or need to recalculate the nbv value
+                    self.arm_move_done_status_msg = 2
+                    self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg,self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg) # 2 means it is out of range or need to recalculate the nbv value
                         
                 
                 
