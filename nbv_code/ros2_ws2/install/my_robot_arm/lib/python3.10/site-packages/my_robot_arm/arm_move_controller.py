@@ -78,32 +78,38 @@ class MyNode(Node): #construct Node class
                 # self.get_logger().info(f'Recieved NBV point: ({self.nbv_point_x_msg:2f}, {self.nbv_point_y_msg:2f}, {self.nbv_point_z_msg:2f}, {self.nbv_point_rx_msg:2f}, {self.nbv_point_ry_msg:2f}, {self.nbv_point_rz_msg:2f})') # CHANGE
                 self.get_logger().info(f'Recieved NBV point: ({self.Recieved_nbv_point[0]:2f}, {self.Recieved_nbv_point[1]:2f}, {self.Recieved_nbv_point[2]:2f}, {self.Recieved_nbv_point[3]:2f}, {self.Recieved_nbv_point[4]:2f}, {self.Recieved_nbv_point[5]:2f})') # CHANGE
                 
-                if(self.Is_Point_Reachable_By_RArm): # 如果true --> reachable
-                    user_input = input("Confirm Sending Command to Robot Arm? (Y/ N): ").strip()
-                    if(user_input=='Y' or user_input=='y'):
-                        # self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
-                        
-                        self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, True, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
-                        
-                        # self.change_is_moving_status(True)
-                        self.send_MovingCommandToArm()
-                        self.arm_move_done_status_msg = 1
-                        self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, False, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
-                        
-                        # self.change_is_moving_status(False)
+                if(self.is_final_result_msg == True): #如果已經到達最佳點, 表示上次就到了, 那就不用再重新移動了
+                    self.get_logger().info('Already reach the final best view point')
+                    self.arm_move_done_status_msg = 1
+                    self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, False, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
+                            
+                else:
+                    if(self.Is_Point_Reachable_By_RArm()): # 如果true --> reachable
+                        user_input = input("Confirm Sending Command to Robot Arm? (Y/ N): ").strip()
+                        if(user_input=='Y' or user_input=='y'):
+                            # self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
+                            
+                            self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, True, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
+                            
+                            # self.change_is_moving_status(True)
+                            self.send_MovingCommandToArm()
+                            self.arm_move_done_status_msg = 1
+                            self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, False, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
+                            
+                            # self.change_is_moving_status(False)
+                        else: 
+                            self.get_logger().info('Not Sending Moving Command tO Robot Arm') # CHANGE
+                            self.get_logger().info('Need to recalculate the next-best-view for this scene')
+                            self.arm_move_done_status_msg = 2 # 先改好自己再改大家
+                            # self.is_final_result_msg = False #因為這個點被否決, 表示他不是最好的點了
+                            self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg,self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg) # 2 means it is out of range or need to recalculate the nbv value
+                            
                     else: 
-                        self.get_logger().info('Not Sending Moving Command tO Robot Arm') # CHANGE
-                        self.get_logger().info('Need to recalculate the next-best-view for this scene')
-                        self.arm_move_done_status_msg = 2 # 先改好自己再改大家
-
+                        self.get_logger().info('The Next-Best-View is unreachable for the robot arm') # CHANGE
+                        self.get_logger().info('Need to recalculate the next-best-view for this scene') # CHANGE
+                        self.arm_move_done_status_msg = 2
                         self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg,self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg) # 2 means it is out of range or need to recalculate the nbv value
-                        
-                else: 
-                    self.get_logger().info('The Next-Best-View is unreachable for the robot arm') # CHANGE
-                    self.get_logger().info('Need to recalculate the next-best-view for this scene') # CHANGE
-                    self.arm_move_done_status_msg = 2
-                    self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg,self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg) # 2 means it is out of range or need to recalculate the nbv value
-                        
+                            
                 
                 
 

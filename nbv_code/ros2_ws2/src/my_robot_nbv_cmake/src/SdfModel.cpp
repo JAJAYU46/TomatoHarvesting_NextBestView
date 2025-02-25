@@ -160,8 +160,9 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
     // cout<< query_points_input;
     // cout<< query_points_input.size();
     // Print the size of the vector
-    std::cout << "Number of query points: " << query_points_input.size() << std::endl;
-    
+    if (DEBUG_MODE) {
+        std::cout << "Number of query points: " << query_points_input.size() << std::endl;
+    }
     
     for (const auto& point_q : query_points_input) {
         if (DEBUG_MODE) {
@@ -216,8 +217,10 @@ void SdfModel::ComputeSDF(std::vector<Eigen::Vector3f> query_points_input) { //E
 }
 //==================== [Operation Function] =========================//
 array<int, 2> SdfModel::ShowInPointCount(){ //會回傳目前現在有幾個點在surface內
-    cout<< "there are "<<countPoint[0] <<"within the surface"; 
-    cout<< "there are "<<countPoint[1] <<"outside the surface";
+    if (DEBUG_MODE) {
+        cout<< "there are "<<countPoint[0] <<"within the surface"; 
+        cout<< "there are "<<countPoint[1] <<"outside the surface";
+    }
     return countPoint;
 }
 
