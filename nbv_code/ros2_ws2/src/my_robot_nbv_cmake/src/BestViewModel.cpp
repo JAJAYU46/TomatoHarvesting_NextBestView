@@ -55,6 +55,12 @@ using namespace Eigen;
 // 在SDF.h那裡
 int INPUT_MODE=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
+// Parameters
+int CANDIDATE_VIEWS_NUM=100; //50; //20
+int RAYS_NUM = 400; //100; better to be square num
+float NEXT_GAIN_THRESHOLD = 0.012; //0.05 //next gain need to >= this+before gain so that it can be considered a recursive better gain
+float ANY_RAY_MARKER_SCALE = 1;
+
 
 class BestViewModel {
 public:
@@ -218,7 +224,9 @@ public:
             std::vector<octomap::point3d> directionsEndPV;
 
             //====== 4. 跑each ray看每個ray有沒有射到東西 ======
-            cout<<"There are total "<<directionsEndP.size()<<" generated ray"<<endl;  
+            if (DEBUG_MODE) {
+                cout<<"There are total "<<directionsEndP.size()<<" generated ray"<<endl; 
+            } 
             for (const auto& directionEndP : directionsEndP) { //跑each ray
 
                 //[4-1] 看這個ray射到哪個grid By Octomap castRay()
@@ -247,6 +255,7 @@ public:
             
 
             //====== 6. 計算gain ====== (用sdfmodel裡面的最後留有幾個點在sdf裡面, 點數就=此candidate view 的那些有打到蕃茄的rays的數量)
+            
             array<int, 2> countInOut=ModelScene.ShowInPointCount();//會回傳現在有幾個點在surface內, 幾個在外的陣列
             int gain=countInOut[0]*1; //countInOut[0]為在內部的點數, 在內部的點數就存為gain
             
@@ -272,7 +281,7 @@ public:
             
             //====== 8. save for publish visualization marker ======
                         //要publish 綠色的那些ray, 下面是for 某個candidate view publish它的所有ray
-            saveFor_publish_any_ray_marker(origin, directionsEndPV, marker_ID_handler[0], {0,1,0}, 0.003);
+            saveFor_publish_any_ray_marker(origin, directionsEndPV, marker_ID_handler[0], {0,1,0}, 0.003*ANY_RAY_MARKER_SCALE);
 
             //[save for red and blue ray marker]// 
             std::vector<Eigen::Vector3f> query_points_in_sdf = ModelScene.ShowInQueryPoints();
@@ -282,7 +291,7 @@ public:
             std::vector<octomath::Vector3> converted_points_out_sdf = convertEigenToOctomap(query_points_out_sdf);
             
             //hit到蕃茄的ray要變成紅色 (hit到蕃茄的ray就是query_points_out_sdf)
-            saveFor_publish_any_ray_marker(origin, converted_points_in_sdf, marker_ID_handler[1], {1,0,0}, 0.005);
+            saveFor_publish_any_ray_marker(origin, converted_points_in_sdf, marker_ID_handler[1], {1,0,0}, 0.005*ANY_RAY_MARKER_SCALE);
             //hit到grid的ray要變成藍色 (hit到的就同進入sdf的query_points_in_sdf)
             // saveFor_publish_any_ray_marker(origin, converted_points_out_sdf, marker_ID_handler[2], {0,0,1}, 0.005);
             
@@ -779,10 +788,17 @@ class MyNode : public rclcpp::Node
         }
 
     private:
+
+        int candidateViews_num = CANDIDATE_VIEWS_NUM; //50; //20
+        int rays_num = RAYS_NUM;//100;
         // last nbv control
         octomap::point3d LastBestCandidateView_point;
         int LastBestCandidateView_gain=0;
         float LastBestCandidateView_gain_percent=0.0;
+
+        vector<pair<octomap::point3d, float>> HistoryBestViews;
+
+
         bool isFinalNBVpoint = false;
 
         //====== 0. for status controller topic ======
@@ -882,8 +898,13 @@ class MyNode : public rclcpp::Node
                 if(octomap_done_msg_==false and icp_done_msg_==true){//它前一個步驟也要好才可以 //只有false然後又接收到octomap的時候, 才要求一次nbv
                     if(iteration_msg_ == 0){ // 如果是第0次iteration, 表示是新的tomato, 就要重設nbv scene
                         // msg_status2.iteration = iteration_msg_+1;
-                        LastBestCandidateView_gain=0;
-                        LastBestCandidateView_gain_percent=0.0;
+                        // LastBestCandidateView_gain=0;
+                        // LastBestCandidateView_gain_percent=0.0;
+                        HistoryBestViews.clear();
+                        HistoryBestViews.shrink_to_fit();
+
+                        HistoryBestViews.push_back(std::make_pair(octomap::point3d(0.0, 0.0, 0.0), 0.0)); //初始化最開始的起點（<Note> 其實初始點理論上也要算一下gain啦）
+
                     }
                     
                     
@@ -952,8 +973,8 @@ class MyNode : public rclcpp::Node
                                 }else{
                                     candidateViews_radius = 0.32;
                                 }
-                                int candidateViews_num =50; //20
-                                int rays_num = 100;//64;//要是完全平方數最好   50; //50
+                                // int candidateViews_num =50; //20
+                                // int rays_num = 100;//64;//要是完全平方數最好   50; //50
 
                                 BestViewModel NbvScene(cloud_o3d_icpTomato, octree, candidateViews_radius, candidateViews_num, rays_num);
                                 
@@ -1000,15 +1021,30 @@ class MyNode : public rclcpp::Node
                                 // BestCandidateView_point = Now_BestCandidateView_point;
                                 // BestCandidateView_gain = Now_BestCandidateView_gain;
                                 // BestCandidateView_gain_percent = float(Now_BestCandidateView_gain)/float(rays_num_);
+
+                                if(arm_move_done_status_msg_==2){ //表示上一個Best View點被否決了, 沒有成功移動到那, 這樣就要把上一個點給刪掉
+                                    RCLCPP_INFO(this->get_logger(), "The Point=(%f, %f, %f) is deleted due to the unsuccessful arm moving", HistoryBestViews.back().first.x(), HistoryBestViews.back().first.y(), HistoryBestViews.back().first.z());
+                                    // HistoryBestViews.back().second
+                                    HistoryBestViews.pop_back();
+
+                                }
+
+
+
+
+                                LastBestCandidateView_gain_percent = HistoryBestViews.back().second; 
+                                LastBestCandidateView_point = HistoryBestViews.back().first;
                                 RCLCPP_INFO(this->get_logger(), "NbvScene.BestCandidateView_gain_percent=%f", NbvScene.BestCandidateView_gain_percent);
                                 RCLCPP_INFO(this->get_logger(), "NbvScene.BestCandidateView_gain=%d", NbvScene.BestCandidateView_gain);
                                 
                                 RCLCPP_INFO(this->get_logger(), "LastBestCandidateView_gain_percent=%f", LastBestCandidateView_gain_percent);
-                                RCLCPP_INFO(this->get_logger(), "LastBestCandidateView_gain=%d", LastBestCandidateView_gain);
+                                // RCLCPP_INFO(this->get_logger(), "LastBestCandidateView_gain=%d", LastBestCandidateView_gain);
                                 
-                                if(((NbvScene.BestCandidateView_gain_percent-LastBestCandidateView_gain_percent)<0.05) && ((LastBestCandidateView_gain_percent)>0.0001)){ //如果新的點比舊的點少於5% 那表示這就是最終的NBV點了
+                                // LastBestCandidateView_gain_percent = 
+
+                                if(((NbvScene.BestCandidateView_gain_percent-LastBestCandidateView_gain_percent)<NEXT_GAIN_THRESHOLD) && ((LastBestCandidateView_gain_percent)>0.0001)){ //如果新的點比舊的點少於5% 那表示這就是最終的NBV點了
                                     NbvScene.BestCandidateView_point = LastBestCandidateView_point;
-                                    NbvScene.BestCandidateView_gain = LastBestCandidateView_gain;
+                                    // NbvScene.BestCandidateView_gain = LastBestCandidateView_gain;
                                     NbvScene.BestCandidateView_gain_percent = LastBestCandidateView_gain_percent;
                                     isFinalNBVpoint = true;
 
@@ -1016,10 +1052,26 @@ class MyNode : public rclcpp::Node
                                 }else{
                                     isFinalNBVpoint = false;
                                 }
-                                LastBestCandidateView_gain = NbvScene.BestCandidateView_gain;
-                                LastBestCandidateView_point = NbvScene.BestCandidateView_point;
-                                LastBestCandidateView_gain_percent = NbvScene.BestCandidateView_gain_percent;
+                                // LastBestCandidateView_gain = NbvScene.BestCandidateView_gain;
+                                HistoryBestViews.push_back(make_pair(NbvScene.BestCandidateView_point, NbvScene.BestCandidateView_gain_percent)); //更新新的best view點
+                                // LastBestCandidateView_point = NbvScene.BestCandidateView_point;
+                                // LastBestCandidateView_gain_percent = NbvScene.BestCandidateView_gain_percent;
 
+                                // if(arm_move_done_status_msg_==2){ //表示上一個點被否決了, 沒有成功移動到那, 這樣就要把上一個點給刪掉
+                                //     RCLCPP_INFO(this->get_logger(), "The Point=(%f, %f, %f) is deleted due to the unsuccessful arm moving", HistoryBestViews.back().first.x(), HistoryBestViews.back().first.y(), HistoryBestViews.back().first.z());
+                                //     // HistoryBestViews.back().second
+                                //     HistoryBestViews.pop_back();
+
+                                // }
+                                cout << "Current Best View Point Path"<< endl;
+                                for (const auto& view : HistoryBestViews) {
+                                    
+                                    std::cout << "Point: (" 
+                                            << view.first.x() << ", " 
+                                            << view.first.y() << ", " 
+                                            << view.first.z() << ") "
+                                            << "Gain: " << view.second << std::endl;
+                                }
 
 
                                 // 3.5 Calculating the Orientation(Rotation) for the robot arm
