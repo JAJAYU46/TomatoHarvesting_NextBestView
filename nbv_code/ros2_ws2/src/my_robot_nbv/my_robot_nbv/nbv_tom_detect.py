@@ -183,6 +183,26 @@ class MyNode(Node): #construct Node class
 
             try:
                 frame1 = self.bridge.imgmsg_to_cv2(msg_frame, "bgr8")
+                
+                
+                
+                # <Debug> you can't do this, since the coordinate for bounding box will be wrong, it should be deal by frame 
+                # # Get the image dimensions
+                # (h, w) = frame2.shape[:2]
+
+                # # Define the center of the image
+                # center = (w // 2, h // 2)
+
+                # # Define the angle of rotation (in degrees)
+                # angle = 180  # Example: rotate 45 degrees
+
+                # # Create the rotation matrix
+                # M = cv2.getRotationMatrix2D(center, angle, 1.0)  # The third parameter is the scale factor (1.0 means no scaling)
+
+                # # Apply the rotation
+                # frame1 = cv2.warpAffine(frame2, M, (w, h))
+
+
             except CvBridgeError as e:
                 print(e)
             (rows,cols,channels) = frame1.shape
@@ -282,7 +302,22 @@ class MyNode(Node): #construct Node class
                         self.donePublishDetectPart = True
 
                     # self.get_logger().info('Publishing: "%d"' % msg_box.lu_x) 
-                cv2.imshow('Tomato Image', image)
+                #<Debug> The thing you can do is deal with it before visualization
+                # Get the image dimensions
+                (h, w) = image.shape[:2]
+
+                # Define the center of the image
+                center = (w // 2, h // 2)
+
+                # Define the angle of rotation (in degrees)
+                angle = 180  # Example: rotate 45 degrees
+
+                # Create the rotation matrix
+                M = cv2.getRotationMatrix2D(center, angle, 1.0)  # The third parameter is the scale factor (1.0 means no scaling)
+
+                # Apply the rotation
+                image_rotated = cv2.warpAffine(image, M, (w, h))
+                cv2.imshow('Tomato Image', image_rotated)
                 # cv2.imshow('frame1', frame1)
                 cv2.waitKey(1)
 

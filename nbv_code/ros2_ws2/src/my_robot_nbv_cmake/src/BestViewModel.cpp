@@ -57,9 +57,9 @@ int INPUT_MODE=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
 
 // Parameters
 int CANDIDATE_VIEWS_NUM=100; //50; //20
-int RAYS_NUM = 400; //100; better to be square num
+int RAYS_NUM = 144; //400; //100; better to be square num
 float NEXT_GAIN_THRESHOLD = 0.012; //0.05 //next gain need to >= this+before gain so that it can be considered a recursive better gain
-float ANY_RAY_MARKER_SCALE = 1;
+float ANY_RAY_MARKER_SCALE = 0.8;
 
 
 class BestViewModel {
@@ -1386,10 +1386,10 @@ class MyNode : public rclcpp::Node
                   
             // 2. Get the ZYX Euler Angle (alpha, beta, gama)=(theta_x, theta_y, theta_z)
             // 注意因為是從0開始index所以要-1
-            float alpha = atan2(matrix_R(1,0), matrix_R(0,0));
+            float alpha = atan2(matrix_R(1,0), matrix_R(0,0)); //for z due to theformula we assumed (look at Samsung note forth grade robotics course)
             float beta = asin(-matrix_R(2,0));
             float gama = atan2(matrix_R(2,1), matrix_R(2,2));
-            vector<float> botArmRotateDegree = {alpha*180/M_PI, beta*180/M_PI, gama*180/M_PI};
+            vector<float> botArmRotateDegree = {gama*180/M_PI, beta*180/M_PI, alpha*180/M_PI};
 
             // float cosDegree_Axis_x = z/(sqrt(z*z+y*y));
             // float cosDegree_Axis_y = z/(sqrt(z*z+x*x));
