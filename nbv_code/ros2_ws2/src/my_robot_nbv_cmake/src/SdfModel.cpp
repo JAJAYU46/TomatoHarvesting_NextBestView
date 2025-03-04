@@ -35,7 +35,7 @@ using namespace std;
 
 
 float SIGN_DISTANCE_THRESHOLD_FOR_MODE1 = 0.05;
-float SIGN_DISTANCE_THRESHOLD_FOR_MODE23 = 0.0025;
+float SIGN_DISTANCE_THRESHOLD_FOR_MODE23 = 0.0005;//0.001//0.0025;上次試ok的是這個
 //在sdf.h那裡
 // int INPUT_MODE=3; //1. gazebo big tomato 2. gazebo small tomato 3. realsense
 

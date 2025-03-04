@@ -166,15 +166,21 @@ public:
             // octomap::point3d projection_OT_RA = RobotArmFrontAxisVec * scalarProjection_OT_RA;
             // 如果投影長度是負數的話
             // cout<<"OK1.......scalarProjection_OT_RA: "<<scalarProjection_OT_RA<<"scalarProjection_BO_RA: "<<scalarProjection_BO_RA<<endl;  
-        
-            if(scalarProjection_OT_RA<=0){ // 蕃茄背面不行 the front axis be the front
-                // cout<<"Ok2...... "<<origins.size()<<" candidate views after back filtering"<<endl;  
-        
-                continue;
+
+            if(INPUT_MODE==3){
+                if(scalarProjection_OT_RA<=0){ // 蕃茄45度斜背面不行 the front axis be the front
+                    // cout<<"Ok2...... "<<origins.size()<<" candidate views after back filtering"<<endl;  
+            
+                    continue;
+                }
+            
+                // 這個限制好像會限制不能到手必左邊, 這個限制怪怪的
+                if(scalarProjection_BO_RA<=0){//手臂背面不行
+                    continue; //就不會做下面了, 會直接跳到下個origin
+                }
             }
-            if(scalarProjection_BO_RA<=0){//手臂背面不行
-                continue; //就不會做下面了, 會直接跳到下個origin
-            } 
+
+            
 
             // <For Improve> =============================
             double dotProductVV_RSA_RSA = RobotArmSecondAxisVec.dot(RobotArmSecondAxisVec);
@@ -192,10 +198,20 @@ public:
             // octomap::point3d projection_OT_RA = RobotArmFrontAxisVec * scalarProjection_OT_RA;
             // 如果投影長度是負數的話
             // cout<<"OK1.......scalarProjection_OT_RA: "<<scalarProjection_OT_RA<<"scalarProjection_BO_RA: "<<scalarProjection_BO_RA<<endl;  
-        
-            if(scalarProjection_OT_RSA<=0){ // 蕃茄背面不行 the front axis be the front
-                // cout<<"Ok2...... "<<origins.size()<<" candidate views after back filtering"<<endl;  
-        
+            if(INPUT_MODE==3){
+                if(scalarProjection_OT_RSA<=0){ // 蕃茄背面不行 the front axis be the front
+                    // cout<<"Ok2...... "<<origins.size()<<" candidate views after back filtering"<<endl;  
+            
+                    continue;
+                }
+            }
+
+            // check if it 在手臂可以移動到的方方之外
+            if(vectorBO.z()>0.72 || vectorBO.z()<0.2){ //candidate view太高太低都不行
+                continue;
+            }else if(vectorBO.x()>0.72 || vectorBO.x()<0.2){ //cantidate view離base太近太遠都不行
+                continue;
+            }else if(vectorBO.y()>0.7 || vectorBO.y()<-0.7){
                 continue;
             }
             
@@ -373,8 +389,8 @@ private:
         //////////////// Before is this 20250212 //////////////
         // std::uniform_real_distribution<> dist_cos_theta(-1.0, 1.0); //<chatgpt2>
         // std::uniform_real_distribution<> dist_cos_theta(0.0, 1.0); //only the upper half 
-        std::uniform_real_distribution<> dist_cos_theta(0.0, 0.5); 
-
+        // std::uniform_real_distribution<> dist_cos_theta(0.0, 0.5); //V5_can't generate below the tomato and above the tomato
+        std::uniform_real_distribution<> dist_cos_theta(-0.9, 0.9);
 
         for (int i = 0; i < pointNum; ++i) {
 
