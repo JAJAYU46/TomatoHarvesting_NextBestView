@@ -10,7 +10,7 @@ from sensor_msgs.msg import PointCloud2
 from sensor_msgs_py import point_cloud2 as pc2
 
 import sensor_msgs.msg as sensor_msgs
-#================================
+#==========================0======
 #for 3D point cloud data
 import ctypes
 import struct
@@ -50,6 +50,8 @@ import tf2_geometry_msgs
 #To convert pointcloud2(for ROS2) to pointcloud(for open3d)
 
 INPUT_MODE=0 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+
+
 
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
@@ -837,6 +839,9 @@ class MyNode(Node): #construct Node class
         # print(frame.shape)
         try:
             cv_image = self.bridge.imgmsg_to_cv2(msg_frame, "bgr8")
+            
+
+
         except CvBridgeError as e:
             print(e)
         (rows,cols,channels) = cv_image.shape
