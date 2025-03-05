@@ -19,8 +19,15 @@ from message_interfaces.msg import NodeStatus    # CHANGE
 # use numpy array to store the nbv point can be better when dealing with numerical stuff
 import numpy as np
 
-IS_SOLO_NODE = True #當只有這個node開發階段時用
+# For Robot Arm Control
+from tm_msgs.msg import *
+from tm_msgs.srv import *
 
+from move_tm.tmr_utils import TMRUtils
+tmr = TMRUtils()
+
+IS_SOLO_NODE = True #當只有這個node開發階段時用
+Open_REAL_ARM_CONTROLL = True
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
         super().__init__("arm_move_controller") #set python_NodeName
@@ -46,7 +53,21 @@ class MyNode(Node): #construct Node class
         #【subscriber】
         # self.pose_subscriber_=self.create_subscription(Pose, "/turtle/cmd_vel", self.callback_forSubscribe, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         
+        # For Robot Arm Control
+        if (Open_REAL_ARM_CONTROLL):
+            self.arm_client_ = self.create_client(SendScript, 'send_script')
+            while not self.arm_client_.wait_for_service(timeout_sec = 1.0):
+                self.get_logger().info('service not availabe, waiting again...')
+         
+
+
+
+
+
         self.get_logger().info("arm_move_controller have been started")
+
+           
+
         
         # self.create_timer(1.0, self.callback1) #(time interval/ calling callback)
     def setFakeStatusForSoloNode_callback(self):
@@ -141,7 +162,21 @@ class MyNode(Node): #construct Node class
 
 
                 # user_input = input("Enter 'n' to start NBV process for next target tomato: ").strip()
-                
+    # ================== Function For Robot Arm Control ==================
+    
+    def send_script(self, script):
+      move_cmd = SendScript.Request()
+      move_cmd.script = script
+      self.arm_client_.call_async(move_cmd)  
+    
+    def Cmotions(self, cmd_Cpose):
+        for i in range(len(cmd_Cpose)):
+            self.MoveCartesian(cmd_Cpose[i])
+    
+    def MoveCartesianVelocity(self, Cpvt):
+            self.send_script("PVTPoint(" + self.ToStr(Cpvt) + ")")
+
+    # ====================================================================            
                 
                 
     def Is_Point_Reachable_By_RArm(self): 
@@ -152,7 +187,9 @@ class MyNode(Node): #construct Node class
     def send_MovingCommandToArm(self):
         self.get_logger().info('SENDING MOVING COMMAND TO ROBOT ARM...') # CHANGE
         self.get_logger().info(f'MOVING ROBOT ARM TO: ({self.Recieved_nbv_point[0]:2f}, {self.Recieved_nbv_point[1]:2f}, {self.Recieved_nbv_point[2]:2f}, {self.Recieved_nbv_point[3]:2f}, {self.Recieved_nbv_point[4]:2f}, {self.Recieved_nbv_point[5]:2f})') # CHANGE
-        
+        if (Open_REAL_ARM_CONTROLL): 
+            goal_command = np.array(self.Recieved_nbv_point[0:5])
+            self.MoveCartesian(goal_command)
         
         self.get_logger().info('Successfully moving to the new robor arm coordinate') # CHANGE
 
