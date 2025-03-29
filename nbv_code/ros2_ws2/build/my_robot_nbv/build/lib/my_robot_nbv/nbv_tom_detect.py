@@ -58,7 +58,8 @@ from message_interfaces.msg import BoundingBox    # CHANGE
 # from tutorial_interfaces.msg import Num    # CHANGE
 
 #To convert pointcloud2(for ROS2) to pointcloud(for open3d)
-
+# for saving output file
+import json
 INPUT_MODE=0
 
 
@@ -183,7 +184,7 @@ class MyNode(Node): #construct Node class
 
             try:
                 frame1 = self.bridge.imgmsg_to_cv2(msg_frame, "bgr8")
-                
+                cv2.imwrite("./src/dataset/output_data/bounding_box/origin_frame.jpg", cv2.resize(frame1, (int(frame1.shape[1]), int(frame1.shape[0]))))
                 
                 
                 # <Debug> you can't do this, since the coordinate for bounding box will be wrong, it should be deal by frame 
@@ -252,6 +253,26 @@ class MyNode(Node): #construct Node class
                 if TargetBox is None:
                     print("No tomato detected.")
                 else: 
+                    # <For Data Collecting for improve ICP>
+                    # ================================================================================================
+                    # 1. Save The bounding box values to a text file
+                    # Open a text file and write the bounding box values
+                    bounding_box_data = {
+                        "lu_x": TargetBox[0],
+                        "lu_y": TargetBox[1],
+                        "rd_x": TargetBox[2],
+                        "rd_y": TargetBox[3]
+                    }
+
+                    with open("./src/dataset/output_data/bounding_box/bbox.json", "w") as f:
+                        json.dump(bounding_box_data, f, indent=4)
+                        # f.write(f"{TargetBox[0]} {TargetBox[1]} {TargetBox[2]} {TargetBox[3]}\n")
+
+                    print("Bounding box saved to bounding_box.txt")
+
+                    cv2.imwrite("./src/dataset/output_data/bounding_box/origin_frame.jpg", frame1_resized)
+                    cv2.imwrite("./src/dataset/output_data/bounding_box/bbox_frame.jpg", image)
+                    # =================================================================================================
                     msg_box = BoundingBox()
                     msg_box.lu_x = TargetBox[0]
                     msg_box.lu_y = TargetBox[1]
@@ -305,7 +326,6 @@ class MyNode(Node): #construct Node class
                 #<Debug> The thing you can do is deal with it before visualization
                 # Get the image dimensions
                 (h, w) = image.shape[:2]
-
                 # Define the center of the image
                 center = (w // 2, h // 2)
 

@@ -16,7 +16,8 @@ import os
 
 #path_in_pcd = "/home/rmml01/d435_pointcloud/pcd_saved_240523/pcd_{}.ply"
 #path_in_pcd = "/home/jajayu/Documents/NextBestView/pointCloudDataPLY/xyzrgb_dragon.ply"
-path_in_pcd = "/home/jajayu/Documents/NextBestView/pointCloudDataPLY/copy_of_filtered_msg2.pcd"
+# path_in_pcd = "/home/jajayu/Documents/NextBestView/pointCloudDataPLY/copy_of_filtered_msg2.pcd"
+path_in_pcd = "./dataset/output_data/pointcloud/filtered_pcd.ply"
 #path_in_pcd = "/home/jajayu/Documents/NextBestView/pointCloudDataPLY/Merged mesh.ply"
 #path_in_pcd = "/home/jajayu/Documents/NextBestView/pointCloudDataPLY/MinePLY/out.ply"
 #path_in_pcd = "/home/jajayu/Documents/NextBestView/pointCloudDataPLY/fragment.ply"

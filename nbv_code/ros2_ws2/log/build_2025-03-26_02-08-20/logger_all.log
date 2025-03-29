@@ -1,0 +1,838 @@
+[0.201s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.201s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7ec0a3fa8d30>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ec0a3fa8790>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ec0a3fa8790>>, mixin_verb=('build',))
+[0.648s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.649s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.649s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.649s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.649s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.649s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.649s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2'
+[0.649s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.649s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.649s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.650s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.650s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.650s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.650s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.650s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.650s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.678s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.679s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.679s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.679s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.679s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.679s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.679s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.679s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.679s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.680s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.680s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extensions ['ignore', 'ignore_ament_install']
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extension 'ignore'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extension 'ignore_ament_install'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extensions ['colcon_pkg']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extension 'colcon_pkg'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extensions ['colcon_meta']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extension 'colcon_meta'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extensions ['ros']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extension 'ros'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extensions ['cmake', 'python']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extension 'cmake'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extension 'python'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extensions ['python_setup_py']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset) by extension 'python_setup_py'
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extensions ['ignore', 'ignore_ament_install']
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extension 'ignore'
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extension 'ignore_ament_install'
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extensions ['colcon_pkg']
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extension 'colcon_pkg'
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extensions ['colcon_meta']
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extension 'colcon_meta'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extensions ['ros']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extension 'ros'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extensions ['cmake', 'python']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extension 'cmake'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extension 'python'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extensions ['python_setup_py']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_octomap) by extension 'python_setup_py'
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extensions ['ignore', 'ignore_ament_install']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extension 'ignore'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extension 'ignore_ament_install'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extensions ['colcon_pkg']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extension 'colcon_pkg'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extensions ['colcon_meta']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extension 'colcon_meta'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extensions ['ros']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extension 'ros'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extensions ['cmake', 'python']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extension 'cmake'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extension 'python'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extensions ['python_setup_py']
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_pcd) by extension 'python_setup_py'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extensions ['ignore', 'ignore_ament_install']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extension 'ignore'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extension 'ignore_ament_install'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extensions ['colcon_pkg']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extension 'colcon_pkg'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extensions ['colcon_meta']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extension 'colcon_meta'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extensions ['ros']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extension 'ros'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extensions ['cmake', 'python']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extension 'cmake'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extension 'python'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extensions ['python_setup_py']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/data_tomatoVideo_forDetection) by extension 'python_setup_py'
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extensions ['ignore', 'ignore_ament_install']
+[0.692s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extension 'ignore'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extension 'ignore_ament_install'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extensions ['colcon_pkg']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extension 'colcon_pkg'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extensions ['colcon_meta']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extension 'colcon_meta'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extensions ['ros']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extension 'ros'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extensions ['cmake', 'python']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extension 'cmake'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extension 'python'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extensions ['python_setup_py']
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data) by extension 'python_setup_py'
+[0.693s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extensions ['ignore', 'ignore_ament_install']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extension 'ignore'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extension 'ignore_ament_install'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extensions ['colcon_pkg']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extension 'colcon_pkg'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extensions ['colcon_meta']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extension 'colcon_meta'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extensions ['ros']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extension 'ros'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extensions ['cmake', 'python']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extension 'cmake'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extension 'python'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extensions ['python_setup_py']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/bounding_box) by extension 'python_setup_py'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extensions ['ignore', 'ignore_ament_install']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extension 'ignore'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extension 'ignore_ament_install'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extensions ['colcon_pkg']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extension 'colcon_pkg'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extensions ['colcon_meta']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extension 'colcon_meta'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extensions ['ros']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extension 'ros'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extensions ['cmake', 'python']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extension 'cmake'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extension 'python'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extensions ['python_setup_py']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/output_data/pointcloud) by extension 'python_setup_py'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extensions ['ignore', 'ignore_ament_install']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extension 'ignore'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extension 'ignore_ament_install'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extensions ['colcon_pkg']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extension 'colcon_pkg'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extensions ['colcon_meta']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extension 'colcon_meta'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extensions ['ros']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extension 'ros'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extensions ['cmake', 'python']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extension 'cmake'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extension 'python'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extensions ['python_setup_py']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(src/dataset/rqtGraph) by extension 'python_setup_py'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[0.697s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(src/message_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(src/message_interfaces) by extension 'ignore'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(src/message_interfaces) by extension 'ignore_ament_install'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/message_interfaces) by extensions ['colcon_pkg']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/message_interfaces) by extension 'colcon_pkg'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/message_interfaces) by extensions ['colcon_meta']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/message_interfaces) by extension 'colcon_meta'
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/message_interfaces) by extensions ['ros']
+[0.699s] Level 1:colcon.colcon_core.package_identification:_identify(src/message_interfaces) by extension 'ros'
+[0.704s] DEBUG:colcon.colcon_core.package_identification:Package 'src/message_interfaces' with type 'ros.ament_cmake' and name 'message_interfaces'
+[0.704s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_bot) by extensions ['ignore', 'ignore_ament_install']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_bot) by extension 'ignore'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_bot) by extension 'ignore_ament_install'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_bot) by extensions ['colcon_pkg']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_bot) by extension 'colcon_pkg'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_bot) by extensions ['colcon_meta']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_bot) by extension 'colcon_meta'
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_bot) by extensions ['ros']
+[0.705s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_bot) by extension 'ros'
+[0.707s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_bot' with type 'ros.ament_cmake' and name 'my_bot'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_arm) by extensions ['ignore', 'ignore_ament_install']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_arm) by extension 'ignore'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_arm) by extension 'ignore_ament_install'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_arm) by extensions ['colcon_pkg']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_arm) by extension 'colcon_pkg'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_arm) by extensions ['colcon_meta']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_arm) by extension 'colcon_meta'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_arm) by extensions ['ros']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_arm) by extension 'ros'
+[0.709s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_arm' with type 'ros.ament_python' and name 'my_robot_arm'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_cam) by extensions ['ignore', 'ignore_ament_install']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_cam) by extension 'ignore'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_cam) by extension 'ignore_ament_install'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_cam) by extensions ['colcon_pkg']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_cam) by extension 'colcon_pkg'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_cam) by extensions ['colcon_meta']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_cam) by extension 'colcon_meta'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_cam) by extensions ['ros']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_cam) by extension 'ros'
+[0.711s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_cam' with type 'ros.ament_python' and name 'my_robot_cam'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv) by extensions ['ignore', 'ignore_ament_install']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv) by extension 'ignore'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv) by extension 'ignore_ament_install'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv) by extensions ['colcon_pkg']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv) by extension 'colcon_pkg'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv) by extensions ['colcon_meta']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv) by extension 'colcon_meta'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv) by extensions ['ros']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv) by extension 'ros'
+[0.714s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_nbv' with type 'ros.ament_python' and name 'my_robot_nbv'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv_cmake) by extensions ['ignore', 'ignore_ament_install']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv_cmake) by extension 'ignore'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv_cmake) by extension 'ignore_ament_install'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv_cmake) by extensions ['colcon_pkg']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv_cmake) by extension 'colcon_pkg'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv_cmake) by extensions ['colcon_meta']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv_cmake) by extension 'colcon_meta'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv_cmake) by extensions ['ros']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_nbv_cmake) by extension 'ros'
+[0.716s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_nbv_cmake' with type 'ros.ament_cmake' and name 'my_robot_nbv_cmake'
+[0.717s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extensions ['ignore', 'ignore_ament_install']
+[0.717s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'ignore'
+[0.717s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'ignore_ament_install'
+[0.717s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extensions ['colcon_pkg']
+[0.717s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'colcon_pkg'
+[0.717s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extensions ['colcon_meta']
+[0.717s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'colcon_meta'
+[0.717s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extensions ['ros']
+[0.717s] Level 1:colcon.colcon_core.package_identification:_identify(src/octomap_server2) by extension 'ros'
+[0.718s] DEBUG:colcon.colcon_core.package_identification:Package 'src/octomap_server2' with type 'ros.ament_cmake' and name 'octomap_server2'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extensions ['ignore', 'ignore_ament_install']
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extension 'ignore'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extension 'ignore_ament_install'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extensions ['colcon_pkg']
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extension 'colcon_pkg'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extensions ['colcon_meta']
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extension 'colcon_meta'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extensions ['ros']
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extension 'ros'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extensions ['cmake', 'python']
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extension 'cmake'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extension 'python'
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extensions ['python_setup_py']
+[0.719s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros) by extension 'python_setup_py'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera) by extensions ['ignore', 'ignore_ament_install']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera) by extension 'ignore'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera) by extension 'ignore_ament_install'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera) by extensions ['colcon_pkg']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera) by extension 'colcon_pkg'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera) by extensions ['colcon_meta']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera) by extension 'colcon_meta'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera) by extensions ['ros']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera) by extension 'ros'
+[0.728s] DEBUG:colcon.colcon_core.package_identification:Package 'src/realsense-ros/realsense2_camera' with type 'ros.ament_cmake' and name 'realsense2_camera'
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera_msgs) by extension 'ignore'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera_msgs) by extension 'ignore_ament_install'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera_msgs) by extensions ['colcon_pkg']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera_msgs) by extension 'colcon_pkg'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera_msgs) by extensions ['colcon_meta']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera_msgs) by extension 'colcon_meta'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera_msgs) by extensions ['ros']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_camera_msgs) by extension 'ros'
+[0.730s] DEBUG:colcon.colcon_core.package_identification:Package 'src/realsense-ros/realsense2_camera_msgs' with type 'ros.ament_cmake' and name 'realsense2_camera_msgs'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_description) by extensions ['ignore', 'ignore_ament_install']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_description) by extension 'ignore'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_description) by extension 'ignore_ament_install'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_description) by extensions ['colcon_pkg']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_description) by extension 'colcon_pkg'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_description) by extensions ['colcon_meta']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_description) by extension 'colcon_meta'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_description) by extensions ['ros']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(src/realsense-ros/realsense2_description) by extension 'ros'
+[0.733s] DEBUG:colcon.colcon_core.package_identification:Package 'src/realsense-ros/realsense2_description' with type 'ros.ament_cmake' and name 'realsense2_description'
+[0.733s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.734s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.734s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.734s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.734s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.777s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.777s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.795s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 10 installed packages in /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install
+[0.797s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 366 installed packages in /opt/ros/humble
+[0.799s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.878s] Level 5:colcon.colcon_core.verb:set package 'message_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.878s] Level 5:colcon.colcon_core.verb:set package 'message_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.878s] Level 5:colcon.colcon_core.verb:set package 'message_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.878s] Level 5:colcon.colcon_core.verb:set package 'message_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.878s] Level 5:colcon.colcon_core.verb:set package 'message_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.878s] Level 5:colcon.colcon_core.verb:set package 'message_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.878s] Level 5:colcon.colcon_core.verb:set package 'message_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.878s] Level 5:colcon.colcon_core.verb:set package 'message_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'message_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.879s] DEBUG:colcon.colcon_core.verb:Building package 'message_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/message_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'my_bot' build argument 'cmake_args' from command line to 'None'
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'my_bot' build argument 'cmake_target' from command line to 'None'
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'my_bot' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'my_bot' build argument 'cmake_clean_cache' from command line to 'False'
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'my_bot' build argument 'cmake_clean_first' from command line to 'False'
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'my_bot' build argument 'cmake_force_configure' from command line to 'False'
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'my_bot' build argument 'ament_cmake_args' from command line to 'None'
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'my_bot' build argument 'catkin_cmake_args' from command line to 'None'
+[0.879s] Level 5:colcon.colcon_core.verb:set package 'my_bot' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.879s] DEBUG:colcon.colcon_core.verb:Building package 'my_bot' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_bot', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_bot', 'symlink_install': False, 'test_result_base': None}
+[0.880s] Level 5:colcon.colcon_core.verb:set package 'my_robot_cam' build argument 'cmake_args' from command line to 'None'
+[0.880s] Level 5:colcon.colcon_core.verb:set package 'my_robot_cam' build argument 'cmake_target' from command line to 'None'
+[0.880s] Level 5:colcon.colcon_core.verb:set package 'my_robot_cam' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'my_robot_cam' build argument 'cmake_clean_cache' from command line to 'False'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'my_robot_cam' build argument 'cmake_clean_first' from command line to 'False'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'my_robot_cam' build argument 'cmake_force_configure' from command line to 'False'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'my_robot_cam' build argument 'ament_cmake_args' from command line to 'None'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'my_robot_cam' build argument 'catkin_cmake_args' from command line to 'None'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'my_robot_cam' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.881s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_cam' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_cam', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_cam', 'symlink_install': False, 'test_result_base': None}
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_args' from command line to 'None'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_target' from command line to 'None'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_clean_first' from command line to 'False'
+[0.881s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'cmake_force_configure' from command line to 'False'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'ament_cmake_args' from command line to 'None'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'octomap_server2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.882s] DEBUG:colcon.colcon_core.verb:Building package 'octomap_server2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/octomap_server2', 'symlink_install': False, 'test_result_base': None}
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_args' from command line to 'None'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_target' from command line to 'None'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.882s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.883s] DEBUG:colcon.colcon_core.verb:Building package 'realsense2_camera_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_camera_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.883s] Level 5:colcon.colcon_core.verb:set package 'my_robot_arm' build argument 'cmake_args' from command line to 'None'
+[0.883s] Level 5:colcon.colcon_core.verb:set package 'my_robot_arm' build argument 'cmake_target' from command line to 'None'
+[0.883s] Level 5:colcon.colcon_core.verb:set package 'my_robot_arm' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.883s] Level 5:colcon.colcon_core.verb:set package 'my_robot_arm' build argument 'cmake_clean_cache' from command line to 'False'
+[0.883s] Level 5:colcon.colcon_core.verb:set package 'my_robot_arm' build argument 'cmake_clean_first' from command line to 'False'
+[0.883s] Level 5:colcon.colcon_core.verb:set package 'my_robot_arm' build argument 'cmake_force_configure' from command line to 'False'
+[0.883s] Level 5:colcon.colcon_core.verb:set package 'my_robot_arm' build argument 'ament_cmake_args' from command line to 'None'
+[0.883s] Level 5:colcon.colcon_core.verb:set package 'my_robot_arm' build argument 'catkin_cmake_args' from command line to 'None'
+[0.883s] Level 5:colcon.colcon_core.verb:set package 'my_robot_arm' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.883s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_arm' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_arm', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_arm', 'symlink_install': False, 'test_result_base': None}
+[0.884s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv' build argument 'cmake_args' from command line to 'None'
+[0.884s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv' build argument 'cmake_target' from command line to 'None'
+[0.884s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.884s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv' build argument 'cmake_clean_cache' from command line to 'False'
+[0.884s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv' build argument 'cmake_clean_first' from command line to 'False'
+[0.884s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv' build argument 'cmake_force_configure' from command line to 'False'
+[0.884s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv' build argument 'ament_cmake_args' from command line to 'None'
+[0.884s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv' build argument 'catkin_cmake_args' from command line to 'None'
+[0.884s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.884s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_nbv' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv', 'symlink_install': False, 'test_result_base': None}
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv_cmake' build argument 'cmake_args' from command line to 'None'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv_cmake' build argument 'cmake_target' from command line to 'None'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv_cmake' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv_cmake' build argument 'cmake_clean_cache' from command line to 'False'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv_cmake' build argument 'cmake_clean_first' from command line to 'False'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv_cmake' build argument 'cmake_force_configure' from command line to 'False'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv_cmake' build argument 'ament_cmake_args' from command line to 'None'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv_cmake' build argument 'catkin_cmake_args' from command line to 'None'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'my_robot_nbv_cmake' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.885s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_nbv_cmake' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake', 'symlink_install': False, 'test_result_base': None}
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_args' from command line to 'None'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_target' from command line to 'None'
+[0.885s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_clean_cache' from command line to 'False'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_clean_first' from command line to 'False'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'cmake_force_configure' from command line to 'False'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'ament_cmake_args' from command line to 'None'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'catkin_cmake_args' from command line to 'None'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_camera' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.886s] DEBUG:colcon.colcon_core.verb:Building package 'realsense2_camera' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_camera', 'symlink_install': False, 'test_result_base': None}
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_args' from command line to 'None'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_target' from command line to 'None'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.886s] Level 5:colcon.colcon_core.verb:set package 'realsense2_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.886s] DEBUG:colcon.colcon_core.verb:Building package 'realsense2_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description', 'merge_install': False, 'path': '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_description', 'symlink_install': False, 'test_result_base': None}
+[0.887s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.889s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.889s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/message_interfaces' with build type 'ament_cmake'
+[0.889s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/message_interfaces'
+[0.896s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.897s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.897s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.904s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_camera_msgs' with build type 'ament_cmake'
+[0.904s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_camera_msgs'
+[0.904s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.904s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.910s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_bot' with build type 'ament_cmake'
+[0.911s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_bot'
+[0.911s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.912s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.917s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_cam' with build type 'ament_python'
+[0.917s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_cam', 'ament_prefix_path')
+[0.918s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/hook/ament_prefix_path.ps1'
+[0.920s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/hook/ament_prefix_path.dsv'
+[0.921s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/hook/ament_prefix_path.sh'
+[0.922s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.922s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.929s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/octomap_server2' with build type 'ament_cmake'
+[0.930s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/octomap_server2'
+[0.930s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.930s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.950s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces -- -j8 -l8
+[0.956s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs -- -j8 -l8
+[0.961s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_bot -- -j8 -l8
+[1.483s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_cam'
+[1.484s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.484s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.521s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2 -- -j8 -l8
+[1.521s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_bot -- -j8 -l8
+[2.113s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces -- -j8 -l8
+[3.109s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_bot
+[3.758s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces
+[3.810s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_bot)
+[3.814s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_bot
+[3.830s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot' for CMake module files
+[3.831s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot' for CMake config files
+[3.834s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_bot', 'cmake_prefix_path')
+[3.834s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/hook/cmake_prefix_path.ps1'
+[3.835s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/hook/cmake_prefix_path.dsv'
+[3.839s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/hook/cmake_prefix_path.sh'
+[3.840s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/bin'
+[3.840s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/lib/pkgconfig/my_bot.pc'
+[3.841s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/lib/python3.10/site-packages'
+[3.841s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/bin'
+[3.841s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.ps1'
+[3.845s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.dsv'
+[3.848s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.sh'
+[3.855s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.bash'
+[3.860s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.zsh'
+[3.870s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/colcon-core/packages/my_bot)
+[4.001s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_cam': PYTHONPATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_cam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_cam build --build-base /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_cam/build install --record /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_cam/install.log --single-version-externally-managed install_data
+[4.481s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(message_interfaces)
+[4.482s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/message_interfaces
+[4.482s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces' for CMake module files
+[4.485s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces' for CMake config files
+[4.489s] Level 1:colcon.colcon_core.shell:create_environment_hook('message_interfaces', 'cmake_prefix_path')
+[4.490s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/cmake_prefix_path.ps1'
+[4.490s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/cmake_prefix_path.dsv'
+[4.491s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/cmake_prefix_path.sh'
+[4.492s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib'
+[4.492s] Level 1:colcon.colcon_core.shell:create_environment_hook('message_interfaces', 'ld_library_path_lib')
+[4.493s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/ld_library_path_lib.ps1'
+[4.494s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/ld_library_path_lib.dsv'
+[4.496s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/ld_library_path_lib.sh'
+[4.497s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/bin'
+[4.497s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/pkgconfig/message_interfaces.pc'
+[4.497s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/python3.10/site-packages'
+[4.498s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/bin'
+[4.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.ps1'
+[4.499s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.dsv'
+[4.500s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.sh'
+[4.500s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.bash'
+[4.501s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.zsh'
+[4.502s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/colcon-core/packages/message_interfaces)
+[4.569s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_bot)
+[4.575s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot' for CMake module files
+[4.579s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot' for CMake config files
+[4.580s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_bot', 'cmake_prefix_path')
+[4.584s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/hook/cmake_prefix_path.ps1'
+[4.584s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/hook/cmake_prefix_path.dsv'
+[4.589s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/hook/cmake_prefix_path.sh'
+[4.599s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/bin'
+[4.599s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/lib/pkgconfig/my_bot.pc'
+[4.599s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/lib/python3.10/site-packages'
+[4.601s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/bin'
+[4.603s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.ps1'
+[4.607s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.dsv'
+[4.617s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.sh'
+[4.620s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.bash'
+[4.621s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/my_bot/package.zsh'
+[4.628s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot/share/colcon-core/packages/my_bot)
+[5.970s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(message_interfaces)
+[5.970s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces' for CMake module files
+[5.971s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces' for CMake config files
+[5.972s] Level 1:colcon.colcon_core.shell:create_environment_hook('message_interfaces', 'cmake_prefix_path')
+[5.972s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/cmake_prefix_path.ps1'
+[5.986s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/cmake_prefix_path.dsv'
+[6.012s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/cmake_prefix_path.sh'
+[6.027s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib'
+[6.027s] Level 1:colcon.colcon_core.shell:create_environment_hook('message_interfaces', 'ld_library_path_lib')
+[6.028s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/ld_library_path_lib.ps1'
+[6.033s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/ld_library_path_lib.dsv'
+[6.182s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/hook/ld_library_path_lib.sh'
+[6.188s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/bin'
+[6.189s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/pkgconfig/message_interfaces.pc'
+[6.197s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib/python3.10/site-packages'
+[6.197s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/bin'
+[6.198s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.ps1'
+[6.199s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.dsv'
+[6.206s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.sh'
+[6.218s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.bash'
+[6.229s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/message_interfaces/package.zsh'
+[6.231s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/share/colcon-core/packages/message_interfaces)
+[6.253s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_arm' with build type 'ament_python'
+[6.254s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_arm', 'ament_prefix_path')
+[6.254s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/hook/ament_prefix_path.ps1'
+[6.263s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/hook/ament_prefix_path.dsv'
+[6.264s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/hook/ament_prefix_path.sh'
+[6.265s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.265s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.313s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv' with build type 'ament_python'
+[6.314s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_nbv', 'ament_prefix_path')
+[6.318s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/hook/ament_prefix_path.ps1'
+[6.329s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/hook/ament_prefix_path.dsv'
+[6.334s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/hook/ament_prefix_path.sh'
+[6.346s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.346s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.365s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake' with build type 'ament_cmake'
+[6.365s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv_cmake'
+[6.366s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.366s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[7.374s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_arm'
+[7.374s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[7.374s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[8.005s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv'
+[8.006s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[8.006s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[8.038s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam' for CMake module files
+[8.040s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8
+[8.041s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_cam' returned '0': PYTHONPATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_cam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_cam build --build-base /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_cam/build install --record /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_cam/install.log --single-version-externally-managed install_data
+[8.044s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam' for CMake config files
+[8.199s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib'
+[8.200s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/bin'
+[8.200s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/pkgconfig/my_robot_cam.pc'
+[8.200s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/lib/python3.10/site-packages'
+[8.200s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_cam', 'pythonpath')
+[8.200s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/hook/pythonpath.ps1'
+[8.268s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/hook/pythonpath.dsv'
+[8.298s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/hook/pythonpath.sh'
+[8.342s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/bin'
+[8.342s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_cam)
+[8.343s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/package.ps1'
+[8.369s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/package.dsv'
+[8.393s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/package.sh'
+[8.617s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/package.bash'
+[8.622s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/my_robot_cam/package.zsh'
+[8.627s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam/share/colcon-core/packages/my_robot_cam)
+[11.644s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_arm': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_arm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_arm build --build-base /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_arm/build install --record /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_arm/install.log --single-version-externally-managed install_data
+[11.661s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_nbv build --build-base /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv/build install --record /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv/install.log --single-version-externally-managed install_data
+[11.676s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs -- -j8 -l8
+[12.846s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv' for CMake module files
+[12.848s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_nbv' returned '0': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_nbv build --build-base /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv/build install --record /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv/install.log --single-version-externally-managed install_data
+[12.853s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv' for CMake config files
+[12.861s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib'
+[12.861s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/bin'
+[12.861s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/pkgconfig/my_robot_nbv.pc'
+[12.862s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/lib/python3.10/site-packages'
+[12.862s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_nbv', 'pythonpath')
+[12.863s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/hook/pythonpath.ps1'
+[12.868s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/hook/pythonpath.dsv'
+[12.869s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/hook/pythonpath.sh'
+[12.870s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/bin'
+[12.870s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_nbv)
+[12.871s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/package.ps1'
+[12.872s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/package.dsv'
+[12.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/package.sh'
+[12.874s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/package.bash'
+[12.874s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/my_robot_nbv/package.zsh'
+[12.875s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv/share/colcon-core/packages/my_robot_nbv)
+[12.887s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs
+[13.019s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm' for CMake module files
+[13.022s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm' for CMake config files
+[13.028s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/my_robot_arm' returned '0': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_arm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_arm build --build-base /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_arm/build install --record /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_arm/install.log --single-version-externally-managed install_data
+[13.032s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/lib'
+[13.032s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/bin'
+[13.032s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/lib/pkgconfig/my_robot_arm.pc'
+[13.032s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/lib/python3.10/site-packages'
+[13.035s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_arm', 'pythonpath')
+[13.035s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/hook/pythonpath.ps1'
+[13.036s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/hook/pythonpath.dsv'
+[13.042s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/hook/pythonpath.sh'
+[13.043s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/bin'
+[13.044s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_arm)
+[13.044s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/package.ps1'
+[13.045s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/package.dsv'
+[13.049s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/package.sh'
+[13.050s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/package.bash'
+[13.051s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/my_robot_arm/package.zsh'
+[13.052s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm/share/colcon-core/packages/my_robot_arm)
+[13.146s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_camera_msgs)
+[13.147s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs' for CMake module files
+[13.148s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera_msgs
+[13.149s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs' for CMake config files
+[13.157s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera_msgs', 'cmake_prefix_path')
+[13.157s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.ps1'
+[13.158s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.dsv'
+[13.159s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.sh'
+[13.161s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib'
+[13.161s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera_msgs', 'ld_library_path_lib')
+[13.161s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.ps1'
+[13.163s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.dsv'
+[13.164s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.sh'
+[13.165s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/bin'
+[13.165s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib/pkgconfig/realsense2_camera_msgs.pc'
+[13.165s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib/python3.10/site-packages'
+[13.166s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/bin'
+[13.166s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.ps1'
+[13.168s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.dsv'
+[13.169s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.sh'
+[13.169s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.bash'
+[13.170s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.zsh'
+[13.171s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/colcon-core/packages/realsense2_camera_msgs)
+[13.696s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_camera_msgs)
+[13.696s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs' for CMake module files
+[13.697s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs' for CMake config files
+[13.700s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera_msgs', 'cmake_prefix_path')
+[13.702s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.ps1'
+[13.703s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.dsv'
+[13.704s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.sh'
+[13.705s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib'
+[13.705s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera_msgs', 'ld_library_path_lib')
+[13.706s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.ps1'
+[13.707s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.dsv'
+[13.707s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.sh'
+[13.708s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/bin'
+[13.708s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib/pkgconfig/realsense2_camera_msgs.pc'
+[13.709s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib/python3.10/site-packages'
+[13.709s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/bin'
+[13.709s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.ps1'
+[13.712s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.dsv'
+[13.713s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.sh'
+[13.714s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.bash'
+[13.715s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.zsh'
+[13.716s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/share/colcon-core/packages/realsense2_camera_msgs)
+[13.718s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_camera' with build type 'ament_cmake'
+[13.718s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_camera'
+[13.718s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[13.718s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[13.729s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_description' with build type 'ament_cmake'
+[13.730s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/realsense-ros/realsense2_description'
+[13.730s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[13.730s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[13.754s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera -- -j8 -l8
+[13.763s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_description': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_description -- -j8 -l8
+[14.243s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_description' returned '0': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_description -- -j8 -l8
+[14.919s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_description': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_description
+[15.508s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_description)
+[15.508s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description' for CMake module files
+[15.511s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_description' returned '0': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_description
+[15.517s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description' for CMake config files
+[15.535s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_description', 'cmake_prefix_path')
+[15.536s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.ps1'
+[15.541s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.dsv'
+[15.546s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.sh'
+[15.553s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/bin'
+[15.553s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/lib/pkgconfig/realsense2_description.pc'
+[15.556s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/lib/python3.10/site-packages'
+[15.557s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/bin'
+[15.557s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.ps1'
+[15.566s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.dsv'
+[15.571s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.sh'
+[15.576s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.bash'
+[15.577s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.zsh'
+[15.584s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/colcon-core/packages/realsense2_description)
+[16.937s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_description)
+[16.938s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description' for CMake module files
+[16.938s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description' for CMake config files
+[16.939s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_description', 'cmake_prefix_path')
+[16.939s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.ps1'
+[16.958s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.dsv'
+[16.979s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.sh'
+[17.000s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/bin'
+[17.000s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/lib/pkgconfig/realsense2_description.pc'
+[17.000s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/lib/python3.10/site-packages'
+[17.001s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/bin'
+[17.001s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.ps1'
+[17.010s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.dsv'
+[17.054s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.sh'
+[17.068s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.bash'
+[17.075s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/realsense2_description/package.zsh'
+[17.083s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description/share/colcon-core/packages/realsense2_description)
+[398.384s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake' returned '0': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake -- -j8 -l8
+[398.953s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake
+[399.278s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_nbv_cmake)
+[399.279s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake' returned '0': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/my_robot_nbv_cmake
+[399.281s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake' for CMake module files
+[399.285s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake' for CMake config files
+[399.289s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_nbv_cmake', 'cmake_prefix_path')
+[399.291s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/hook/cmake_prefix_path.ps1'
+[399.298s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/hook/cmake_prefix_path.dsv'
+[399.303s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/hook/cmake_prefix_path.sh'
+[399.306s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib'
+[399.309s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/bin'
+[399.313s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/pkgconfig/my_robot_nbv_cmake.pc'
+[399.315s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/python3.10/site-packages'
+[399.316s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/bin'
+[399.321s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.ps1'
+[399.323s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.dsv'
+[399.326s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.sh'
+[399.329s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.bash'
+[399.335s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.zsh'
+[399.356s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/colcon-core/packages/my_robot_nbv_cmake)
+[399.770s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_nbv_cmake)
+[399.771s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake' for CMake module files
+[399.772s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake' for CMake config files
+[399.772s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_nbv_cmake', 'cmake_prefix_path')
+[399.773s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/hook/cmake_prefix_path.ps1'
+[399.775s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/hook/cmake_prefix_path.dsv'
+[399.779s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/hook/cmake_prefix_path.sh'
+[399.788s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib'
+[399.789s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/bin'
+[399.790s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/pkgconfig/my_robot_nbv_cmake.pc'
+[399.791s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/lib/python3.10/site-packages'
+[399.791s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/bin'
+[399.792s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.ps1'
+[399.793s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.dsv'
+[399.795s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.sh'
+[399.796s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.bash'
+[399.797s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/my_robot_nbv_cmake/package.zsh'
+[399.798s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake/share/colcon-core/packages/my_robot_nbv_cmake)
+[424.301s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2 -- -j8 -l8
+[424.469s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2
+[424.617s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(octomap_server2)
+[424.618s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2' for CMake module files
+[424.618s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/octomap_server2
+[424.619s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2' for CMake config files
+[424.619s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_server2', 'cmake_prefix_path')
+[424.620s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.ps1'
+[424.620s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.dsv'
+[424.621s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.sh'
+[424.623s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib'
+[424.623s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_server2', 'ld_library_path_lib')
+[424.625s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.ps1'
+[424.627s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.dsv'
+[424.628s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.sh'
+[424.629s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/bin'
+[424.629s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib/pkgconfig/octomap_server2.pc'
+[424.629s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib/python3.10/site-packages'
+[424.630s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/bin'
+[424.630s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.ps1'
+[424.631s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.dsv'
+[424.633s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.sh'
+[424.633s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.bash'
+[424.634s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.zsh'
+[424.635s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/colcon-core/packages/octomap_server2)
+[424.795s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(octomap_server2)
+[424.795s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2' for CMake module files
+[424.796s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2' for CMake config files
+[424.796s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_server2', 'cmake_prefix_path')
+[424.796s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.ps1'
+[424.797s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.dsv'
+[424.798s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/cmake_prefix_path.sh'
+[424.800s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib'
+[424.801s] Level 1:colcon.colcon_core.shell:create_environment_hook('octomap_server2', 'ld_library_path_lib')
+[424.802s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.ps1'
+[424.803s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.dsv'
+[424.804s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/hook/ld_library_path_lib.sh'
+[424.805s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/bin'
+[424.806s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib/pkgconfig/octomap_server2.pc'
+[424.806s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib/python3.10/site-packages'
+[424.806s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/bin'
+[424.807s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.ps1'
+[424.807s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.dsv'
+[424.808s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.sh'
+[424.810s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.bash'
+[424.811s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/octomap_server2/package.zsh'
+[424.812s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/share/colcon-core/packages/octomap_server2)
+[473.918s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera' returned '0': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --build /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera -- -j8 -l8
+[474.113s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera
+[474.260s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_camera)
+[474.261s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera' for CMake module files
+[474.262s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera' returned '0': CMAKE_PREFIX_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_description:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv_cmake:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_bot:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_nbv:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_cam:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/my_robot_arm:/opt/ros/humble LD_LIBRARY_PATH=/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera_msgs/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/octomap_server2/lib:/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/message_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/jajayu/.local/bin/cmake --install /home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/build/realsense2_camera
+[474.262s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera' for CMake config files
+[474.264s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera', 'cmake_prefix_path')
+[474.265s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.ps1'
+[474.265s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.dsv'
+[474.266s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.sh'
+[474.267s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib'
+[474.267s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera', 'ld_library_path_lib')
+[474.267s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.ps1'
+[474.268s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.dsv'
+[474.268s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.sh'
+[474.268s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/bin'
+[474.268s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib/pkgconfig/realsense2_camera.pc'
+[474.269s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib/python3.10/site-packages'
+[474.269s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/bin'
+[474.269s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.ps1'
+[474.270s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.dsv'
+[474.271s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.sh'
+[474.272s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.bash'
+[474.273s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.zsh'
+[474.273s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/colcon-core/packages/realsense2_camera)
+[474.460s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(realsense2_camera)
+[474.460s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera' for CMake module files
+[474.461s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera' for CMake config files
+[474.461s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera', 'cmake_prefix_path')
+[474.462s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.ps1'
+[474.463s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.dsv'
+[474.463s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/cmake_prefix_path.sh'
+[474.465s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib'
+[474.466s] Level 1:colcon.colcon_core.shell:create_environment_hook('realsense2_camera', 'ld_library_path_lib')
+[474.466s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.ps1'
+[474.466s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.dsv'
+[474.468s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/hook/ld_library_path_lib.sh'
+[474.468s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/bin'
+[474.468s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib/pkgconfig/realsense2_camera.pc'
+[474.468s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/lib/python3.10/site-packages'
+[474.469s] Level 1:colcon.colcon_core.environment:checking '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/bin'
+[474.469s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.ps1'
+[474.470s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.dsv'
+[474.471s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.sh'
+[474.472s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.bash'
+[474.473s] INFO:colcon.colcon_core.shell:Creating package script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/realsense2_camera/package.zsh'
+[474.475s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/realsense2_camera/share/colcon-core/packages/realsense2_camera)
+[474.481s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[474.487s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[474.488s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[474.490s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[474.556s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[474.556s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[474.556s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[474.756s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[474.762s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/local_setup.ps1'
+[474.765s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/_local_setup_util_ps1.py'
+[474.766s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/setup.ps1'
+[474.770s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/local_setup.sh'
+[474.771s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/_local_setup_util_sh.py'
+[474.771s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/setup.sh'
+[474.772s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/local_setup.bash'
+[474.773s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/setup.bash'
+[474.774s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/local_setup.zsh'
+[474.775s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/install/setup.zsh'

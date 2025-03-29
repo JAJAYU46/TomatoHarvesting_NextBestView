@@ -358,7 +358,11 @@ class MyNode(Node): #construct Node class
                             # try:
                             if(1==1):##==============================================================================================
                                 self.get_logger().info("start ICP")
-                                result_trans_final=ICPoperation(source,target)
+                                # result_trans_final=ICPoperation(source,target)
+                                projection_para = [self.fx, self.fy, self.cx, self.cy]
+                                camera_point = np.array([0,0,0])
+                                result_trans_final=ICPoperation(source, target, self.TomatoBox_lu, self.TomatoBox_rd, projection_para, camera_point)
+
                                 if result_trans_final is not None: #才做下面的事情
                                     source.paint_uniform_color([1, 0.706, 0])
                                     source.transform(result_trans_final.transformation)
