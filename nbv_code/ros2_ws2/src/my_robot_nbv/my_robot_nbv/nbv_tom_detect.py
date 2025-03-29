@@ -266,7 +266,7 @@ class MyNode(Node): #construct Node class
 
                     with open("./src/dataset/output_data/bounding_box/bbox.json", "w") as f:
                         json.dump(bounding_box_data, f, indent=4)
-                        f.write(f"{TargetBox[0]} {TargetBox[1]} {TargetBox[2]} {TargetBox[3]}\n")
+                        # f.write(f"{TargetBox[0]} {TargetBox[1]} {TargetBox[2]} {TargetBox[3]}\n")
 
                     print("Bounding box saved to bounding_box.txt")
 

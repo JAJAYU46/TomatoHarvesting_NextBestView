@@ -325,7 +325,27 @@ class MyNode(Node): #construct Node class
                             
                                 # source_path="/home/jajayu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src/dataset/data_pcd/TomatoPlant_only1tomato_onlyRed.ply"
                             
+                            # <For Data Collecting for improve ICP>
+                            # ================================================================================================
+                            # 1. Save The filtered point pointcloud
+                            o3d.io.write_point_cloud("./src/dataset/output_data/pointcloud/filtered_pcd.ply", point_cloud)
+                            # 3. the current cameera_link frame coordinate
                             
+                            # from_frame = 'base'  # Change to your reference frame
+                            # to_frame = 'camera_link_optical'  # Change to the TF frame you want to query
+
+                            # try:
+                            #     trans: TransformStamped = self.tf_buffer.lookup_transform(from_frame, to_frame, rclpy.time.Time())
+                            #     translation = trans.transform.translation
+                            #     rotation = trans.transform.rotation
+
+                            #     self.get_logger().info(f"Position of {to_frame} relative to {from_frame}:")
+                            #     self.get_logger().info(f"Translation: x={translation.x}, y={translation.y}, z={translation.z}")
+                            #     self.get_logger().info(f"Rotation (quaternion): x={rotation.x}, y={rotation.y}, z={rotation.z}, w={rotation.w}")
+
+                            # except Exception as e:
+                            #     self.get_logger().warn(f"Could not get transform: {str(e)}")
+                            # =================================================================================================
                             source = o3d.io.read_point_cloud(source_path.format(3)) #demo_pcds.paths[0])
                             # print(np.asarray(pcd.points))
                             #for debug
@@ -338,7 +358,11 @@ class MyNode(Node): #construct Node class
                             # try:
                             if(1==1):##==============================================================================================
                                 self.get_logger().info("start ICP")
-                                result_trans_final=ICPoperation(source,target)
+                                # result_trans_final=ICPoperation(source,target)
+                                projection_para = [self.fx, self.fy, self.cx, self.cy]
+                                camera_point = np.array([0,0,0])
+                                result_trans_final=ICPoperation(source, target, self.TomatoBox_lu, self.TomatoBox_rd, projection_para, camera_point)
+
                                 if result_trans_final is not None: #才做下面的事情
                                     source.paint_uniform_color([1, 0.706, 0])
                                     source.transform(result_trans_final.transformation)

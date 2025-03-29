@@ -19,7 +19,15 @@ from message_interfaces.msg import NodeStatus    # CHANGE
 # use numpy array to store the nbv point can be better when dealing with numerical stuff
 import numpy as np
 
+# For Robot Arm Control
+from tm_msgs.msg import *
+from tm_msgs.srv import *
 
+from move_tm.tmr_utils import TMRUtils
+tmr = TMRUtils()
+
+IS_SOLO_NODE = True #當只有這個node開發階段時用
+Open_REAL_ARM_CONTROLL = True
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
         super().__init__("arm_move_controller") #set python_NodeName
@@ -33,6 +41,8 @@ class MyNode(Node): #construct Node class
         self.publish_status_=self.create_publisher(NodeStatus, "/nbv/status_communicator", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         # timer
         self.create_timer(1.0, self.callback1) #(time interval/ calling callback)
+        if(IS_SOLO_NODE==True):
+            self.create_timer(1.0, self.setFakeStatusForSoloNode_callback)
 		
         # initialization
         self.is_moving_msg = False
@@ -43,8 +53,45 @@ class MyNode(Node): #construct Node class
         #【subscriber】
         # self.pose_subscriber_=self.create_subscription(Pose, "/turtle/cmd_vel", self.callback_forSubscribe, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         
+        # For Robot Arm Control
+        if (Open_REAL_ARM_CONTROLL):
+            self.arm_client_ = self.create_client(SendScript, 'send_script')
+            while not self.arm_client_.wait_for_service(timeout_sec = 1.0):
+                self.get_logger().info('service not availabe, waiting again...')
+         
+
+
+
+
+
         self.get_logger().info("arm_move_controller have been started")
+
+           
+
+        
         # self.create_timer(1.0, self.callback1) #(time interval/ calling callback)
+    def setFakeStatusForSoloNode_callback(self):
+        self.ready_for_next_iteration_msg = True
+        self.is_moving_msg = False
+        self.target_box_id_msg = 0
+        self.iteration_msg = 0
+        self.detection_done_msg = True
+        self.icp_done_msg =True
+        self.octomap_done_msg = True # 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
+        self.nbv_done_msg = True
+        self.nbv_point_x_msg = 500
+        self.nbv_point_y_msg = 0
+        self.nbv_point_z_msg = 500
+        self.nbv_point_rx_msg = 0
+        self.nbv_point_ry_msg = 0
+        self.nbv_point_rz_msg = 0
+        self.is_final_result_msg = False
+        self.arm_move_done_status_msg = False
+        
+        
+        self.renew_done = True
+        self.Recieved_nbv_point[:]=[self.nbv_point_x_msg, self.nbv_point_y_msg, self.nbv_point_z_msg, self.nbv_point_rx_msg, self.nbv_point_ry_msg, self.nbv_point_rz_msg]
+
     def status_callback(self,msg):
         if (self.is_moving_msg != msg.is_moving): 
             self.get_logger().info('now the is_moving_msg: '+str(msg.is_moving)) # CHANGE
@@ -115,18 +162,34 @@ class MyNode(Node): #construct Node class
 
 
                 # user_input = input("Enter 'n' to start NBV process for next target tomato: ").strip()
-                
+    # ================== Function For Robot Arm Control ==================
+    
+    def send_script(self, script):
+      move_cmd = SendScript.Request()
+      move_cmd.script = script
+      self.arm_client_.call_async(move_cmd)  
+    
+    def Cmotions(self, cmd_Cpose):
+        for i in range(len(cmd_Cpose)):
+            self.MoveCartesian(cmd_Cpose[i])
+    
+    def MoveCartesianVelocity(self, Cpvt):
+            self.send_script("PVTPoint(" + self.ToStr(Cpvt) + ")")
+
+    # ====================================================================            
                 
                 
     def Is_Point_Reachable_By_RArm(self): 
-        if (self.Recieved_nbv_point[5]<=0): #如果跑到z<0就是unreachable
+        if (self.Recieved_nbv_point[2]<=0): #如果跑到z<0就是unreachable
             return False
         return True
 
     def send_MovingCommandToArm(self):
         self.get_logger().info('SENDING MOVING COMMAND TO ROBOT ARM...') # CHANGE
         self.get_logger().info(f'MOVING ROBOT ARM TO: ({self.Recieved_nbv_point[0]:2f}, {self.Recieved_nbv_point[1]:2f}, {self.Recieved_nbv_point[2]:2f}, {self.Recieved_nbv_point[3]:2f}, {self.Recieved_nbv_point[4]:2f}, {self.Recieved_nbv_point[5]:2f})') # CHANGE
-        
+        if (Open_REAL_ARM_CONTROLL): 
+            goal_command = np.array(self.Recieved_nbv_point[0:5])
+            self.MoveCartesian(goal_command)
         
         self.get_logger().info('Successfully moving to the new robor arm coordinate') # CHANGE
 
