@@ -130,6 +130,11 @@ public:
         // (1.0,0.0,0.0): car front/ (0.0,-1.0,0.0): car right/ (0.0,0.0,-1.0): car up
         // <For Improve>
         octomap::point3d RobotArmSecondAxisVec(0.0,-1.0,0.0); //The second direction you want to delete
+
+        if(INPUT_MODE==2){
+            octomap::point3d RobotArmFrontAxisVec(1.0,0.0,0.0);
+            octomap::point3d RobotArmSecondAxisVec(1.0,0.0,0.0);
+        }
         cout<<"There are total "<<origins_original.size()<<" candidate view"<<endl;  
         //在這邊過濾點（因為candidate view 頂多100個所以這裡過濾不太影響時間複雜度)
         //也可以在上面製造的時候就過濾好, 但這裡邏輯是先隨機製造, 再過濾掉不能到達點
