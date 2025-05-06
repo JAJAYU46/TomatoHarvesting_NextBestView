@@ -47,6 +47,8 @@ from geometry_msgs.msg import Point, PointStamped
 import tf2_geometry_msgs
 
 
+from tf2_ros import TransformBroadcaster
+
 #To convert pointcloud2(for ROS2) to pointcloud(for open3d)
 
 INPUT_MODE=0 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
@@ -99,7 +101,8 @@ class MyNode(Node): #construct Node class
         self.tompcd_filter_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_filter", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         self.tompcd_ICP_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_ICP", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         self.tompcd_ICPonly_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_ICPonly", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
-        
+        self.tompcd_filter_on_base_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_filter_on_base", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
+        self.tompcd_filter_on_camera_pub_=self.create_publisher(sensor_msgs.PointCloud2, "/nbv/tompcd_filter_on_camera", 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         #【subscriber】
         self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/cam/cloudrate_transformer", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         #for image
@@ -134,10 +137,80 @@ class MyNode(Node): #construct Node class
         # self.nbv_point_y_msg
         # self.nbv_point_z_msg
         # self.is_final_result_msg
+
+        # <Section>Merge pcd
+        self.previous_filter_point_np = np.empty((0, 4))
+
+        # <Section> For controlling TF frame for gazebo vs real world
+        if(INPUT_MODE==1 or INPUT_MODE==2): # gazebo
+            self.arm_base_frame = 'odom'
+            self.arm_cam_frame = 'camera_link_optical'
+        else: 
+            self.arm_base_frame = 'base'
+            self.arm_cam_frame = 'camera_link_optical'
+
+
+        # # Broadcast_transformer for gazebo, let base_link = base
+        # self.tf_broadcaster = TransformBroadcaster(self)
+        # # Create a timer to continuously broadcast the transform
+        # self.declare_parameter("use_sim_time", rclpy.Parameter.Type.BOOL)
+        # self.set_parameters([rclpy.parameter.Parameter("use_sim_time", value=True)])
+
+        # self.create_timer(0.001, self.broadcast_transform)
+        
     
     # def status_callback(self,msg): 
     #     self.is_moving_msg = msg.is_moving
     #     self.get_logger().info('now the is_moving_msg: '+str(self.is_moving_msg)) # CHANGE
+    def broadcast_transform(self):
+        
+
+        # Create a TransformStamped message for the transform
+        transform2 = TransformStamped()
+
+        # Fill in the header information
+        transform2.header.stamp = self.get_clock().now().to_msg()
+        transform2.header.frame_id = 'base_link'  # Parent frame
+        transform2.child_frame_id = self.arm_base_frame  # Child frame
+
+        # Define the translation (position) of camera_link_optical relative to camera_depth_optical_frame
+        transform2.transform.translation.x = 0.0  # Example translation in meters
+        transform2.transform.translation.y = 0.0  # Example translation in meters
+        transform2.transform.translation.z = 0.0  # Example translation in meters
+
+        # Define the rotation (orientation) of camera_link_optical relative to camera_depth_optical_frame
+        transform2.transform.rotation.x = 0.0
+        transform2.transform.rotation.y = 0.0
+        transform2.transform.rotation.z = 0.0
+        transform2.transform.rotation.w = 1.0 # Identity rotation (no rotation)
+
+        # Broadcast the transform
+        
+        self.tf_broadcaster.sendTransform(transform2)
+    
+    
+        # Create a TransformStamped message for the transform
+        transform3 = TransformStamped()
+
+        # Fill in the header information
+        transform3.header.stamp = self.get_clock().now().to_msg()
+        transform3.header.frame_id = self.arm_base_frame  # Parent frame
+        transform3.child_frame_id = self.arm_cam_frame  # Child frame
+
+        # Define the translation (position) of camera_link_optical relative to camera_depth_optical_frame
+        transform3.transform.translation.x = 0.22  # Example translation in meters
+        transform3.transform.translation.y = 0.0  # Example translation in meters
+        transform3.transform.translation.z = 0.0  # Example translation in meters
+
+        # Define the rotation (orientation) of camera_link_optical relative to camera_depth_optical_frame
+        transform3.transform.rotation.x = 0.0
+        transform3.transform.rotation.y = 0.0
+        transform3.transform.rotation.z = 0.0
+        transform3.transform.rotation.w = 1.0 # Identity rotation (no rotation)
+
+        # Broadcast the transform
+        self.tf_broadcaster.sendTransform(transform3)
+
     def status_callback(self,msg):
         if (self.is_moving_msg != msg.is_moving): 
             self.get_logger().info('now the is_moving_msg: '+str(msg.is_moving)) # CHANGE
@@ -182,11 +255,11 @@ class MyNode(Node): #construct Node class
                     self.bboxReadyFlag = False # 如果這次bounding box被用掉了, 就轉成false, 要下次有新的bounding box msg 才會再做, 防止bounding box是之前frame的bounding box
                     try: #街收到新data後除非transform有成功讀到, 才繼續往下做
                         # TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成base的座標用的TransformStamped
-                        # 'base', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                        # self.arm_base_frame, # target frame Moving frame #也就是現在的self.arm_cam_frame,    
                         # msg.header.frame_id, # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                         # rclpy.time.Time())#msg.header.stamp)         # Time when the point cloud was captured
                         TransformStamped_before = self.tf_buffer.lookup_transform( #先把它轉成base的座標用的TransformStamped
-                        'base', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                        self.arm_base_frame, # target frame Moving frame #也就是現在的self.arm_cam_frame,    
                         msg.header.frame_id, # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                         msg.header.stamp)#rclpy.time.Time())#msg.header.stamp)         # Time when the point cloud was captured
 
@@ -291,18 +364,82 @@ class MyNode(Node): #construct Node class
                         # self.TomatoBox_rd[1]=max_v
                         if __debug__:
                             self.get_logger().info("done filtering")
-                        msg.header=std_msgs.Header(frame_id='camera_link_optical')#, stamp=Clock().now().to_msg())#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID      
-                        # msg.header=std_msgs.Header(frame_id='camera_link_optical', stamp=msg.header.stamp)
+                        msg.header=std_msgs.Header(frame_id=self.arm_cam_frame)#, stamp=Clock().now().to_msg())#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID      
+                        # msg.header=std_msgs.Header(frame_id=self.arm_cam_frame, stamp=msg.header.stamp)
                         filtered_msg = pc2.create_cloud(msg.header, msg.fields, filtered_points)
                         # self.get_logger().info(f"filtered_points: {filtered_points}")
                         # self.tompcd_filter_pub_.publish(filtered_msg)
                         self.tompcd_filter_pub_.publish(filtered_msg) #這是ICP之前, 而且後面用不到, 所以留這裡是還好, 但其實filter也是花時間
 
+                        # <Section> Try to merge filtered point cloud =============================================================================================================
+                        # Convert to np array first for better operation
+                        filtered_points_np=np.array(filtered_points)
+                        # self.previous_filter_point_np 是用base_link在存
+                        previous_filter_points_np_camera=self.transform_points_frameB_to_frameA(self.tf_buffer, self.previous_filter_point_np, self.arm_cam_frame, self.arm_base_frame)
+                        
+                        
+                        preAnew_filter_points_np = np.empty((0, 4))
+                        if filtered_points_np.size == 0:
+                            preAnew_filter_points_np = previous_filter_points_np_camera
+                        else:
+                            preAnew_filter_points_np = np.append(previous_filter_points_np_camera, filtered_points_np, axis=0)
+                        # print("=========================================================")
+                        # print(f'Shape of previous_filter_point_np: {previous_filter_points_np_camera.shape}')
+                        # print(f'Shape of filtered_points_np: {filtered_points_np.shape}')
+                        # print(f'preAnew_filter_points_np: {preAnew_filter_points_np.shape}')
+                        
+                        # print("=========================================================")
+                        
+                        
+                        # <Debugging> (not used)
+                        # ==============================================================
+                        # # 1. 先來驗證camera_link_optical --> base_link 轉換 # correct! 
+                        # # pc2.create_cloud(msg.header, msg.fields, filtered_points)
+                        # filtered_points_np_on_base = self.transform_points_frameB_to_frameA(self.tf_buffer, filtered_points_np, self.arm_base_frame, self.arm_cam_frame)
+                        # filtered_msg_on_base = pc2.create_cloud(std_msgs.Header(frame_id=self.arm_base_frame), msg.fields, filtered_points_np_on_base) 
+                        # self.tompcd_filter_on_base_pub_.publish(filtered_msg_on_base)
 
+                        # # 2. 來驗證base_link --> camera_link 轉換 # correct!
+                        # filtered_points_np_on_camera = self.transform_points_frameB_to_frameA(self.tf_buffer, filtered_points_np_on_base, self.arm_cam_frame, self.arm_base_frame)
+                        # filtered_msg_on_camera = pc2.create_cloud(std_msgs.Header(frame_id=self.arm_cam_frame), msg.fields, filtered_points_np_on_camera) 
+                        # self.tompcd_filter_on_camera_pub_.publish(filtered_msg_on_camera)
+                        
+                        # 3. 驗證顯示self.previous_filter_point_np （on base)
+                        previous_filter_point = pc2.create_cloud(std_msgs.Header(frame_id=self.arm_base_frame), msg.fields, self.previous_filter_point_np) 
+                        self.tompcd_filter_on_base_pub_.publish(previous_filter_point)
+                        
+
+                        # 4. 驗證preAnew_filter_points_np (on camera)
+                        preAnew_filter_points = pc2.create_cloud(std_msgs.Header(frame_id=self.arm_cam_frame), msg.fields, preAnew_filter_points_np) 
+                        self.tompcd_filter_on_camera_pub_.publish(preAnew_filter_points)
+                        
+                        
+                        
+                        
+                        # ==============================================================                      
+                        
+                        
+                        
+                        if(self.icp_done_msg==False): #前面已確保self.is_moving_msg==False and self.detection_done_msg==True # 指抓第一次做完icp的去更新這個previous point cloud
+                            # if(iteration==0) 如果現在換一顆新的蕃茄, 就要重新紀錄這個icp 用point cloud #這個之後加, 因為現在id還不穩
+                            # preAnew_filter_points_np = self.transform_points_frameB_to_frameA(self.tf_buffer, preAnew_filter_points_np)
+                            self.previous_filter_point_np = self.transform_points_frameB_to_frameA(self.tf_buffer, preAnew_filter_points_np, self.arm_base_frame, self.arm_cam_frame)
+                        
+                        
                         # Save the filtered points to a PCD file using Open3D
                         point_cloud = o3d.geometry.PointCloud()
-                        if filtered_points: #如果有filter到東西(is not empty)再做下面的icp跟publish
-                            points = np.array(filtered_points)[:, :3] #紀錄x, y, z
+                        #if filtered_points: 
+                        if np.any(filtered_points_np):#如果有filter到東西(is not empty)再做下面的icp跟publish
+                            points = preAnew_filter_points_np[:, :3]
+                            print("=========================================================")
+                            print(f'Shape of previous_filter_point_np: {previous_filter_points_np_camera.shape}')
+                            print(f'Shape of filtered_points_np: {filtered_points_np.shape}')
+                            print(f'preAnew_filter_points_np: {preAnew_filter_points_np.shape}')
+                            print(f'points: {points.shape}')
+                            
+                            print("=========================================================")
+                            
+                            #points = np.array(filtered_points)[:, :3] #紀錄x, y, z
                             #colors = np.array(filtered_points)[:, 3:6]  # RGB colors
 
                             # # Ensure the colors are of type float64 and shape (N, 3)
@@ -331,8 +468,8 @@ class MyNode(Node): #construct Node class
                             o3d.io.write_point_cloud("./src/dataset/output_data/pointcloud/filtered_pcd.ply", point_cloud)
                             # 3. the current cameera_link frame coordinate
                             
-                            # from_frame = 'base'  # Change to your reference frame
-                            # to_frame = 'camera_link_optical'  # Change to the TF frame you want to query
+                            # from_frame = self.arm_base_frame  # Change to your reference frame
+                            # to_frame = self.arm_cam_frame  # Change to the TF frame you want to query
 
                             # try:
                             #     trans: TransformStamped = self.tf_buffer.lookup_transform(from_frame, to_frame, rclpy.time.Time())
@@ -421,16 +558,16 @@ class MyNode(Node): #construct Node class
                                     # source_pointcloud2_transformed_points_np = self.transform_pointcloud_to_np(source_points_np, TransformStamped)
                                     
                                     # TransformStamped = self.tf_buffer.lookup_transform( #先把它轉成base的座標用的TransformStamped
-                                    #     msg.header.frame_id, # target frame Moving frame #也就是現在的'camera_link_optical',    
+                                    #     msg.header.frame_id, # target frame Moving frame #也就是現在的self.arm_cam_frame,    
                                     #     rclpy.time.Time() , # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                                     #     msg.header.frame_id, #現在是camera link
                                     #     msg.header.stamp,
-                                    #     'base',
+                                    #     self.arm_base_frame,
                                     #     rclpy.duration.Duration(seconds=0)  # Correct way to create a Duration object
                                     #     )         # Time when the point cloud was captured
                                     try:
                                         TransformStamped_after = self.tf_buffer.lookup_transform(
-                                            'base', msg.header.frame_id, rclpy.time.Time())#msg.header.stamp)#rclpy.time.Time())
+                                            self.arm_base_frame, msg.header.frame_id, rclpy.time.Time())#msg.header.stamp)#rclpy.time.Time())
                                         
 
                                         #  # Extract translation
@@ -467,7 +604,7 @@ class MyNode(Node): #construct Node class
 
                                     #     try:
                                     #         transform1 = self.tf_buffer.lookup_transform(
-                                    #             'base',
+                                    #             self.arm_base_frame,
                                     #             msg.header.frame_id,
                                     #             rclpy.time.Time()
                                     #         )
@@ -482,7 +619,7 @@ class MyNode(Node): #construct Node class
 
 
                                     # TransformStamped_after = self.tf_buffer.lookup_transform( #先把它轉成base的座標用的TransformStamped
-                                    #     'base', # target frame Moving frame #也就是現在的'camera_link_optical',    
+                                    #     self.arm_base_frame, # target frame Moving frame #也就是現在的self.arm_cam_frame,    
                                     #     msg.header.frame_id,
                                     #     rclpy.time.Time() , # world frame Original frame (typically fixed)（作為固定的參考, 才知道轉了多少)
                                     #     #rclpy.duration.Duration(seconds=0)  # Correct way to create a Duration object
@@ -510,7 +647,7 @@ class MyNode(Node): #construct Node class
                                     # source_pointcloud2_transformed_points_np = self.transform_pointcloud_to_np(source_pointcloud2_transformed_points_np1, TransformStamped_after)
                                     
                                     # source_pointcloud2_transformed_points_np = self.transform_pointcloud_to_np(source_points_np, TransformStamped_between)
-                                    # try_header=std_msgs.Header(frame_id='base')
+                                    # try_header=std_msgs.Header(frame_id=self.arm_base_frame)
                                     # self.get_logger().info("ok1")
                                     # source_pointcloud2__transformed_points= pc2.create_cloud(try_header, msg.fields, source_pointcloud2_transformed_points_np.tolist())
                                     # self.get_logger().info("ok2")
@@ -653,7 +790,72 @@ class MyNode(Node): #construct Node class
         #o3d.io.write_point_cloud("/home/jajayu/Documents/NextBestView/pointCloudDataPLY/copy_of_filtered_msg2.pcd",point_cloud)
         #==============================================
 
+    # <Section> Merge pcd
+    def transform_points_frameB_to_frameA(self, tf_buffer, points_np, target_frame='base', source_frame='camera_link_optical'):
+        """
+        Transforms a set of points from the source frame to the target frame.
 
+        :param tf_buffer: The TF2 buffer for looking up transformations.
+        :param points_np: (N, 4) numpy array of points in the source frame (homogeneous coordinates).
+        :param target_frame: The target frame (default: self.arm_base_frame).
+        :param source_frame: The source frame (default: self.arm_cam_frame).
+        :return: Transformed numpy array of points in the target frame.
+        """
+        try:
+            # Get the transform from source_frame to target_frame
+            transform_stamped = tf_buffer.lookup_transform(target_frame, source_frame, rclpy.time.Time())
+
+            # # Extract translation
+            # tx, ty, tz = transform_stamped.transform.translation.x, \
+            #             transform_stamped.transform.translation.y, \
+            #             transform_stamped.transform.translation.z
+
+            # # Extract rotation and convert to rotation matrix
+            # q = [transform_stamped.transform.rotation.x,
+            #     transform_stamped.transform.rotation.y,
+            #     transform_stamped.transform.rotation.z,
+            #     transform_stamped.transform.rotation.w]
+            # rotation_matrix = tf_transformations.quaternion_matrix(q)[:3, :3]  # 3x3 rotation matrix
+
+            # # Convert points from source to target frame
+            # points_camera = points_np[:, :3].T  # Extract x, y, z and transpose to (3, N)
+            # transformed_points = rotation_matrix @ points_camera  # Apply rotation
+            # transformed_points = transformed_points.T + np.array([tx, ty, tz])  # Apply translation
+
+            # # Update the points array with transformed coordinates
+            # points_np[:, :3] = transformed_points
+
+                    # Create an empty list to store the transformed points
+            if(np.any(points_np)):
+                transformed_points = []
+                
+
+                for point in points_np:
+                    # Convert numpy array point to a Point message
+                    x, y, z, rgb = point
+                    point_wrt_source = Point(x=x, y=y, z=z)
+                    # point_wrt_source = Point(x=point[0], y=point[1], z=point[2], rgb=point[3])
+                    
+                    # Transform the point using tf2
+                    point_wrt_target = tf2_geometry_msgs.do_transform_point(
+                        PointStamped(point=point_wrt_source), transform_stamped).point
+                    
+                    # Store the transformed point in the list
+                    transformed_points.append([point_wrt_target.x, point_wrt_target.y, point_wrt_target.z, rgb])
+                    # transformed_points.append()
+                # Convert the transformed points list back to a numpy array
+                transformed_points_np = np.array(transformed_points)
+
+                
+                
+                return transformed_points_np
+            else:
+                return points_np
+
+
+        except Exception as e:
+            print(f"Error transforming points: {e}")
+            return points_np  # Return original points if transformation fails
 
     def are_frames_same(self, transform1, transform2, tol=1e-4):
 
@@ -918,7 +1120,7 @@ class MyNode(Node): #construct Node class
         points = np.asarray(open3d_pcd.points)
         colors = np.asarray(open3d_pcd.colors)
 
-        header=std_msgs.Header(frame_id='camera_link_optical')#, stamp=Clock().now().to_msg())#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID      
+        header=std_msgs.Header(frame_id=self.arm_cam_frame)#, stamp=Clock().now().to_msg())#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID      
         
         # Convert to ROS2 PointCloud2
         # # header = rclpy.header.Header(frame_id='your_frame_id')
@@ -1085,7 +1287,7 @@ if __name__=='__main__':
             # filtered_points.append([x, y, z, rgb])
 
         
-        # msg.header=std_msgs.Header(frame_id='camera_link_optical')#, stamp=Clock().now().to_msg())#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID      
+        # msg.header=std_msgs.Header(frame_id=self.arm_cam_frame)#, stamp=Clock().now().to_msg())#cam_frame_pcd(for realsense）#設定這個點雲圖會顯示到的frame ID      
         # filtered_msg = pc2.create_cloud(msg.header, msg.fields, filtered_points)
         # # self.tompcd_filter_pub_.publish(filtered_msg)
         # self.tompcd_filter_pub_.publish(filtered_msg)
