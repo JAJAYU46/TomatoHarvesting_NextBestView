@@ -1,5 +1,6 @@
 #!/user/bin/env python3 
 '''
+這邊是舊的, 要改要改ros2_local_ws 的檔案, 這裡都是複製過來方便測試用的
 [arm_move_controller]
 1. Introduction: 
 This Node is a movement controller for Robot Arm. It will subscribe the data from /nbv/status_communicator topic 
@@ -7,6 +8,12 @@ when the next-best-view point is calculated, do some reachability checking and s
 robot arm. Also, it will send whether the robot arm is moving to the /nbv/status_communicator msg.is_moving.
 
 2. Input and Output: 
+
+
+
+---
+# <Section> For controlling TF frame for gazebo vs real world
+        if(INPUT_MODE==1 or INPUT_MODE==2): # gazebo
 '''
 
 import rclpy #library for ROS2
@@ -20,17 +27,30 @@ from message_interfaces.msg import NodeStatus    # CHANGE
 import numpy as np
 
 # For Robot Arm Control
-from tm_msgs.msg import *
-from tm_msgs.srv import *
+try:
+    from tm_msgs.msg import *
+    from tm_msgs.srv import *
+except ImportError as e:
+    tm_msgs_available = False 
+    print(f"ImportError: {e}")
+else:
+    tm_msgs_available = True
+# from move_tm.tmr_utils import TMRUtils
+# tmr = TMRUtils()
 
-from move_tm.tmr_utils import TMRUtils
-tmr = TMRUtils()
+IS_SOLO_NODE = False #當只有這個node開發階段時用
+Open_REAL_ARM_CONTROLL = True # 預設是要下面用args去控制如果是在gazebo測試時, 就不用
 
-IS_SOLO_NODE = True #當只有這個node開發階段時用
-Open_REAL_ARM_CONTROLL = True
+import sys
+INPUT_MODE=0 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+
+
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
         super().__init__("arm_move_controller") #set python_NodeName
+
+
+        
         
         # [subscriber]
         # Subscribe from /nbv/status_communicator topic
@@ -79,11 +99,11 @@ class MyNode(Node): #construct Node class
         self.icp_done_msg =True
         self.octomap_done_msg = True # 因為這個包是直接用octomap server2的, 所以只有它是在之後nbv的時候會被改著定義
         self.nbv_done_msg = True
-        self.nbv_point_x_msg = 500
+        self.nbv_point_x_msg = 300
         self.nbv_point_y_msg = 0
         self.nbv_point_z_msg = 500
         self.nbv_point_rx_msg = 0
-        self.nbv_point_ry_msg = 0
+        self.nbv_point_ry_msg = 90
         self.nbv_point_rz_msg = 0
         self.is_final_result_msg = False
         self.arm_move_done_status_msg = False
@@ -114,7 +134,7 @@ class MyNode(Node): #construct Node class
         
         
         self.renew_done = True
-        self.Recieved_nbv_point[:]=[msg.nbv_point_x, msg.nbv_point_y, msg.nbv_point_z, msg.nbv_point_rx, msg.nbv_point_ry, msg.nbv_point_rz]
+        self.Recieved_nbv_point[:]=[(msg.nbv_point_x*1000), (msg.nbv_point_y*1000), (msg.nbv_point_z*1000), msg.nbv_point_rx, msg.nbv_point_ry, msg.nbv_point_rz]
         # [:] 變成是更改已存在的array而非replace it, 會更efficient
         
     def callback1(self): #construct a callback
@@ -139,13 +159,14 @@ class MyNode(Node): #construct Node class
                             self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, True, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
                             
                             # self.change_is_moving_status(True)
+
                             self.send_MovingCommandToArm()
                             self.arm_move_done_status_msg = 1
                             self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, False, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
                             
                             # self.change_is_moving_status(False)
                         else: 
-                            self.get_logger().info('Not Sending Moving Command tO Robot Arm') # CHANGE
+                            self.get_logger().info('Not Sending Moving Command to Robot Arm') # CHANGE
                             self.get_logger().info('Need to recalculate the next-best-view for this scene')
                             self.arm_move_done_status_msg = 2 # 先改好自己再改大家
                             # self.is_final_result_msg = False #因為這個點被否決, 表示他不是最好的點了
@@ -175,7 +196,11 @@ class MyNode(Node): #construct Node class
     
     def MoveCartesianVelocity(self, Cpvt):
             self.send_script("PVTPoint(" + self.ToStr(Cpvt) + ")")
-
+    def MoveCartesian(self, Cpose):
+        self.send_script("PTP(\"CPP\"," + self.ToStr(Cpose) + ",6,500,100,false)") # TCP Speed = 55 [mm/s] / 5 %, 110 [mm/s] / 10 %
+    def ToStr(self, array):
+        return ", ".join(str(array_num) for array_num in array)
+    
     # ====================================================================            
                 
                 
@@ -187,9 +212,15 @@ class MyNode(Node): #construct Node class
     def send_MovingCommandToArm(self):
         self.get_logger().info('SENDING MOVING COMMAND TO ROBOT ARM...') # CHANGE
         self.get_logger().info(f'MOVING ROBOT ARM TO: ({self.Recieved_nbv_point[0]:2f}, {self.Recieved_nbv_point[1]:2f}, {self.Recieved_nbv_point[2]:2f}, {self.Recieved_nbv_point[3]:2f}, {self.Recieved_nbv_point[4]:2f}, {self.Recieved_nbv_point[5]:2f})') # CHANGE
+        
+        
         if (Open_REAL_ARM_CONTROLL): 
-            goal_command = np.array(self.Recieved_nbv_point[0:5])
-            self.MoveCartesian(goal_command)
+            goal_command = np.array([self.Recieved_nbv_point[0], self.Recieved_nbv_point[1], self.Recieved_nbv_point[2], int(self.Recieved_nbv_point[3]), int(self.Recieved_nbv_point[4]), int(self.Recieved_nbv_point[5])])#np.array([500, 0,  500,  0,   90, 0]) #np.array(self.Recieved_nbv_point[0:5])
+            # self.MoveCartesian(goal_command)
+            cmd_Cpose = [
+                    goal_command,
+                    ]
+            self.Cmotions(cmd_Cpose)
         
         self.get_logger().info('Successfully moving to the new robor arm coordinate') # CHANGE
 
@@ -246,6 +277,18 @@ class MyNode(Node): #construct Node class
         
 def main(args=None): #construct main function
     rclpy.init(args=args)
+
+    global INPUT_MODE, Open_REAL_ARM_CONTROLL
+    if len(sys.argv) > 1:
+        INPUT_MODE = int(sys.argv[1])  # Get the argument from the command line
+    else:
+        INPUT_MODE = 3  # Default value  # default value if no args are provided  #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+    # run with 'ros2 run my_robot_nbv nbv_tompcd_filter 2'
+    print("INPUT_MODE:", INPUT_MODE)
+
+    # <Section> For controlling TF frame for gazebo vs real world
+    if(INPUT_MODE==1 or INPUT_MODE==2): # gazebo
+        Open_REAL_ARM_CONTROLL = False
     node1 = MyNode() #node1=NodeClass: MyNode
     rclpy.spin(node1) #keep node alive until ctrl+C
     rclpy.shutdown()

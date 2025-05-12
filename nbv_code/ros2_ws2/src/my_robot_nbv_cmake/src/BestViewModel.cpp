@@ -97,7 +97,7 @@ public:
         marker_ID_handler[1]=100; //for red ray id 101~200第二個candidate view要使用下一套ex若100個candidate view就會有100個red ray 100個 green ray 
         marker_ID_handler[2]=200; //for blue ray id 201~300
         
-        
+
 
     }
 
@@ -369,6 +369,9 @@ private:
     float candidateViews_radius_;
     int candidateViews_num_; //default要20
     int rays_num_; //default要50
+    // <Section> For controlling TF frame for gazebo vs real world
+
+
 
 
     array<int, 3> marker_ID_handler = {0,0,0};
@@ -803,12 +806,27 @@ class MyNode : public rclcpp::Node
             status_publisher_ = this->create_publisher<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10);
             status_subscription_ = this->create_subscription<message_interfaces::msg::NodeStatus>("/nbv/status_communicator", 10, std::bind(&MyNode::status_topic_callback, this, std::placeholders::_1));
             
+
+            if (INPUT_MODE == 1 || INPUT_MODE == 2) { // Gazebo
+                arm_base_frame = "odom";
+                arm_cam_frame = "camera_link_optical";
+                
+            } else { // Real world
+                arm_base_frame = "base";
+                arm_cam_frame = "camera_link_optical";
+            }
             RCLCPP_INFO(this->get_logger(), "node 'BestViewModel' have been started lalala newnew");
-            
+            RCLCPP_INFO(this->get_logger(), "Now arm_base_frame: %s", arm_base_frame.c_str());
 
         }
 
     private:
+
+        // For mode
+        std::string arm_base_frame;
+        std::string arm_cam_frame;  // same in both cases
+
+
 
         int candidateViews_num = CANDIDATE_VIEWS_NUM; //50; //20
         int rays_num = RAYS_NUM;//100;
@@ -899,12 +917,12 @@ class MyNode : public rclcpp::Node
             cloud_o3d_icpTomato->Clear();//<Debug> 物件用. access 一個pointer 裡面的物件才用->
 
             // open3d_cloud_ = ConvertPointCloud2ToOpen3D(msg);
-            cloud_o3d_icpTomato = pointCloud2ToOpen3D(msg, "base", tf_buffer_);
+            cloud_o3d_icpTomato = pointCloud2ToOpen3D(msg, arm_base_frame, tf_buffer_);
             if (DEBUG_MODE) {
                 RCLCPP_INFO(this->get_logger(), "Success Received a new point cloud with %lu points", cloud_o3d_icpTomato->points_.size());
             }
             // [for Debug] 可以不用publish回去, 只是用來檢查這樣有沒有抓到的工具而已
-            // sensor_msgs::msg::PointCloud2 cloud_ros_icpTomato = open3dToRos2PointCloud2(*open3d_cloud_, "base");//msg->header.frame_id
+            // sensor_msgs::msg::PointCloud2 cloud_ros_icpTomato = open3dToRos2PointCloud2(*open3d_cloud_, arm_base_frame);//msg->header.frame_id
             // pcd_publisher_->publish(cloud_ros_icpTomato);
             
             firstPCD_ready_flag=true;
@@ -1281,7 +1299,7 @@ class MyNode : public rclcpp::Node
             
             visualization_msgs::msg::Marker any_ray_marker;
             
-            any_ray_marker.header.frame_id = "base";   // Change if you have another frame map
+            any_ray_marker.header.frame_id = arm_base_frame;   // Change if you have another frame map
             any_ray_marker.header.stamp = this->get_clock()->now();
             any_ray_marker.ns = "any_ray_visualization";
             any_ray_marker.id = id;  // Unique ID for each marker  #<Note> 不同次的的publish如果ID同就會被替代掉
@@ -1333,7 +1351,7 @@ class MyNode : public rclcpp::Node
             visualization_msgs::msg::Marker marker;
 
             // Set frame_id and timestamp
-            marker.header.frame_id = "base";  // Make sure this frame exists in your tf tree
+            marker.header.frame_id = arm_base_frame;  // Make sure this frame exists in your tf tree
             marker.header.stamp = this->get_clock()->now();
 
             // Set the namespace and id for this marker
@@ -1432,7 +1450,7 @@ int main(int argc, char **argv)
 {   //ROS2
 	rclcpp::init(argc, argv);
 
-    int INPUT_MODE = 0;  
+    // int INPUT_MODE = 0;  
 
     if (argc > 1) {
         INPUT_MODE = std::stoi(argv[1]);  // Convert argument to int
