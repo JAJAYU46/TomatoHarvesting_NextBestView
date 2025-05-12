@@ -7,6 +7,5 @@
 #include "message_interfaces/msg/detail/node_status__struct.hpp"
 #include "message_interfaces/msg/detail/node_status__builder.hpp"
 #include "message_interfaces/msg/detail/node_status__traits.hpp"
-#include "message_interfaces/msg/detail/node_status__type_support.hpp"
 
 #endif  // MESSAGE_INTERFACES__MSG__NODE_STATUS_HPP_

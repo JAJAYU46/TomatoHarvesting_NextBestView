@@ -1,5 +1,6 @@
 #!/user/bin/env python3 
 '''
+這邊的才是最新的(20250506)
 [arm_move_controller]
 1. Introduction: 
 This Node is a movement controller for Robot Arm. It will subscribe the data from /nbv/status_communicator topic 
@@ -7,6 +8,12 @@ when the next-best-view point is calculated, do some reachability checking and s
 robot arm. Also, it will send whether the robot arm is moving to the /nbv/status_communicator msg.is_moving.
 
 2. Input and Output: 
+
+
+
+---
+# <Section> For controlling TF frame for gazebo vs real world
+        if(INPUT_MODE==1 or INPUT_MODE==2): # gazebo
 '''
 
 import rclpy #library for ROS2
@@ -20,17 +27,30 @@ from message_interfaces.msg import NodeStatus    # CHANGE
 import numpy as np
 
 # For Robot Arm Control
-from tm_msgs.msg import *
-from tm_msgs.srv import *
-
+try:
+    from tm_msgs.msg import *
+    from tm_msgs.srv import *
+except ImportError as e:
+    tm_msgs_available = False 
+    print(f"ImportError: {e}")
+else:
+    tm_msgs_available = True
 # from move_tm.tmr_utils import TMRUtils
 # tmr = TMRUtils()
 
 IS_SOLO_NODE = False #當只有這個node開發階段時用
-Open_REAL_ARM_CONTROLL = True
+Open_REAL_ARM_CONTROLL = True # 預設是要下面用args去控制如果是在gazebo測試時, 就不用
+
+import sys
+INPUT_MODE=0 #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+
+
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
         super().__init__("arm_move_controller") #set python_NodeName
+
+
+        
         
         # [subscriber]
         # Subscribe from /nbv/status_communicator topic
@@ -139,13 +159,14 @@ class MyNode(Node): #construct Node class
                             self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, True, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
                             
                             # self.change_is_moving_status(True)
+
                             self.send_MovingCommandToArm()
                             self.arm_move_done_status_msg = 1
                             self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, False, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
                             
                             # self.change_is_moving_status(False)
                         else: 
-                            self.get_logger().info('Not Sending Moving Command tO Robot Arm') # CHANGE
+                            self.get_logger().info('Not Sending Moving Command to Robot Arm') # CHANGE
                             self.get_logger().info('Need to recalculate the next-best-view for this scene')
                             self.arm_move_done_status_msg = 2 # 先改好自己再改大家
                             # self.is_final_result_msg = False #因為這個點被否決, 表示他不是最好的點了
@@ -256,6 +277,18 @@ class MyNode(Node): #construct Node class
         
 def main(args=None): #construct main function
     rclpy.init(args=args)
+
+    global INPUT_MODE, Open_REAL_ARM_CONTROLL
+    if len(sys.argv) > 1:
+        INPUT_MODE = int(sys.argv[1])  # Get the argument from the command line
+    else:
+        INPUT_MODE = 3  # Default value  # default value if no args are provided  #1. gazebo big tomato 2. gazebo small tomato 3. realsense
+    # run with 'ros2 run my_robot_nbv nbv_tompcd_filter 2'
+    print("INPUT_MODE:", INPUT_MODE)
+
+    # <Section> For controlling TF frame for gazebo vs real world
+    if(INPUT_MODE==1 or INPUT_MODE==2): # gazebo
+        Open_REAL_ARM_CONTROLL = False
     node1 = MyNode() #node1=NodeClass: MyNode
     rclpy.spin(node1) #keep node alive until ctrl+C
     rclpy.shutdown()

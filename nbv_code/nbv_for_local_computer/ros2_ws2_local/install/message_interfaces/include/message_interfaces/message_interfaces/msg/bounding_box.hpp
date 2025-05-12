@@ -7,6 +7,5 @@
 #include "message_interfaces/msg/detail/bounding_box__struct.hpp"
 #include "message_interfaces/msg/detail/bounding_box__builder.hpp"
 #include "message_interfaces/msg/detail/bounding_box__traits.hpp"
-#include "message_interfaces/msg/detail/bounding_box__type_support.hpp"
 
 #endif  // MESSAGE_INTERFACES__MSG__BOUNDING_BOX_HPP_
