@@ -210,16 +210,16 @@ public:
                     continue;
                 }
             }
-
-            // check if it 在手臂可以移動到的方方之外
-            if(vectorBO.z()>0.72 || vectorBO.z()<0.2){ //candidate view太高太低都不行
-                continue;
-            }else if(vectorBO.x()>0.72 || vectorBO.x()<0.2){ //cantidate view離base太近太遠都不行
-                continue;
-            }else if(vectorBO.y()>0.7 || vectorBO.y()<-0.7){
-                continue;
+            if(INPUT_MODE==3){
+                // check if it 在手臂可以移動到的方方之外
+                if(vectorBO.z()>0.72 || vectorBO.z()<0.2){ //candidate view太高太低都不行
+                    continue;
+                }else if(vectorBO.x()>0.72 || vectorBO.x()<0.2){ //cantidate view離base太近太遠都不行
+                    continue;
+                }else if(vectorBO.y()>0.7 || vectorBO.y()<-0.7){
+                    continue;
+                }
             }
-            
             // ==================================================
             
             origins.push_back(origin); //過審核的話再從後面丟進去
@@ -398,7 +398,8 @@ private:
         // std::uniform_real_distribution<> dist_cos_theta(-1.0, 1.0); //<chatgpt2>
         // std::uniform_real_distribution<> dist_cos_theta(0.0, 1.0); //only the upper half 
         // std::uniform_real_distribution<> dist_cos_theta(0.0, 0.5); //V5_can't generate below the tomato and above the tomato
-        std::uniform_real_distribution<> dist_cos_theta(-0.9, 0.9);
+        std::uniform_real_distribution<> dist_cos_theta(-0.9, 0.9); 
+        
 
         for (int i = 0; i < pointNum; ++i) {
 
@@ -406,12 +407,14 @@ private:
             float r = dist_r(gen);
             // float theta=acos(dist_theta(gen)); //<chatgpt2> 說這樣會不能uniform, 因為acos不是uniform 的, 所以改用上下面chatgpt2
             float theta = acos(dist_cos_theta(gen)); //<chatgpt2>
-
+            
             
             float x = center_.x() + r * sin(theta)*cos(phi);
             float y = center_.y() + r * sin(theta)*sin(phi);
             float z = center_.z() + r * cos(theta);//0.05 ;//現在因為是用車車測試所以就用平面地板就好//center_.z() + r * cos(theta); /////////////////////////////////////
-
+            if(INPUT_MODE==2){
+                z = center_.z();
+            }
             // RayEndPoints.emplace_back(Eigen::Vector3f(x, y, z));
             RayEndPoints.push_back(octomap::point3d(x, y, z));
         }
