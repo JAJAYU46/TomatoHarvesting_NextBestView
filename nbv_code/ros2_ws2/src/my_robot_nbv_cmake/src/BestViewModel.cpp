@@ -1408,7 +1408,9 @@ class MyNode : public rclcpp::Node
             vector_u = vector_u/vector_u.norm(); //normalize才可代那個Ru(theta)公式！
 
             // [Calculate rotation matrix] matrixR=以u向量為軸鄭方向轉theta度
-            Matrix3f matrix_R; 
+            Matrix3f matrix_R1; 
+            Matrix3f matrix_R2;
+            Matrix3f matrix_R;
             float ux=vector_u(0); //vector的unit vector的第一個元素就是ux 
             float uy=vector_u(1);
             float uz=vector_u(2);
@@ -1416,21 +1418,55 @@ class MyNode : public rclcpp::Node
             float cos_theta = cos(theta);
             float sin_theta = sin(theta);
 
-            matrix_R << 
+            matrix_R1 << 
                 ux * ux * one_cos + cos_theta, ux * uy * one_cos - uz * sin_theta, ux * uz * one_cos + uy * sin_theta,
                 ux * uy * one_cos + uz * sin_theta, uy * uy * one_cos + cos_theta, uy * uz * one_cos - ux * sin_theta,
                 ux * uz * one_cos - uy * sin_theta, uy * uz * one_cos + ux * sin_theta, uz * uz * one_cos + cos_theta;
 
-            // matrix_R << ux^2*(one_cos)+cos_theta, ux*uy*(one_cos)-uz*sin_theta, ux*uz*(one_cos)+uy*sin_theta, 
+            // matrix_R1 << ux^2*(one_cos)+cos_theta, ux*uy*(one_cos)-uz*sin_theta, ux*uz*(one_cos)+uy*sin_theta, 
             //             ux*uy*(one_cos)+uz*sin_theta, uy^2*(one_cos)+cos_theta, uy*uz*(one_cos)-ux*sin_theta, 
             //             ux*uz*(one_cos)-uy*sin_theta, uy*uz*(one_cos)+ux*sin_theta, uz^2*(one_cos)+cos_theta; 
-            cout << "Rotation Matrix:\n" << matrix_R << endl;
-                  
+            cout << "Rotation Matrix For R1:\n" << matrix_R1 << endl;
+
+            // Caluculate the Rotation Matrix For R2
+            float phi_forR2 = atan2(-matrix_R1(2,0), -matrix_R1(2,1)); //出來是弧度//前面的在分子
+            float theta_forR2 = M_PI/2-phi_forR2;
+            // Matrix3f matrix_R;
+            matrix_R2 << 
+                cos(theta_forR2), -sin(theta_forR2), 0, 
+                sin(theta_forR2), cos(theta_forR2), 0, 
+                0, 0, 1;
+
+            matrix_R = matrix_R1*matrix_R2;
+
+            cout << "theta_forR2(Radius): " << theta_forR2 << endl;
+            cout << "Rotation Matrix For R2:\n" << matrix_R2 << endl;
+            cout << "Rotation Matrix For Final R:\n" << matrix_R << endl;
+
+            // <Debug> 注意當beta=+-90度時, 會有gimbal lock 的問題, 這時候不能用之前那個公式算出Eular angle, 因為推導的假社會出錯, 要設gamma=0用另一個推導的公式解
+            float alpha=0.0; //另一個變數初始化
+            float beta=0.0;
+            float gama=0.0;
+
+            const float EPSILON_GIMBAL = 1e-4f;
+            if(fabs(fabs(matrix_R(2,0))-1.0f)<EPSILON_GIMBAL){
+                cout << "Gimbal Lock for FinalR Detected, change to formula3" << theta_forR2 << endl;
+                beta = asin(-matrix_R(2,0));
+                alpha = 0.0;
+                gama = atan2(matrix_R(0,1)/(-matrix_R(2,0)), matrix_R(1,1));
+
+            }else{
+                cout << "No Gimbal Lock" << theta_forR2 << endl;
+                alpha = atan2(matrix_R(1,0), matrix_R(0,0)); //for z due to theformula we assumed (look at Samsung note forth grade robotics course)
+                beta = asin(-matrix_R(2,0));
+                gama = atan2(matrix_R(2,1), matrix_R(2,2));
+            }
+
             // 2. Get the ZYX Euler Angle (alpha, beta, gama)=(theta_x, theta_y, theta_z)
             // 注意因為是從0開始index所以要-1
-            float alpha = atan2(matrix_R(1,0), matrix_R(0,0)); //for z due to theformula we assumed (look at Samsung note forth grade robotics course)
-            float beta = asin(-matrix_R(2,0));
-            float gama = atan2(matrix_R(2,1), matrix_R(2,2));
+            // float alpha = atan2(matrix_R(1,0), matrix_R(0,0)); //for z due to theformula we assumed (look at Samsung note forth grade robotics course)
+            // float beta = asin(-matrix_R(2,0));
+            // float gama = atan2(matrix_R(2,1), matrix_R(2,2));
             vector<float> botArmRotateDegree = {gama*180/M_PI, beta*180/M_PI, alpha*180/M_PI};
 
             // float cosDegree_Axis_x = z/(sqrt(z*z+y*y));
