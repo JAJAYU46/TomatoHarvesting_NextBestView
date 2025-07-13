@@ -10,6 +10,20 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__))) #approach adds the 
 from message_interfaces.msg import NodeStatus    # CHANGE
 import threading
 
+# 計實用
+import time
+import numpy as np
+# 會顯示的時間
+'''
+分次報表
+1. 第幾iterate, 分別(detect, filter, octomap, nbv 花的時間), 這個iteration花的總時間, 得到的 temp nbv point
+最終結果報表
+1. 花的iterate數
+2. 花的總時間
+3. 最終的nbv point
+
+'''
+
 
 class MyNode(Node): #construct Node class
     def __init__(self): #construct constructor
@@ -39,6 +53,14 @@ class MyNode(Node): #construct Node class
         self.doneReset=False
         self.ready_for_new_Tomato = True
         # self.status_reset()
+
+        # [time controller]
+        self.time_start = None
+        self.time_itter_start = None
+        self.time_temp_section_start = None
+
+        self.time_results = []
+        self.nbv_results = []
         
         
         # self.bboxReadyFlag = False
@@ -93,7 +115,11 @@ class MyNode(Node): #construct Node class
         msg_status.is_final_result = False
         msg_status.arm_move_done_status=False
         self.publish_status_.publish(msg_status)
+
+        self.nbv_results = []
+        self.time_results = []
         self.get_logger().info('Reset Status1 done') # CHANGE
+
         
         # self.doneReset = True
     def status_reset_within_iteration(self): #初始化所有參數, 再把iteration設為0（表示前一個iteration已完成, 可執行下移步驟後, 各個node才會接續著跟著動作）
@@ -127,18 +153,23 @@ class MyNode(Node): #construct Node class
                 user_input = input("Enter 'n' to start NBV process for next target tomato: ").strip()
                 self.status_reset()
                 self.ready_for_new_Tomato=False
+
+                self.time_start = time.perf_counter() #time.time()
             else: 
                 self.status_reset_within_iteration()
             
 
 
             #1. 要iteration_msg==0
+            temp_time0_iter_start = time.perf_counter()
             while(self.doneReset!=True): #會一直等直到被初始化完成
                 continue
             while(self.ready_for_next_iteration_msg!=True): #會一直等直到被初始化完成
                 continue
             
             self.get_logger().info("Done initializing this scene")
+            temp_time1_init_end = time.perf_counter()
+            
             self.get_logger().info("start for the "+str(self.iteration_msg)+"th iteration")
             
             
@@ -148,6 +179,8 @@ class MyNode(Node): #construct Node class
             while(self.detection_done_msg != True): #等待完成
                 continue
             self.get_logger().info("Done Detection")
+            temp_time2_detect_end = time.perf_counter()
+            
             self.get_logger().info("Target Box ID = "+str(self.target_box_id_msg))
 
             
@@ -157,25 +190,31 @@ class MyNode(Node): #construct Node class
             while(self.icp_done_msg != True): #等待完成ICP
                 continue  
             self.get_logger().info("Done filter & ICP")
+            temp_time3_filter_end = time.perf_counter()
+            
 
             #4. 等待完成Octomap  ======================================
             self.get_logger().info("Doing the pcd to Octomap convertion...")
             while(self.octomap_done_msg != True): #等待完成ICP
                 continue  
             self.get_logger().info("Done Octomap")
+            temp_time4_octomap_end = time.perf_counter()
+            
 
             #5. 等待完成NBV calculation  ======================================
             self.get_logger().info("Calculating NBV toward target tomato...")
             while(self.nbv_done_msg != True): #等待完成ICP
                 continue  
             self.get_logger().info("Done Calculating NBV toward target tomato")
+            temp_time5_nbv_end = time.perf_counter()
+            
             self.get_logger().info("============== Result =============")
             self.get_logger().info("Iteration: "+str(self.iteration_msg)+"th")
             # self.get_logger().info("The NBV for the tomato is: ( %.2f, %.2f, %.2f)",(self.nbv_point_x_msg),(self.nbv_point_y_msg), (self.nbv_point_z_msg))
             self.get_logger().info(f"The NBV for this tomato is: ( {self.nbv_point_x_msg:.2f}, {self.nbv_point_y_msg:.2f}, {self.nbv_point_z_msg:.2f} )")
             self.get_logger().info(f"The Orientation is: ( {self.nbv_point_rx_msg:.2f}, {self.nbv_point_ry_msg:.2f}, {self.nbv_point_rz_msg:.2f} )")
             self.get_logger().info("===================================")
-
+            self.nbv_results.append([self.nbv_point_x_msg, self.nbv_point_y_msg, self.nbv_point_z_msg, self.nbv_point_rx_msg, self.nbv_point_ry_msg, self.nbv_point_rz_msg])
             if(self.is_final_result_msg==False): 
                 self.get_logger().info("SENDINT MOVING COMMAND TO ROBOT ARM NODE...")
                 
@@ -189,21 +228,59 @@ class MyNode(Node): #construct Node class
                 elif (self.arm_move_done_status_msg == 2):
                     self.get_logger().info("This nbv point is unreachable, needs to recalculate the nbv point")
                 
+
+
+                
                 self.doneReset=False
                 # self.status_reset_within_iteration() #didn't reset iteration... x, y, z
                 self.get_logger().info("Done Reset starting next iteration")
                 # ready for...
-                
+                temp_time6_arm_end = time.perf_counter()
+            
+                self.time_results.append([
+                    temp_time1_init_end - temp_time0_iter_start,
+                    temp_time2_detect_end - temp_time1_init_end,
+                    temp_time3_filter_end - temp_time2_detect_end,
+                    temp_time4_octomap_end - temp_time3_filter_end,
+                    temp_time5_nbv_end - temp_time4_octomap_end,
+                    temp_time6_arm_end - temp_time5_nbv_end, 
+                ])
             else: 
                 self.get_logger().info("Arrive the final position for grabbing")
                 self.get_logger().info(f"Robot arm now position (x, y, z, Rx, Ry, Rz): ({self.nbv_point_x_msg:.2f}, {self.nbv_point_y_msg:.2f}, {self.nbv_point_z_msg:.2f}, {self.nbv_point_rx_msg:.2f}, {self.nbv_point_ry_msg:.2f}, {self.nbv_point_rz_msg:.2f})")
                 # self.status_reset() #不可以在這裡reset, 要等下令
                 # self.get_logger().info("Done Reset, starting NBV for next Target Tomato scene")
                 self.ready_for_new_Tomato = True
+                temp_time6_arm_end = time.perf_counter()
+            
+                self.time_results.append([
+                    temp_time1_init_end - temp_time0_iter_start,
+                    temp_time2_detect_end - temp_time1_init_end,
+                    temp_time3_filter_end - temp_time2_detect_end,
+                    temp_time4_octomap_end - temp_time3_filter_end,
+                    temp_time5_nbv_end - temp_time4_octomap_end,
+                    temp_time6_arm_end - temp_time5_nbv_end, 
+                ])
+                
                 # user_input = input("Enter 'n' to start NBV process for next target tomato: ").strip()
+                print("============ [Final Report For this Scene] ============")
+                step_names = ["Init", "Detection", "Filter", "Octomap", "NBV", "Arm"]
+                scene_total_time = 0.0
+                for idx, (time_result, nbv_result) in enumerate(zip(self.time_results, self.nbv_results)):
+                    print(f"iteration {idx}:")
+                    for step_name, time_used in zip(step_names, time_result):
+                        print(f"  {step_name:<10}: {time_used:.6f} sec") # <Note> <10 靠左對齊格式
+                    iter_total_time = sum(time_result)
+                    scene_total_time += iter_total_time
+                    print(f"  Total time for iteration: {iter_total_time:.6f} sec")
+                    print(f"NBV for iteration: ({nbv_result[0]:.2f}, {nbv_result[1]:.2f}, {nbv_result[2]:.2f}, {nbv_result[3]:.2f}, {nbv_result[4]:.2f}, {nbv_result[5]:.2f})")
+                    print()
+                print(f"Total time for this scene: {scene_total_time:.6f} sec")
+
+                print("=====================================================")
                 
                 # ready for...
-
+            
 
             # 看這是不是最終位置了 要再做一次NBV才會知道上一次已經是最終位置了, 
             # 所以當is_final_result_msg是true時, 就不用移動robot arm了（因為在上一次就到達這裡了）
