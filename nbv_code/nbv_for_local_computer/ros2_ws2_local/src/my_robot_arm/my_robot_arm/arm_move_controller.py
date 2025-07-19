@@ -152,7 +152,7 @@ class MyNode(Node): #construct Node class
                             
                 else:
                     if(self.Is_Point_Reachable_By_RArm()): # 如果true --> reachable
-                        user_input = input("Confirm Sending Command to Robot Arm? (Y/ N): ").strip()
+                        user_input = input("Confirm Sending Command to Robot Arm?? (Y/ N): ").strip()
                         if(user_input=='Y' or user_input=='y'):
                             # self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, self.is_moving_msg, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
                             
@@ -161,6 +161,15 @@ class MyNode(Node): #construct Node class
                             # self.change_is_moving_status(True)
 
                             self.send_MovingCommandToArm()
+
+                            while(True): 
+                                print("waiting for robot arm done moving...")
+                                user_input2 = input("Does the robot arm done moving? (Y/ N): ").strip()
+                                if(user_input2=='Y' or user_input2=='y'):
+                                    break
+                            
+                            self.get_logger().info('Successfully moving to the new robor arm coordinate') # CHANGE
+
                             self.arm_move_done_status_msg = 1
                             self.change_nbv_status_topic(self.ready_for_next_iteration_msg, self.target_box_id_msg, False, self.iteration_msg, self.icp_done_msg, self.octomap_done_msg, self.nbv_done_msg, self.Recieved_nbv_point, self.is_final_result_msg, self.arm_move_done_status_msg)
                             
@@ -222,7 +231,7 @@ class MyNode(Node): #construct Node class
                     ]
             self.Cmotions(cmd_Cpose)
         
-        self.get_logger().info('Successfully moving to the new robor arm coordinate') # CHANGE
+        # self.get_logger().info('Successfully moving to the new robor arm coordinate') # CHANGE
 
                         
     def change_nbv_status_topic(self, ready_for_next_iteration, target_box_id, is_moving, iteration, icp_done, octomap_done, nbv_done, Recieved_nbv_point, is_final_result, arm_move_done_status): #初始化所有參數, 再把iteration設為0（表示前一個iteration已完成, 可執行下移步驟後, 各個node才會接續著跟著動作）

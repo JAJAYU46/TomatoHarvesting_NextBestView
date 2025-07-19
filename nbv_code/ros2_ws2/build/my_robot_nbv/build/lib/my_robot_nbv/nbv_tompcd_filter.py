@@ -500,6 +500,10 @@ class MyNode(Node): #construct Node class
                                 camera_point = np.array([0,0,0])
                                 result_trans_final=ICPoperation(source, target, self.TomatoBox_lu, self.TomatoBox_rd, projection_para, camera_point)
 
+                                # <Debug> 一直重抓新的bounding box. 避免移動結束瞬間就抓到錯的bounding box
+                                while result_trans_final is None: 
+                                    result_trans_final=ICPoperation(source, target, self.TomatoBox_lu, self.TomatoBox_rd, projection_para, camera_point)
+                                
                                 if result_trans_final is not None: #才做下面的事情
                                     source.paint_uniform_color([1, 0.706, 0])
                                     source.transform(result_trans_final.transformation)
