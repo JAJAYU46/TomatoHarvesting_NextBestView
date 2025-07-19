@@ -159,7 +159,7 @@ def ICPoperation(source, target, TomatoBox_lu=[0,0], TomatoBox_rd=[10000,10000],
     
         # evaluation.inlier_rmse 正常的時候是0.00762, 如果這次算出的global誤差太大, 就重算global
         #不知為啥有時paired_point_ratio會大於1ㄟ其實不太對的
-        if RedoGlobalCount<=AcceptRedoGlobalCount or result_ransac_largestNow == None: #如果太多次了或是就是還沒有一個Acceptable的話，就繼續找
+        if RedoGlobalCount<=AcceptRedoGlobalCount: #如果是None也沒關係, 就代表現在還沒抓到對的蕃茄位置, 就回傳none重新抓 or result_ransac_largestNow == None: #如果太多次了或是就是還沒有一個Acceptable的話，就繼續找
             if IsDebug:
                 print("recalculate global registration (target_num_points/len(evaluation.correspondence_set))<0.60) or (evaluation.inlier_rmse > 0.01)")
             #===========test=============
@@ -202,7 +202,9 @@ def ICPoperation(source, target, TomatoBox_lu=[0,0], TomatoBox_rd=[10000,10000],
             break #看看如果global沒取好照做會怎樣 #結果好像也是可以, 你可能上面標準設太高了
             
     # if(RedoGlobalCount>)
-
+    if result_ransac == None:
+        print("global registration fail due to too many try, return none and reget the bounding box")
+        return result_ransac
 
     #[Step2] Local Registration (By ICP method)
     icp_count=10

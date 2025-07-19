@@ -243,7 +243,7 @@ class MyNode(Node): #construct Node class
                     temp_time3_filter_end - temp_time2_detect_end,
                     temp_time4_octomap_end - temp_time3_filter_end,
                     temp_time5_nbv_end - temp_time4_octomap_end,
-                    temp_time6_arm_end - temp_time5_nbv_end, 
+                    temp_time6_arm_end - temp_time5_nbv_end, #不要紀錄手臂時間
                 ])
             else: 
                 self.get_logger().info("Arrive the final position for grabbing")
@@ -264,18 +264,19 @@ class MyNode(Node): #construct Node class
                 
                 # user_input = input("Enter 'n' to start NBV process for next target tomato: ").strip()
                 print("============ [Final Report For this Scene] ============")
-                step_names = ["Init", "Detection", "Filter", "Octomap", "NBV", "Arm"]
+                step_names = ["Init", "Detection", "Filter", "Octomap", "NBV", "Arm"] #不要紀錄手臂時間
                 scene_total_time = 0.0
                 for idx, (time_result, nbv_result) in enumerate(zip(self.time_results, self.nbv_results)):
                     print(f"iteration {idx}:")
                     for step_name, time_used in zip(step_names, time_result):
                         print(f"  {step_name:<10}: {time_used:.6f} sec") # <Note> <10 靠左對齊格式
-                    iter_total_time = sum(time_result)
+                    # iter_total_time = sum(time_result)
+                    iter_total_time = sum(time_result[:-1]) #不要加最後一個元素也就是不要算Arm time
                     scene_total_time += iter_total_time
-                    print(f"  Total time for iteration: {iter_total_time:.6f} sec")
+                    print(f"  Total time for iteration(no armtime): {iter_total_time:.6f} sec")
                     print(f"NBV for iteration: ({nbv_result[0]:.2f}, {nbv_result[1]:.2f}, {nbv_result[2]:.2f}, {nbv_result[3]:.2f}, {nbv_result[4]:.2f}, {nbv_result[5]:.2f})")
                     print()
-                print(f"Total time for this scene: {scene_total_time:.6f} sec")
+                print(f"Total time for this scene(no armtime): {scene_total_time:.6f} sec")
 
                 print("=====================================================")
                 

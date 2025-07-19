@@ -207,6 +207,7 @@ class MyNode(Node): #construct Node class
     def Is_Point_Reachable_By_RArm(self): 
         if (self.Recieved_nbv_point[2]<=0): #如果跑到z<0就是unreachable
             return False
+        # 要加那個半圓
         return True
 
     def send_MovingCommandToArm(self):
