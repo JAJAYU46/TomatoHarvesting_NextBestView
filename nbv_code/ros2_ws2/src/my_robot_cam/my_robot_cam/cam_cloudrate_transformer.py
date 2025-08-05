@@ -45,6 +45,9 @@ class MyNode(Node): #construct Node class
         if(INPUT_MODE==1 or INPUT_MODE==2):
             self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/camera/points", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         else:
+            # for robot realsense SDK package
+            # /camera/camera/depth/color/points
+            # /camera/camera/depth/color/points
             self.PointCloud2_subscriber_=self.create_subscription(sensor_msgs.PointCloud2, "/camera/camera/depth/color/points", self.callback1, 10) #(messageType/ "Topic_Name"/ callbackName/ Queue size)
         # /camera/camera/depth/color/points
         #/camera/points （for gazebo) "/camera/camera/depth/color/points"(for realsense)

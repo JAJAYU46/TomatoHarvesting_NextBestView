@@ -37,6 +37,8 @@ local_parameters = [{'name': 'camera_name',                  'default': 'camera'
                     {'name': 'enable_color',                 'default': 'true', 'description': 'enable color stream'},
                     {'name': 'enable_depth',                 'default': 'true', 'description': 'enable depth stream'},
                     {'name': 'pointcloud.enable',            'default': 'true', 'description': 'enable pointcloud'},
+                    #{'name': 'serial_no',        'default': '',       'description': 'camera serial number'},#
+                    #{'name': 'usb_port_id',      'default': '',       'description': 'camera USB port ID'},#
                    ]
 
 def set_configurable_parameters(local_params):
@@ -44,7 +46,7 @@ def set_configurable_parameters(local_params):
 
 
 def generate_launch_description():
-    params = rs_launch.configurable_parameters
+    params = rs_launch.configurable_parameters#+local_parameters#
     return LaunchDescription(
         rs_launch.declare_configurable_parameters(local_parameters) +
         rs_launch.declare_configurable_parameters(params) + 

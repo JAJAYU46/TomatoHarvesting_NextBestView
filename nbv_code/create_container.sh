@@ -30,7 +30,7 @@ CONTAINER_NAME="nbv_container${index}_nbv_image_fullinstall4"
 docker run -it \
   --runtime=nvidia --gpus all \
   -v /dev/bus/usb:/dev/bus/usb \
-  -v /home/rmml05/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src:/home/ros2_ws2/src \
+  -v /home/rmml05/Best_View/nbv_JaJaYu/TomatoHarvesting_NextBestView/nbv_code/ros2_ws2/src:/home/ros2_ws2/src \
   --device-cgroup-rule='c 189:* rmw' \
   --name=$CONTAINER_NAME \
   --env="DISPLAY=$DISPLAY" \
