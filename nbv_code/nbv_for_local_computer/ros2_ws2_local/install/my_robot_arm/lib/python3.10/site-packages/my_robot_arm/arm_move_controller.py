@@ -164,7 +164,7 @@ class MyNode(Node): #construct Node class
 
                             while(True): 
                                 print("waiting for robot arm done moving...")
-                                user_input2 = input("Does the robot arm done moving?").strip()
+                                user_input2 = input("Does the robot arm done moving? (Y/ N): ").strip()
                                 if(user_input2=='Y' or user_input2=='y'):
                                     break
                             

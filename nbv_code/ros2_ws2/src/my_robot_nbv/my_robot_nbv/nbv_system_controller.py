@@ -208,11 +208,12 @@ class MyNode(Node): #construct Node class
             self.get_logger().info("Done Calculating NBV toward target tomato")
             temp_time5_nbv_end = time.perf_counter()
             
-            self.get_logger().info("============== Result =============")
+            self.get_logger().info("============== Iteration Result =============")
             self.get_logger().info("Iteration: "+str(self.iteration_msg)+"th")
             # self.get_logger().info("The NBV for the tomato is: ( %.2f, %.2f, %.2f)",(self.nbv_point_x_msg),(self.nbv_point_y_msg), (self.nbv_point_z_msg))
             self.get_logger().info(f"The NBV for this tomato is: ( {self.nbv_point_x_msg:.2f}, {self.nbv_point_y_msg:.2f}, {self.nbv_point_z_msg:.2f} )")
             self.get_logger().info(f"The Orientation is: ( {self.nbv_point_rx_msg:.2f}, {self.nbv_point_ry_msg:.2f}, {self.nbv_point_rz_msg:.2f} )")
+            
             self.get_logger().info("===================================")
             self.nbv_results.append([self.nbv_point_x_msg, self.nbv_point_y_msg, self.nbv_point_z_msg, self.nbv_point_rx_msg, self.nbv_point_ry_msg, self.nbv_point_rz_msg])
             if(self.is_final_result_msg==False): 
@@ -245,6 +246,21 @@ class MyNode(Node): #construct Node class
                     temp_time5_nbv_end - temp_time4_octomap_end,
                     temp_time6_arm_end - temp_time5_nbv_end, #不要紀錄手臂時間
                 ])
+                print("============ [Report For this Iteration] ============")
+                # print(f"iteration {idx}:")
+                step_names = ["Init", "Detection", "Filter", "Octomap", "NBV", "Arm"] #不要紀錄手臂時間
+                
+                print("Iteration "+str(self.iteration_msg)+"th: ")
+                latest_time_result = self.time_results[-1]
+                latest_nbv_result = self.nbv_results[-1]
+                for step_name, time_used in zip(step_names, latest_time_result):
+                    print(f"  {step_name:<10}: {time_used:.6f} sec") # <Note> <10 靠左對齊格式
+                # iter_total_time = sum(time_result)
+                iter_total_time1 = sum(latest_time_result[:-1]) #不要加最後一個元素也就是不要算Arm time
+                
+                print(f"  Total time for iteration(no armtime): {iter_total_time1:.6f} sec")
+                print(f"NBV for iteration: ({latest_nbv_result[0]:.2f}, {latest_nbv_result[1]:.2f}, {latest_nbv_result[2]:.2f}, {latest_nbv_result[3]:.2f}, {latest_nbv_result[4]:.2f}, {latest_nbv_result[5]:.2f})")
+                print()
             else: 
                 self.get_logger().info("Arrive the final position for grabbing")
                 self.get_logger().info(f"Robot arm now position (x, y, z, Rx, Ry, Rz): ({self.nbv_point_x_msg:.2f}, {self.nbv_point_y_msg:.2f}, {self.nbv_point_z_msg:.2f}, {self.nbv_point_rx_msg:.2f}, {self.nbv_point_ry_msg:.2f}, {self.nbv_point_rz_msg:.2f})")

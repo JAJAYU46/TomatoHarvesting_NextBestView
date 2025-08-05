@@ -140,6 +140,7 @@ class MyNode(Node): #construct Node class
 
         # <Section>Merge pcd
         self.previous_filter_point_np = np.empty((0, 4))
+        self.previous_result_trans_final = None
 
         # <Section> For controlling TF frame for gazebo vs real world
         if(INPUT_MODE==1 or INPUT_MODE==2): # gazebo
@@ -373,7 +374,7 @@ class MyNode(Node): #construct Node class
 
                         # <Section> Try to merge filtered point cloud =============================================================================================================
                         # Convert to np array first for better operation
-                        filtered_points_np=np.array(filtered_points)
+                        filtered_points_np=np.array(filtered_points) 
                         # self.previous_filter_point_np 是用base_link在存
                         previous_filter_points_np_camera=self.transform_points_frameB_to_frameA(self.tf_buffer, self.previous_filter_point_np, self.arm_cam_frame, self.arm_base_frame)
                         
@@ -501,9 +502,25 @@ class MyNode(Node): #construct Node class
                                 result_trans_final=ICPoperation(source, target, self.TomatoBox_lu, self.TomatoBox_rd, projection_para, camera_point)
 
                                 # <Debug> 一直重抓新的bounding box. 避免移動結束瞬間就抓到錯的bounding box
-                                while result_trans_final is None: 
-                                    result_trans_final=ICPoperation(source, target, self.TomatoBox_lu, self.TomatoBox_rd, projection_para, camera_point)
+                                # <Debug> add a count, if the registration keep falling due to the mismach point cloud, then clear the filter point cloud and only use the current observed point cloud
                                 
+                                regetBboxCount = 0
+                                while result_trans_final is None: 
+                                    regetBboxCount += 1
+                                    result_trans_final=ICPoperation(source, target, self.TomatoBox_lu, self.TomatoBox_rd, projection_para, camera_point)
+                                    # add a count
+                                    if(regetBboxCount>2): #if reget over twice
+                                        self.get_logger().warn("ICP registration failed too many times, reinitialize the filter point cloud") 
+                                        preAnew_filter_points_np = filtered_points_np
+                                        points = preAnew_filter_points_np[:, :3]
+                                        point_cloud.points = o3d.utility.Vector3dVector(points)
+                                        point_cloud.colors = o3d.utility.Vector3dVector(colors_pcd_open3d)
+                                        target = point_cloud
+
+                                        if(regetBboxCount>5): #if the renew icp still fail, just use the previous result
+                                            result_trans_final = self.previous_result_trans_final
+                                            print("Use previous result_trans_final")
+                                self.previous_result_trans_final = result_trans_final
                                 if result_trans_final is not None: #才做下面的事情
                                     source.paint_uniform_color([1, 0.706, 0])
                                     source.transform(result_trans_final.transformation)

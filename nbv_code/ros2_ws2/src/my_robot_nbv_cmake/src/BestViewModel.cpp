@@ -129,8 +129,8 @@ public:
         octomap::point3d RobotArmFrontAxisVec(1.0,-1.0,0.0); // The front axis(to determine where is "the back of the Tomato" & "the back of the robot arm")
         // (1.0,0.0,0.0): car front/ (0.0,-1.0,0.0): car right/ (0.0,0.0,-1.0): car up
         // <For Improve>
-        octomap::point3d RobotArmSecondAxisVec(0.0,-1.0,0.0); //The second direction you want to delete
-
+        // octomap::point3d RobotArmSecondAxisVec(0.0,-1.0,0.0); //The second direction you want to delete
+        octomap::point3d RobotArmSecondAxisVec(1.0,0.0, 0.0);
         if(INPUT_MODE==2){
             octomap::point3d RobotArmFrontAxisVec(1.0,0.0,0.0);
             octomap::point3d RobotArmSecondAxisVec(1.0,0.0,0.0);
@@ -176,7 +176,7 @@ public:
                 if(scalarProjection_OT_RA<=0){ // 蕃茄45度斜背面不行 the front axis be the front
                     // cout<<"Ok2...... "<<origins.size()<<" candidate views after back filtering"<<endl;  
             
-                    continue;
+                    // continue;
                 }
             
                 // 這個限制好像會限制不能到手必左邊, 這個限制怪怪的
@@ -214,7 +214,7 @@ public:
                 // check if it 在手臂可以移動到的方方之外
                 if(vectorBO.z()>0.72 || vectorBO.z()<0.2){ //candidate view太高太低都不行
                     continue;
-                }else if(vectorBO.x()>0.72 || vectorBO.x()<0.2){ //cantidate view離base太近太遠都不行
+                } else if(vectorBO.x()>0.72 || vectorBO.x()<0.2){ //cantidate view離base太近太遠都不行
                     continue;
                 }else if(vectorBO.y()>0.7 || vectorBO.y()<-0.7){
                     continue;
