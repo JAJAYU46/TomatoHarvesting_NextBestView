@@ -1,5 +1,8 @@
+docker start nbv_container2_nbv_image_fullinstall4
+xhost +local:docker
+
 docker exec -it nbv_container2_nbv_image_fullinstall4 bash
-source ./install/setup.bash
+c
 
 ros2 launch realsense2_camera rs_pointcloud_launch.py
 
@@ -9,7 +12,7 @@ ros2 run my_robot_nbv nbv_tom_detect
 ros2 run my_robot_nbv nbv_tompcd_filter
 ros2 launch octomap_server2 octomap_server_launch.py  resolution:=0.003 frame_id:=base input_cloud_topic:=/nbv/tompcd_ICP
 ros2 run my_robot_nbv_cmake BestViewModel 2>&1 | grep -v "WARNING: Coordinate hit bounds"
-
+ros2 topic echo /nbv/status_communicator
  
 ros2 run my_robot_nbv nbv_system_controller
 rviz2 -d src/my_bot/config/camera_bot3.rviz
@@ -26,3 +29,37 @@ ros2 run tm_driver tm_driver robot_ip:=192.168.1.100
 
 ros2 run my_robot_nbv nbv_temp_isMovingPublisher
 ros2 topic echo /nbv/status_communicator
+
+-----------------------
+Temp: 
+
+(also in docker)
+ros2 run my_robot_cam cam_calculate_redpix 
+ros2 run my_robot_cam cam_image_getsave 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------
+
+if filtered_points_np.size == 0:
+    preAnew_filter_points_np = previous_filter_points_np_camera
+else:
+    preAnew_filter_points_np = np.append(previous_filter_points_np_camera, filtered_points_np, axis=0)
+
+
+points = preAnew_filter_points_np[:, :3]
+point_cloud = o3d.geometry.PointCloud()
+point_cloud.points = o3d.utility.Vector3dVector(points)
+point_cloud.colors = o3d.utility.Vector3dVector(colors_pcd_open3d)
+                            
